@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.config_loader import load_all
 from src.query_builder import build_recipient_trigger_queries, google_news_rss_url
 from src.sources import fetch_all
-from src.clustering import filter_by_trigger_phrase, tag_country, cluster_articles
+from src.clustering import filter_by_trigger_phrase, tag_country, cluster_articles, rank_clusters_by_priority
 from src.extraction import extract_from_cluster, build_donation_entry
 from src.store import EventStore
 from src.models import today_str, DonationEntry
@@ -91,8 +91,17 @@ def main():
 
     max_calls = args.max_clusters or settings["ai"]["max_ai_calls_per_run"]
     if len(clusters) > max_calls:
-        logger.warning("Capping at %d clusters (of %d) to respect the AI call budget.", max_calls, len(clusters))
+        # Gemini's free tier can be as low as ~20 requests/day (verified
+        # live — this changes without notice, see settings.yaml). When the
+        # budget is tight, spend it on the most promising candidates first
+        # rather than an arbitrary subset.
+        clusters = rank_clusters_by_priority(clusters)
+        logger.warning("Capping at %d clusters (of %d) to respect the AI call budget — "
+                        "processing the highest-priority candidates first.", max_calls, len(clusters))
+        skipped_due_to_budget = len(clusters) - max_calls
         clusters = clusters[:max_calls]
+    else:
+        skipped_due_to_budget = 0
 
     # --- Extract + dedupe ---
     store = EventStore()
@@ -102,13 +111,16 @@ def main():
 
     from src.extraction import FatalExtractionError
 
-    for cluster in clusters:
+    for i, cluster in enumerate(clusters, start=1):
+        if i == 1 or i % 5 == 0 or i == len(clusters):
+            logger.info("Processing cluster %d/%d...", i, len(clusters))
         try:
             result = extract_from_cluster(cluster, model=settings["ai"]["model"], mock=args.mock)
         except FatalExtractionError as e:
             logger.error("Stopping run early: %s", e)
             logger.error("No further clusters will be processed this run. Fix the issue above and "
                          "re-run manually from the Actions tab once resolved.")
+            skipped_due_to_budget += (len(clusters) - i + 1)
             break
         if result is None:
             continue  # not relevant, or extraction failed after retries
@@ -146,6 +158,7 @@ def main():
         "items_considered": items_considered,
         "items_after_trigger_filter": len(filtered),
         "clusters_analysed": len(clusters),
+        "skipped_due_to_ai_budget": skipped_due_to_budget,
         "duplicates_skipped": duplicates_skipped,
         "entries_published": len(entries),
         "high_confidence_count": sum(1 for e in entries if e.confidence_score >= high_confidence_threshold),
