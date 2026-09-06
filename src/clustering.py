@@ -16,7 +16,7 @@ from __future__ import annotations
 
 from rapidfuzz import fuzz
 
-from .models import ArticleCluster, RawArticle
+from .models import ArticleCluster, RawArticle, SourceTier
 
 TITLE_SIMILARITY_THRESHOLD = 62  # 0-100, rapidfuzz token_set_ratio
 # NOTE: this is a best-effort, imperfect signal. Headlines about the same
