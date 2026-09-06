@@ -6,38 +6,39 @@
 # them. Keep phrases short and natural — how a headline or opening sentence
 # would actually phrase it. Case does not matter.
 #
-# If you notice real donation stories being missed, that usually means a
-# phrase needs adding here. If you notice a lot of irrelevant stories
-# getting through, a phrase below is probably too generic — remove it or
-# make it more specific.
+# IMPORTANT: phrases here should point specifically at CORPORATE/private
+# giving, not general "funding"/"donor" language. Words like "funding for"
+# or "contributes to" match government donor news just as easily as
+# corporate news, and UN agencies are constantly in government funding
+# stories — a loose phrase list here floods the AI extraction step with
+# hundreds of irrelevant candidates. If you notice real corporate donation
+# stories being missed, add a phrase; if you notice a flood of irrelevant
+# results, a phrase below is probably too generic and should be removed.
 # =============================================================================
 
-donates
-donation
-donated
-pledges
-pledge
-in-kind
-partners with
-partnership with
-announces partnership
-renews partnership
-contributes to
-contribution to
-commits $
-commits to
-commitment of
-grant to
-grant of
-philanthropic
-charitable giving
+corporate donation
+company donates
+company pledges
+corporate foundation
 corporate social responsibility
 CSR partnership
-funding for
-funds to
-provides funding
-supports response
-humanitarian support from
+CSR commitment
 private sector support
+private sector donation
+philanthropic gift
+philanthropic donation
+charitable giving
+in-kind donation
+in-kind contribution
 foundation gift
 foundation grant
+renews partnership with
+announces partnership with
+corporate partner
+brand partners with
+company partners with
+Inc. donates
+Corp. donates
+plc donates
+donated to support
+pledged to support
