@@ -19,7 +19,7 @@ ai:
   # "gemini-2.0-flash" is the free-tier friendly option. Do not switch to a
   # "pro" model without checking its free-tier daily limit first — it is
   # much lower and the pipeline will run out of quota partway through the day.
-  model: "gemini-2.0-flash"
+  model: "gemini-3.6-flash"
   # Safety cap: the pipeline will never make more than this many AI calls
   # in one run, no matter how many stories are found. This protects against
   # accidentally exhausting the free daily quota (1,500 requests/day).
