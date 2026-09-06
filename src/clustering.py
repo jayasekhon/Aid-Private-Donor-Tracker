@@ -82,3 +82,38 @@ def cluster_articles(articles: list[RawArticle]) -> list[ArticleCluster]:
         if not placed:
             clusters.append(ArticleCluster(cluster_id=f"c{len(clusters)+1}", articles=[article]))
     return clusters
+
+def rank_clusters_by_priority(clusters: list[ArticleCluster]) -> list[ArticleCluster]:
+    """Sorts clusters best-candidate-first, so that when the daily AI budget
+    is scarce (as low as ~18-20 calls/day on Gemini's current free tier —
+    see settings.yaml), the calls spent go on the most promising stories
+    rather than whichever happened to appear first.
+
+    Heuristic score, cheapest signals first (no AI involved):
+      +3 if the cluster has more than one independent source (corroborated)
+      +2 if the best source in the cluster is official/wire-tier
+      +2 if any article's headline contains a currency symbol or "million"/
+         "billion" (suggests a concrete figure is likely stated)
+      +1 if any article's headline contains a known corporate legal suffix
+         (Inc, Corp, Ltd, plc, LLC) — a weak signal this is company-specific
+         news rather than a generic sector/agency story
+    """
+    import re
+
+    CURRENCY_PATTERN = re.compile(r"[$€£]|\bmillion\b|\bbillion\b", re.IGNORECASE)
+    CORPORATE_SUFFIX_PATTERN = re.compile(r"\b(inc\.?|corp\.?|ltd\.?|plc|llc|co\.?)\b", re.IGNORECASE)
+
+    def score(cluster: ArticleCluster) -> int:
+        s = 0
+        if cluster.independent_source_count > 1:
+            s += 3
+        if cluster.best_source_tier in (SourceTier.OFFICIAL, SourceTier.WIRE):
+            s += 2
+        titles = " ".join(a.title for a in cluster.articles)
+        if CURRENCY_PATTERN.search(titles):
+            s += 2
+        if CORPORATE_SUFFIX_PATTERN.search(titles):
+            s += 1
+        return s
+
+    return sorted(clusters, key=score, reverse=True)
