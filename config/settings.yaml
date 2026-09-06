@@ -16,14 +16,34 @@ site:
 
 ai:
   # Which Gemini model to use for reading stories and pulling out the facts.
-  # "gemini-2.0-flash" is the free-tier friendly option. Do not switch to a
-  # "pro" model without checking its free-tier daily limit first — it is
-  # much lower and the pipeline will run out of quota partway through the day.
+  # IMPORTANT — Google's free tier has changed A LOT and without much
+  # notice: it used to allow ~1,500 requests/day on Flash models, but as of
+  # testing in September 2026 the free tier for "gemini-3.6-flash" is only
+  # ~20 requests/day (confirmed via a live quota-exceeded error, not a blog
+  # post — those are often stale/wrong). Check your actual current limit at
+  # https://aistudio.google.com/usage before assuming any number here is
+  # still accurate, and update max_ai_calls_per_run below to match.
+  # If you see a 404 "model no longer available" error in the Actions log,
+  # check https://ai.google.dev/gemini-api/docs/models for the current
+  # model name and update this line.
   model: "gemini-3.6-flash"
   # Safety cap: the pipeline will never make more than this many AI calls
-  # in one run, no matter how many stories are found. This protects against
-  # accidentally exhausting the free daily quota (1,500 requests/day).
-  max_ai_calls_per_run: 300
+  # in one run, no matter how many stories are found. Set this to comfortably
+  # UNDER your actual daily quota (see note above) — 18 leaves a 2-request
+  # buffer under a 20/day free-tier cap. When there are more candidate
+  # clusters than this budget allows, the highest-priority ones (most
+  # corroborated, clearest stated figures) are processed first; the rest
+  # are logged as skipped rather than silently dropped — see the
+  # "Sources & Limitations" page after a run.
+  #
+  # If 18/day free tier isn't enough coverage for your needs, the realistic
+  # options are: (a) accept partial daily coverage on free tier, (b) enable
+  # billing on your Google Cloud project — this workload's short prompts
+  # make it genuinely cheap even at higher volume (check current pricing at
+  # https://ai.google.dev/gemini-api/docs/pricing before committing), or
+  # (c) check aistudio.google.com/usage for whether a different current
+  # model offers a better free quota right now.
+  max_ai_calls_per_run: 18
   # How many days back a new story is checked against, to decide whether
   # it's a duplicate/renewal of something already published.
   dedupe_lookback_days: 180
