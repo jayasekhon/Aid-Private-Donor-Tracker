@@ -28,6 +28,44 @@ from .models import ArticleCluster, DonationEntry, EventStatus, SourceTier, now_
 
 logger = logging.getLogger(__name__)
 
+# Free-tier Gemini 3.x Flash allows ~10 requests/minute (down from the 15
+# RPM the older 2.0/2.5 Flash models had). Spacing calls 6.5s apart keeps us
+# at ~9.2/minute, comfortably under the ceiling with margin for clock drift.
+MIN_SECONDS_BETWEEN_AI_CALLS = 6.5
+_last_ai_call_time: float = 0.0
+
+
+def _pace_ai_calls() -> None:
+    global _last_ai_call_time
+    elapsed = time.monotonic() - _last_ai_call_time
+    if elapsed < MIN_SECONDS_BETWEEN_AI_CALLS:
+        time.sleep(MIN_SECONDS_BETWEEN_AI_CALLS - elapsed)
+    _last_ai_call_time = time.monotonic()
+
+
+class FatalExtractionError(Exception):
+    """An error that will not resolve by retrying — e.g. the configured
+    model no longer exists, or the API key is invalid. Raised to stop the
+    whole run immediately (with a clear, actionable message) rather than
+    burning through every remaining cluster's retry budget on an error
+    that was never going to succeed. This is what caused the ~8 minute
+    stall on a bad model name: 32 clusters x 3 retries x (2s+4s+8s) backoff
+    each, for an error that would never resolve.
+    """
+
+
+# Substrings that mean "this will never succeed, no matter how many times
+# we retry" — as opposed to transient issues (timeouts, 429 rate limits,
+# 5xx server errors) where retrying is the right move.
+NON_RETRYABLE_ERROR_MARKERS = (
+    "is no longer available",
+    "404",
+    "not found",
+    "api key not valid",
+    "permission_denied",
+    "invalid_argument",
+)
+
 EXTRACTION_PROMPT_TEMPLATE = """You are a careful research assistant helping track private-sector \
 (corporate) donations to UN agencies, INGOs, and NGOs. You will be shown one or more news \
 items that a keyword filter believes describe the SAME real-world donation/partnership event.
@@ -173,9 +211,23 @@ def extract_from_cluster(
         raw = None
         for attempt in range(1, max_retries + 1):
             try:
+                _pace_ai_calls()
                 raw = _call_gemini(prompt, model, api_key)
                 break
             except Exception as e:  # noqa: BLE001 - broad on purpose, see note below
+                error_text = str(e).lower()
+                if any(marker in error_text for marker in NON_RETRYABLE_ERROR_MARKERS):
+                    # This will not fix itself by retrying. Stop the whole
+                    # run now with a clear, actionable message rather than
+                    # repeating the same failure for every remaining cluster.
+                    raise FatalExtractionError(
+                        f"Gemini call failed with a non-retryable error: {e}\n"
+                        f"This usually means the model name in config/settings.yaml "
+                        f"(currently '{model}') is wrong or has been retired. "
+                        f"Check https://ai.google.dev/gemini-api/docs/models for the "
+                        f"current model name and update settings.yaml, or that your "
+                        f"GEMINI_API_KEY secret is valid."
+                    ) from e
                 # Free-tier quota errors, transient network issues, etc. all
                 # land here. We back off and retry rather than crash the run;
                 # if all retries fail we skip this one cluster and move on.
