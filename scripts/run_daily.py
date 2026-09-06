@@ -100,8 +100,16 @@ def main():
     entries: list[DonationEntry] = []
     duplicates_skipped = 0
 
+    from src.extraction import FatalExtractionError
+
     for cluster in clusters:
-        result = extract_from_cluster(cluster, model=settings["ai"]["model"], mock=args.mock)
+        try:
+            result = extract_from_cluster(cluster, model=settings["ai"]["model"], mock=args.mock)
+        except FatalExtractionError as e:
+            logger.error("Stopping run early: %s", e)
+            logger.error("No further clusters will be processed this run. Fix the issue above and "
+                         "re-run manually from the Actions tab once resolved.")
+            break
         if result is None:
             continue  # not relevant, or extraction failed after retries
 
