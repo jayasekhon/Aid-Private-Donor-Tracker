@@ -1,1 +1,70 @@
-[]
+[
+  {
+    "entry_id": "46061645-e33b-4ab9-8fa8-44a0d260c921",
+    "donor": "DBS Foundation",
+    "recipient": "Haqdarshak",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "unclear",
+    "summary": "DBS Foundation has established a partnership with Haqdarshak aimed at boosting financial literacy for underserved populations. The collaboration focuses on improving access to financial education and services for disadvantaged groups.",
+    "figure_quote": null,
+    "assumptions": [
+      "Recipient classification as an NGO or social organization was inferred from context",
+      "Specific funding amounts or nature of support were not provided in the source headline"
+    ],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 15,
+        "points": 3
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZENLeEVYaHppNkZ3Y2ZzWFJqSjNEQVczTU5lNDI4RDJSMTJ5ZG8wU1M1MkpfUS0ybEJOUHluYXMwU2ZjYmxwdm9TR2hWOUJyYndxQ1o0TmhuUTR5NV9DLUxMa0JTWFNyUUlKVXRwcGdXUmhvNWdRNFhQamJ5ZGF3QjJfWUE0LUNBN3J2T29OaklJZEo2?oc=5",
+      "https://news.google.com/rss/articles/CBMikgFBVV95cUxNX3FFQUYxVHJZcUZYbm5rZnJVZXNrLUg5Zm9LR1UwT0UxQ0hGc29UOEpob1pLYjVTMGpaRDlweU02eUl2R05CYlNFeHNjZUVwOS1oa01aRElPanBfZ3ZRTVZhX2dabVctclRJVEhnMFF2VV9jX2pIbTRRcXozLVkyX2c1NnpXMFdQSDFrWkxFVUpFZw?oc=5",
+      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVDMxdWZScU90ajFxdVk1cVAzN2ZoNm9pWWd0eTdYNS1UMVlvWWxzaU5DbUFjY1NpVDM5X25GQWdsVUFGOGRGM2pveU9qdGNMNkZTaHBMVFZkRzRvX29OZWhYV2pxNDh1dTRKcUEtdC1ZTEJQZmdXN3Y4dERhSEF1OXJZMEh6NHhic1JYSmZoU1J3UkdXNFRfdWV3bTNnQ2Z6YW9qbllhdXBrZw?oc=5",
+      "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5BUUZ5QkNBNzZxbFgtNUI3dnNpZVVGXzdSU01vRHQtbTBtb1Z4UTB4TFUwYUFNdDVIZXhsdUZKMFpXbnhNb01NUXZCR0w0WDhOQl9MUEJ2Vk0tYllxalF0aENoWDBXczl3?oc=5",
+      "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMHMyUmtJejRXdTFONERFZXowSW9acWhqVTl0czl0VktZTTVBZFU2RWxDVllEcFF4Nno5cUVjOTlpNE0wZEZCXzc0WUFRb3J5WTZyNnJHOXR4eW1wWGxkNHlwY0hwVEU4Ri1Qd1JVU2dIUldCeUFJNmVmbjNFb2VRSkpnU2dZaUZPcWlQRWdmYjNYY1p2X3Ayb0dWa2JXMnBjZktVX3pYRnJma2xPcGtSeWN6Rkw1YURmZ3FaZTJwcHhGRXZu?oc=5",
+      "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8wQTBlQnY2TU1XUmlOR0FrU0xEdjV3T0gtSlVXZkh5Ry0tQmswUXNLd193bG5FRWFjUEU1UDM2aXJrbGItZmVkS0hkY3J4TmRvdDVCak1weUhQZEVRb0RJ?oc=5",
+      "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNVWdRaHllNmpyZ2dnUTJka0s5TExneXhSWnJLS0V1bFp4a2hQMmlzSkdwem5LWGxOaWFKZllsSS1qNjJjUGdWZ2ZZVnlST1RrMzhNVWtkbVFfUGFVZ2hVX2ZkODFzMFRJZzNUM0JIOHlmUlNwTy1tc3MzY1N4TTlqX0NibmpYeDFzNmI1a1g1TjJOTUVVX21YZFZKSWFLVllMWWxTT3A3d01IRFBMMlgwSGg5YXM0Tk12OEMtWC0wOTQ1MGlGV1dQRzk2cTBHZTVacUZMV0JZbw?oc=5",
+      "https://news.google.com/rss/articles/CBMiygFBVV95cUxPcHEwbE42ekQ2NGdIb0hGaC1SUV9rM1dIYkFscXh1aERVS0FCZE1XX3lmWjgzSXp6cllXZFY1Y0lNdUJpMHlyOVdZWGNfcWplb2xWWnNZNFlhTGdKdVl3OEVmRF9vRkEzd1pEdG5WU0NrU1FjdHY5Y0FBTUQ0QUpidV9XZGNwWVN4bTNSVGd3RzdzcklhSHFwMHZGR0pXUlY2N19JbU4yeHh3YndHbTRGTFIxWUFBNUk3ZjVjR1E2VW1PWlJlUElKQzVn?oc=5",
+      "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8zbWdUQWgtYWNPbkRmYktERXpVeUNHR2tkSW9pU1RWUGQ5b3hscHcwbzNSZEs4M1lwZ2NGdGFGVVJzM1lUWjZUaTBmdW9SQWZ5ZmxJY2hnSEloSTQ5NTBnT3ZBVFNsTldh?oc=5",
+      "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTi1CcVY2dXRLUFBpUkc2YjRiUEY0TzdfWng5OHlHZVVNX1pta3lLVVhXdmVkVXZDdHZ4eTFUY3R1S0hldjZYLWhlaDlyemlTa3BENEpHMmx1NzE0dDA4ZEkxbEJmSGZuTDVvZ0pEamphMzFDUGFGeWFxUkhUSERpMFIySjJKX3l6WEpFU2NoLVlELUFxbnhR?oc=5",
+      "https://news.google.com/rss/articles/CBMioAFBVV95cUxOaUtpQjhzSndsRXc1RlZDS1BGSTNWZGI2M3dCYThLUTJtWVNpQVR6SnJ2TThXV1NpWHJRdjROTy01cmozMEZqM1RYYUNHM3lQUVBTOTVRY29pVXpqek5PVXJqal9wRi1qMGFWX3RNYVpSVGpuYlpQWF9rbGFITno4M3ZLQ3QzM1lacGZ4RlZoUFpud3NNc2FrYmxndHl1dlpt?oc=5",
+      "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPQzlXZjhFOG9haDl3d2pUT0J2UUMwUXF3b3kyaTFKT1ZTNmdCZHQ0c1AwQU1HUDFYX0J5TEdjby1PaURQWlYwczdzTV9CVzBOaFNsWUxaUzhPaFF1M18yanBqaXVteWpvZDc2N3ZJVk5reXZpbGhCQ0ZBaXQ0ZDE2cmpWemsyRlRQRzR1dnRWRl9xREVTY0xKOUpoVEJ5M2JQVUxiMXhsYjc4M1VJdUd1Ri0weEZJUDA1bnFldTlYZmVWbXBQSkNsWVV0WGwtM2FhYmc?oc=5",
+      "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWExIYWpkSTlPRHlNYmdfeWtnMXpqcFpnTG03WFdpT0JTN0lpblp3SG5COXhibHVGWXZZX0JiRlh5dURlMnNIOVpzME92WEgwWFJaeE90YmZ3eDdFRXRwSVk3MGQxQmFteXJJOUlScHpVWGhSVzdFOUJnR25nd1NubFBEZkpERmlqeGIxUVJiYmpKYkkzMXhQRVdUWG84MVJwTjFV?oc=5",
+      "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWU1PTks0RjlPR2trR3k2RUVBTkNZdVBTV0ZpZGxSMjRzYmw2XzZJTUE3elhLZTZYOEZieXRXdWRQN2ZEYU45UUM1VzUwOUZhRVRycGpmdjJNWWNWcV90cmxKZDJ0ZENMZTl6VDljNXowM2x4ZjdIckJ3NlZvc1NRZHVzRi1MU29qajZRZUx3WmcwLV9IUWZSNQ?oc=5",
+      "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZGxDbF91Q09VNDhTUE9menc1Z09lRjMtNmVrTTVpUVlIdlJiYjdQQlp4Y1o3eTByN2cyR0Zxb05BTjZ2ekctaVh3TlpuSDJGcjR2bjZwMzhYZHlLT3I0elpIb1VIc2Y1QmFKZWxqX3NqTFdRUEc4bWhXS2JqaVUyREMzUkE4UVUtQkdUWExBNzk3YkVvWFhoSnlwNWxZWFZNME9UcUNIVEd1VC1LSFE?oc=5",
+      "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaGxPc1NQZE5WUlV5ay1xdVZvRGZCc0tjYVlXWlc1UzhaTjJ1T1RHVGJreFRGQUtnRDI2NTUydDdvRGdBeW5vTy1aZ3M0eDlESEtGbDU5d1gyWXhYQlM0VEh6cFdvVVByWHdHUVRBaHAxLUxnUWpocW5pcUNkR2syVkJTZHlXRFk5QUtYV1hleUJ5Y3A0ZlZKZ0lONGRoTnlDMDQ1RnBSbHdRdXZlN2tRUWJ2YXR5c3lwbGNJMTNCRE52a2ktUHJYQUxpN0s2clhoYlNkdDlKWXlHcUZOQ0oyNnJqaWpCT2MtUXluLWFlekc?oc=5"
+    ],
+    "source_names": [
+      "Knowledge at Wharton",
+      "SearchLight.vc",
+      "weforum.org",
+      "nature.com",
+      "worldbank.org",
+      "Boston University",
+      "www.elsevier.com",
+      "thestandard.co.zw",
+      "International Monetary Fund | IMF",
+      "brocku.ca",
+      "The CSR Journal",
+      "Wiley Online Library",
+      "Open Global Rights",
+      "World Bank Blogs",
+      "Frontiers"
+    ],
+    "date_found": "2026-09-06T09:56:41.200179+00:00",
+    "is_duplicate_of": null
+  }
+]
