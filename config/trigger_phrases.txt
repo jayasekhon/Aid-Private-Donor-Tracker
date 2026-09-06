@@ -1,0 +1,43 @@
+# =============================================================================
+# TRIGGER PHRASES — language that suggests a story is about a donation
+# =============================================================================
+# HOW TO EDIT: one phrase per line. These are used as a first, cheap filter
+# to cut down the number of stories before the more expensive AI step reads
+# them. Keep phrases short and natural — how a headline or opening sentence
+# would actually phrase it. Case does not matter.
+#
+# If you notice real donation stories being missed, that usually means a
+# phrase needs adding here. If you notice a lot of irrelevant stories
+# getting through, a phrase below is probably too generic — remove it or
+# make it more specific.
+# =============================================================================
+
+donates
+donation
+donated
+pledges
+pledge
+in-kind
+partners with
+partnership with
+announces partnership
+renews partnership
+contributes to
+contribution to
+commits $
+commits to
+commitment of
+grant to
+grant of
+philanthropic
+charitable giving
+corporate social responsibility
+CSR partnership
+funding for
+funds to
+provides funding
+supports response
+humanitarian support from
+private sector support
+foundation gift
+foundation grant

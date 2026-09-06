@@ -1,0 +1,227 @@
+/* =============================================================================
+   Corporate Giving Monitor — stylesheet
+   Deliberately matched to the existing "OCHA Media Monitoring" broadsheet
+   look: warm cream background, high-contrast serif display type, hairline
+   rules, a single brown/terracotta accent used sparingly, boxed panels for
+   pulled-out facts. No card shadows, no rounded corners, no gradients —
+   the newspaper metaphor is the whole visual language here.
+   ============================================================================= */
+
+:root {
+  --paper: #f2ede4;
+  --ink: #17140f;
+  --rule: #17140f;
+  --hairline: #d8d0c0;
+  --accent: #8a3b2b;      /* brown/terracotta, used for the top story rail + labels */
+  --accent-strong: #17140f;
+  --muted: #6b6455;
+  --panel-bg: #e9e2d3;
+  --badge-high: #17140f;
+  --badge-mid: #8a3b2b;
+  --badge-low: #b5aa93;
+  --serif: "PT Serif", Georgia, "Times New Roman", serif;
+  --serif-display: "Playfair Display", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+/* ---------- Masthead ---------- */
+.masthead { border-bottom: 3px solid var(--rule); }
+.masthead-top { border-bottom: 1px solid var(--rule); }
+.masthead-title {
+  font-family: var(--serif-display);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  text-align: center;
+  margin: 0.5em 0 0.1em;
+  letter-spacing: -0.01em;
+}
+.masthead-sub {
+  text-align: center;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.9em;
+}
+.masthead-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 10px 0;
+  border-top: 1px solid var(--hairline);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- Section nav ---------- */
+.section-nav {
+  display: flex;
+  gap: 26px;
+  padding: 14px 0;
+  font-weight: 700;
+  font-size: 0.92rem;
+  flex-wrap: wrap;
+}
+.section-nav a { color: var(--ink); }
+.section-nav a.active { color: var(--accent); }
+
+/* ---------- Headings ---------- */
+.eyebrow { color: var(--accent); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px; }
+h1.page-title, h2.section-title {
+  font-family: var(--serif-display);
+  font-weight: 900;
+  margin: 0 0 18px;
+}
+h1.page-title { font-size: clamp(2rem, 5vw, 3.2rem); }
+h2.section-title { font-size: clamp(1.5rem, 3vw, 2.1rem); border-bottom: 3px solid var(--rule); padding-bottom: 10px; }
+
+/* ---------- Entry cards (the newspaper "story" unit) ---------- */
+.entry {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.entry-headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.entry-headline h3 {
+  font-family: var(--serif-display);
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 1.25;
+}
+.entry-body p { margin: 0.8em 0; }
+.entry-body p:first-of-type::first-letter {
+  font-family: var(--serif-display);
+  font-size: 2.6rem;
+  float: left;
+  line-height: 0.8;
+  padding-right: 8px;
+  padding-top: 4px;
+  font-weight: 900;
+}
+
+/* Badges: source-tier + confidence + status, deliberately plain rectangles */
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  color: var(--paper);
+  white-space: nowrap;
+}
+.badge-confidence-high { background: var(--badge-high); }
+.badge-confidence-mid  { background: var(--badge-mid); }
+.badge-confidence-low  { background: var(--badge-low); color: var(--ink); }
+.badge-status {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--hairline);
+}
+
+.badge-row { display: flex; gap: 8px; align-items: center; flex-shrink: 0; flex-wrap: wrap; }
+
+/* Panel: the boxed "Figures"-style callout, reused for the figure quote and for assumptions */
+.panel {
+  border-left: 3px solid var(--accent);
+  background: var(--panel-bg);
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+.panel-label {
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+  display: block;
+}
+.panel.assumptions { border-left-color: var(--muted); }
+.panel.assumptions .panel-label { color: var(--muted); }
+.panel ul { margin: 0; padding-left: 18px; }
+.panel li { font-style: italic; margin: 3px 0; }
+.panel .figure-quote { font-style: italic; font-size: 1.05rem; }
+
+.entry-meta {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.entry-meta a { color: var(--muted); text-decoration: underline; }
+.entry-meta .divider { margin: 0 6px; }
+
+/* ---------- Stats box (Coverage snapshot style) ---------- */
+.stats-box {
+  border: 1px solid var(--rule);
+  padding: 18px 20px;
+}
+.stats-box-title { font-weight: 700; font-size: 0.85rem; letter-spacing: 0.03em; margin-bottom: 10px; }
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 0.95rem;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-row .value { font-weight: 700; }
+
+/* ---------- Layout helpers ---------- */
+.two-col { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: start; }
+@media (max-width: 860px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+/* ---------- Edition browser ---------- */
+.edition-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  flex-wrap: wrap;
+}
+.edition-nav select, .edition-nav .nav-btn {
+  font-family: var(--serif);
+  font-weight: 700;
+  padding: 8px 16px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+}
+.nav-btn[disabled] { color: var(--badge-low); border-color: var(--hairline); }
+
+footer {
+  border-top: 3px solid var(--rule);
+  margin-top: 40px;
+  padding: 20px 0 40px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.empty-state {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+}

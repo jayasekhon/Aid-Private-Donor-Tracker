@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}{{ site.title }} — Sources &amp; Limitations{% endblock %}
+{% block content %}
+
+<div class="two-col">
+  <div>
+    <p class="eyebrow">Reporting Record</p>
+    <h2 class="section-title">Sources &amp; limitations</h2>
+
+    <p><strong>How this works:</strong> every day, this tracker searches Google News and a set of
+    PR wire feeds for stories mentioning a monitored UN agency, INGO, or NGO alongside
+    donation-related language. Candidate stories are grouped into events, read by an AI model
+    (Google Gemini), and turned into the structured entries you see on the daily page. Anything
+    the model is unsure about is flagged under "Assumptions &amp; uncertainties" on that entry
+    rather than silently resolved.</p>
+
+    <p><strong>What this will miss:</strong> donations that never appear in general news or PR
+    wires at all — small or local gifts, donations announced only on social media, or ones
+    disclosed only in an annual report months later. This tracker is a discovery aid for
+    otherwise-uncaptured private donations, not a comprehensive financial record.</p>
+
+    <p><strong>Confidence scoring:</strong> each entry is scored out of 10 on three factors:
+    the strongest source type behind it (an official press release scores highest, a general
+    news mention lower), whether an explicit figure was stated, and whether more than one
+    independent outlet reported it. Entries scoring below {{ low_confidence_threshold }} are
+    still published but marked low-confidence and excluded from the weekly email highlights.</p>
+
+    <h3 style="font-family: var(--serif-display); margin-top: 30px;">Today's run, in numbers</h3>
+    <ul>
+      <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries, {{ stats.pr_wire_feeds }} PR wire feeds)</li>
+      <li>{{ stats.items_considered }} raw item(s) considered</li>
+      <li>{{ stats.items_after_trigger_filter }} passed the keyword pre-filter</li>
+      <li>{{ stats.clusters_analysed }} event cluster(s) sent to the AI model for extraction</li>
+      <li>{{ stats.duplicates_skipped }} flagged as duplicates/renewals of a previously published entry</li>
+      <li>{{ stats.entries_published }} entries published today</li>
+    </ul>
+
+    {% if fetch_failures %}
+    <h3 style="font-family: var(--serif-display); margin-top: 30px;">Feed problems today</h3>
+    <p style="color: var(--muted);">The following sources could not be reached and were skipped for this run. If a feed keeps failing, its URL may need updating in <code>config/pr_wire_feeds.txt</code>.</p>
+    <ul>
+      {% for f in fetch_failures %}<li><strong>{{ f.source_label }}</strong> — {{ f.error }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  <aside>
+    <div class="stats-box">
+      <div class="stats-box-title">MONITORED RECIPIENTS</div>
+      <div class="stat-row"><span>UN agencies</span><span class="value">{{ recipient_counts.UN }}</span></div>
+      <div class="stat-row"><span>INGOs</span><span class="value">{{ recipient_counts.INGO }}</span></div>
+      <div class="stat-row"><span>Other NGOs</span><span class="value">{{ recipient_counts.NGO }}</span></div>
+    </div>
+    <p style="font-size: 0.85rem; color: var(--muted); margin-top: 14px;">
+      Full recipient and geographic scope lists are maintained in the project's
+      <code>config/</code> folder and can be edited without touching any code.
+    </p>
+  </aside>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+# =============================================================================
+# COUNTRIES — geographic scope for this tracker
+# =============================================================================
+# HOW TO EDIT: one country/context name per line. Lines starting with "#"
+# are comments. This list is currently OCHA's Global Humanitarian Overview
+# (GHO) 2026 country plans, plus Nepal (added manually — not a GHO country
+# but in scope for this project).
+#
+# NOTE: a donation that doesn't mention any of these countries by name is
+# NOT discarded — it is still captured, but tagged "scope: unspecified"
+# (see settings.yaml). This list only controls which entries get tagged
+# with a specific named country vs. left as unspecified/global.
+#
+# Remember to check https://humanitarianaction.info each year and update
+# this list when a new GHO is published.
+# =============================================================================
+
+Afghanistan
+Burkina Faso
+Cameroon
+Central African Republic
+Chad
+Colombia
+Democratic Republic of the Congo
+Haiti
+Mali
+Mozambique
+Myanmar
+Niger
+Nigeria
+Occupied Palestinian Territory
+Pakistan
+Somalia
+South Sudan
+Sri Lanka
+Sudan
+Syrian Arab Republic
+Ukraine
+Venezuela
+Viet Nam
+Yemen
+
+# --- Added manually (not part of the current GHO list) ---
+Nepal
+
+# --- Regional response plans (donations to these count as in-scope too) ---
+Horn of Africa
+Rohingya
+Sudan Regional Refugee Response
+Syria Regional Refugee and Resilience Plan
+Uganda Regional Refugee Response
+Venezuela Regional Refugee and Migrant Response

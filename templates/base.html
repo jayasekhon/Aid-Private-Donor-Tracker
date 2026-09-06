@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ site.title }}{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset_prefix }}static/style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap masthead-top">
+      <h1 class="masthead-title">{{ site.title }}</h1>
+      <p class="masthead-sub">{{ site.subtitle }}</p>
+    </div>
+    <div class="wrap masthead-meta">
+      <span>{{ edition_date_display }}</span>
+      <span>Private donations to UN agencies &amp; NGOs, found daily</span>
+      <span>Printed: {{ printed_time }}</span>
+    </div>
+    <div class="wrap section-nav">
+      <a href="{{ asset_prefix }}index.html" class="{{ 'active' if active_nav == 'today' else '' }}">Today</a>
+      <a href="{{ asset_prefix }}archive/index.html" class="{{ 'active' if active_nav == 'archive' else '' }}">Archive</a>
+      <a href="{{ asset_prefix }}sources.html" class="{{ 'active' if active_nav == 'sources' else '' }}">Sources &amp; Limitations</a>
+    </div>
+  </header>
+
+  <main class="wrap" style="padding-top: 28px; padding-bottom: 20px;">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <div class="wrap">{{ site.footer_note }}</div>
+  </footer>
+</body>
+</html>

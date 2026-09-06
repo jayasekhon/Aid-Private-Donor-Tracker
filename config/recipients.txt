@@ -1,0 +1,55 @@
+# =============================================================================
+# RECIPIENTS — UN agencies, INGOs, and NGOs to watch for incoming donations
+# =============================================================================
+# HOW TO EDIT THIS FILE (no coding needed):
+#   - One organization per line.
+#   - Format:   Full Name | alias1; alias2; alias3 | TYPE
+#   - TYPE must be one of: UN, INGO, NGO
+#   - Aliases are other names/abbreviations the press might use. Separate
+#     multiple aliases with a semicolon ";". You can leave aliases blank
+#     if there are none, but keep both "|" separators, e.g.:  Name |  | UN
+#   - Lines starting with "#" are comments and are ignored.
+#   - Blank lines are ignored.
+#   - To ADD an organization: just add a new line in this format.
+#   - To REMOVE one: delete the line, or put a "#" at the start of it.
+# To skip this org during a run, comment it out with "#" rather than delete
+# it if you might want it back later.
+# =============================================================================
+
+# --- UN agencies & bodies ---
+World Food Programme | WFP; World Food Program | UN
+United Nations Children's Fund | UNICEF | UN
+United Nations High Commissioner for Refugees | UNHCR; UN Refugee Agency | UN
+United Nations Development Programme | UNDP | UN
+World Health Organization | WHO | UN
+International Organization for Migration | IOM | UN
+UN Office for the Coordination of Humanitarian Affairs | OCHA | UN
+UN Population Fund | UNFPA | UN
+UN Women | UN Women | UN
+Office of the UN High Commissioner for Human Rights | OHCHR | UN
+UN Relief and Works Agency for Palestine Refugees | UNRWA | UN
+World Bank | World Bank | UN
+UN Central Emergency Response Fund | CERF | UN
+
+# --- Major INGOs frequently partnered with UN agencies ---
+International Committee of the Red Cross | ICRC | INGO
+International Federation of Red Cross and Red Crescent Societies | IFRC | INGO
+Save the Children | Save the Children International | INGO
+Médecins Sans Frontières | MSF; Doctors Without Borders | INGO
+Oxfam | Oxfam International | INGO
+International Rescue Committee | IRC | INGO
+CARE International | CARE | INGO
+Norwegian Refugee Council | NRC | INGO
+Mercy Corps | Mercy Corps | INGO
+World Vision | World Vision International | INGO
+Action Against Hunger | ACF; Action Contre la Faim | INGO
+Plan International | Plan International | INGO
+Catholic Relief Services | CRS | INGO
+Danish Refugee Council | DRC | INGO
+Islamic Relief Worldwide | Islamic Relief | INGO
+
+# --- Other notable NGOs active in crisis response ---
+Direct Relief | Direct Relief | NGO
+GiveDirectly | GiveDirectly | NGO
+Handicap International | Humanity & Inclusion | NGO
+Samaritan's Purse | Samaritan's Purse | NGO

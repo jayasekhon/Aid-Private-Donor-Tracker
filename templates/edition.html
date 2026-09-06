@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}{{ site.title }} — {{ edition_date_display }}{% endblock %}
+{% block content %}
+
+<div class="edition-nav">
+  {% if prev_edition_url %}<a class="nav-btn" href="{{ prev_edition_url }}">&larr; Older</a>{% else %}<span class="nav-btn" disabled>&larr; Older</span>{% endif %}
+  <span class="nav-btn">{{ edition_date_display }}{{ ' — Latest' if is_latest else '' }}</span>
+  {% if next_edition_url %}<a class="nav-btn" href="{{ next_edition_url }}">Newer &rarr;</a>{% else %}<span class="nav-btn" disabled>Newer &rarr;</span>{% endif %}
+</div>
+
+<div class="two-col">
+  <div>
+    <p class="eyebrow">Today's Edition</p>
+    <h2 class="section-title">
+      {% if entries %}{{ entries|length }} donation{{ 's' if entries|length != 1 else '' }} found today{% else %}No new donations found today{% endif %}
+    </h2>
+
+    {% if not entries %}
+      <p class="empty-state">No qualifying private-sector donations were found in today's monitored sources. This is expected on quiet news days — see "Sources &amp; Limitations" for what was checked.</p>
+    {% endif %}
+
+    {% for e in entries %}
+    <article class="entry">
+      <div class="entry-headline">
+        <h3>{{ e.donor }} &rarr; {{ e.recipient }}</h3>
+        <div class="badge-row">
+          <span class="badge {{ e.confidence_css_class }}">{{ e.confidence_score }}/10</span>
+        </div>
+      </div>
+      <div class="badge-row" style="margin: 8px 0;">
+        <span class="badge badge-status">{{ e.status_display }}</span>
+        <span class="badge badge-status">{{ e.country_scope }}</span>
+        {% if e.is_in_kind %}<span class="badge badge-status">In-kind</span>{% endif %}
+      </div>
+      <div class="entry-body">
+        <p>{{ e.summary }}</p>
+      </div>
+
+      {% if e.figure_quote %}
+      <div class="panel">
+        <span class="panel-label">FIGURE CITED</span>
+        <div class="figure-quote">&ldquo;{{ e.figure_quote }}&rdquo;</div>
+      </div>
+      {% elif e.is_in_kind and e.in_kind_description %}
+      <div class="panel">
+        <span class="panel-label">IN-KIND CONTRIBUTION</span>
+        <div>{{ e.in_kind_description }}</div>
+      </div>
+      {% endif %}
+
+      {% if e.assumptions %}
+      <div class="panel assumptions">
+        <span class="panel-label">ASSUMPTIONS &amp; UNCERTAINTIES</span>
+        <ul>
+          {% for a in e.assumptions %}<li>{{ a }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <div class="entry-meta">
+        Sources:
+        {% for name, url in e.source_links %}
+          <a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a>{{ ", " if not loop.last else "" }}
+        {% endfor %}
+        <span class="divider">&middot;</span>
+        Confidence breakdown: source tier {{ e.confidence_breakdown.source_tier.points }}pt,
+        explicit figure {{ e.confidence_breakdown.explicit_amount_stated.points }}pt,
+        {{ e.confidence_breakdown.multiple_independent_sources.value }} independent source(s) {{ e.confidence_breakdown.multiple_independent_sources.points }}pt
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <aside>
+    <div class="stats-box">
+      <div class="stats-box-title">COVERAGE SNAPSHOT</div>
+      <div class="stat-row"><span>Feeds checked</span><span class="value">{{ stats.feeds_checked }}</span></div>
+      <div class="stat-row"><span>Items considered</span><span class="value">{{ stats.items_considered }}</span></div>
+      <div class="stat-row"><span>Clusters analysed by AI</span><span class="value">{{ stats.clusters_analysed }}</span></div>
+      <div class="stat-row"><span>Entries published</span><span class="value">{{ entries|length }}</span></div>
+      <div class="stat-row"><span>High confidence (&ge;8)</span><span class="value">{{ stats.high_confidence_count }}</span></div>
+      <div class="stat-row"><span>Skipped as duplicates</span><span class="value">{{ stats.duplicates_skipped }}</span></div>
+    </div>
+    <p style="font-size: 0.85rem; color: var(--muted); margin-top: 14px;">
+      This tracker surfaces private-sector donations that may not be centrally logged elsewhere.
+      It is a discovery aid, not an audited financial record — verify figures against primary
+      sources before citing them. See <a href="{{ asset_prefix }}sources.html">Sources &amp; Limitations</a>.
+    </p>
+  </aside>
+</div>
+
+{% endblock %}

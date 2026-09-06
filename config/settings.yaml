@@ -1,0 +1,66 @@
+# =============================================================================
+# SETTINGS — the main dials for this project
+# =============================================================================
+# This file uses a simple "name: value" format. To change something, edit
+# the value after the colon and save. Keep quotes " " around text values.
+# Lines starting with "#" are notes and are ignored.
+# =============================================================================
+
+site:
+  title: "Corporate Giving Monitor"
+  subtitle: "Independent Tracker of Private Donations to UN Agencies & NGOs"
+  # Shown in the footer of every page.
+  footer_note: "Built to surface private-sector donations not centrally logged elsewhere. Not an official OCHA product."
+  # How many days of past editions to keep linked in the "Older" archive.
+  archive_days_kept: 90
+
+ai:
+  # Which Gemini model to use for reading stories and pulling out the facts.
+  # "gemini-2.0-flash" is the free-tier friendly option. Do not switch to a
+  # "pro" model without checking its free-tier daily limit first — it is
+  # much lower and the pipeline will run out of quota partway through the day.
+  model: "gemini-2.0-flash"
+  # Safety cap: the pipeline will never make more than this many AI calls
+  # in one run, no matter how many stories are found. This protects against
+  # accidentally exhausting the free daily quota (1,500 requests/day).
+  max_ai_calls_per_run: 300
+  # How many days back a new story is checked against, to decide whether
+  # it's a duplicate/renewal of something already published.
+  dedupe_lookback_days: 180
+
+confidence:
+  # The three-part scoring rubric. Do not change the field names, only the
+  # points, if you want to rebalance how confidence is calculated.
+  # An entry's final score is the sum of the points below (max 10).
+  source_tier_points:
+    official_press_release_or_agency_newsroom: 4
+    wire_service: 3
+    general_news: 2
+    social_media_or_blog: 1
+  explicit_amount_stated_points: 3
+  multiple_independent_sources_points: 3
+  # Entries scoring below this are still published, but visually marked
+  # "Low confidence" and excluded from the weekly email highlights.
+  low_confidence_threshold: 5
+
+publishing:
+  # If true, unearmarked/global donations with no named country are
+  # included and tagged "scope: unspecified" rather than being dropped.
+  include_unspecified_scope: true
+  # Maximum number of items shown on the daily front page before the
+  # rest move to a "More today" section.
+  max_front_page_items: 8
+
+email:
+  enabled: false   # set to true once SMTP/API details below are filled in
+  send_day: "Friday"          # which day of the week the digest goes out
+  subject_prefix: "Weekly Corporate Giving Digest"
+  # Comma-separated list of recipient email addresses.
+  recipients: "example@example.org"
+  # Sending method: "resend" (recommended, free tier) or "smtp"
+  method: "resend"
+  from_address: "digest@example.org"
+  # Only used if method is "smtp":
+  smtp_host: ""
+  smtp_port: 587
+  smtp_username: ""

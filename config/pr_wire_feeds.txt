@@ -1,0 +1,18 @@
+# =============================================================================
+# PR WIRE FEEDS — press release feeds monitored alongside Google News
+# =============================================================================
+# HOW TO EDIT: one feed per line, format:  Label | Feed URL
+# Lines starting with "#" are comments.
+#
+# These feeds carry company self-announcements (partnerships, donations,
+# CSR commitments) that general news sometimes never picks up. If a feed
+# URL stops working (check the "Sources & limitations" page after a run —
+# failed feeds are listed there), visit the wire service's site, find the
+# replacement RSS link for the same category, and swap the URL below.
+# =============================================================================
+
+PR Newswire - Total CSR | https://www.prnewswire.com/rss/corporate-social-responsibility-latest-news.rss
+PR Newswire - Nonprofit | https://www.prnewswire.com/rss/nonprofit-latest-news.rss
+PR Newswire - All Public Company News | https://www.prnewswire.com/rss/news-releases-list.rss
+Business Wire - CSR | https://www.businesswire.com/portal/site/home/news/subject/?vnsId=31382
+GlobeNewswire - Nonprofit | https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss
