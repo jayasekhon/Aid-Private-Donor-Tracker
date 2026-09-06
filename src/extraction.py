@@ -66,6 +66,18 @@ NON_RETRYABLE_ERROR_MARKERS = (
     "invalid_argument",
 )
 
+# Quota-exhausted errors are a special case of non-retryable: retrying
+# *within the same run* will never help (the daily cap has been hit and
+# resets at midnight Pacific time), but the message a maintainer needs is
+# different from "the model name is wrong" — so it gets its own markers
+# and its own message, even though the control flow (stop immediately,
+# don't burn retries) is identical.
+QUOTA_EXHAUSTED_MARKERS = (
+    "quota",
+    "resource_exhausted",
+    "generaterequestsperdayperprojectpermodel",
+)
+
 EXTRACTION_PROMPT_TEMPLATE = """You are a careful research assistant helping track private-sector \
 (corporate) donations to UN agencies, INGOs, and NGOs. You will be shown one or more news \
 items that a keyword filter believes describe the SAME real-world donation/partnership event.
@@ -216,6 +228,17 @@ def extract_from_cluster(
                 break
             except Exception as e:  # noqa: BLE001 - broad on purpose, see note below
                 error_text = str(e).lower()
+                if any(marker in error_text for marker in QUOTA_EXHAUSTED_MARKERS):
+                    raise FatalExtractionError(
+                        f"Gemini free-tier daily quota exhausted: {e}\n"
+                        f"The free tier for '{model}' currently allows a limited number of "
+                        f"requests per day (Google changes this without much notice — check "
+                        f"https://aistudio.google.com/usage for your current limit). This resets "
+                        f"at midnight Pacific time. Either lower max_ai_calls_per_run in "
+                        f"settings.yaml to stay under your actual daily quota, or enable billing "
+                        f"on your Google Cloud project for a much higher (paid, but cheap for "
+                        f"this workload) limit."
+                    ) from e
                 if any(marker in error_text for marker in NON_RETRYABLE_ERROR_MARKERS):
                     # This will not fix itself by retrying. Stop the whole
                     # run now with a clear, actionable message rather than
