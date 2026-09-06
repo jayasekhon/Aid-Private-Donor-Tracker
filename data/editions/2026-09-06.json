@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-06",
+  "entries": [],
+  "stats": {
+    "feeds_checked": 37,
+    "google_news_queries": 32,
+    "pr_wire_feeds": 5,
+    "items_considered": 498,
+    "items_after_trigger_filter": 75,
+    "clusters_analysed": 18,
+    "skipped_due_to_ai_budget": 37,
+    "duplicates_skipped": 0,
+    "entries_published": 0,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "PR Newswire - Total CSR",
+      "url": "https://www.prnewswire.com/rss/corporate-social-responsibility-latest-news.rss",
+      "error": "404 Client Error: Not Found for url: https://www.prnewswire.com/rss/corporate-social-responsibility-latest-news.rss"
+    },
+    {
+      "source_label": "PR Newswire - Nonprofit",
+      "url": "https://www.prnewswire.com/rss/nonprofit-latest-news.rss",
+      "error": "404 Client Error: Not Found for url: https://www.prnewswire.com/rss/nonprofit-latest-news.rss"
+    },
+    {
+      "source_label": "Business Wire - CSR",
+      "url": "https://www.businesswire.com/portal/site/home/news/subject/?vnsId=31382",
+      "error": "HTTPSConnectionPool(host='www.businesswire.com', port=443): Read timed out. (read timeout=15)"
+    },
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    }
+  ]
+}
