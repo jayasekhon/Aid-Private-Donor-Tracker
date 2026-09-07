@@ -28,13 +28,15 @@
 
     <h3 style="font-family: var(--serif-display); margin-top: 30px;">Today's run, in numbers</h3>
     <ul>
-      <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries, {{ stats.pr_wire_feeds }} PR wire feeds)</li>
+      <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries across {{ stats.recipients_watched }} monitored recipients, {{ stats.pr_wire_feeds }} PR wire feeds)</li>
       <li>{{ stats.items_considered }} raw item(s) considered</li>
       {% if stats.items_filtered_as_stale %}<li>{{ stats.items_filtered_as_stale }} discarded as older than {{ stats.max_article_age_days }} days</li>{% endif %}
       <li>{{ stats.items_after_trigger_filter }} passed the keyword pre-filter</li>
       <li>{{ stats.clusters_analysed }} event cluster(s) sent to the AI model for extraction</li>      
       {% if stats.skipped_due_to_ai_budget %}<li><strong>{{ stats.skipped_due_to_ai_budget }} candidate story/stories were not analysed today</strong> due to the AI provider's daily request limit. The highest-priority candidates (most corroborated, clearest figures) were processed first; the rest will need a future run or a higher quota to review.</li>{% endif %}
       <li>{{ stats.duplicates_skipped }} flagged as duplicates/renewals of a previously published entry</li>
+      {% if stats.rejected_off_scope_recipient %}<li>{{ stats.rejected_off_scope_recipient }} rejected — the story was real, but the recipient named wasn't one of the monitored organizations</li>{% endif %}
+      {% if stats.rejected_no_named_donor %}<li>{{ stats.rejected_no_named_donor }} rejected — no specific donor company could be identified</li>{% endif %}
       <li>{{ stats.entries_published }} entries published today</li>
     </ul>
 

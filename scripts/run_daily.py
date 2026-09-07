@@ -67,15 +67,15 @@ def main():
             RawArticle("UNICEF marks World Children's Day", "https://example.com/4", None, "BBC", SourceTier.GENERAL_NEWS, "A routine editorial piece, not about a donation.", matched_recipient="UNICEF"),
         ]
         fetch_failures = []
+        google_news_query_count = 0
     else:
-        trigger_queries = build_recipient_trigger_queries(recipients, triggers, max_age_days=settings["search"]["max_article_age_days"])
-        recipient_queries = {
-            r.name: google_news_rss_url(q) for r, q in zip(recipients, trigger_queries)
-        }
+        trigger_query_pairs = build_recipient_trigger_queries(recipients, triggers, max_age_days=settings["search"]["max_article_age_days"])
+        recipient_queries = [(name, google_news_rss_url(q)) for name, q in trigger_query_pairs]
         raw_articles, failures = fetch_all(recipient_queries, pr_wire_feeds)
         fetch_failures = [f.__dict__ for f in failures]
-        logger.info("Fetched %d raw articles across %d Google News queries + %d PR wire feeds (%d fetch failures).",
-                     len(raw_articles), len(recipient_queries), len(pr_wire_feeds), len(fetch_failures))
+        google_news_query_count = len(recipient_queries)
+        logger.info("Fetched %d raw articles across %d Google News queries (%d recipients, batched) + %d PR wire feeds (%d fetch failures).",
+                     len(raw_articles), google_news_query_count, len(recipients), len(pr_wire_feeds), len(fetch_failures))
 
     items_considered = len(raw_articles)
 
@@ -115,8 +115,10 @@ def main():
     lookback = settings["ai"]["dedupe_lookback_days"]
     entries: list[DonationEntry] = []
     duplicates_skipped = 0
+    rejected_off_scope_recipient = 0
+    rejected_no_named_donor = 0
 
-    from src.extraction import FatalExtractionError
+    from src.extraction import FatalExtractionError, is_generic_donor, recipient_is_monitored
 
     for i, cluster in enumerate(clusters, start=1):
         if i == 1 or i % 5 == 0 or i == len(clusters):
@@ -131,6 +133,21 @@ def main():
             break
         if result is None:
             continue  # not relevant, or extraction failed after retries
+
+        # Backstop behind the extraction prompt's own instructions — the
+        # model is told to set is_relevant=false for these cases, but
+        # doesn't always comply. Google's search doesn't strictly enforce
+        # our recipient-name query either, so an off-scope recipient can
+        # slip all the way to extraction; publishing it would defeat the
+        # point of anchoring this tracker on a specific recipient list.
+        if is_generic_donor(result.donor):
+            rejected_no_named_donor += 1
+            logger.info("Rejecting cluster %s: no specific donor named (%r).", cluster.cluster_id, result.donor)
+            continue
+        if not recipient_is_monitored(result.recipient, recipients):
+            rejected_off_scope_recipient += 1
+            logger.info("Rejecting cluster %s: recipient %r isn't one of the monitored orgs.", cluster.cluster_id, result.recipient)
+            continue
 
         entry = build_donation_entry(cluster, result, settings["confidence"])
 
@@ -154,13 +171,15 @@ def main():
         entries.append(entry)
 
     store.save()
-    logger.info("Published %d entries today (%d duplicates skipped).", len(entries), duplicates_skipped)
+    logger.info("Published %d entries today (%d duplicates skipped, %d rejected as off-scope recipient, %d rejected as no named donor).",
+                 len(entries), duplicates_skipped, rejected_off_scope_recipient, rejected_no_named_donor)
 
     # --- Save + build site ---
     high_confidence_threshold = 8
     stats = {
-        "feeds_checked": len(recipients) + len(pr_wire_feeds),
-        "google_news_queries": len(recipients),
+        "feeds_checked": google_news_query_count + len(pr_wire_feeds),
+        "google_news_queries": google_news_query_count,
+        "recipients_watched": len(recipients),
         "pr_wire_feeds": len(pr_wire_feeds),
         "items_considered": items_considered,
         "items_filtered_as_stale": items_filtered_as_stale,
@@ -169,6 +188,8 @@ def main():
         "clusters_analysed": len(clusters),
         "skipped_due_to_ai_budget": skipped_due_to_budget,
         "duplicates_skipped": duplicates_skipped,
+        "rejected_off_scope_recipient": rejected_off_scope_recipient,
+        "rejected_no_named_donor": rejected_no_named_donor,
         "entries_published": len(entries),
         "high_confidence_count": sum(1 for e in entries if e.confidence_score >= high_confidence_threshold),
     }

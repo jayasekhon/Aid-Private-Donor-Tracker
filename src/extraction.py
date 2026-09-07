@@ -24,9 +24,54 @@ import time
 import uuid
 from dataclasses import dataclass
 
+from rapidfuzz import fuzz
+
+from .config_loader import Recipient
 from .models import ArticleCluster, DonationEntry, EventStatus, SourceTier, now_iso, today_str
 
 logger = logging.getLogger(__name__)
+
+# Phrases that mean "no specific company was actually named" — a backstop
+# behind the extraction prompt's own instruction to set is_relevant=false
+# in this case, for when the model doesn't comply. This tracker exists to
+# identify WHICH company gave; an entry that can't name one isn't discovery,
+# it's just noise confirming "some company" exists.
+GENERIC_DONOR_MARKERS = (
+    "unspecified", "not specified", "unnamed", "unknown", "unidentified",
+    "various compan", "several compan", "multiple compan", "corporate partners",
+    "a company", "companies involved", "not named", "n/a", "undisclosed",
+)
+
+
+def is_generic_donor(donor: str) -> bool:
+    if not donor or not donor.strip():
+        return True
+    d = donor.strip().lower()
+    return any(marker in d for marker in GENERIC_DONOR_MARKERS)
+
+
+def recipient_is_monitored(recipient: str, recipients: list[Recipient]) -> bool:
+    """True if the extracted recipient corresponds to one of the orgs this
+    tracker is actually scoped to watch (recipients.txt, including
+    aliases). Google News' search doesn't strictly enforce our query — a
+    returned article can be about something else entirely that merely
+    triggered a loose relevance match — so the model can (and does)
+    sometimes extract a real donation to a real recipient that just isn't
+    one we track. That's out of scope, not a tracked finding.
+    """
+    if not recipient or not recipient.strip():
+        return False
+    candidate = recipient.strip().lower()
+    for r in recipients:
+        for name in r.all_names:
+            name_l = name.strip().lower()
+            if not name_l:
+                continue
+            if candidate == name_l or candidate in name_l or name_l in candidate:
+                return True
+            if fuzz.token_set_ratio(candidate, name_l) >= 88:
+                return True
+    return False
 
 # Free-tier Gemini 3.x Flash allows ~10 requests/minute (down from the 15
 # RPM the older 2.0/2.5 Flash models had). Spacing calls 6.5s apart keeps us
@@ -85,7 +130,14 @@ items that a keyword filter believes describe the SAME real-world donation/partn
 Your job: decide if this is genuinely a private company (or corporate foundation) donating to, \
 partnering with, or otherwise financially/materially supporting a UN agency, INGO, or NGO. If it \
 is NOT (e.g. it's a government donation, an unrelated story that matched keywords by coincidence, \
-or pure speculation with no confirmed commitment), say so clearly and set "is_relevant" to false.
+or pure speculation with no confirmed commitment), say so clearly and set "is_relevant" to false. \
+This tracker exists to identify WHICH company gave — if the source text never names a specific \
+company or corporate foundation (only vague language like "corporate partners", "several \
+companies", or "a donor"), that is also not relevant: set "is_relevant" to false rather than \
+inventing a placeholder donor. Similarly, the recipient must be one of the organizations this \
+tracker is actually scoped to (a UN agency, INGO, or NGO watched by name) — if the story is about \
+some other organization that merely happened to be mentioned alongside a watched one (e.g. in an \
+unrelated paragraph of the same article), set "is_relevant" to false.
 
 If it IS relevant, extract the following as JSON. Follow these rules exactly:
 
@@ -95,7 +147,9 @@ If it IS relevant, extract the following as JSON. Follow these rules exactly:
    (e.g. "$2 million in emergency relief supplies"). If no specific figure is stated \
    anywhere in the source text, set this to null. Do not paraphrase this field — it must \
    be the exact wording used for the number, and nothing more.
-3. "donor": the company or corporate foundation name, as stated.
+3. "donor": the SPECIFIC company or corporate foundation name, as stated. Never write a \
+   placeholder like "unspecified corporate partners" here — if you can't name a specific donor, \
+   set "is_relevant" to false instead (see above).
 4. "recipient": the UN agency / INGO / NGO name, as stated.
 5. "is_in_kind": true if this is a donation of goods/services/logistics rather than cash.
 6. "in_kind_description": if is_in_kind is true, describe what was given, in your own words, \

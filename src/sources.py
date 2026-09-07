@@ -94,14 +94,18 @@ def fetch_pr_wire_feed(label: str, url: str) -> tuple[list[RawArticle], FetchFai
 
 
 def fetch_all(
-    recipient_queries: dict[str, str],
+    recipient_queries: list[tuple[str, str]],
     pr_wire_feeds: list[tuple[str, str]],
 ) -> tuple[list[RawArticle], list[FetchFailure]]:
-    """recipient_queries: {recipient_name: google_news_rss_url}"""
+    """recipient_queries: [(recipient_name, google_news_rss_url), ...] — a
+    list, not a dict, because a recipient can have more than one query
+    (trigger phrases are batched across several simpler queries; see
+    query_builder.build_recipient_trigger_queries).
+    """
     all_articles: list[RawArticle] = []
     failures: list[FetchFailure] = []
 
-    for recipient_name, url in recipient_queries.items():
+    for recipient_name, url in recipient_queries:
         articles, failure = fetch_google_news_query(url, recipient_name)
         all_articles.extend(articles)
         if failure:

@@ -27,22 +27,23 @@ GOOGLE_NEWS_RSS_BASE = "https://news.google.com/rss/search"
 def build_recipient_trigger_queries(
     recipients: list[Recipient],
     triggers: list[str],
-    max_triggers_per_recipient: int | None = None,
+    triggers_per_query: int = 8,
     max_age_days: int | None = None,
-) -> list[str]:
-    """One query per recipient, OR-ing together the trigger phrases so we
-    don't explode into recipients x triggers separate calls.
+) -> list[tuple[str, str]]:
+    """Returns (recipient_name, query) pairs — one or more per recipient.
 
-    max_triggers_per_recipient caps how many trigger phrases go into each
-    recipient's query, if you ever need to shorten it (e.g. hitting a feed's
-    URL length limit) — but this doesn't change the number of Google News
-    RSS requests made (still one per recipient either way), only which
-    phrases that one request can match on. Previously defaulted to 6 out of
-    ~26 phrases, which meant Google's search itself could never see most of
-    the trigger list (only the post-fetch filter in clustering.py checked
-    the full list) — a real story phrased with e.g. "donated to support"
-    (trigger #25) would never even be searched for. Default is now "use all
-    of them" — a 26-phrase query is under 1KB, nowhere near any URL limit.
+    Trigger phrases are split into batches of triggers_per_query, each its
+    own query, rather than one query OR-ing all ~26 phrases together (and
+    all of a recipient's aliases) in one giant boolean expression. A real
+    run with the single-mega-query approach returned suspiciously few raw
+    articles (377 across 50 recipients — ~7.5 each, far below what a single
+    well-known org name alone normally returns from Google News), which
+    looks like the same kind of unreliability we already found with the
+    "when:" operator: Google's RSS search endpoint doesn't reliably
+    evaluate very large/complex boolean queries, silently under-matching
+    rather than erroring. Splitting into smaller, simpler queries trades
+    more HTTP requests (cheap — public, unauthenticated RSS, no quota) for
+    queries Google is actually likely to evaluate in full.
 
     max_age_days, if given, adds Google News' "when:Nd" operator so the
     search itself is restricted to recent results — Google News ranks by
@@ -58,35 +59,36 @@ def build_recipient_trigger_queries(
     actually read by the query builder — a real gap in coverage, not a
     tuning knob.
     """
-    queries = []
+    pairs = []
     for r in recipients:
         name_clause = " OR ".join(f'"{n}"' for n in r.all_names)
-        trigger_sample = triggers[:max_triggers_per_recipient] if max_triggers_per_recipient else triggers
-        trigger_clause = " OR ".join(f'"{t}"' for t in trigger_sample)
-        query = f'({name_clause}) ({trigger_clause})'
-        if max_age_days:
-            query += f" when:{max_age_days}d"
-        queries.append(query)
-    return queries
+        for i in range(0, len(triggers), triggers_per_query):
+            batch = triggers[i:i + triggers_per_query]
+            trigger_clause = " OR ".join(f'"{t}"' for t in batch)
+            query = f'({name_clause}) ({trigger_clause})'
+            if max_age_days:
+                query += f" when:{max_age_days}d"
+            pairs.append((r.name, query))
+    return pairs
 
 
 def build_recipient_country_queries(
     recipients: list[Recipient],
     countries: list[str],
     max_age_days: int | None = None,
-) -> list[str]:
-    """One query per (recipient, country) pair. This is the more expensive,
-    exhaustive shape — used sparingly, e.g. once a week or when the broad
-    query above is clearly missing regional stories.
+) -> list[tuple[str, str]]:
+    """One (recipient_name, query) pair per (recipient, country) pair. This
+    is the more expensive, exhaustive shape — used sparingly, e.g. once a
+    week or when the broad query above is clearly missing regional stories.
     """
-    queries = []
+    pairs = []
     for r, c in itertools.product(recipients, countries):
         name_clause = " OR ".join(f'"{n}"' for n in r.all_names)
         query = f'({name_clause}) "{c}" donation'
         if max_age_days:
             query += f" when:{max_age_days}d"
-        queries.append(query)
-    return queries
+        pairs.append((r.name, query))
+    return pairs
 
 
 def google_news_rss_url(query: str, language: str = "en-US", country: str = "US") -> str:
@@ -103,9 +105,10 @@ def build_daily_query_plan(
     countries: list[str],
     include_country_queries: bool = False,
     max_age_days: int | None = None,
-) -> list[str]:
-    """Returns the Google News RSS URLs to fetch for one daily run."""
-    queries = build_recipient_trigger_queries(recipients, triggers, max_age_days=max_age_days)
+) -> list[tuple[str, str]]:
+    """Returns (recipient_name, google_news_rss_url) pairs to fetch for one
+    daily run."""
+    pairs = build_recipient_trigger_queries(recipients, triggers, max_age_days=max_age_days)
     if include_country_queries:
-        queries += build_recipient_country_queries(recipients, countries, max_age_days=max_age_days)
-    return [google_news_rss_url(q) for q in queries]
+        pairs += build_recipient_country_queries(recipients, countries, max_age_days=max_age_days)
+    return [(name, google_news_rss_url(q)) for name, q in pairs]
