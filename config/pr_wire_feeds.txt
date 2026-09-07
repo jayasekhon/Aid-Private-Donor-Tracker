@@ -10,9 +10,27 @@
 # failed feeds are listed there), visit the wire service's site, find the
 # replacement RSS link for the same category, and swap the URL below.
 # =============================================================================
+#
+# STATUS (checked against several consecutive daily runs — see the
+# "Feed problems today" section of the Sources & limitations page):
+#   - PR Newswire's topic-specific RSS feeds (CSR, Nonprofit) return 404 —
+#     PR Newswire appears to have discontinued public RSS for these
+#     categories. Disabled below rather than left to fail silently every day.
+#   - Business Wire's CSR feed times out on every run — its public RSS
+#     also appears discontinued/blocked. Disabled below.
+#   - PR Newswire's general "All Public Company News" feed still works and
+#     is kept active, even though it's broader/noisier than the old
+#     CSR-specific feed, since it's the only reliably-working PR Newswire
+#     feed left.
+#   - GlobeNewswire's Nonprofit feed has also been failing every run with an
+#     XML parse error ("not well-formed (invalid token)"), not a 404 — this
+#     looks like a malformed-feed issue rather than a discontinued feed, so
+#     it's left active in case it self-resolves, but it currently is NOT
+#     contributing articles. Worth a closer look if it doesn't clear up.
+# =============================================================================
 
-PR Newswire - Total CSR | https://www.prnewswire.com/rss/corporate-social-responsibility-latest-news.rss
-PR Newswire - Nonprofit | https://www.prnewswire.com/rss/nonprofit-latest-news.rss
+# PR Newswire - Total CSR | https://www.prnewswire.com/rss/corporate-social-responsibility-latest-news.rss
+# PR Newswire - Nonprofit | https://www.prnewswire.com/rss/nonprofit-latest-news.rss
 PR Newswire - All Public Company News | https://www.prnewswire.com/rss/news-releases-list.rss
-Business Wire - CSR | https://www.businesswire.com/portal/site/home/news/subject/?vnsId=31382
+# Business Wire - CSR | https://www.businesswire.com/portal/site/home/news/subject/?vnsId=31382
 GlobeNewswire - Nonprofit | https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss
