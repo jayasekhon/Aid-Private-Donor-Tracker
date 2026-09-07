@@ -112,7 +112,7 @@ def load_settings(path: Path = CONFIG_DIR / "settings.yaml") -> dict:
             data = yaml.safe_load(f)
     except yaml.YAMLError as e:
         raise ConfigError(f"{path.name} is not valid YAML: {e}") from e
-    required_top_level = {"site", "ai", "confidence", "publishing", "email"}
+    required_top_level = {"site", "search", "ai", "confidence", "publishing", "email"}
     missing = required_top_level - data.keys()
     if missing:
         raise ConfigError(f"{path.name} is missing required section(s): {missing}")

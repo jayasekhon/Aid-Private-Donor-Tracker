@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.config_loader import load_all
 from src.query_builder import build_recipient_trigger_queries, google_news_rss_url
 from src.sources import fetch_all
-from src.clustering import filter_by_trigger_phrase, tag_country, cluster_articles, rank_clusters_by_priority
+from src.clustering import filter_by_recency, filter_by_trigger_phrase, tag_country, cluster_articles, rank_clusters_by_priority
 from src.extraction import extract_from_cluster, build_donation_entry
 from src.store import EventStore
 from src.models import today_str, DonationEntry
@@ -68,9 +68,9 @@ def main():
         ]
         fetch_failures = []
     else:
+        trigger_queries = build_recipient_trigger_queries(recipients, triggers, max_age_days=settings["search"]["max_article_age_days"])
         recipient_queries = {
-            r.name: google_news_rss_url(f'"{r.name}" ({" OR ".join(chr(34)+t+chr(34) for t in triggers[:6])})')
-            for r in recipients
+            r.name: google_news_rss_url(q) for r, q in zip(recipients, trigger_queries)
         }
         raw_articles, failures = fetch_all(recipient_queries, pr_wire_feeds)
         fetch_failures = [f.__dict__ for f in failures]
@@ -78,6 +78,13 @@ def main():
                      len(raw_articles), len(recipient_queries), len(pr_wire_feeds), len(fetch_failures))
 
     items_considered = len(raw_articles)
+
+    # --- Recency filter (backstop behind the Google News "when:" restriction
+    # above — catches PR wire items and anything that slips past it) ---
+    max_article_age_days = settings["search"]["max_article_age_days"]
+    raw_articles, items_filtered_as_stale = filter_by_recency(raw_articles, max_article_age_days)
+    if items_filtered_as_stale:
+        logger.info("Dropped %d article(s) older than %d days.", items_filtered_as_stale, max_article_age_days)
 
     # --- Filter ---
     filtered = filter_by_trigger_phrase(raw_articles, triggers)
@@ -156,6 +163,8 @@ def main():
         "google_news_queries": len(recipients),
         "pr_wire_feeds": len(pr_wire_feeds),
         "items_considered": items_considered,
+        "items_filtered_as_stale": items_filtered_as_stale,
+        "max_article_age_days": max_article_age_days,
         "items_after_trigger_filter": len(filtered),
         "clusters_analysed": len(clusters),
         "skipped_due_to_ai_budget": skipped_due_to_budget,

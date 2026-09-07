@@ -14,6 +14,18 @@ site:
   # How many days of past editions to keep linked in the "Older" archive.
   archive_days_kept: 90
 
+search:
+  # Only consider news items published within this many days. Google News'
+  # search results are ranked by RELEVANCE, not recency — a keyword-heavy
+  # query can easily surface an old story (we've seen one from years ago)
+  # that matches well, crowding out today's actual news. This restricts the
+  # Google News query itself to this window (via "when:Nd") and also drops
+  # anything older than this that slips through anyway (e.g. from PR wire
+  # feeds, which have no equivalent recency filter). Raise this if genuinely
+  # current donations are being missed because their publish date is
+  # missing/unreliable; lower it if stale stories still get through.
+  max_article_age_days: 14
+
 ai:
   # Which Gemini model to use for reading stories and pulling out the facts.
   # IMPORTANT — Google's free tier has changed A LOT and without much

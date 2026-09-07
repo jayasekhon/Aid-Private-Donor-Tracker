@@ -9,7 +9,8 @@
 
     <p><strong>How this works:</strong> every day, this tracker searches Google News and a set of
     PR wire feeds for stories mentioning a monitored UN agency, INGO, or NGO alongside
-    donation-related language. Candidate stories are grouped into events, read by an AI model
+    donation-related language, published within the last {{ stats.max_article_age_days }} days.
+    Candidate stories are grouped into events, read by an AI model
     (Google Gemini), and turned into the structured entries you see on the daily page. Anything
     the model is unsure about is flagged under "Assumptions &amp; uncertainties" on that entry
     rather than silently resolved.</p>
@@ -29,6 +30,7 @@
     <ul>
       <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries, {{ stats.pr_wire_feeds }} PR wire feeds)</li>
       <li>{{ stats.items_considered }} raw item(s) considered</li>
+      {% if stats.items_filtered_as_stale %}<li>{{ stats.items_filtered_as_stale }} discarded as older than {{ stats.max_article_age_days }} days</li>{% endif %}
       <li>{{ stats.items_after_trigger_filter }} passed the keyword pre-filter</li>
       <li>{{ stats.clusters_analysed }} event cluster(s) sent to the AI model for extraction</li>      
       {% if stats.skipped_due_to_ai_budget %}<li><strong>{{ stats.skipped_due_to_ai_budget }} candidate story/stories were not analysed today</strong> due to the AI provider's daily request limit. The highest-priority candidates (most corroborated, clearest figures) were processed first; the rest will need a future run or a higher quota to review.</li>{% endif %}

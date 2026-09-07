@@ -28,22 +28,32 @@ def build_recipient_trigger_queries(
     recipients: list[Recipient],
     triggers: list[str],
     max_triggers_per_recipient: int = 6,
+    max_age_days: int | None = None,
 ) -> list[str]:
     """One query per recipient, OR-ing together a capped sample of trigger
     phrases so we don't explode into recipients x triggers separate calls.
+
+    max_age_days, if given, adds Google News' "when:Nd" operator so the
+    search itself is restricted to recent results — Google News ranks by
+    relevance, not recency, so without this an old story that matches the
+    keywords well can outrank (and crowd out) today's actual news.
     """
     queries = []
     for r in recipients:
         name = r.name
         trigger_sample = triggers[:max_triggers_per_recipient]
         trigger_clause = " OR ".join(f'"{t}"' for t in trigger_sample)
-        queries.append(f'"{name}" ({trigger_clause})')
+        query = f'"{name}" ({trigger_clause})'
+        if max_age_days:
+            query += f" when:{max_age_days}d"
+        queries.append(query)
     return queries
 
 
 def build_recipient_country_queries(
     recipients: list[Recipient],
     countries: list[str],
+    max_age_days: int | None = None,
 ) -> list[str]:
     """One query per (recipient, country) pair. This is the more expensive,
     exhaustive shape — used sparingly, e.g. once a week or when the broad
@@ -51,7 +61,10 @@ def build_recipient_country_queries(
     """
     queries = []
     for r, c in itertools.product(recipients, countries):
-        queries.append(f'"{r.name}" "{c}" donation')
+        query = f'"{r.name}" "{c}" donation'
+        if max_age_days:
+            query += f" when:{max_age_days}d"
+        queries.append(query)
     return queries
 
 
@@ -68,9 +81,10 @@ def build_daily_query_plan(
     triggers: list[str],
     countries: list[str],
     include_country_queries: bool = False,
+    max_age_days: int | None = None,
 ) -> list[str]:
     """Returns the Google News RSS URLs to fetch for one daily run."""
-    queries = build_recipient_trigger_queries(recipients, triggers)
+    queries = build_recipient_trigger_queries(recipients, triggers, max_age_days=max_age_days)
     if include_country_queries:
-        queries += build_recipient_country_queries(recipients, countries)
+        queries += build_recipient_country_queries(recipients, countries, max_age_days=max_age_days)
     return [google_news_rss_url(q) for q in queries]

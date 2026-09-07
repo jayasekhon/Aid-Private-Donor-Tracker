@@ -11,8 +11,10 @@ temporarily down is normal, and it gets recorded so it shows up on the
 """
 from __future__ import annotations
 
+import calendar
 import logging
 from dataclasses import dataclass
+from datetime import datetime, timezone
 
 import feedparser
 import requests
@@ -23,6 +25,18 @@ logger = logging.getLogger(__name__)
 
 REQUEST_TIMEOUT_SECONDS = 15
 USER_AGENT = "CorporateGivingMonitor/1.0 (+https://github.com/; non-commercial research)"
+
+
+def _entry_published_iso(entry) -> str | None:
+    """Prefers feedparser's already-parsed struct_time (published_parsed)
+    over the raw published string — feedparser normalises whatever date
+    format the feed used, so this is far more reliable for downstream age
+    filtering than trying to re-parse entry.published ourselves.
+    """
+    parsed = entry.get("published_parsed") or entry.get("updated_parsed")
+    if parsed:
+        return datetime.fromtimestamp(calendar.timegm(parsed), tz=timezone.utc).isoformat()
+    return entry.get("published") or entry.get("updated")
 
 
 @dataclass
@@ -55,7 +69,7 @@ def fetch_google_news_query(url: str, recipient_name: str) -> tuple[list[RawArti
         articles.append(RawArticle(
             title=entry.get("title", "").strip(),
             url=entry.get("link", "").strip(),
-            published=entry.get("published", None),
+            published=_entry_published_iso(entry),
             source_name=source_name or "Unknown (via Google News)",
             source_tier=SourceTier.GENERAL_NEWS,
             summary=entry.get("summary", ""),
@@ -71,7 +85,7 @@ def fetch_pr_wire_feed(label: str, url: str) -> tuple[list[RawArticle], FetchFai
         articles.append(RawArticle(
             title=entry.get("title", "").strip(),
             url=entry.get("link", "").strip(),
-            published=entry.get("published", None),
+            published=_entry_published_iso(entry),
             source_name=label.split(" - ")[0],  # e.g. "PR Newswire"
             source_tier=SourceTier.WIRE,
             summary=entry.get("summary", ""),
