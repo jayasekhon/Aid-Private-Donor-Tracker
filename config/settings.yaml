@@ -24,7 +24,7 @@ search:
   # feeds, which have no equivalent recency filter). Raise this if genuinely
   # current donations are being missed because their publish date is
   # missing/unreliable; lower it if stale stories still get through.
-  max_article_age_days: 14
+  max_article_age_days: 60
 
 ai:
   # Which Gemini model to use for reading stories and pulling out the facts.
