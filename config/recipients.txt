@@ -34,6 +34,39 @@ World Bank | World Bank | UN
 # in corporate press releases, e.g. "donate...to UN Crisis Relief".
 UN Central Emergency Response Fund | CERF; UN Crisis Relief | UN
 
+# --- OCHA Country-Based Pooled Funds (CBPFs) ---
+# Distinct from CERF/"UN Crisis Relief" above: each of these is its own
+# named, OCHA-administered fund for a specific crisis/country, and a LOT of
+# corporate disaster-relief giving is donated to the named fund directly
+# rather than to OCHA itself or to a global agency — e.g. a company giving
+# to Venezuela earthquake relief may donate "to the Venezuela Humanitarian
+# Fund", never mentioning OCHA by name at all. Without its own line here,
+# that donation is invisible to this tracker no matter how the search/
+# trigger-phrase logic works, because the recipient name never gets
+# searched for in the first place.
+# This list (17 active country/regional funds) reflects OCHA's own current
+# list as of this writing — CBPFs open and close as crises evolve, so
+# cross-check https://www.unocha.org/country-based-pooled-funds periodically
+# and add/remove lines as needed. Same edit rules as above.
+Afghanistan Humanitarian Fund |  | UN
+Central African Republic Humanitarian Fund |  | UN
+Democratic Republic of the Congo Humanitarian Fund | DRC Humanitarian Fund | UN
+Ethiopia Humanitarian Fund |  | UN
+Lebanon Humanitarian Fund |  | UN
+Myanmar Humanitarian Fund |  | UN
+Nigeria Humanitarian Fund |  | UN
+occupied Palestinian territory Humanitarian Fund | oPt Humanitarian Fund; oPt HF | UN
+Somalia Humanitarian Fund |  | UN
+South Sudan Humanitarian Fund |  | UN
+Sudan Humanitarian Fund |  | UN
+Syria Humanitarian Fund |  | UN
+Syria Cross-border Humanitarian Fund | Syria Cross-Border Fund | UN
+Ukraine Humanitarian Fund |  | UN
+Venezuela Humanitarian Fund |  | UN
+Yemen Humanitarian Fund |  | UN
+Regional Humanitarian Fund for West and Central Africa | West and Central Africa Humanitarian Fund | UN
+Latin America and Caribbean Humanitarian Fund |  | UN
+
 # --- Major INGOs frequently partnered with UN agencies ---
 International Committee of the Red Cross | ICRC | INGO
 International Federation of Red Cross and Red Crescent Societies | IFRC | INGO
