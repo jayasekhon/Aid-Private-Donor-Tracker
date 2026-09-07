@@ -17,9 +17,9 @@
 # =============================================================================
 
 # --- UN agencies & bodies ---
-World Food Programme | WFP; World Food Program | UN
-United Nations Children's Fund | UNICEF | UN
-United Nations High Commissioner for Refugees | UNHCR; UN Refugee Agency | UN
+World Food Programme | WFP; World Food Program; World Food Program USA | UN
+United Nations Children's Fund | UNICEF; UNICEF USA; U.S. Fund for UNICEF | UN
+United Nations High Commissioner for Refugees | UNHCR; UN Refugee Agency; USA for UNHCR | UN
 United Nations Development Programme | UNDP | UN
 World Health Organization | WHO | UN
 International Organization for Migration | IOM | UN
@@ -29,7 +29,10 @@ UN Women | UN Women | UN
 Office of the UN High Commissioner for Human Rights | OHCHR | UN
 UN Relief and Works Agency for Palestine Refugees | UNRWA | UN
 World Bank | World Bank | UN
-UN Central Emergency Response Fund | CERF | UN
+# CERF's donations are publicly branded "UN Crisis Relief" (crisisrelief.un.org)
+# rather than the formal fund name — that's the name that actually shows up
+# in corporate press releases, e.g. "donate...to UN Crisis Relief".
+UN Central Emergency Response Fund | CERF; UN Crisis Relief | UN
 
 # --- Major INGOs frequently partnered with UN agencies ---
 International Committee of the Red Cross | ICRC | INGO

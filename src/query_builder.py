@@ -27,23 +27,43 @@ GOOGLE_NEWS_RSS_BASE = "https://news.google.com/rss/search"
 def build_recipient_trigger_queries(
     recipients: list[Recipient],
     triggers: list[str],
-    max_triggers_per_recipient: int = 6,
+    max_triggers_per_recipient: int | None = None,
     max_age_days: int | None = None,
 ) -> list[str]:
-    """One query per recipient, OR-ing together a capped sample of trigger
-    phrases so we don't explode into recipients x triggers separate calls.
+    """One query per recipient, OR-ing together the trigger phrases so we
+    don't explode into recipients x triggers separate calls.
+
+    max_triggers_per_recipient caps how many trigger phrases go into each
+    recipient's query, if you ever need to shorten it (e.g. hitting a feed's
+    URL length limit) — but this doesn't change the number of Google News
+    RSS requests made (still one per recipient either way), only which
+    phrases that one request can match on. Previously defaulted to 6 out of
+    ~26 phrases, which meant Google's search itself could never see most of
+    the trigger list (only the post-fetch filter in clustering.py checked
+    the full list) — a real story phrased with e.g. "donated to support"
+    (trigger #25) would never even be searched for. Default is now "use all
+    of them" — a 26-phrase query is under 1KB, nowhere near any URL limit.
 
     max_age_days, if given, adds Google News' "when:Nd" operator so the
     search itself is restricted to recent results — Google News ranks by
     relevance, not recency, so without this an old story that matches the
     keywords well can outrank (and crowd out) today's actual news.
+
+    Also ORs in every alias from recipients.txt, not just the primary name —
+    e.g. WFP's own line lists "WFP" and "World Food Program" as aliases
+    specifically because that's how press actually refers to it, but until
+    now only the formal "World Food Programme" (note the UK spelling) was
+    ever searched for. Aliases existed in config and were fully documented
+    as "other names/abbreviations the press might use" but were never
+    actually read by the query builder — a real gap in coverage, not a
+    tuning knob.
     """
     queries = []
     for r in recipients:
-        name = r.name
-        trigger_sample = triggers[:max_triggers_per_recipient]
+        name_clause = " OR ".join(f'"{n}"' for n in r.all_names)
+        trigger_sample = triggers[:max_triggers_per_recipient] if max_triggers_per_recipient else triggers
         trigger_clause = " OR ".join(f'"{t}"' for t in trigger_sample)
-        query = f'"{name}" ({trigger_clause})'
+        query = f'({name_clause}) ({trigger_clause})'
         if max_age_days:
             query += f" when:{max_age_days}d"
         queries.append(query)
@@ -61,7 +81,8 @@ def build_recipient_country_queries(
     """
     queries = []
     for r, c in itertools.product(recipients, countries):
-        query = f'"{r.name}" "{c}" donation'
+        name_clause = " OR ".join(f'"{n}"' for n in r.all_names)
+        query = f'({name_clause}) "{c}" donation'
         if max_age_days:
             query += f" when:{max_age_days}d"
         queries.append(query)
