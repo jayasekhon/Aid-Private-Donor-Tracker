@@ -17,7 +17,7 @@
     <div class="wrap masthead-meta">
       <span></span>
       <span>Private donations to UN agencies &amp; NGOs, found daily</span>
-      <span>Printed: 12:50 UTC</span>
+      <span>Printed: 12:53 UTC</span>
     </div>
     <div class="wrap section-nav">
       <a href="index.html" class="">Today</a>
@@ -36,7 +36,7 @@
 
     <p><strong>How this works:</strong> every day, this tracker searches Google News and a set of
     PR wire feeds for stories mentioning a monitored UN agency, INGO, or NGO alongside
-    donation-related language, published within the last 14 days.
+    donation-related language, published within the last 60 days.
     Candidate stories are grouped into events, read by an AI model
     (Google Gemini), and turned into the structured entries you see on the daily page. Anything
     the model is unsure about is flagged under "Assumptions &amp; uncertainties" on that entry
@@ -56,20 +56,20 @@
     <h3 style="font-family: var(--serif-display); margin-top: 30px;">Today's run, in numbers</h3>
     <ul>
       <li>52 feed(s) checked (50 Google News queries, 2 PR wire feeds)</li>
-      <li>353 raw item(s) considered</li>
-      <li>350 discarded as older than 14 days</li>
-      <li>0 passed the keyword pre-filter</li>
-      <li>0 event cluster(s) sent to the AI model for extraction</li>      
+      <li>377 raw item(s) considered</li>
+      <li>344 discarded as older than 60 days</li>
+      <li>6 passed the keyword pre-filter</li>
+      <li>6 event cluster(s) sent to the AI model for extraction</li>      
       
       <li>0 flagged as duplicates/renewals of a previously published entry</li>
-      <li>0 entries published today</li>
+      <li>2 entries published today</li>
     </ul>
 
     
     <h3 style="font-family: var(--serif-display); margin-top: 30px;">Feed problems today</h3>
     <p style="color: var(--muted);">The following sources could not be reached and were skipped for this run. If a feed keeps failing, its URL may need updating in <code>config/pr_wire_feeds.txt</code>.</p>
     <ul>
-      <li><strong>PR Newswire - All Public Company News</strong> — 404 Client Error: Not Found for url: https://www.prnewswire.com/rss/news-releases-list.rss/</li><li><strong>GlobeNewswire - Nonprofit</strong> — Feed parse error: &lt;unknown&gt;:25:79: not well-formed (invalid token)</li>
+      <li><strong>GlobeNewswire - Nonprofit</strong> — Feed parse error: &lt;unknown&gt;:25:79: not well-formed (invalid token)</li>
     </ul>
     
   </div>

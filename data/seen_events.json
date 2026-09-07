@@ -66,5 +66,83 @@
     ],
     "date_found": "2026-09-06T09:56:41.200179+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "77912b08-8144-4d2d-8427-93d4b1379ee7",
+    "donor": "Powerica",
+    "recipient": "Lions Club of Juhu",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "unclear",
+    "summary": "Powerica has partnered with the Lions Club of Juhu through a corporate social responsibility initiative. The collaboration is designed to enhance healthcare infrastructure.",
+    "figure_quote": null,
+    "assumptions": [
+      "Only headline text was available, so specific funding amounts and detailed project parameters are unknown.",
+      "Country name is not explicitly mentioned in the text, though Juhu is a location in India."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQa2lyQ0hNaHgybS1iM2lEcDJmdUV6SHh6MFcxTEtqMmhDZGFHaGNVUGlXVV84TUhzVGo4OWRqQ3VwVkRZUC0xN1huQ29FbXBCQjNyeDc2bktYb1o0bkx0Q0cyQ0hwNEUxcU5SYUFVYUhGQzhFeFBzVTNGdTNRVEFrRzlsc0JZaVFrX19YZVpHRVhlNWtIb3JQdWEtUUl5SFkzeEdrNFNIVGJWcUEzamlMWFVMeElIdmdXR2JBRzNUTVhQdzRraXI4UllXT3dXS2o1MExDT1FSbDhYYmJraWR5aWFTTHlOTXFtVDBr0gHwAUFVX3lxTE5wMmNiN3JNOW5HTm1Rb3B4bXpMTHpONURkRkFYZGN0dEtYWDA5N1BTNjB2ZTVIVGVVSEdfNURhRThubF9sbEI5eHhyQzJ1aEQ3YWh1OS1lUEV3WkpmZXF4TW1WdjJPNzdTdGZiYnIyN1h3dU56V28zcmRzbFZFYXNYOVhlX1J5bVE0b3Y3Y1lFa2pBLVdaM3NrOVhKX0daTm5BdmdPemdqNlRiaENRSFlSbnF3ZU96S2FwN0ZkdkNUb0N3XzVfdktTLW5DdmY2TmhCaHhxQXpXUzJHSzVhTHBJSHZQRUxnd0M5bnNKajA5Ng?oc=5"
+    ],
+    "source_names": [
+      "ThePrint"
+    ],
+    "date_found": "2026-09-07T12:52:26.672649+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "cbe6023e-0e19-47b6-88f5-7585efd35c4a",
+    "donor": "Unspecified corporate partners",
+    "recipient": "World Vision",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Burera",
+    "status": "new_commitment",
+    "summary": "A golf tournament helped establish new corporate partnerships to support World Vision's school feeding initiative in Burera.",
+    "figure_quote": null,
+    "assumptions": [
+      "Specific corporate partner names are not detailed in the snippet",
+      "No financial figures or detailed terms were provided in the source text"
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiywFBVV95cUxOVXN6aWxQWGJ3S3pqT01fODB5bVl3Um54OVlhdGRjM0lNQ1U4TUVoNjFhV3JfM0RkN1R3VzNxX3VvVjhGdFhkdEF0SzBKWWZ3UE9WVmFMRFV4SEdvdDlJQWdyR21ENG5DZXh5R2pGaEZXeURVZERHMUpjd2NZSDUxd3I0d1FqeC14WXRicUhhQl9BNzJJaWk3eTJ0WVpLajBZZ3JrQnBVbnp6ZWVOXzBMQ0tmSVUxQmlaMXpKdENQWjZkSjRlWkdkdGE0UQ?oc=5"
+    ],
+    "source_names": [
+      "KT PRESS -"
+    ],
+    "date_found": "2026-09-07T12:53:05.820626+00:00",
+    "is_duplicate_of": null
   }
 ]
