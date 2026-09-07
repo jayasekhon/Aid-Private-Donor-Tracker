@@ -2,10 +2,10 @@
   "date": "2026-09-07",
   "entries": [],
   "stats": {
-    "feeds_checked": 34,
-    "google_news_queries": 32,
+    "feeds_checked": 52,
+    "google_news_queries": 50,
     "pr_wire_feeds": 2,
-    "items_considered": 373,
+    "items_considered": 353,
     "items_filtered_as_stale": 350,
     "max_article_age_days": 14,
     "items_after_trigger_filter": 0,
@@ -16,6 +16,11 @@
     "high_confidence_count": 0
   },
   "fetch_failures": [
+    {
+      "source_label": "PR Newswire - All Public Company News",
+      "url": "https://www.prnewswire.com/rss/news-releases-list.rss",
+      "error": "404 Client Error: Not Found for url: https://www.prnewswire.com/rss/news-releases-list.rss/"
+    },
     {
       "source_label": "GlobeNewswire - Nonprofit",
       "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
