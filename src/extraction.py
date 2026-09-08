@@ -235,11 +235,41 @@ def _call_gemini(prompt: str, model: str, api_key: str) -> str:
     return response.text
 
 
+def _call_bedrock(prompt: str, model: str, region: str) -> str:
+    """Thin wrapper around Claude on Bedrock — same "isolated in one
+    function" pattern as _call_gemini, so switching providers again later
+    stays a contained change.
+
+    Auth is via whatever AWS credentials are already in the environment
+    (set by the GitHub Actions OIDC step before this script runs) — nothing
+    AWS-specific is configured here beyond the region. No response-format
+    parameter exists for Claude the way Gemini has response_mime_type; the
+    prompt's own "Return ONLY valid JSON" instruction plus the markdown-
+    fence-stripping in extract_from_cluster below handles this reliably.
+
+    No temperature/sampling parameter is set — verified against the
+    installed SDK that messages.create() on this client doesn't accept one
+    at all (confirmed via inspect.signature, not assumed), so there's
+    nothing to configure here; the model's default sampling behaviour is
+    used.
+    """
+    from anthropic import AnthropicBedrockMantle
+
+    client = AnthropicBedrockMantle(aws_region=region)
+    response = client.messages.create(
+        model=model,
+        max_tokens=1024,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return "".join(block.text for block in response.content if block.type == "text")
+
+
 def _mock_extract(cluster: ArticleCluster) -> str:
-    """Deterministic, fake-but-structured response used when GEMINI_API_KEY
-    is not set. Lets the rest of the pipeline (dedupe, scoring, site build,
-    email) be developed and tested end-to-end without API access, and lets
-    a maintainer smoke-test after every config change with `--mock`.
+    """Deterministic, fake-but-structured response used when --mock is
+    passed. Lets the rest of the pipeline (dedupe, scoring, site build,
+    email) be developed and tested end-to-end without any AI provider
+    credentials, and lets a maintainer smoke-test after every config
+    change without spending anything.
     """
     first = cluster.articles[0]
     return json.dumps({
@@ -253,67 +283,153 @@ def _mock_extract(cluster: ArticleCluster) -> str:
         "amount_text": None,
         "country_scope": first.matched_country or "Unspecified / global",
         "status": "unclear",
-        "assumptions": ["This is placeholder mock data — GEMINI_API_KEY was not set."],
+        "assumptions": ["This is placeholder mock data — run with --mock."],
     })
+
+
+def _extract_via_gemini(prompt: str, model: str, cluster_id: str, max_retries: int) -> str | None:
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        # Historically this fell back to mock output here; now the caller
+        # decides mock vs. live before ever reaching this function, so a
+        # missing key on a live run is a real configuration error.
+        raise FatalExtractionError(
+            "ai.provider is 'gemini' in settings.yaml but no GEMINI_API_KEY is set "
+            "in the environment. Add it as a secret, or switch provider to 'bedrock'."
+        )
+    raw = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            _pace_ai_calls()
+            raw = _call_gemini(prompt, model, api_key)
+            break
+        except Exception as e:  # noqa: BLE001 - broad on purpose, see note below
+            error_text = str(e).lower()
+            if any(marker in error_text for marker in QUOTA_EXHAUSTED_MARKERS):
+                raise FatalExtractionError(
+                    f"Gemini free-tier daily quota exhausted: {e}\n"
+                    f"The free tier for '{model}' currently allows a limited number of "
+                    f"requests per day (Google changes this without much notice — check "
+                    f"https://aistudio.google.com/usage for your current limit). This resets "
+                    f"at midnight Pacific time. Either lower max_ai_calls_per_run in "
+                    f"settings.yaml to stay under your actual daily quota, or switch "
+                    f"ai.provider to 'bedrock', which has no daily request ceiling."
+                ) from e
+            if any(marker in error_text for marker in NON_RETRYABLE_ERROR_MARKERS):
+                # This will not fix itself by retrying. Stop the whole
+                # run now with a clear, actionable message rather than
+                # repeating the same failure for every remaining cluster.
+                raise FatalExtractionError(
+                    f"Gemini call failed with a non-retryable error: {e}\n"
+                    f"This usually means the model name in config/settings.yaml "
+                    f"(currently '{model}') is wrong or has been retired. "
+                    f"Check https://ai.google.dev/gemini-api/docs/models for the "
+                    f"current model name and update settings.yaml, or that your "
+                    f"GEMINI_API_KEY secret is valid."
+                ) from e
+            # Free-tier quota errors, transient network issues, etc. all
+            # land here. We back off and retry rather than crash the run;
+            # if all retries fail we skip this one cluster and move on.
+            wait = 2 ** attempt
+            logger.warning("Gemini call failed (attempt %d/%d): %s. Retrying in %ds.",
+                            attempt, max_retries, e, wait)
+            time.sleep(wait)
+    if raw is None:
+        logger.error("Giving up on cluster %s after %d failed attempts.", cluster_id, max_retries)
+        return None
+    return raw
+
+
+def _extract_via_bedrock(prompt: str, model: str, region: str, cluster_id: str, max_retries: int) -> str | None:
+    import anthropic
+
+    raw = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            _pace_ai_calls()
+            raw = _call_bedrock(prompt, model, region)
+            break
+        except RuntimeError as e:
+            # The Bedrock client raises a plain RuntimeError (not one of
+            # the anthropic.* typed exceptions below) when it can't resolve
+            # AWS credentials at all — confirmed by testing, not assumed.
+            # This is a setup/config problem, not a transient one, so it
+            # gets the same "stop now" treatment as the typed auth errors.
+            if "credential" in str(e).lower():
+                raise FatalExtractionError(
+                    f"Bedrock call failed to resolve AWS credentials: {e}\n"
+                    f"Check that the GitHub workflow's aws-actions/configure-aws-credentials "
+                    f"step ran successfully before this step, that id-token: write is set in "
+                    f"the workflow's permissions, and that the IAM role's trust policy actually "
+                    f"matches this repo/branch."
+                ) from e
+            raise  # an unrelated RuntimeError — a real bug, don't mask it as a Bedrock auth issue
+        except anthropic.NotFoundError as e:
+            raise FatalExtractionError(
+                f"Bedrock call failed: model '{model}' not found or not accessible in region "
+                f"'{region}': {e}\n"
+                f"Check that model access is enabled for this model in the AWS Bedrock console "
+                f"for this region, and that config/settings.yaml's ai.bedrock_model / "
+                f"ai.bedrock_region are correct."
+            ) from e
+        except (anthropic.AuthenticationError, anthropic.PermissionDeniedError) as e:
+            raise FatalExtractionError(
+                f"Bedrock call failed due to an authentication/permission error: {e}\n"
+                f"Check the IAM role's trust policy (GitHub OIDC provider + repo/branch condition) "
+                f"and its permission policy (bedrock:InvokeModel on the exact inference-profile and "
+                f"foundation-model ARNs), and that the GitHub workflow's "
+                f"aws-actions/configure-aws-credentials step is pointed at the right Role ARN."
+            ) from e
+        except anthropic.BadRequestError as e:
+            # A malformed request (bad params, bad prompt shape) — retrying
+            # the identical request will fail identically every time.
+            raise FatalExtractionError(f"Bedrock call failed with a bad-request error: {e}") from e
+        except (anthropic.RateLimitError, anthropic.APIStatusError, anthropic.APIConnectionError) as e:
+            # Transient: per-minute throttling, a 5xx, or a network hiccup.
+            # Unlike Gemini's free tier, Bedrock has no daily wall to hit —
+            # these are worth retrying.
+            wait = 2 ** attempt
+            logger.warning("Bedrock call failed (attempt %d/%d): %s. Retrying in %ds.",
+                            attempt, max_retries, e, wait)
+            time.sleep(wait)
+    if raw is None:
+        logger.error("Giving up on cluster %s after %d failed attempts.", cluster_id, max_retries)
+        return None
+    return raw
 
 
 def extract_from_cluster(
     cluster: ArticleCluster,
-    model: str,
+    ai_settings: dict,
     mock: bool = False,
     max_retries: int = 3,
 ) -> ExtractionResult | None:
     """Returns None if the model judged the cluster not actually relevant,
     or if extraction failed after retries (logged, never raised — one bad
     cluster should not kill the whole day's run).
+
+    ai_settings is the full settings.yaml "ai:" block — which provider-
+    specific fields it needs depends on ai_settings["provider"].
     """
     source_text = _build_source_text(cluster)
     prompt = EXTRACTION_PROMPT_TEMPLATE.format(source_text=source_text)
 
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if mock or not api_key:
+    if mock:
         raw = _mock_extract(cluster)
     else:
-        raw = None
-        for attempt in range(1, max_retries + 1):
-            try:
-                _pace_ai_calls()
-                raw = _call_gemini(prompt, model, api_key)
-                break
-            except Exception as e:  # noqa: BLE001 - broad on purpose, see note below
-                error_text = str(e).lower()
-                if any(marker in error_text for marker in QUOTA_EXHAUSTED_MARKERS):
-                    raise FatalExtractionError(
-                        f"Gemini free-tier daily quota exhausted: {e}\n"
-                        f"The free tier for '{model}' currently allows a limited number of "
-                        f"requests per day (Google changes this without much notice — check "
-                        f"https://aistudio.google.com/usage for your current limit). This resets "
-                        f"at midnight Pacific time. Either lower max_ai_calls_per_run in "
-                        f"settings.yaml to stay under your actual daily quota, or enable billing "
-                        f"on your Google Cloud project for a much higher (paid, but cheap for "
-                        f"this workload) limit."
-                    ) from e
-                if any(marker in error_text for marker in NON_RETRYABLE_ERROR_MARKERS):
-                    # This will not fix itself by retrying. Stop the whole
-                    # run now with a clear, actionable message rather than
-                    # repeating the same failure for every remaining cluster.
-                    raise FatalExtractionError(
-                        f"Gemini call failed with a non-retryable error: {e}\n"
-                        f"This usually means the model name in config/settings.yaml "
-                        f"(currently '{model}') is wrong or has been retired. "
-                        f"Check https://ai.google.dev/gemini-api/docs/models for the "
-                        f"current model name and update settings.yaml, or that your "
-                        f"GEMINI_API_KEY secret is valid."
-                    ) from e
-                # Free-tier quota errors, transient network issues, etc. all
-                # land here. We back off and retry rather than crash the run;
-                # if all retries fail we skip this one cluster and move on.
-                wait = 2 ** attempt
-                logger.warning("Gemini call failed (attempt %d/%d): %s. Retrying in %ds.",
-                                attempt, max_retries, e, wait)
-                time.sleep(wait)
+        provider = ai_settings.get("provider", "gemini")
+        if provider == "bedrock":
+            raw = _extract_via_bedrock(
+                prompt, ai_settings["bedrock_model"], ai_settings["bedrock_region"],
+                cluster.cluster_id, max_retries,
+            )
+        elif provider == "gemini":
+            raw = _extract_via_gemini(prompt, ai_settings["model"], cluster.cluster_id, max_retries)
+        else:
+            raise FatalExtractionError(
+                f"Unknown ai.provider '{provider}' in settings.yaml — must be 'bedrock' or 'gemini'."
+            )
         if raw is None:
-            logger.error("Giving up on cluster %s after %d failed attempts.", cluster.cluster_id, max_retries)
             return None
 
     try:

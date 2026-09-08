@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write   # required so GitHub can mint the OIDC token this workflow presents to AWS to assume the Bedrock role — nothing else changes about repo permissions
 
 concurrency:
   group: daily-run
@@ -32,8 +33,20 @@ jobs:
       - name: Validate config files
         run: python src/config_loader.py
 
+      - name: Configure AWS credentials (for Bedrock, via OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::543936965927:role/github-actions-donation-tracker-bedrock
+          aws-region: eu-north-1
+          # No stored AWS secret involved — GitHub mints a short-lived OIDC
+          # token for this run, AWS exchanges it for temporary credentials
+          # scoped to exactly this role, and they expire when the job ends.
+
       - name: Run the daily pipeline
         env:
+          # Only used if config/settings.yaml's ai.provider is "gemini";
+          # harmless to leave set otherwise. Bedrock auth comes from the
+          # step above instead, via the environment, not a secret here.
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/run_daily.py
 

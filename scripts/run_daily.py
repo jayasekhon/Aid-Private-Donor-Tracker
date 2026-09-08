@@ -7,13 +7,14 @@
   4. Filter by trigger phrase (cheap, cuts volume before any AI calls)
   5. Tag country mentions
   6. Cluster near-duplicate articles into events (further cuts AI calls)
-  7. Extract structured facts per cluster via Gemini (or --mock)
+  7. Extract structured facts per cluster via the configured AI provider
+     (Bedrock or Gemini — see config/settings.yaml's ai.provider) (or --mock)
   8. Check each extracted entry against the rolling event store
      (skip exact duplicates, tag renewals, publish new ones)
   9. Save today's edition JSON + rebuild the static site
 
 Usage:
-    python scripts/run_daily.py                 # live run (needs GEMINI_API_KEY)
+    python scripts/run_daily.py                 # live run (needs AWS creds for Bedrock, or GEMINI_API_KEY if ai.provider is "gemini")
     python scripts/run_daily.py --mock           # no API calls, fake data throughout
     python scripts/run_daily.py --max-clusters 5 # cap AI calls for a cheap smoke test
 """
@@ -98,10 +99,11 @@ def main():
 
     max_calls = args.max_clusters or settings["ai"]["max_ai_calls_per_run"]
     if len(clusters) > max_calls:
-        # Gemini's free tier can be as low as ~20 requests/day (verified
-        # live — this changes without notice, see settings.yaml). When the
-        # budget is tight, spend it on the most promising candidates first
-        # rather than an arbitrary subset.
+        # max_ai_calls_per_run is a self-imposed cap — sized to stay under
+        # Gemini's free-tier daily quota if ai.provider is "gemini", or to
+        # bound worst-case Bedrock spend otherwise (see settings.yaml).
+        # When the budget is tight, spend it on the most promising
+        # candidates first rather than an arbitrary subset.
         clusters = rank_clusters_by_priority(clusters)
         logger.warning("Capping at %d clusters (of %d) to respect the AI call budget — "
                         "processing the highest-priority candidates first.", max_calls, len(clusters))
@@ -124,7 +126,7 @@ def main():
         if i == 1 or i % 5 == 0 or i == len(clusters):
             logger.info("Processing cluster %d/%d...", i, len(clusters))
         try:
-            result = extract_from_cluster(cluster, model=settings["ai"]["model"], mock=args.mock)
+            result = extract_from_cluster(cluster, ai_settings=settings["ai"], mock=args.mock)
         except FatalExtractionError as e:
             logger.error("Stopping run early: %s", e)
             logger.error("No further clusters will be processed this run. Fix the issue above and "

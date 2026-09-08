@@ -5,3 +5,9 @@ Jinja2==3.1.4
 PyYAML==6.0.2
 python-dateutil==2.9.0.post0
 google-generativeai==0.8.3
+# Unpinned deliberately: pulls in the Bedrock-capable Anthropic SDK (the
+# [bedrock] extra adds boto3 for AWS request signing). The exact latest
+# version wasn't verified against a live pip index at the time this was
+# written, so this installs whatever's current rather than risking a pin
+# to a version number that might not exist.
+anthropic[bedrock]

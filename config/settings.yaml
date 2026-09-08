@@ -27,35 +27,50 @@ search:
   max_article_age_days: 60
 
 ai:
-  # Which Gemini model to use for reading stories and pulling out the facts.
-  # IMPORTANT — Google's free tier has changed A LOT and without much
-  # notice: it used to allow ~1,500 requests/day on Flash models, but as of
-  # testing in September 2026 the free tier for "gemini-3.6-flash" is only
-  # ~20 requests/day (confirmed via a live quota-exceeded error, not a blog
-  # post — those are often stale/wrong). Check your actual current limit at
-  # https://aistudio.google.com/usage before assuming any number here is
-  # still accurate, and update max_ai_calls_per_run below to match.
-  # If you see a 404 "model no longer available" error in the Actions log,
-  # check https://ai.google.dev/gemini-api/docs/models for the current
-  # model name and update this line.
+  # Which AI provider does the extraction step: "bedrock" (Claude Haiku 4.5
+  # via AWS, paid per-token, no daily request ceiling) or "gemini" (Google's
+  # free tier, hard-capped at ~20 requests/day — kept working as a fallback,
+  # not the default, since that cap meant the pipeline routinely couldn't
+  # finish a day's real candidate list).
+  provider: "bedrock"
+
+  # --- Bedrock settings (only used when provider is "bedrock") ---
+  # Model ID as it appears on AWS Bedrock, including the routing prefix
+  # ("global." = routes to any commercial AWS region for the best price;
+  # an "eu." or region-specific prefix instead pins the call to stay within
+  # that geography, at roughly a 10% premium — only worth it if you have an
+  # actual data-residency requirement, which this project doesn't since it
+  # only processes public news snippets).
+  bedrock_model: "global.anthropic.claude-haiku-4-5-20251001-v1:0"
+  # AWS region the Bedrock inference profile itself lives in (separate from
+  # which region the "global." routing prefix actually sends the request
+  # to for inference).
+  bedrock_region: "eu-north-1"
+
+  # --- Gemini settings (only used when provider is "gemini") ---
+  # If you see a 404 "model no longer available" error in the Actions log
+  # while on this provider, check https://ai.google.dev/gemini-api/docs/models
+  # for the current model name and update this line.
   model: "gemini-3.6-flash"
-  # Safety cap: the pipeline will never make more than this many AI calls
-  # in one run, no matter how many stories are found. Set this to comfortably
-  # UNDER your actual daily quota (see note above) — 18 leaves a 2-request
-  # buffer under a 20/day free-tier cap. When there are more candidate
-  # clusters than this budget allows, the highest-priority ones (most
-  # corroborated, clearest stated figures) are processed first; the rest
-  # are logged as skipped rather than silently dropped — see the
-  # "Sources & Limitations" page after a run.
-  #
-  # If 18/day free tier isn't enough coverage for your needs, the realistic
-  # options are: (a) accept partial daily coverage on free tier, (b) enable
-  # billing on your Google Cloud project — this workload's short prompts
-  # make it genuinely cheap even at higher volume (check current pricing at
-  # https://ai.google.dev/gemini-api/docs/pricing before committing), or
-  # (c) check aistudio.google.com/usage for whether a different current
-  # model offers a better free quota right now.
-  max_ai_calls_per_run: 18
+
+  # Safety cap: the pipeline will never make more than this many AI calls in
+  # one run, no matter how many stories are found. What this protects
+  # against differs by provider:
+  #   - On Gemini's free tier, this guards the daily request quota (was set
+  #     to 18, just under the ~20/day ceiling).
+  #   - On Bedrock, there's no free-tier wall — this instead bounds
+  #     worst-case COST. At Claude Haiku 4.5 pricing ($1 / $5 per million
+  #     input/output tokens) and this workload's typical prompt size, 100
+  #     calls/day costs roughly $10.50/month even in the pessimistic case of
+  #     hitting the cap every single day of the month — comfortably under a
+  #     $15/month target. Real days run far below that (observed volume has
+  #     been ~18-25 clusters/day). Raise this only after checking the math
+  #     against your own cost ceiling.
+  # When there are more candidate clusters than this budget allows, the
+  # highest-priority ones (most corroborated, clearest stated figures) are
+  # processed first; the rest are logged as skipped rather than silently
+  # dropped — see the "Sources & Limitations" page after a run.
+  max_ai_calls_per_run: 100
   # How many days back a new story is checked against, to decide whether
   # it's a duplicate/renewal of something already published.
   dedupe_lookback_days: 180
