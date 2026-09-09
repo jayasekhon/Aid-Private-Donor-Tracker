@@ -34,6 +34,14 @@ search:
   # its results turn out low-quality after a few real runs.
   gdelt_enabled: true
 
+  # Per-source on/off switches, mainly for testing one source in isolation
+  # (e.g. set both of these to false to see GDELT-only output, without
+  # Google News + PR wire results eating into Gemini's small daily request
+  # quota before GDELT's own candidates even get a turn). Set both back to
+  # true for normal running.
+  google_news_enabled: false
+  pr_wire_feeds_enabled: false
+
 ai:
   # Which AI provider does the extraction step: "bedrock" (Claude Haiku 4.5
   # via AWS, paid per-token, no daily request ceiling) or "gemini" (Google's

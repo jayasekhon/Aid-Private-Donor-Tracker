@@ -52,7 +52,7 @@ def main():
     recipients = cfg["recipients"]
     countries = cfg["countries"]
     triggers = cfg["triggers"]
-    pr_wire_feeds = cfg["pr_wire_feeds"]
+    pr_wire_feeds = cfg["pr_wire_feeds"] if cfg["settings"]["search"].get("pr_wire_feeds_enabled", True) else []
 
     date_str = today_str()
     logger.info("=== Daily run for %s ===", date_str)
@@ -71,8 +71,10 @@ def main():
         google_news_query_count = 0
         gdelt_query_count = 0
     else:
-        trigger_query_pairs = build_recipient_trigger_queries(recipients, triggers, max_age_days=settings["search"]["max_article_age_days"])
-        recipient_queries = [(name, google_news_rss_url(q)) for name, q in trigger_query_pairs]
+        recipient_queries = []
+        if settings["search"].get("google_news_enabled", True):
+            trigger_query_pairs = build_recipient_trigger_queries(recipients, triggers, max_age_days=settings["search"]["max_article_age_days"])
+            recipient_queries = [(name, google_news_rss_url(q)) for name, q in trigger_query_pairs]
 
         gdelt_queries = []
         if settings["search"].get("gdelt_enabled", True):
