@@ -2,32 +2,23 @@
   "date": "2026-09-09",
   "entries": [],
   "stats": {
-    "feeds_checked": 202,
-    "google_news_queries": 200,
+    "feeds_checked": 0,
+    "google_news_queries": 0,
+    "gdelt_files_processed": 97,
+    "gdelt_candidates_found": 703,
     "recipients_watched": 50,
-    "pr_wire_feeds": 2,
-    "items_considered": 878,
-    "items_filtered_as_stale": 802,
+    "pr_wire_feeds": 0,
+    "items_considered": 703,
+    "items_filtered_as_stale": 0,
     "max_article_age_days": 60,
-    "items_after_trigger_filter": 24,
-    "clusters_analysed": 23,
-    "skipped_due_to_ai_budget": 22,
+    "items_after_trigger_filter": 0,
+    "clusters_analysed": 0,
+    "skipped_due_to_ai_budget": 0,
     "duplicates_skipped": 0,
     "rejected_off_scope_recipient": 0,
     "rejected_no_named_donor": 0,
     "entries_published": 0,
     "high_confidence_count": 0
   },
-  "fetch_failures": [
-    {
-      "source_label": "PR Newswire - All Public Company News",
-      "url": "https://www.prnewswire.com/rss/news-releases-list.rss",
-      "error": "404 Client Error: Not Found for url: https://www.prnewswire.com/rss/news-releases-list.rss/"
-    },
-    {
-      "source_label": "GlobeNewswire - Nonprofit",
-      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
-      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
-    }
-  ]
+  "fetch_failures": []
 }
