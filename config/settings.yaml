@@ -32,7 +32,7 @@ ai:
   # free tier, hard-capped at ~20 requests/day — kept working as a fallback,
   # not the default, since that cap meant the pipeline routinely couldn't
   # finish a day's real candidate list).
-  provider: "bedrock"
+  provider: "gemini"
 
   # --- Bedrock settings (only used when provider is "bedrock") ---
   # Model ID as it appears on AWS Bedrock, including the routing prefix
