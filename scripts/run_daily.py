@@ -28,7 +28,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.config_loader import load_all
-from src.query_builder import build_recipient_trigger_queries, google_news_rss_url
+from src.query_builder import build_recipient_trigger_queries, google_news_rss_url, gdelt_query_url
 from src.sources import fetch_all
 from src.clustering import filter_by_recency, filter_by_trigger_phrase, tag_country, cluster_articles, rank_clusters_by_priority
 from src.extraction import extract_from_cluster, build_donation_entry
@@ -69,14 +69,27 @@ def main():
         ]
         fetch_failures = []
         google_news_query_count = 0
+        gdelt_query_count = 0
     else:
         trigger_query_pairs = build_recipient_trigger_queries(recipients, triggers, max_age_days=settings["search"]["max_article_age_days"])
         recipient_queries = [(name, google_news_rss_url(q)) for name, q in trigger_query_pairs]
-        raw_articles, failures = fetch_all(recipient_queries, pr_wire_feeds)
+
+        gdelt_queries = []
+        if settings["search"].get("gdelt_enabled", True):
+            # Reused with max_age_days=None so it doesn't append Google's own
+            # "when:Nd" syntax, which GDELT wouldn't understand — GDELT gets
+            # its own recency restriction via gdelt_query_url's timespan
+            # param instead (see query_builder.gdelt_query_url).
+            gdelt_pairs = build_recipient_trigger_queries(recipients, triggers, max_age_days=None)
+            max_age_days = settings["search"]["max_article_age_days"]
+            gdelt_queries = [(name, gdelt_query_url(q, max_age_days=max_age_days)) for name, q in gdelt_pairs]
+
+        raw_articles, failures = fetch_all(recipient_queries, pr_wire_feeds, gdelt_queries)
         fetch_failures = [f.__dict__ for f in failures]
         google_news_query_count = len(recipient_queries)
-        logger.info("Fetched %d raw articles across %d Google News queries (%d recipients, batched) + %d PR wire feeds (%d fetch failures).",
-                     len(raw_articles), google_news_query_count, len(recipients), len(pr_wire_feeds), len(fetch_failures))
+        gdelt_query_count = len(gdelt_queries)
+        logger.info("Fetched %d raw articles across %d Google News queries + %d GDELT queries (%d recipients, batched) + %d PR wire feeds (%d fetch failures).",
+                     len(raw_articles), google_news_query_count, gdelt_query_count, len(recipients), len(pr_wire_feeds), len(fetch_failures))
 
     items_considered = len(raw_articles)
 
@@ -179,8 +192,9 @@ def main():
     # --- Save + build site ---
     high_confidence_threshold = 8
     stats = {
-        "feeds_checked": google_news_query_count + len(pr_wire_feeds),
+        "feeds_checked": google_news_query_count + gdelt_query_count + len(pr_wire_feeds),
         "google_news_queries": google_news_query_count,
+        "gdelt_queries": gdelt_query_count,
         "recipients_watched": len(recipients),
         "pr_wire_feeds": len(pr_wire_feeds),
         "items_considered": items_considered,

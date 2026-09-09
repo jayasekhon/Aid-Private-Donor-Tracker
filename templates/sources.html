@@ -7,13 +7,12 @@
     <p class="eyebrow">Reporting Record</p>
     <h2 class="section-title">Sources &amp; limitations</h2>
 
-    <p><strong>How this works:</strong> every day, this tracker searches Google News and a set of
-    PR wire feeds for stories mentioning a monitored UN agency, INGO, or NGO alongside
-    donation-related language, published within the last {{ stats.max_article_age_days }} days.
-    Candidate stories are grouped into events, read by an AI model
-    (Google Gemini), and turned into the structured entries you see on the daily page. Anything
-    the model is unsure about is flagged under "Assumptions &amp; uncertainties" on that entry
-    rather than silently resolved.</p>
+    <p><strong>How this works:</strong> every day, this tracker searches Google News, GDELT's global
+    news index, and a set of PR wire feeds for stories mentioning a monitored UN agency, INGO, or
+    NGO alongside donation-related language, published within the last {{ stats.max_article_age_days }}
+    days. Candidate stories are grouped into events, read by an AI model, and turned into the
+    structured entries you see on the daily page. Anything the model is unsure about is flagged
+    under "Assumptions &amp; uncertainties" on that entry rather than silently resolved.</p>
 
     <p><strong>What this will miss:</strong> donations that never appear in general news or PR
     wires at all — small or local gifts, donations announced only on social media, or ones
@@ -28,7 +27,7 @@
 
     <h3 style="font-family: var(--serif-display); margin-top: 30px;">Today's run, in numbers</h3>
     <ul>
-      <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries across {{ stats.recipients_watched }} monitored recipients, {{ stats.pr_wire_feeds }} PR wire feeds)</li>
+      <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries + {{ stats.gdelt_queries }} GDELT queries across {{ stats.recipients_watched }} monitored recipients, {{ stats.pr_wire_feeds }} PR wire feeds)</li>
       <li>{{ stats.items_considered }} raw item(s) considered</li>
       {% if stats.items_filtered_as_stale %}<li>{{ stats.items_filtered_as_stale }} discarded as older than {{ stats.max_article_age_days }} days</li>{% endif %}
       <li>{{ stats.items_after_trigger_filter }} passed the keyword pre-filter</li>

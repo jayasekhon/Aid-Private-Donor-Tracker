@@ -26,13 +26,25 @@ search:
   # missing/unreliable; lower it if stale stories still get through.
   max_article_age_days: 60
 
+  # Whether to also query GDELT's global news index (a much broader,
+  # more international/multilingual public news monitor updated every 15
+  # minutes) alongside Google News + PR wire feeds. Meant to catch regional
+  # or non-English coverage Google News misses. Set to false to fall back
+  # to Google News + PR wire feeds only, e.g. if GDELT proves too noisy or
+  # its results turn out low-quality after a few real runs.
+  gdelt_enabled: true
+
 ai:
   # Which AI provider does the extraction step: "bedrock" (Claude Haiku 4.5
   # via AWS, paid per-token, no daily request ceiling) or "gemini" (Google's
-  # free tier, hard-capped at ~20 requests/day — kept working as a fallback,
-  # not the default, since that cap meant the pipeline routinely couldn't
-  # finish a day's real candidate list).
-  provider: "bedrock"
+  # free tier, hard-capped at ~20 requests/day).
+  #
+  # Temporarily back on "gemini" while the one-time AWS Marketplace/Private
+  # Marketplace approval for Claude on Bedrock is pending (see the Bedrock
+  # settings below — nothing there needs to change, they just aren't used
+  # while provider is "gemini"). Switch this back to "bedrock" once that
+  # approval comes through and max_ai_calls_per_run below is raised again.
+  provider: "gemini"
 
   # --- Bedrock settings (only used when provider is "bedrock") ---
   # Model ID as it appears on AWS Bedrock, including the routing prefix
@@ -56,21 +68,22 @@ ai:
   # Safety cap: the pipeline will never make more than this many AI calls in
   # one run, no matter how many stories are found. What this protects
   # against differs by provider:
-  #   - On Gemini's free tier, this guards the daily request quota (was set
-  #     to 18, just under the ~20/day ceiling).
+  #   - On Gemini's free tier, this guards the daily request quota — kept
+  #     just under the ~20/day ceiling. This is the active provider right
+  #     now, so this cap is back down to 18 (was raised to 100 for Bedrock's
+  #     cost math while that was the active provider — see provider above).
   #   - On Bedrock, there's no free-tier wall — this instead bounds
   #     worst-case COST. At Claude Haiku 4.5 pricing ($1 / $5 per million
   #     input/output tokens) and this workload's typical prompt size, 100
   #     calls/day costs roughly $10.50/month even in the pessimistic case of
   #     hitting the cap every single day of the month — comfortably under a
-  #     $15/month target. Real days run far below that (observed volume has
-  #     been ~18-25 clusters/day). Raise this only after checking the math
-  #     against your own cost ceiling.
+  #     $15/month target. Raise this back to 100 when switching provider
+  #     back to "bedrock".
   # When there are more candidate clusters than this budget allows, the
   # highest-priority ones (most corroborated, clearest stated figures) are
   # processed first; the rest are logged as skipped rather than silently
   # dropped — see the "Sources & Limitations" page after a run.
-  max_ai_calls_per_run: 100
+  max_ai_calls_per_run: 18
   # How many days back a new story is checked against, to decide whether
   # it's a duplicate/renewal of something already published.
   dedupe_lookback_days: 180

@@ -1,11 +1,13 @@
-"""Fetches raw items from Google News RSS and PR wire RSS feeds.
+"""Fetches raw items from Google News RSS, PR wire RSS feeds, and GDELT's
+DOC 2.0 API (a much broader, more international/multilingual public news
+index — see query_builder.gdelt_query_url for details on its query syntax).
 
-Both are public, syndication-oriented feeds (not an adversarial scrape of
-a site that doesn't want automated access), which is why this pipeline
-uses them as its primary sources rather than scraping company/news pages
-directly. See README for the reasoning.
+All three are public sources (not an adversarial scrape of a site that
+doesn't want automated access), which is why this pipeline uses them as
+its primary sources rather than scraping company/news pages directly. See
+README for the reasoning.
 
-Network failures here should never crash the whole run — a feed being
+Network failures here should never crash the whole run — a feed/API being
 temporarily down is normal, and it gets recorded so it shows up on the
 "Sources & limitations" page rather than silently disappearing.
 """
@@ -78,6 +80,50 @@ def fetch_google_news_query(url: str, recipient_name: str) -> tuple[list[RawArti
     return articles, failure
 
 
+def _gdelt_seendate_iso(seendate: str | None) -> str | None:
+    """GDELT's "seendate" field uses its own compact format, e.g.
+    "20260115T143000Z" — not the same as feedparser's struct_time, so this
+    doesn't reuse _entry_published_iso above. Falls back to None (not a
+    crash) on anything unexpected, same as the rest of this file — an
+    unparsed date just means the recency backstop in clustering.py treats
+    it as unknown rather than dropping the article outright.
+    """
+    if not seendate:
+        return None
+    try:
+        return datetime.strptime(seendate, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc).isoformat()
+    except ValueError:
+        return None
+
+
+def fetch_gdelt_query(url: str, recipient_name: str) -> tuple[list[RawArticle], FetchFailure | None]:
+    """GDELT's DOC API returns JSON, not RSS/Atom, so this doesn't go
+    through feedparser/_fetch_feed like the other two sources — same
+    RawArticle shape and graceful-degradation-via-FetchFailure behaviour
+    though.
+    """
+    try:
+        resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SECONDS)
+        resp.raise_for_status()
+        data = resp.json()
+    except (requests.RequestException, ValueError) as e:
+        logger.warning("GDELT fetch failed for %s: %s", recipient_name, e)
+        return [], FetchFailure(f"GDELT: {recipient_name}", url, str(e))
+
+    articles = []
+    for item in data.get("articles", []):
+        articles.append(RawArticle(
+            title=(item.get("title") or "").strip(),
+            url=(item.get("url") or "").strip(),
+            published=_gdelt_seendate_iso(item.get("seendate")),
+            source_name=item.get("domain") or "Unknown (via GDELT)",
+            source_tier=SourceTier.GENERAL_NEWS,
+            summary="",  # GDELT's article-list mode doesn't return a snippet
+            matched_recipient=recipient_name,
+        ))
+    return articles, None
+
+
 def fetch_pr_wire_feed(label: str, url: str) -> tuple[list[RawArticle], FetchFailure | None]:
     parsed, failure = _fetch_feed(url, label)
     articles = []
@@ -96,17 +142,26 @@ def fetch_pr_wire_feed(label: str, url: str) -> tuple[list[RawArticle], FetchFai
 def fetch_all(
     recipient_queries: list[tuple[str, str]],
     pr_wire_feeds: list[tuple[str, str]],
+    gdelt_queries: list[tuple[str, str]] | None = None,
 ) -> tuple[list[RawArticle], list[FetchFailure]]:
-    """recipient_queries: [(recipient_name, google_news_rss_url), ...] — a
-    list, not a dict, because a recipient can have more than one query
+    """recipient_queries / gdelt_queries: [(recipient_name, url), ...] —
+    lists, not dicts, because a recipient can have more than one query
     (trigger phrases are batched across several simpler queries; see
-    query_builder.build_recipient_trigger_queries).
+    query_builder.build_recipient_trigger_queries). gdelt_queries defaults
+    to None/empty so existing callers (and tests) that don't pass it keep
+    working unchanged.
     """
     all_articles: list[RawArticle] = []
     failures: list[FetchFailure] = []
 
     for recipient_name, url in recipient_queries:
         articles, failure = fetch_google_news_query(url, recipient_name)
+        all_articles.extend(articles)
+        if failure:
+            failures.append(failure)
+
+    for recipient_name, url in gdelt_queries or []:
+        articles, failure = fetch_gdelt_query(url, recipient_name)
         all_articles.extend(articles)
         if failure:
             failures.append(failure)

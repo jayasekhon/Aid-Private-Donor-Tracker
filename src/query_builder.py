@@ -17,11 +17,12 @@ why "scope: unspecified" exists downstream instead of forcing a country match.
 from __future__ import annotations
 
 import itertools
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlencode
 
 from .config_loader import Recipient
 
 GOOGLE_NEWS_RSS_BASE = "https://news.google.com/rss/search"
+GDELT_DOC_API_BASE = "https://api.gdeltproject.org/api/v2/doc/doc"
 
 
 def build_recipient_trigger_queries(
@@ -97,6 +98,35 @@ def google_news_rss_url(query: str, language: str = "en-US", country: str = "US"
         f"{GOOGLE_NEWS_RSS_BASE}?q={encoded}"
         f"&hl={language}&gl={country}&ceid={country}:{language.split('-')[0]}"
     )
+
+
+def gdelt_query_url(query: str, max_age_days: int, maxrecords: int = 250) -> str:
+    """Builds a GDELT DOC 2.0 API request URL (article-list search mode).
+
+    Confirmed against the source of a widely-used GDELT Python client
+    (github.com/alex9smith/gdelt-doc-api) rather than assumed: the base
+    endpoint below, and that GDELT accepts the same quoted-phrase,
+    parenthesized-OR query syntax our Google News queries already use —
+    e.g. '("WFP" OR "World Food Programme") ("donates" OR "pledges")' — so
+    build_recipient_trigger_queries' output is reused as-is for GDELT too
+    (call it with max_age_days=None so it doesn't append Google's own
+    "when:Nd" syntax, which GDELT wouldn't understand).
+
+    timespan hard-restricts results to published-within-N-days server-side,
+    unlike Google News' "when:Nd" (a relevance-ranking hint, not a real
+    filter — see build_recipient_trigger_queries' docstring). maxrecords is
+    GDELT's own per-query cap (250, its documented maximum); staying under
+    it relies on the same "many small batched queries" approach already
+    used for Google News, not any client-side pagination.
+    """
+    params = {
+        "query": query,
+        "mode": "artlist",
+        "format": "json",
+        "timespan": f"{max_age_days}d",
+        "maxrecords": str(maxrecords),
+    }
+    return f"{GDELT_DOC_API_BASE}?{urlencode(params)}"
 
 
 def build_daily_query_plan(
