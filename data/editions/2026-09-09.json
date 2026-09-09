@@ -6,12 +6,12 @@
     "google_news_queries": 200,
     "recipients_watched": 50,
     "pr_wire_feeds": 2,
-    "items_considered": 897,
-    "items_filtered_as_stale": 805,
+    "items_considered": 878,
+    "items_filtered_as_stale": 802,
     "max_article_age_days": 60,
-    "items_after_trigger_filter": 22,
-    "clusters_analysed": 21,
-    "skipped_due_to_ai_budget": 20,
+    "items_after_trigger_filter": 24,
+    "clusters_analysed": 23,
+    "skipped_due_to_ai_budget": 22,
     "duplicates_skipped": 0,
     "rejected_off_scope_recipient": 0,
     "rejected_no_named_donor": 0,
@@ -19,6 +19,11 @@
     "high_confidence_count": 0
   },
   "fetch_failures": [
+    {
+      "source_label": "PR Newswire - All Public Company News",
+      "url": "https://www.prnewswire.com/rss/news-releases-list.rss",
+      "error": "404 Client Error: Not Found for url: https://www.prnewswire.com/rss/news-releases-list.rss/"
+    },
     {
       "source_label": "GlobeNewswire - Nonprofit",
       "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
