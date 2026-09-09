@@ -253,9 +253,9 @@ def _call_bedrock(prompt: str, model: str, region: str) -> str:
     nothing to configure here; the model's default sampling behaviour is
     used.
     """
-    from anthropic import AnthropicBedrockMantle
+    from anthropic import AnthropicBedrock
 
-    client = AnthropicBedrockMantle(aws_region=region)
+    client = AnthropicBedrock(aws_region=region)
     response = client.messages.create(
         model=model,
         max_tokens=1024,
