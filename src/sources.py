@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import calendar
 import logging
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
@@ -27,6 +28,23 @@ logger = logging.getLogger(__name__)
 
 REQUEST_TIMEOUT_SECONDS = 15
 USER_AGENT = "CorporateGivingMonitor/1.0 (+https://github.com/; non-commercial research)"
+
+# GDELT 2.0 enforces one request every 5 seconds per IP address to protect
+# its underlying servers — confirmed against GDELT's own documentation
+# (not the earlier guess of 1.1s, which was a conservative placeholder
+# before that number was found; it correctly still tripped a 429, since it
+# was well under the real limit). 5.5s adds a small margin for clock drift,
+# same approach as MIN_SECONDS_BETWEEN_AI_CALLS in extraction.py.
+MIN_SECONDS_BETWEEN_GDELT_CALLS = 5.5
+_last_gdelt_call_time: float = 0.0
+
+
+def _pace_gdelt_calls() -> None:
+    global _last_gdelt_call_time
+    elapsed = time.monotonic() - _last_gdelt_call_time
+    if elapsed < MIN_SECONDS_BETWEEN_GDELT_CALLS:
+        time.sleep(MIN_SECONDS_BETWEEN_GDELT_CALLS - elapsed)
+    _last_gdelt_call_time = time.monotonic()
 
 
 def _entry_published_iso(entry) -> str | None:
@@ -96,19 +114,36 @@ def _gdelt_seendate_iso(seendate: str | None) -> str | None:
         return None
 
 
-def fetch_gdelt_query(url: str, recipient_name: str) -> tuple[list[RawArticle], FetchFailure | None]:
+def fetch_gdelt_query(url: str, recipient_name: str, max_retries: int = 3) -> tuple[list[RawArticle], FetchFailure | None]:
     """GDELT's DOC API returns JSON, not RSS/Atom, so this doesn't go
     through feedparser/_fetch_feed like the other two sources — same
     RawArticle shape and graceful-degradation-via-FetchFailure behaviour
     though.
+
+    Paced via _pace_gdelt_calls (see that function — GDELT rate-limits
+    per-IP) and retried with backoff on failure, same shape as the AI-call
+    retry logic in extraction.py. Retries exhausted here just means this
+    one query is skipped (recorded as a FetchFailure), not a crashed run.
     """
-    try:
-        resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SECONDS)
-        resp.raise_for_status()
-        data = resp.json()
-    except (requests.RequestException, ValueError) as e:
-        logger.warning("GDELT fetch failed for %s: %s", recipient_name, e)
-        return [], FetchFailure(f"GDELT: {recipient_name}", url, str(e))
+    data = None
+    last_error = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            _pace_gdelt_calls()
+            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SECONDS)
+            resp.raise_for_status()
+            data = resp.json()
+            break
+        except (requests.RequestException, ValueError) as e:
+            last_error = e
+            wait = 2 ** attempt
+            logger.warning("GDELT fetch failed for %s (attempt %d/%d): %s. Retrying in %ds.",
+                            recipient_name, attempt, max_retries, e, wait)
+            time.sleep(wait)
+
+    if data is None:
+        logger.warning("Giving up on GDELT query for %s after %d failed attempts.", recipient_name, max_retries)
+        return [], FetchFailure(f"GDELT: {recipient_name}", url, str(last_error))
 
     articles = []
     for item in data.get("articles", []):
