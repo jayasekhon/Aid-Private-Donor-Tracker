@@ -3,7 +3,7 @@
 
   1. Load config
   2. Build search queries from recipients + trigger phrases
-  3. Fetch Google News RSS + PR wire feeds
+  3. Fetch Google News RSS + PR wire feeds + GDELT GKG bulk files
   4. Filter by trigger phrase (cheap, cuts volume before any AI calls)
   5. Tag country mentions
   6. Cluster near-duplicate articles into events (further cuts AI calls)
@@ -28,8 +28,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.config_loader import load_all
-from src.query_builder import build_recipient_trigger_queries, google_news_rss_url, gdelt_query_url
+from src.query_builder import build_recipient_trigger_queries, google_news_rss_url
 from src.sources import fetch_all
+from src.gdelt_gkg import fetch_gdelt_gkg_articles
 from src.clustering import filter_by_recency, filter_by_trigger_phrase, tag_country, cluster_articles, rank_clusters_by_priority
 from src.extraction import extract_from_cluster, build_donation_entry
 from src.store import EventStore
@@ -69,29 +70,38 @@ def main():
         ]
         fetch_failures = []
         google_news_query_count = 0
-        gdelt_query_count = 0
+        gdelt_files_processed = 0
+        gdelt_candidates_found = 0
     else:
         recipient_queries = []
         if settings["search"].get("google_news_enabled", True):
             trigger_query_pairs = build_recipient_trigger_queries(recipients, triggers, max_age_days=settings["search"]["max_article_age_days"])
             recipient_queries = [(name, google_news_rss_url(q)) for name, q in trigger_query_pairs]
 
-        gdelt_queries = []
-        if settings["search"].get("gdelt_enabled", True):
-            # Reused with max_age_days=None so it doesn't append Google's own
-            # "when:Nd" syntax, which GDELT wouldn't understand — GDELT gets
-            # its own recency restriction via gdelt_query_url's timespan
-            # param instead (see query_builder.gdelt_query_url).
-            gdelt_pairs = build_recipient_trigger_queries(recipients, triggers, max_age_days=None)
-            max_age_days = settings["search"]["max_article_age_days"]
-            gdelt_queries = [(name, gdelt_query_url(q, max_age_days=max_age_days)) for name, q in gdelt_pairs]
-
-        raw_articles, failures = fetch_all(recipient_queries, pr_wire_feeds, gdelt_queries)
+        raw_articles, failures = fetch_all(recipient_queries, pr_wire_feeds)
         fetch_failures = [f.__dict__ for f in failures]
         google_news_query_count = len(recipient_queries)
-        gdelt_query_count = len(gdelt_queries)
-        logger.info("Fetched %d raw articles across %d Google News queries + %d GDELT queries (%d recipients, batched) + %d PR wire feeds (%d fetch failures).",
-                     len(raw_articles), google_news_query_count, gdelt_query_count, len(recipients), len(pr_wire_feeds), len(fetch_failures))
+
+        gdelt_files_processed = 0
+        gdelt_candidates_found = 0
+        if settings["search"].get("gdelt_enabled", True):
+            # A completely different fetch shape from Google News/PR wires:
+            # bulk 15-minute GDELT GKG file downloads, not a per-query search
+            # API (see gdelt_gkg.py's module docstring for why). It narrows
+            # GDELT's global firehose down to "mentions a monitored
+            # recipient" itself; the existing trigger-phrase filter below
+            # then applies to these candidates exactly like any other
+            # source's, with no GDELT-specific filtering code needed there.
+            gdelt_articles, gdelt_failures, gdelt_stats = fetch_gdelt_gkg_articles(recipients)
+            raw_articles.extend(gdelt_articles)
+            fetch_failures.extend(f.__dict__ for f in gdelt_failures)
+            gdelt_files_processed = gdelt_stats.files_processed
+            gdelt_candidates_found = gdelt_stats.candidates_found
+
+        logger.info("Fetched %d raw articles: %d Google News queries (%d recipients, batched) + "
+                     "%d GDELT GKG file(s) processed (%d candidates) + %d PR wire feeds (%d fetch failures).",
+                     len(raw_articles), google_news_query_count, len(recipients),
+                     gdelt_files_processed, gdelt_candidates_found, len(pr_wire_feeds), len(fetch_failures))
 
     items_considered = len(raw_articles)
 
@@ -194,9 +204,10 @@ def main():
     # --- Save + build site ---
     high_confidence_threshold = 8
     stats = {
-        "feeds_checked": google_news_query_count + gdelt_query_count + len(pr_wire_feeds),
+        "feeds_checked": google_news_query_count + len(pr_wire_feeds),
         "google_news_queries": google_news_query_count,
-        "gdelt_queries": gdelt_query_count,
+        "gdelt_files_processed": gdelt_files_processed,
+        "gdelt_candidates_found": gdelt_candidates_found,
         "recipients_watched": len(recipients),
         "pr_wire_feeds": len(pr_wire_feeds),
         "items_considered": items_considered,

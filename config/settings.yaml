@@ -26,11 +26,14 @@ search:
   # missing/unreliable; lower it if stale stories still get through.
   max_article_age_days: 60
 
-  # Whether to also query GDELT's global news index (a much broader,
-  # more international/multilingual public news monitor updated every 15
-  # minutes) alongside Google News + PR wire feeds. Meant to catch regional
-  # or non-English coverage Google News misses. Set to false to fall back
-  # to Google News + PR wire feeds only, e.g. if GDELT proves too noisy or
+  # Whether to also pull from GDELT's Global Knowledge Graph (GKG) — a much
+  # broader, more international/multilingual public news monitor, updated
+  # every 15 minutes, that GDELT publishes as downloadable bulk files
+  # rather than a live search API (see src/gdelt_gkg.py — an earlier
+  # attempt using GDELT's live search API hit persistent rate-limiting
+  # from GitHub Actions' shared runner IPs). Meant to catch regional or
+  # non-English coverage Google News misses. Set to false to fall back to
+  # Google News + PR wire feeds only, e.g. if GDELT proves too noisy or
   # its results turn out low-quality after a few real runs.
   gdelt_enabled: true
 

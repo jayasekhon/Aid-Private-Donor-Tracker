@@ -27,7 +27,7 @@
 
     <h3 style="font-family: var(--serif-display); margin-top: 30px;">Today's run, in numbers</h3>
     <ul>
-      <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries + {{ stats.gdelt_queries }} GDELT queries across {{ stats.recipients_watched }} monitored recipients, {{ stats.pr_wire_feeds }} PR wire feeds)</li>
+      <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries across {{ stats.recipients_watched }} monitored recipients, {{ stats.pr_wire_feeds }} PR wire feeds) + {{ stats.gdelt_files_processed }} GDELT 15-minute file(s) scanned ({{ stats.gdelt_candidates_found }} candidate mentions of a monitored recipient found)</li>
       <li>{{ stats.items_considered }} raw item(s) considered</li>
       {% if stats.items_filtered_as_stale %}<li>{{ stats.items_filtered_as_stale }} discarded as older than {{ stats.max_article_age_days }} days</li>{% endif %}
       <li>{{ stats.items_after_trigger_filter }} passed the keyword pre-filter</li>
