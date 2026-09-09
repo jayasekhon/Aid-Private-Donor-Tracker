@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-09",
+  "entries": [],
+  "stats": {
+    "feeds_checked": 202,
+    "google_news_queries": 200,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 2,
+    "items_considered": 895,
+    "items_filtered_as_stale": 801,
+    "max_article_age_days": 60,
+    "items_after_trigger_filter": 23,
+    "clusters_analysed": 22,
+    "skipped_due_to_ai_budget": 22,
+    "duplicates_skipped": 0,
+    "rejected_off_scope_recipient": 0,
+    "rejected_no_named_donor": 0,
+    "entries_published": 0,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    }
+  ]
+}
