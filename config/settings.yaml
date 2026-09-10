@@ -73,16 +73,19 @@ ai:
   # switch models again later (e.g. back to Claude, if approval comes
   # through eventually).
   #
-  # IMPORTANT — verify this exact ID against the Bedrock console's "Model
-  # access" page for bedrock_region below before a real run: some models
-  # (including some Nova variants outside their home region) require a
-  # cross-region inference profile ID instead of the bare foundation-model
-  # ID shown here (e.g. "eu.amazon.nova-pro-v1:0" rather than
-  # "amazon.nova-pro-v1:0") — if the console shows only a profile ID as
-  # invokable, use that instead. A wrong ID here fails fast with a clear
-  # error (see _extract_via_bedrock's ResourceNotFoundException handling),
-  # not silently.
-  bedrock_model: "amazon.nova-pro-v1:0"
+  # A real run confirmed the bare foundation-model ID ("amazon.nova-pro-v1:0")
+  # is NOT invokable on-demand in this setup — AWS returned:
+  # "Invocation of model ID amazon.nova-pro-v1:0 with on-demand throughput
+  # isn't supported. Retry your request with the ID or ARN of an inference
+  # profile that contains this model." This is the cross-region inference
+  # profile ID instead (same mechanism as Claude's earlier "global." prefix
+  # — see git history). "eu." is the expected prefix for bedrock_region
+  # below being an EU region; double-check this exact string is listed as
+  # invokable on the Bedrock console's "Model access" / cross-region
+  # inference page before relying on it, since it wasn't independently
+  # confirmed there (only inferred from AWS's own documented profile-ID
+  # convention) before this config change.
+  bedrock_model: "eu.amazon.nova-pro-v1:0"
   # AWS region to call Bedrock in.
   bedrock_region: "eu-north-1"
 
