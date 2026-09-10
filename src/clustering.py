@@ -96,6 +96,11 @@ def filter_by_trigger_phrase(articles: list[RawArticle], triggers: list[str]) ->
         for a in rejected_sample:
             logger.info("  [%s] %s", a.matched_recipient or "?", a.title)
 
+    if kept:
+        logger.info("%d candidate(s) passed the trigger-phrase filter and are headed to the AI step:", len(kept))
+        for a in kept:
+            logger.info("  [%s, matched %r] %s", a.matched_recipient or "?", a.matched_trigger, a.title)
+
     return kept
 
 

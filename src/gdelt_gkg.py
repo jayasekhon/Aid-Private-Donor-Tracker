@@ -264,36 +264,30 @@ def _parse_gkg_zip(zip_bytes: bytes, name_lookup: dict[str, str]) -> list[RawArt
     return articles
 
 
-def fetch_gdelt_gkg_articles(recipients: list[Recipient]) -> tuple[list[RawArticle], list[FetchFailure], GkgFetchStats]:
-    """Fetches and parses every new GDELT GKG 15-minute file since the
-    last successful run (tracked in data/gdelt_gkg_state.json), returning
-    candidate articles that mention a monitored recipient.
-
-    Stops at the first real fetch/parse failure rather than skipping past
-    it — state is only advanced up to the last window actually processed,
-    so a failure leaves that window (and everything after it) to be picked
-    up on the next run instead of silently creating a permanent gap.
+def _fetch_and_parse_timestamps(
+    timestamps: list[datetime], name_lookup: dict[str, str]
+) -> tuple[list[RawArticle], list[FetchFailure], list[str]]:
+    """Shared fetch/parse loop used by both the state-tracked incremental
+    fetch and the state-independent backfill fetch below. Stops at the
+    first real fetch/parse failure rather than skipping past it (a 404 —
+    no file published for a window — is not treated as a failure, just
+    continues). Returns (articles, failures, timestamps actually
+    completed, in "%Y%m%d%H%M%S" string form) — callers decide what, if
+    anything, to do with that completed list (e.g. persisting state).
     """
-    state = _load_state()
-    now = datetime.now(timezone.utc)
-    timestamps = _pending_file_timestamps(state.get("last_processed_timestamp"), now)
-
-    name_lookup = _build_name_lookup(recipients)
     all_articles: list[RawArticle] = []
     failures: list[FetchFailure] = []
-    files_processed = 0
+    completed: list[str] = []
 
     for ts in timestamps:
         content, failure = _fetch_gkg_file(ts)
         if failure:
             failures.append(failure)
-            break  # leave state where it is; retry this window (and the rest) next run
+            break
 
         ts_str = ts.strftime("%Y%m%d%H%M%S")
         if content is None:
-            # 404 — nothing published for this window; treat as caught up.
-            state["last_processed_timestamp"] = ts_str
-            files_processed += 1
+            completed.append(ts_str)
             continue
 
         try:
@@ -304,13 +298,67 @@ def fetch_gdelt_gkg_articles(recipients: list[Recipient]) -> tuple[list[RawArtic
             break
 
         all_articles.extend(articles)
-        state["last_processed_timestamp"] = ts_str
-        files_processed += 1
+        completed.append(ts_str)
 
-    _save_state(state)
-    stats = GkgFetchStats(files_pending=len(timestamps), files_processed=files_processed,
+    return all_articles, failures, completed
+
+
+def fetch_gdelt_gkg_articles(recipients: list[Recipient]) -> tuple[list[RawArticle], list[FetchFailure], GkgFetchStats]:
+    """Fetches and parses every new GDELT GKG 15-minute file since the
+    last successful run (tracked in data/gdelt_gkg_state.json), returning
+    candidate articles that mention a monitored recipient.
+
+    State is only advanced up to the last window actually completed, so a
+    failure partway through leaves that window (and everything after it)
+    to be picked up on the next run instead of silently creating a
+    permanent gap.
+    """
+    state = _load_state()
+    now = datetime.now(timezone.utc)
+    timestamps = _pending_file_timestamps(state.get("last_processed_timestamp"), now)
+    name_lookup = _build_name_lookup(recipients)
+
+    all_articles, failures, completed = _fetch_and_parse_timestamps(timestamps, name_lookup)
+    if completed:
+        state["last_processed_timestamp"] = completed[-1]
+        _save_state(state)
+
+    stats = GkgFetchStats(files_pending=len(timestamps), files_processed=len(completed),
                            candidates_found=len(all_articles))
     logger.info("GDELT GKG: processed %d/%d file(s), found %d candidate article(s) mentioning a "
                 "monitored recipient (%d fetch failures).",
+                stats.files_processed, stats.files_pending, stats.candidates_found, len(failures))
+    return all_articles, failures, stats
+
+
+def fetch_gdelt_gkg_articles_for_range(
+    recipients: list[Recipient], start: datetime, end: datetime
+) -> tuple[list[RawArticle], list[FetchFailure], GkgFetchStats]:
+    """Backfill/test variant of fetch_gdelt_gkg_articles: fetches every
+    15-minute GKG file between start and end (inclusive, both rounded down
+    to the nearest 15-minute boundary), for an arbitrary past date range —
+    e.g. to check whether a specific known real-world event would have
+    been caught. Completely independent of data/gdelt_gkg_state.json: does
+    not read or write it, so running this can never disturb the real
+    daily pipeline's incremental tracking. Still capped at
+    MAX_FILES_PER_RUN as the same safety net against an accidentally huge
+    range.
+    """
+    start = _round_down_to_interval(start)
+    end = _round_down_to_interval(end)
+    timestamps = []
+    t = start
+    while t <= end and len(timestamps) < MAX_FILES_PER_RUN:
+        timestamps.append(t)
+        t += timedelta(minutes=FILE_INTERVAL_MINUTES)
+
+    name_lookup = _build_name_lookup(recipients)
+    all_articles, failures, completed = _fetch_and_parse_timestamps(timestamps, name_lookup)
+
+    stats = GkgFetchStats(files_pending=len(timestamps), files_processed=len(completed),
+                           candidates_found=len(all_articles))
+    logger.info("GDELT GKG backfill (%s to %s): processed %d/%d file(s), found %d candidate "
+                "article(s) mentioning a monitored recipient (%d fetch failures).",
+                start.strftime("%Y-%m-%d %H:%M"), end.strftime("%Y-%m-%d %H:%M"),
                 stats.files_processed, stats.files_pending, stats.candidates_found, len(failures))
     return all_articles, failures, stats
