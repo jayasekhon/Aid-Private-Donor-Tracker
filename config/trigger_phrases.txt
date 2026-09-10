@@ -7,21 +7,43 @@
 # would actually phrase it. Case does not matter.
 #
 # IMPORTANT: phrases here should point specifically at CORPORATE/private
-# giving, not general "funding"/"donor" language. Words like "funding for"
-# or "contributes to" match government donor news just as easily as
-# corporate news, and UN agencies are constantly in government funding
-# stories — a loose phrase list here floods the AI extraction step with
-# hundreds of irrelevant candidates. If you notice real corporate donation
-# stories being missed, add a phrase; if you notice a flood of irrelevant
-# results, a phrase below is probably too generic and should be removed.
+# giving, not general "funding"/"donor" language wherever avoidable — a
+# loose phrase list floods the AI extraction step with irrelevant
+# candidates, which the pipeline can't afford at scale (see
+# clustering.py's module docstring on why this filter exists at all).
+#
+# That said, "donates", "contributes", "pledges", "sponsors", "commits",
+# and "partners with" below are deliberately bare, not paired with a
+# business word like "company"/"corporate" the way earlier phrases in
+# this file were. Real headlines almost always name the actual company
+# rather than saying "the company" — a paired-only phrase like "company
+# donates" doesn't even match this project's own sample headline ("Acme
+# Logistics donates $3 million to WFP"), since the literal word "company"
+# never appears. Bare verbs will occasionally admit a government-funding
+# story too (e.g. "the US contributes $50M..."), but that's an accepted
+# cost, not a wrong entry — is_generic_donor and recipient_is_monitored
+# (see extraction.py) reject anything that doesn't name a real donor or
+# monitored recipient before it's ever published, so the worst case is
+# one extra AI call spent on a story that gets correctly rejected, not a
+# bad entry slipping through.
+#
+# Deliberately NOT included even bare, despite being donation-adjacent:
+# "gives", "supports", "funds", "backs", "boosts" — these are so generic
+# across ALL news (gives evidence, supports a bill, funds a war, backs a
+# candidate) that including them would likely readmit close to everything,
+# defeating the filter's entire purpose rather than just broadening it.
+# Also not "aids" — lowercased, that collides with "AIDS" the disease,
+# a real false-positive risk given WHO is a monitored recipient.
 # =============================================================================
 
 corporate donation
-company donates
-company pledges
-company contributes
+donates
+contributes
+pledges
+sponsors
+commits
+partners with
 corporate foundation
-corporate contribution
 corporate social responsibility
 CSR partnership
 CSR commitment
@@ -37,10 +59,5 @@ foundation grant
 renews partnership with
 announces partnership with
 corporate partner
-brand partners with
-company partners with
-Inc. donates
-Corp. donates
-plc donates
 donated to support
 pledged to support
