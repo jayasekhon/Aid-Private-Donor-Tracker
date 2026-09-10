@@ -174,20 +174,39 @@ def _parse_amounts(amounts_field: str) -> list[str]:
     return out
 
 
-def _parse_first_quote(quotes_field: str) -> str | None:
+# Cap on how many of an article's quotes to fold into the synthetic
+# summary — enough to give the trigger-phrase filter a real shot at a
+# donation-relevant quote that isn't literally the first one GDELT
+# extracted, without letting a quote-heavy article balloon the summary.
+MAX_QUOTES_IN_SUMMARY = 5
+
+
+def _parse_quotes(quotes_field: str) -> list[str]:
+    """Returns up to MAX_QUOTES_IN_SUMMARY quotes from the article, in the
+    order GDELT extracted them. Previously only the FIRST quote was kept
+    (_parse_first_quote) — a real recall gap, since the trigger-phrase
+    filter only ever sees whatever text ends up in the synthetic summary,
+    and a donation-relevant quote (e.g. an org spokesperson thanking a
+    donor) is often not literally the first quote in the article; an
+    earlier, unrelated quote (e.g. a local official describing the
+    disaster itself) would previously have crowded it out entirely.
+    """
+    quotes = []
     for block in quotes_field.split("#"):
         parts = block.split("|")
         if len(parts) >= 4 and parts[3].strip():
-            return parts[3].strip()
-    return None
+            quotes.append(parts[3].strip())
+        if len(quotes) >= MAX_QUOTES_IN_SUMMARY:
+            break
+    return quotes
 
 
 def _build_summary(orgs: list[str], amounts_field: str, quotes_field: str) -> str:
     """GKG gives us no article body text, so this stitches together a
     short substitute from what it DOES extract — organization mentions,
-    numeric amounts, and the first quoted statement — giving the
-    trigger-phrase filter and the AI extraction step more to work with
-    than a bare title.
+    numeric amounts, and up to a handful of quoted statements — giving
+    the trigger-phrase filter and the AI extraction step more to work
+    with than a bare title.
     """
     parts = []
     if orgs:
@@ -195,9 +214,9 @@ def _build_summary(orgs: list[str], amounts_field: str, quotes_field: str) -> st
     amounts = _parse_amounts(amounts_field)
     if amounts:
         parts.append("Amounts mentioned: " + "; ".join(amounts) + ".")
-    quote = _parse_first_quote(quotes_field)
-    if quote:
-        parts.append(f'Quote: "{quote}"')
+    quotes = _parse_quotes(quotes_field)
+    if quotes:
+        parts.append("Quotes: " + " | ".join(f'"{q}"' for q in quotes))
     return " ".join(parts)
 
 
