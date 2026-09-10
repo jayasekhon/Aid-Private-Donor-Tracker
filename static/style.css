@@ -138,6 +138,11 @@ h2.section-title { font-size: clamp(1.5rem, 3vw, 2.1rem); border-bottom: 3px sol
   color: var(--muted);
   border: 1px solid var(--hairline);
 }
+.badge-type {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
 
 .badge-row { display: flex; gap: 8px; align-items: center; flex-shrink: 0; flex-wrap: wrap; }
 

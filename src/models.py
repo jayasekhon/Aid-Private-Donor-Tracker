@@ -71,6 +71,7 @@ class DonationEntry:
     entry_id: str
     donor: str
     recipient: str
+    recipient_type: str               # "UN Agency" / "INGO" / "NGO" / "Other Nonprofit" — shown as a tag on every entry
     amount_text: Optional[str]        # e.g. "$5 million" — verbatim short figure clause, or None
     is_in_kind: bool
     in_kind_description: Optional[str]

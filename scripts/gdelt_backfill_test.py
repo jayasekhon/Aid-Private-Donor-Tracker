@@ -89,7 +89,10 @@ def main():
 
     logger.info("--extract passed: running %d cluster(s) through real AI extraction "
                 "(ai.provider=%s) — this costs real AI calls.", len(clusters), settings["ai"]["provider"])
-    from src.extraction import extract_from_cluster, FatalExtractionError, is_generic_donor, recipient_is_monitored
+    from src.extraction import (
+        extract_from_cluster, FatalExtractionError, is_generic_donor,
+        is_generic_recipient, classify_recipient_type,
+    )
 
     for i, cluster in enumerate(clusters, start=1):
         logger.info("Processing cluster %d/%d...", i, len(clusters))
@@ -104,11 +107,13 @@ def main():
         if is_generic_donor(result.donor):
             logger.info("  -> rejected: no specific donor named (%r).", result.donor)
             continue
-        if not recipient_is_monitored(result.recipient, recipients):
-            logger.info("  -> rejected: recipient %r isn't monitored.", result.recipient)
+        if is_generic_recipient(result.recipient):
+            logger.info("  -> rejected: no specific recipient organization named (%r).", result.recipient)
             continue
-        logger.info("  -> MATCH: %s donated %s to %s (%s)",
-                    result.donor, result.amount_text or "(in-kind/unspecified)", result.recipient, result.status)
+        recipient_type = classify_recipient_type(result.recipient, recipients, result.recipient_type_guess)
+        logger.info("  -> MATCH: %s donated %s to %s [%s] (%s)",
+                    result.donor, result.amount_text or "(in-kind/unspecified)", result.recipient,
+                    recipient_type, result.status)
 
 
 if __name__ == "__main__":

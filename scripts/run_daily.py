@@ -142,10 +142,10 @@ def main():
     lookback = settings["ai"]["dedupe_lookback_days"]
     entries: list[DonationEntry] = []
     duplicates_skipped = 0
-    rejected_off_scope_recipient = 0
+    rejected_unnamed_recipient = 0
     rejected_no_named_donor = 0
 
-    from src.extraction import FatalExtractionError, is_generic_donor, recipient_is_monitored
+    from src.extraction import FatalExtractionError, is_generic_donor, is_generic_recipient
 
     for i, cluster in enumerate(clusters, start=1):
         if i == 1 or i % 5 == 0 or i == len(clusters):
@@ -163,20 +163,22 @@ def main():
 
         # Backstop behind the extraction prompt's own instructions — the
         # model is told to set is_relevant=false for these cases, but
-        # doesn't always comply. Google's search doesn't strictly enforce
-        # our recipient-name query either, so an off-scope recipient can
-        # slip all the way to extraction; publishing it would defeat the
-        # point of anchoring this tracker on a specific recipient list.
+        # doesn't always comply. A recipient no longer has to be on the
+        # curated watchlist to be published (any named nonprofit counts —
+        # see classify_recipient_type/build_donation_entry below, which tag
+        # curated vs. off-list recipients rather than rejecting the latter);
+        # what's still rejected is a recipient that was never actually
+        # named at all, since that isn't a usable finding.
         if is_generic_donor(result.donor):
             rejected_no_named_donor += 1
             logger.info("Rejecting cluster %s: no specific donor named (%r).", cluster.cluster_id, result.donor)
             continue
-        if not recipient_is_monitored(result.recipient, recipients):
-            rejected_off_scope_recipient += 1
-            logger.info("Rejecting cluster %s: recipient %r isn't one of the monitored orgs.", cluster.cluster_id, result.recipient)
+        if is_generic_recipient(result.recipient):
+            rejected_unnamed_recipient += 1
+            logger.info("Rejecting cluster %s: no specific recipient organization named (%r).", cluster.cluster_id, result.recipient)
             continue
 
-        entry = build_donation_entry(cluster, result, settings["confidence"])
+        entry = build_donation_entry(cluster, result, settings["confidence"], recipients)
 
         if not settings["publishing"]["include_unspecified_scope"] and entry.country_scope == "Unspecified / global":
             continue
@@ -198,8 +200,8 @@ def main():
         entries.append(entry)
 
     store.save()
-    logger.info("Published %d entries today (%d duplicates skipped, %d rejected as off-scope recipient, %d rejected as no named donor).",
-                 len(entries), duplicates_skipped, rejected_off_scope_recipient, rejected_no_named_donor)
+    logger.info("Published %d entries today (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no named donor).",
+                 len(entries), duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor)
 
     # --- Save + build site ---
     high_confidence_threshold = 8
@@ -217,7 +219,7 @@ def main():
         "clusters_analysed": len(clusters),
         "skipped_due_to_ai_budget": skipped_due_to_budget,
         "duplicates_skipped": duplicates_skipped,
-        "rejected_off_scope_recipient": rejected_off_scope_recipient,
+        "rejected_unnamed_recipient": rejected_unnamed_recipient,
         "rejected_no_named_donor": rejected_no_named_donor,
         "entries_published": len(entries),
         "high_confidence_count": sum(1 for e in entries if e.confidence_score >= high_confidence_threshold),

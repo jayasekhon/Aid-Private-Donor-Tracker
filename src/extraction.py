@@ -50,17 +50,17 @@ def is_generic_donor(donor: str) -> bool:
     return any(marker in d for marker in GENERIC_DONOR_MARKERS)
 
 
-def recipient_is_monitored(recipient: str, recipients: list[Recipient]) -> bool:
-    """True if the extracted recipient corresponds to one of the orgs this
-    tracker is actually scoped to watch (recipients.txt, including
-    aliases). Google News' search doesn't strictly enforce our query — a
-    returned article can be about something else entirely that merely
-    triggered a loose relevance match — so the model can (and does)
-    sometimes extract a real donation to a real recipient that just isn't
-    one we track. That's out of scope, not a tracked finding.
+def match_curated_recipient(recipient: str, recipients: list[Recipient]) -> Recipient | None:
+    """Returns the curated recipients.txt entry the extracted recipient
+    corresponds to (including alias matches), or None if it names a real
+    organization that just isn't on our curated 50-recipient watchlist.
+    Being off that list is no longer a rejection reason on its own (see
+    is_generic_recipient for the actual publish/reject gate) — this is
+    used only to pull the authoritative org_type for curated recipients,
+    which is more reliable than trusting the AI's own guess.
     """
     if not recipient or not recipient.strip():
-        return False
+        return None
     candidate = recipient.strip().lower()
     for r in recipients:
         for name in r.all_names:
@@ -68,10 +68,68 @@ def recipient_is_monitored(recipient: str, recipients: list[Recipient]) -> bool:
             if not name_l:
                 continue
             if candidate == name_l or candidate in name_l or name_l in candidate:
-                return True
+                return r
             if fuzz.token_set_ratio(candidate, name_l) >= 88:
-                return True
-    return False
+                return r
+    return None
+
+
+# Phrases that mean "no specific organization was actually named" — the
+# recipient-side counterpart to GENERIC_DONOR_MARKERS. Per an explicit
+# scope-broadening decision, a recipient no longer has to be one of the
+# curated 50 to be published (see match_curated_recipient) — a donation to
+# any small, local, or otherwise off-list nonprofit is a real finding as
+# long as that nonprofit is actually NAMED. What's still rejected is a
+# recipient that was never named at all, since "a company donated to a
+# local charity" identifies WHO gave but not WHERE it went, and that's a
+# materially weaker finding than either half being anonymous alone.
+GENERIC_RECIPIENT_MARKERS = (
+    "unspecified", "not specified", "unnamed", "unknown", "unidentified",
+    "various nonprofit", "several nonprofit", "multiple nonprofit",
+    "various ngo", "several ngo", "multiple ngo",
+    "various charit", "several charit", "multiple charit",
+    "local charity", "local charities", "local nonprofit", "local ngo",
+    "a nonprofit", "a non-profit", "a charity", "an ngo", "an ingo",
+    "aid organizations", "humanitarian organizations", "not named", "n/a", "undisclosed",
+)
+
+
+def is_generic_recipient(recipient: str) -> bool:
+    if not recipient or not recipient.strip():
+        return True
+    r = recipient.strip().lower()
+    return any(marker in r for marker in GENERIC_RECIPIENT_MARKERS)
+
+
+# Display labels for the type tag shown on every published entry. Curated
+# recipients (recipients.txt) use their authoritative org_type; anything
+# off-list falls back to the AI's own "recipient_type" guess from the
+# extraction prompt, normalized to one of these four — never trusted
+# blindly beyond that, since the AI can mis-classify an org it doesn't
+# recognize.
+RECIPIENT_TYPE_LABELS = {"UN": "UN Agency", "INGO": "INGO", "NGO": "NGO"}
+OTHER_NONPROFIT_LABEL = "Other Nonprofit"
+# Keyed lowercase since the prompt asks the model for lowercase-style
+# values ("UN agency", "Other nonprofit") but the model's exact casing
+# can't be relied on — matched case-insensitively, always returned as
+# one of the canonical display labels above.
+_AI_LABEL_BY_LOWER = {label.lower(): label for label in RECIPIENT_TYPE_LABELS.values()} | {
+    OTHER_NONPROFIT_LABEL.lower(): OTHER_NONPROFIT_LABEL,
+}
+
+
+def classify_recipient_type(recipient: str, recipients: list[Recipient], ai_type_guess: str | None) -> str:
+    """The display label for the entry's type tag. A curated-list match
+    always wins (authoritative data beats a guess); otherwise falls back
+    to the AI's own classification if it returned one of the four expected
+    labels, or "Other Nonprofit" if it didn't (missing, malformed, or an
+    unrecognized value) rather than publishing an untagged/miscategorized entry.
+    """
+    matched = match_curated_recipient(recipient, recipients)
+    if matched is not None:
+        return RECIPIENT_TYPE_LABELS[matched.org_type]
+    guess = (ai_type_guess or "").strip().lower()
+    return _AI_LABEL_BY_LOWER.get(guess, OTHER_NONPROFIT_LABEL)
 
 # Free-tier Gemini 3.x Flash allows ~10 requests/minute (down from the 15
 # RPM the older 2.0/2.5 Flash models had). Spacing calls 6.5s apart keeps us
@@ -128,16 +186,18 @@ EXTRACTION_PROMPT_TEMPLATE = """You are a careful research assistant helping tra
 items that a keyword filter believes describe the SAME real-world donation/partnership event.
 
 Your job: decide if this is genuinely a private company (or corporate foundation) donating to, \
-partnering with, or otherwise financially/materially supporting a UN agency, INGO, or NGO. If it \
-is NOT (e.g. it's a government donation, an unrelated story that matched keywords by coincidence, \
-or pure speculation with no confirmed commitment), say so clearly and set "is_relevant" to false. \
-This tracker exists to identify WHICH company gave — if the source text never names a specific \
-company or corporate foundation (only vague language like "corporate partners", "several \
-companies", or "a donor"), that is also not relevant: set "is_relevant" to false rather than \
-inventing a placeholder donor. Similarly, the recipient must be one of the organizations this \
-tracker is actually scoped to (a UN agency, INGO, or NGO watched by name) — if the story is about \
-some other organization that merely happened to be mentioned alongside a watched one (e.g. in an \
-unrelated paragraph of the same article), set "is_relevant" to false.
+partnering with, or otherwise financially/materially supporting a nonprofit organization — a UN \
+agency, INGO, NGO, or any other named charity/nonprofit, of any size. If it is NOT (e.g. it's a \
+government donation, an unrelated story that matched keywords by coincidence, or pure speculation \
+with no confirmed commitment), say so clearly and set "is_relevant" to false. This tracker exists \
+to identify WHICH company gave — if the source text never names a specific company or corporate \
+foundation (only vague language like "corporate partners", "several companies", or "a donor"), \
+that is also not relevant: set "is_relevant" to false rather than inventing a placeholder donor. \
+The recipient does NOT need to be a major/well-known organization — a donation to a small local \
+nonprofit is just as relevant a finding as one to a large UN agency — but it DOES need to be a \
+SPECIFIC, NAMED organization. If the source text only says something vague like "a local charity", \
+"several nonprofits", or "an aid organization" without ever naming which one, that is not \
+relevant either: set "is_relevant" to false rather than inventing a placeholder recipient.
 
 If it IS relevant, extract the following as JSON. Follow these rules exactly:
 
@@ -150,25 +210,32 @@ If it IS relevant, extract the following as JSON. Follow these rules exactly:
 3. "donor": the SPECIFIC company or corporate foundation name, as stated. Never write a \
    placeholder like "unspecified corporate partners" here — if you can't name a specific donor, \
    set "is_relevant" to false instead (see above).
-4. "recipient": the UN agency / INGO / NGO name, as stated.
-5. "is_in_kind": true if this is a donation of goods/services/logistics rather than cash.
-6. "in_kind_description": if is_in_kind is true, describe what was given, in your own words, \
+4. "recipient": the nonprofit organization's name, as stated.
+5. "recipient_type": your best classification of the recipient, exactly one of "UN agency" \
+   (a United Nations body, fund, or programme), "INGO" (a large international NGO operating \
+   across multiple countries, e.g. Save the Children, Oxfam, the Red Cross/Red Crescent \
+   movement), "NGO" (a national or regional NGO), or "Other nonprofit" (anything else — a \
+   local charity, a hospital, a school, a foundation, a community organization, or anything \
+   you're not confident fits the other three). If genuinely unsure between two, pick the \
+   broader/safer one rather than guessing narrowly.
+6. "is_in_kind": true if this is a donation of goods/services/logistics rather than cash.
+7. "in_kind_description": if is_in_kind is true, describe what was given, in your own words, \
    with NO estimated dollar value invented. If is_in_kind is false, set to null.
-7. "amount_text": the stated monetary amount as a short string (e.g. "$5 million"), or null \
+8. "amount_text": the stated monetary amount as a short string (e.g. "$5 million"), or null \
    if none stated or if in-kind with no value given. Never estimate or infer a number that \
    is not explicitly stated in the source text.
-8. "country_scope": a specific country/context name if the source text names one, otherwise \
+9. "country_scope": a specific country/context name if the source text names one, otherwise \
    the string "Unspecified / global". Do NOT guess a country from context or from what you \
    know about the recipient's operations — only use one if it is explicitly named in the text.
-9. "status": one of "new_commitment", "renewed_partnership", or "unclear" — based ONLY on \
-   whether the source text itself describes this as new vs. a renewal/continuation. If the \
-   text doesn't say, use "unclear" rather than guessing.
-10. "assumptions": a list of short strings flagging ANYTHING you were unsure about, had to \
+10. "status": one of "new_commitment", "renewed_partnership", or "unclear" — based ONLY on \
+    whether the source text itself describes this as new vs. a renewal/continuation. If the \
+    text doesn't say, use "unclear" rather than guessing.
+11. "assumptions": a list of short strings flagging ANYTHING you were unsure about, had to \
     infer, or found ambiguous or conflicting between sources — e.g. "amount differs slightly \
     between the two sources provided", "unclear whether this is a one-time gift or annual \
     pledge", "recipient name is a national committee, not the global agency". If there is \
     truly nothing ambiguous, return an empty list — do not invent caveats for the sake of it.
-11. "is_relevant": true/false as described above.
+12. "is_relevant": true/false as described above.
 
 Return ONLY valid JSON, no other text, matching this shape:
 {{
@@ -177,6 +244,7 @@ Return ONLY valid JSON, no other text, matching this shape:
   "figure_quote": "..." or null,
   "donor": "...",
   "recipient": "...",
+  "recipient_type": "UN agency",
   "is_in_kind": false,
   "in_kind_description": null,
   "amount_text": "..." or null,
@@ -197,6 +265,7 @@ class ExtractionResult:
     figure_quote: str | None = None
     donor: str = ""
     recipient: str = ""
+    recipient_type_guess: str | None = None  # raw AI classification, normalized later via classify_recipient_type
     is_in_kind: bool = False
     in_kind_description: str | None = None
     amount_text: str | None = None
@@ -278,6 +347,7 @@ def _mock_extract(cluster: ArticleCluster) -> str:
         "figure_quote": None,
         "donor": "Example Corp (mock)",
         "recipient": first.matched_recipient or "Unknown",
+        "recipient_type": "NGO",
         "is_in_kind": False,
         "in_kind_description": None,
         "amount_text": None,
@@ -450,6 +520,7 @@ def extract_from_cluster(
             figure_quote=data.get("figure_quote"),
             donor=data.get("donor", "").strip(),
             recipient=data.get("recipient", "").strip(),
+            recipient_type_guess=data.get("recipient_type"),
             is_in_kind=bool(data.get("is_in_kind", False)),
             in_kind_description=data.get("in_kind_description"),
             amount_text=data.get("amount_text"),
@@ -484,12 +555,15 @@ def build_donation_entry(
     cluster: ArticleCluster,
     result: ExtractionResult,
     confidence_cfg: dict,
+    recipients: list[Recipient],
 ) -> DonationEntry:
     score, breakdown = score_confidence(cluster, result, confidence_cfg)
+    recipient_type = classify_recipient_type(result.recipient, recipients, result.recipient_type_guess)
     return DonationEntry(
         entry_id=str(uuid.uuid4()),
         donor=result.donor,
         recipient=result.recipient,
+        recipient_type=recipient_type,
         amount_text=result.amount_text,
         is_in_kind=result.is_in_kind,
         in_kind_description=result.in_kind_description,

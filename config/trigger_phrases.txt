@@ -23,11 +23,11 @@
 # Logistics donates $3 million to WFP"), since the literal word "company"
 # never appears. Bare verbs will occasionally admit a government-funding
 # story too (e.g. "the US contributes $50M..."), but that's an accepted
-# cost, not a wrong entry — is_generic_donor and recipient_is_monitored
+# cost, not a wrong entry — is_generic_donor and is_generic_recipient
 # (see extraction.py) reject anything that doesn't name a real donor or
-# monitored recipient before it's ever published, so the worst case is
-# one extra AI call spent on a story that gets correctly rejected, not a
-# bad entry slipping through.
+# a real, specifically-named recipient before it's ever published, so
+# the worst case is one extra AI call spent on a story that gets
+# correctly rejected, not a bad entry slipping through.
 #
 # Deliberately NOT included even bare, despite being donation-adjacent:
 # "gives", "supports", "funds", "backs", "boosts" — these are so generic

@@ -28,6 +28,7 @@
         </div>
       </div>
       <div class="badge-row" style="margin: 8px 0;">
+        <span class="badge badge-type">{{ e.recipient_type }}</span>
         <span class="badge badge-status">{{ e.status_display }}</span>
         <span class="badge badge-status">{{ e.country_scope }}</span>
         {% if e.is_in_kind %}<span class="badge badge-status">In-kind</span>{% endif %}
