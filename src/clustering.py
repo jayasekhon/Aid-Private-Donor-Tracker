@@ -14,11 +14,20 @@
 """
 from __future__ import annotations
 
+import logging
 from datetime import datetime, timedelta, timezone
 
 from rapidfuzz import fuzz
 
 from .models import ArticleCluster, RawArticle, SourceTier
+
+logger = logging.getLogger(__name__)
+
+# How many rejected-candidate titles to log per run, for eyeballing whether
+# the trigger-phrase filter looks too strict (real donation stories being
+# discarded) vs. correctly rejecting noise (recipient mentioned, but not in
+# a donation context) — capped to keep logs readable on a high-volume day.
+REJECTED_SAMPLE_LOG_LIMIT = 15
 
 
 def _parse_published(published: str | None) -> datetime | None:
@@ -67,13 +76,26 @@ def filter_by_recency(articles: list[RawArticle], max_age_days: int) -> tuple[li
 
 def filter_by_trigger_phrase(articles: list[RawArticle], triggers: list[str]) -> list[RawArticle]:
     kept = []
+    rejected_sample = []
     for a in articles:
         haystack = f"{a.title} {a.summary}".lower()
+        matched = False
         for phrase in triggers:
             if phrase in haystack:
                 a.matched_trigger = phrase
                 kept.append(a)
+                matched = True
                 break
+        if not matched and len(rejected_sample) < REJECTED_SAMPLE_LOG_LIMIT:
+            rejected_sample.append(a)
+
+    if rejected_sample:
+        logger.info("Sample of %d rejected candidate(s) (of %d total not passing the trigger-phrase "
+                     "filter) — eyeball these for real donation stories the phrase list is missing:",
+                     len(rejected_sample), len(articles) - len(kept))
+        for a in rejected_sample:
+            logger.info("  [%s] %s", a.matched_recipient or "?", a.title)
+
     return kept
 
 
