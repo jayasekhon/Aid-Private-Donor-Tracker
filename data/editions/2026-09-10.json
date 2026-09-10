@@ -1,24 +1,646 @@
 {
   "date": "2026-09-10",
-  "entries": [],
+  "entries": [
+    {
+      "entry_id": "a096f304-b4f3-4033-a33c-05d4c2e56146",
+      "donor": "George Norcross III",
+      "recipient": "Cooper University Health Care",
+      "recipient_type": "INGO",
+      "amount_text": "$100 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "George Norcross III donated $100 million to Cooper University Health Care.",
+      "figure_quote": "$100 million",
+      "assumptions": [],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 8,
+          "points": 3
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNmtVd2d5MTAxd2NBVDFtQUFIRTNLWEtvOVYzU1d3RlFvTmM4N2xWSUM5TjRVOGtDal9KM1ZScGh1R0ZoZDBZQUd1TmxLX2sxZGdzZW5XTHpidlB2Z21BNWc4SHRsSVBtLXpYVWV2ZG1XY0hnVGJNM3o0bEhudWtlUkxzdTIzSjJrcllYVkdwcU9FUkJLMjVSY0NaS2J1X0x1RldUVTNn?oc=5",
+        "https://news.google.com/rss/articles/CBMizgFBVV95cUxQd2JybDkzc0xFUWVkZ3VOVFc5aDZyMEd0RjZUdzFMWF9sWjdOZXRUTm9TSm50ZDIzREhFZGI2SlA1dm9hUmhJUXhNX1RLMG9sc0dlX0NlbkQxaGxLaGNGOGVIN1c1aUtUdVVNMjlKa3NwdXNoa3lkem9OaE5XVXpTeHN2QUlFS2VzX3oxTEM4LWk4STF2eUxJdjQ0MUhuNWNBbmtGOWlRR0Z4OXNfWVl1dWFydzB2Y3NnU0RMSjNrSXNTRVF0UUlYeUtVX05Hdw?oc=5",
+        "https://news.google.com/rss/articles/CBMixgFBVV95cUxPYnpWdjZjQnNXalJsSWE5QWtwQnpJb1B4X0JsQ3d5V1VVTG1sajVoa1JjUnQ2R3VQbEJzbnhMUzgxWHNSd2JPUU03XzZJZ3ZDTk85VERhbV9DdElNeFJzWjk2YUhZNHd5Z29MQUJ6aF9UbVBPSGlhbEw5eFB5b0Zvc2E5VlBEaDU4OHYwbUtLd3ZIVGs1Y0YteHd1Sk9GVFJ6NDlqbTBlcHVsZ01YYnJ5TzRZUmZ2d0RQc3AwZl9PMHE1MFYzUUHSAcsBQVVfeXFMTjJYU0xIT2Vsamg0SW0wSm5SYXoxVnpsMzU1al9TMUNKb0dIeGh3YkJRV0VUUUYyME83N0haZml4UUlDNkZVY0I1V3dIa1B5RndXdFFDS0VDWXAtOUNHOVZobUxwYzJoejJCT3VDajdBR2VkbzdCeG5nZ3Ziend3dnlWZG1KYkp4QUxRcmI2bTdoSklYX2k2ZGhnaWVNeE84aDhDTncxVVpKU0o4SFdLTHZHNXBveUFyUHVDUFZmOVhYWWtRVmpsYy1PZnc?oc=5",
+        "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9XR3hheUN2dTB2Uk5udTZrM1RxdTBnUjZLMm42VGh4bkJiNW9mejdmY2pwdVNVejdBNVlicTVaUWw4LXVvbHpXcWlGZWp5OG9JR2VDZGNTbTA2QWNqVnhUTFFEQVItQQ?oc=5",
+        "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNTWxmSUx4YUkwYUxzWTRuWWQzazJJWXhBb05GMDVuWk5FOWNrei1FTmk2ZVpITWhGbV8tVnE5eGZ1bWJHYzVfb2NISklEckd4WHpFUDk5cFFIVkpQRGMzSDJSb3FONmhBWk9Fd0Yyc2pTUmR1eG0wTV9WOHBYa29Eb0NZcjNsVEUzWTdKZFpKX0Q4SXpDcGpidVdzWlhYMmIwQWhPUW81eF9UcHBmeFJTYXkyMmh0Y2JQaXhwTnIxeGxHaC1DSC1xMmhqU2YtWV9laXF3U00zcGE?oc=5",
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZjY3RFBIZHE0Unc5WWtLVVVmaEFUdWEzZVBQczNqYjN6U0Q2UmlBLXhJTHNzN0xQWVFQdGxRWmY3anlpQkRrcGtiLWpnYkhEa0o1NFpZMHFCNjFZakt6RExjM2ttRF9kSWkyZHZBNkpUM0RJb3dVdTVTMkpqYi1lanJUNFRZTndNZnB3?oc=5",
+        "https://news.google.com/rss/articles/CBMibkFVX3lxTE5GTU5VYmJrN3Bjc3lZNWpiQlhPZU9qaDdkNnN5aE10WmdQYnFudGp6Nk9Ub2VTdzVURG4zV0dMQUpobVlfRi1IVnhMOWpKVVhveUVQcC1WbmkzRGd6bGVkdmluSEVfMXRPLWNhdDFR?oc=5",
+        "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUW92Ul9QR0k4TDZXcTFKNk5mbTdVY2N1MGo3TzhZYjI5TkI1a3QzLVdNRFZEU1FOZ0VicHZNYnJhVUkzWFp6VlVSQ3psSEpPUklEQ3pyZll2cE1QOEVSZHFqTEZ5cmZJeFFQbVZtSUk2N3BZcU4zeUtDT3VneFI0dHR4clo4b0pQSlpSdHhEbjl0U0RKNDF4X2ZIc29LaGlqRmpJ?oc=5"
+      ],
+      "source_names": [
+        "Audacy",
+        "Seoul Economic Daily",
+        "Bernews",
+        "Real Estate NJ",
+        "TAPinto",
+        "6abc Philadelphia",
+        "NJBIZ",
+        "New Jersey Globe"
+      ],
+      "date_found": "2026-09-10T18:02:51.110199+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "33d5735f-e0df-4813-9548-7fce1c42c038",
+      "donor": "Ripple",
+      "recipient": "WCK, Mercy Corps",
+      "recipient_type": "INGO",
+      "amount_text": "$300,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Nepal and Tibet",
+      "status": "new_commitment",
+      "summary": "Ripple has donated $300,000 to support flood relief efforts in Nepal and Tibet, funding meals, water, and sanitation through organizations like WCK and Mercy Corps.",
+      "figure_quote": "$300,000",
+      "assumptions": [
+        "The donation is split between multiple recipients, but the exact allocation is not specified."
+      ],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 5,
+          "points": 3
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcDZWOVN5V2t3LXZrQk1sRl81NGR1dWF5bFJUVjVyOHJwQjZLLWx1QlZCU3Mzem85VVlDMDd1MnNJUVcwUUk1cE5nczFBQUFxTHZOTllqSUpHamlTX000aTIxQS15a0JmMEJnRUp5M3V3bm1lX2RnWGN1bzA1S1dhbnhpcllmeVJocmNBbVVxaFVTdGo2M2lqTU9mckYtWmxpaWlVNkhWR2lIcDNOWGVwZTlGSdIBuAFBVV95cUxQMlQ4NU9mcDB4YjdYaGZmSEo0S3A5eWZDSjRvekJBUHlJd2RVWnI0UGpxRXhmaTFySjZ6LWVPMlkzM0JiVEJTY1V0RzloOWczRFAySlI2cEo2VTYwRDdURXFFc2paUlNfcG5mODg1Tjh1V2V4ZlNXUWNJdE1vRTJYc21Ndk9CSVFXcDFDYzRTeGctU2dRYjNzMThsUXhfV2E5VHcyRk1KTTl0SnhRU2FBQXZuem5QWHdX?oc=5",
+        "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9PM3h3WkFGUWZiOFFfTFNpbEpPTVZuMm5MRnVST3dyX2JmSXdKTUJYeF8zUENBNlRQa3NjNWNYYWlTN2Q0QXJJd1B1bXdQaEV2d01uUi13?oc=5",
+        "https://news.google.com/rss/articles/CBMilgFBVV95cUxQbjQyTDBxbF83dFlOR2g2RElibE1sRTJtOE8wck1VQzJWOWt6RUhzbE92Tlg4d2JpS0tGNFlmQ1I0aEFzTGVKdHVucUpiVy1hU3dEN01IVFNqMGpvLTJIQktlWGZ3M2hiRmhHXzJINWc1VE5iTjhaWmczenRXaXpHdUpoZUpOQUhyLVFmSDRRbHl2RVFKSEE?oc=5",
+        "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMXkzVG9QLUxSN0I0NGwwSXJqRHJjZDVHNFN3bjNleFU3S3l2NFVzYzUwS0NqcVVRNjNEZ1NXOTBmMHhBNFRuUXRZN0t4dmlYeVV1STU2WDkzMzAwV0tqcG11NEIwZGVCVnJQRHhmWl96Y2dHLXl1RlJONkJQS2pLNHJuM0NVSzh3SXlpWEtlcEVzOVE0RGRyY3FlSHFRRUJf?oc=5",
+        "https://news.google.com/rss/articles/CBMiekFVX3lxTE90NzZuZlJQejZUQUhIWVdzdWFtSk9vRHZtQks4SmFydy1CYWpHMzN4Z2dveHVWMmdvRGFHY1ExZUttUGhZMGZ3aDgyZDEwcUU4MVJvV0V6SWF0ZEZOay1kbGRJS1o4dDVZN1kyeGZRVnBxTXZVOWRFVWhn?oc=5",
+        "https://news.google.com/rss/articles/CBMifEFVX3lxTE44eGhadTFRTllrMzRSb1NtTXp4M1JONXNYMTVEMkJhOXM0dXRQTXQyRGhSc1JoaHg5c1Z6U3pENmFXa2c1cEREM19HUlBWbVdkUVl5YnFZS01VdmlCQl9HTk5DLTBKUTNQTXdUZUcxN1ZQazhrX08xeENvV1Q?oc=5",
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxOMU1jRlhDUkpGNEVRSHFJNFotbzhyVHc0RVpYdDYxdjNsNE4tdjYwcGZKVDdBbTlXYTN3b1Nsc2RXYXozTDloOVB5T1oweHFzaFlUVU8wUzVVdlFNejZBT2Rpc1FPZXBjMlZqcU1mSDZQUmprRmlLNmJ3Y2wxc0h6ZVFRVGFTOUhzTFpmMUVn?oc=5",
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPek5kTkhUUE16T2dMWW8yRi1UVk9FSklNR3BaOHJIQi1LYzhveTV6Qmdad0FIU2lDb2pPaUpGNXk2QUtsY0YwTV9LTWdxbjgyTVhxaHI4OVVMRmhRQ2MycmIybUFRX1pVb1lVNWRCbmprUnpkbUwzSml0X2pxX21pY2JnZnNNRDZHR2oyeWVkeDRaUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMipgFBVV95cUxPU2RFM1hLTVdNakJpN2kwaDluV084RjdUYmo5ZHBnRUZMbjZETkRZdG0tRk03Vi1TbkVjdU9kRzZBbllIQm9LajdzZ29Td2Z4RGxmdXd6RW5CN0cxdjFHMUVPMTVyVVhyMWR2U1g4SXJ5dkJYdnlWanJfVUs0Uk5fOUxtUktmU3dlUEtrRzQ4QzNYTUlJRDRXWUdjUldWb1FsdjJRSFJn?oc=5",
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxQclctTFU1bXFqTElZWFhaTmttWlotZmY1SjNZWlFEdTZ4Q3pxV2REZV9WRTBJREYxOHl1X3l3emE5UTBUY0c3emVJQnRWZWxELWxnSVZYVkp3QWg1bmtPTjNhOWZwOG1UQkRxTVl6WEJPVTNOWUFuTGY1d0U2dFp3cldR?oc=5"
+      ],
+      "source_names": [
+        "Cryptonews.net",
+        "Hokanews",
+        "CryptoNinjas",
+        "Gizmochina",
+        "Pluang"
+      ],
+      "date_found": "2026-09-10T18:03:17.318766+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "6fc6babc-acf5-4434-8963-d750b00b7a27",
+      "donor": "Lee Know",
+      "recipient": "Nepal flood relief",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "100 million won",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Nepal",
+      "status": "new_commitment",
+      "summary": "Lee Know, a member of the K-pop group Stray Kids, donated 100 million won to support Nepal flood relief efforts.",
+      "figure_quote": "100 million won",
+      "assumptions": [
+        "The exact nonprofit organization receiving the funds is not specified in the source texts."
+      ],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 26,
+          "points": 3
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1ibzlqbXFYUTdnUklEaEtQUUxlRFVKSF9SRHFablVKTFdQM2dyNjFyYUVKQnhEWEUzSVVmdTZNanZkN0cyalNiQjBxY3BxY1RUNE9sNmh5RQ?oc=5",
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMXNHNUdmTUdvSV94ZmUyUjItdG1kY1FxckY5VDZDV20wSllwSzBtUU8yWWpxMWxPdjAxSnNTbnk0akdpOFB2WnFHVzF0VEloOXFTcU40YW8xRkZ6VU0tdDFXaUk2dktwZ0w5ejdyajBUUE9FWWVqS2dZNVFpa1BXUnp1Ym9xbXZBUExWOXdyOWllS0pFVUszTmJvRWVuTjZ3dlpFb3pvUUJrQVMwTkJ3NS1uYlHSAboBQVVfeXFMTVFOWDNteGZoRTVOZ3g1Tl9lQ1pld3ZUZkZ2MVU3djd3UjlOVkdlNjk0SS1zVTBUWVBJSWs5cjBxdlh4c3p1SkdiLWREbGNiYXB3Z0FPeFBNYVZyNHBEYkRKYW5yQkpVaHF1RHpZb0cyTm01NmM0TDN2VHd5WV9NNzE4bHROektFRjVGSDFpREdjZll4NkoyMEdBVjRTR3g4X2JIbmRIWDFudDZEcDJSVDZUWElINUZxNG9n?oc=5",
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxONEs0ZnJFVXBKU0RpZVB6QW5FZk1uOGNORzJzaXJxdGZKeE5Da3VWcTNxbUljdm5odUJVV0FxNHdudkp1TUFkMWQyVU43VGRhWnhGUXZXS3pNSkc2cWtuVzZtYVA0eG9QX3J4NG9oeHh2emgzeEZpV0xoYWRSVzA5LTlIMkdRc3NmMXl4Y093?oc=5",
+        "https://news.google.com/rss/articles/CBMiwgFBVV95cUxORHBTVzNUaS1tdTZ6WnkxWkM4cjkwVXkyOWs0MWlscmt6NVNHVi00V1JXczJ6TGxFYkpCSW1XQlhtcU9DX2VWaFY1dldoZEJSa0dNSlRCZjlqd0VQbjJxNU9TZmdBdURhelZjRzZlOFdKRGN1a000Y21rd0VObENUSmQ3MnFjQVViV0dHU3Vsa1V5MUE3dTlpcWxXRkNUZlVyUGZEeEItQS1LeHZyNHZjNm5oLWxORVBkRmZFbEdqeEl0QQ?oc=5",
+        "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZU1WYXF2bWsyYkZRdk5rRzR3Tk41NEZ5cGtQdkZ4M2FsYjVnemFqLThrMmlKOVJNWnNuekJkQTBXaTN6SFZrSXNjSV9LbHVpRGJSZkU4SWJTNUdnWjJSd2p2aWRac2xiZmpZY2NoMWxPaGVsZzluVWJwOEVhbGc4MXZWWXNBeVljMWRQLXM2eUpIYzYzMzlhMGlfS1loVXh2NkdFLTgtVkJCTlRQcy1XQg?oc=5",
+        "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOWlJlOW1sNlBHSnRkMDE0cndFQUFZN0RvSDF2cGoyVkc1c2dwRWk0eUozYTA0SjJMWHZabmg1SlMtdnpzUE9KMXh5NVhtVVZXbXZpQ2FXOWxLb05OUFF4eHpsc3lvcDhYYzVqTXUwQV9iMkhBOC12c3BPMW52c1hpOHlRX3pXQ1ZFN2tnY1dLc1RYaFR6V3Y2Y1FFX1VrUHpyTHhhTFloRVhuYkZheVpsRUM2cFVKcGRsQzdMVWl3RlVoSVE5SmZwQ2JqS3VvbjFMRVA3NXB3azlpQlNWVF9tLTdra9IB6AFBVV95cUxNeUZYNVROdXZtS2M1U0Y5RmZWTnA4SmFXLXdzNllmU3BnRFMwQVdUUDZvOXQxMHJybV9CNzFNcWtOSXUtdHJyMnhnNThQY3RHRVBoVDVYVDVHY0FiQ3h2NDBLbzJOWk9HNGhDb0tfQnFYWHJVaWY0MURiNGJ1U0lrNjY0dUZuV2ZvcHl6Rlh0dmlOcU93OFBjRlV6bERLcnVkcW9JRl9CN21pNkdaXzhEa3czYVl0NUNWelFINHZpdlFXUXNLUzAxWGRXSGZndHBkV0pKNnlBQ2w2a0tEZ0trQXo1U2hpNUVu?oc=5",
+        "https://news.google.com/rss/articles/CBMiugFBVV95cUxPT1BpaGpucXF5OTBNYmtHNnh5a0dTdkhuSkgzRUVGOUFfRHpQeGdGUFNpeTVaaERGMkVFTGM1dVpxVHVEYlFlcHMyLUxvSnVVTENuRGRzTHZSb1BMZUw5dzNPaHg3dWpuTmFCbDQ5WjFfN1hrT1lBVW1hLUpxdGxsQmJmVXZiaU9PQUJXS1NRLS0yd05jZHZINUFtM01vbXdCSjd2dU1hQU9WUTlYSFhLY2pwRG1kbXA3NXfSAcoBQVVfeXFMTUllNDRNZHJjN3BxaGZHSFpxMFNOeTNHV0VZU3Vham5Tc19hcmgwdXpFOG5qTFNRTUhzM0JHOENLXzc3dEZZcDI3UV9vZ01jN0pfd2dKZFhMRVpneWhoWkhsTzFrVzdFdXJHYk9BLU5QWDFfSjN5MHpLaEJxVGxQal9mQ0RDS3E0dWlUOU1DaDVXb0pvZEI5Rk9tWXRSdjlEakRYMzE5QXVEaXdSSVlxZWpwRnpUNUVZRlBtQm9tdmNqR3lOUTRnRWQzUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1XVFpWYUZrM0lhaFI0eENsRElfWjlmcXROX3VtZnRwQWFiZ2FmMGhCSHVqdE9JbnBOZ3pKUksyT0FMb2V0NHdIR0lWREhRZlhVTFE?oc=5",
+        "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMVZpYUQ3Z3ZJdzM4YlFyY1VwWk9XMWRRWXNNbEdXVkhVWnBtdjdhcldzREQwTDRHcHA4bDFrODZjNENkSUpwZzNxYkdpV0kyUGdoRTMzTWY1eTFqVmhfUlFETDZtbXBuMER6NFRJNl9BTGpnSHIzUFREc2JQYjU1UVVWSQ?oc=5",
+        "https://news.google.com/rss/articles/CBMid0FVX3lxTFB5RndkdnlVWXN0QlZKbFpURkRybnJScmRZOVBrQ1VOS1Zjd2JqYU91X0dCaFpvaXU2NmYzNXB2VHRiOWZMVy1zTUs0Z1lzTG55NlE1X2RuZC1fV0lkT2lab0VDc3ptaHpxVFJWZHZoSjlTU2Y0MDFz?oc=5",
+        "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9LZEdQRWVnX0o1Nmx0RmlUOEdXQmZzdkRlY3NtOXJxams4RUFrblIxalRpYmJTUHZLOVQ4Sk1tZXBIeW5XcWlRbHJ5UkdpdWFUOVVQR3lPSQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdU51NDJ4R281blVYWWd4ZmVfeF81RnlTeFVoamdLRVI0YTNQb1Q3RHY3VmJoTkY0bTFaOWhnV1pMaG1HbnUxUzBOeFhPWUw3X05GSjI5VGtUX3QtVE1YdkFGYlF6bzJBeG5TVjh3dThaSGxMNDNrVFJBN1pmcTlFTy1XYy1zdUJSUWpxWENoSDhjdVVVWXBlb2tJZk5mT0w1dHBTWGxWUmpnZDFFa09PTUtpWkZmeFBZcGJiMjF5NnDSAc4BQVVfeXFMTzVZZW5Ed0J1YmhWb2IzVlluMTA3U2FnTnpuUGpUbE5ETFlmSTJLa2U2ZXNzOElJYWhHRXhvV19nOW5Wc0NReU5PNzBVQ2ZTZUlFV0ZrZzV4YzFNRElJS3gwd2VybVc5UkpxRVJncmFfM2t4WGpGME00aEFwVEZhUTU5R1VhbFg0U3MweEhvcWVJS0Nobk1scDdXa1k4Y2ZTT3VzVjFiWEY2cHF0d09RbmlHWlhpTlZQOWRWVXJRdHpMNGFEM2Y3VHBSMUZDQ2c?oc=5",
+        "https://news.google.com/rss/articles/CBMi4gJBVV95cUxQaXMxNkY0bjlsX2xDLVhhUzFGUkpDNWEwam1DcmF5VzBUYjNYc2tUdFRCYVlHZURsQTVqY2lOQWp5UzZJZWgzaVQtZUtNQlhCbTlfMWlRSUd6ZjU4YzJHZGFXaVg4SENUQnVSamtILV9QMEFlZE5wT0s0RUVVTEhoejFCRnEzdS1XTHRRdkJ2RWRsYUJNRGM1RXVsc2hqTHpCanh4aWo0cTVwT2ZYX3hZRExMQ1lMRDFKZ0xJMVJmcjVZY29GZ01BT0hMeG1HQzRTYzBkVkZmUUwzRTYxZ0xtSkJlV2JaZUwxcW5adC0wWExOdndXcGlra2s0Q01zNjR4NjZ2YUFzUUVwZnBMdHdXSnE1eXVuS3hYTGxQdEZTYXBWUW5LSElwLU9ERy01bTVUcnJuOUVMeUlhakcxdlhkcnZmRlZEd28tY2YyaFlmc2xIdG5NSTlZR1ZORG9yT29NQWfSAecCQVVfeXFMT1RCdmJhd0lTaEdOcVY5OHIxT0pFQjQtMU1XMmFCX2s3cllDZmJHSUQyTm9sUzQ4TGdDSWRya2wzWEhJY2doeXVVU2pXVTRPam51TFJiQUpuT2lSOWwyaTVUVlpUcDNLeWFVeUJuWjJRS1R5bHFVTm9BREtpczR4bE8zcVF1ajBHZkFjV2oyUWV2UlJJT0FGTGp4emJ0VU5nRmNHUFUzWXRMZmdEdDczVUlTa2E4T2QyLXlxbnhSMEtybXYxUEdkM2YwdXc3NmNWMVl3a3ROVlYtS29IWjRuVW42aWZockZfYThpNGh6eVZRNUh0X1RRRTg3c1NobjREOHBiX1Q5VlpuQUdYYUVLRmg4MWRsajZVVi0xRzNtdEctU0RNWm1waDlLc2RhcVVmaW5IV2k0NEZKSTZVNExYMFFkUU81WDk5cGEyZERtdWxicmtVYzhsWGg0RzJoVXBMT09UOWtJTnc?oc=5",
+        "https://news.google.com/rss/articles/CBMigAJBVV95cUxOVENEdFVfOGxJalJFMnFYTTRRTkN1emlhUTg4LWo5RmlkbXlrQmRva1c5Q0lOamk0Yk9nbVcxZFl3Z01IZUVORE00UkQ3VGtGM1RTLWF3R3hHdk9YR0U5c21CZWltVG9VUkU2YW5sVjFCT0l1VUx2RnhUREF3bE5wWXZzV0RxY3I5RVBITGhyTnhuNm9YdHFOLTZPMzFucXZLZHhCTWhrcjZRZkRZREhnbW9aWHVsMGxRclptSGNVRGJ6bU9tR0ZDeDdfVUpaazZWZEJVVmhGNkg1RGYzdC1KSHdyYmJpQU41d0RzRjY2Tm9wSVg4a2x2TlNDcXBQenFF0gGGAkFVX3lxTE94SnhRcG0wcjlTdFZ0WTVVUWJJbDBIUWdhSnowTXo0azFjRzlUTVVjR01UQ25SaW9waWQ0UDY1dUx4UTdndGJqQlE0OWhtMG5RbDNQdjVXQlNoclhTa0NtNnZZWGUzbXdybkw1a2RDUlBKbDdsdTVwdUZ2eHJPbWxvMlFWeGtsTk5MeHBJSWtrMjF0SlVIVjk4OWtqUWQ3X0lCWEUzUmlKMU5adlo1ekN2OTB5RWhsckpaSDNLUkFVTnhRcG5Oa2puYnhYQ1gwN3RYX3FfQUM2M0FobXg3UmR2ZUE5Q2M2QmxmTTV2MVMyNTUzV3h5RzNIbUpjaGl3SWs4RVdiS3c?oc=5",
+        "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTW1ITk1sR3FRNDJBRXhTVlZidHlFZmV0blJJTlhaVFhLbFVhVk9VczkwcDRENUlEbDJKclF0ajBlaEFkdU0zYmxYSDhOYjFqNjNEUl9NWl9mdW9mLVplbDlxZzFjQmNaX015cHVzd0ZBZGE4dE42T3ZENlNnR05ENGlhYm9aN20xMU5xSlM5Mjgta0tRT0lVelQ0YmhFNDNZUlJWTVdGX05fOHBSeVgwMi1aUHA3cDVVOFNYZC15c1c1dzA?oc=5",
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxPTGtPMFZjWGQ1Q2VidmZoMzZGb0NIQTRRMG9JRUg3NlRubDFuYTJBQlBLNE94Q01VeFZtcDV5QXJmNk15ZUFGS1otaW1QcTc2blk5ZWZ1SjRlQVBsZDMwUGFfdVV5aTU3cUg5b1ZCSmI0NUNNV3RZR2lfdEVESjVkX2JjUUhJelBIVTg0dGtn?oc=5",
+        "https://news.google.com/rss/articles/CBMiVEFVX3lxTE84M0FGU3B5WG5IOG1nY3U3LUUzUzJIYnFaVjctdl9ocEdydFBPVF9rRWlYV3hSSEFIUDViU0RIdS1IZWFGSGlKdzVwTHJleWN5QjBXdg?oc=5",
+        "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBnQ0o0cE13N2RjSkFMN1ppV1daS1Vwd3FpWDJpQkJKWG8tc0NKbFZvQndhWmNXZ1ZTczJGbVg0QUM3Q25JbXNNVWo4eVRSelBHRXc?oc=5",
+        "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9DMzJ3N3N1R3dBRnlHVVJEQmZVaGZmUWV2T1Y2eFhNeE5vbUxwbGlHb1Rha3lxRUtxOVA4YWhqLXhRN25TVkl4Vm53OWJzdEwzVlNCb3hkRQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRFZsV3F4Y2NHTWtaajZqdFlOUkp3M0dtbko2NDQwM3Y3akhKclFMeWdsRHI4Ny16Wi1rZHFjZG51QXVKRnNHRm1sbjR5TUpvTGhseWxnVnE2YTd5MTlrUmV3eHVFbE80blR1TVhnblZNR1lNNFFGV1ZHdHNXVF9SM2hyOVVoMWVj0gGcAUFVX3lxTE1NZHE5VWhGOGpmYkNGWm1FNFVXYUJkVjJVZkdHR1ZKU0hsbWFaVHh5bWFHemF1V3Nyd0dBNHYxdmVaWi1UWGdhTTlfbHgtOTBqVTJUY016VnZmZXM4SFJXX0l3WW9jNUo3dkZCSmpwV0pnWlpYaHV3QzVyY29WVWRndzZOaEdVb2JhZlUyUFM3MTJ4SDFGZVNneDNrMA?oc=5",
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE5EcVoydDdfUmlJQVlHNENVZ04xZXMzdEhUbTBhVHlTMlEwTWwyeWJPbE1sUTdFOEdTdGJZV2tvUTdRZ2pBR2hjRzlHV2ZaWG12dkgtNGJnR2VYUmZVRVhYam1YY09pM0MzTEZaM1g5TGdRWVVsSmZ4RA?oc=5",
+        "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOR0xWUklOWmJVNmNkY3lzM2VBOXFDTll0eFluOWdRUHR2cGhyTWxDQWpFMVBHUTdjT3JQY3VSLWNEekFlOXBtbkFBTjRRZWNVcU82U1Mtd2ZWU2p3bU1Zdi1ReWk5VnlDT0FHSWJoS3JySDBZakd1OWFLUFhaQ3pabmdna2hDNHowcDZTN2RVS0dxS3hHdlFFY2hEQ3JxYmxid2tzcllTQXp5Z08zT1M2aEhnb3ppX3FxVHdCMWN1SmJpYjR0SnhOOGhUVEtEb1ljUWlmQlQyWjVmbzN1UjcwLXdRaEptbEFxak9LdGZZSWdkMGPSAfgBQVVfeXFMTjNLcFRYN3BMMlB3MjdPUEJXZWxNR2FCQzlndkYzSU5DZldmUFViMTJOSEM3aE1QSmFiNy1KZzZLQzNjclZFdTlKcjFTbjF0TEN3bzdHbUFlemdnRzRNY0cwZng2QXU1dHZHSDNJN2haYjVEbEFPTmIzVUhEa0FudnpXbHpNQVlNNmxMMjZMMjhVQUJGUG5TTEV6QWF0RENwTWs1eWx1T3JYd0hIYlp5VXdpSXY1SGVnODJXZ0t0WDl2WTl5YkJ1bHVKWjkwTnRnNDlTRjhlM09wT3AwMkhkNEVGSUx3SjR2a3lhVzBiMV9EMnJUOE82Rlk?oc=5",
+        "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQa0tRLVdrWnQ3QmpOX2hISEFOWF83SlQxeDRmc212d190RHdHTHlVM25qWnM3V3hTanI2YkEwUnRpNEVuenlpYUo5b2hJZUFiWkh1c0tjVjZrM2xsTkpHcmY3dkF6SDMtbTlabDdZNEp2SVZCOFdjX2hQVUFRcjRHd3BIX01YY1lDZ2pOS2tnWVBoVkxobkkwek9nRzlNUjNnc2Z0VVM4N0pQV2xjYk5jS1NzVXEwcThDbzlrdmY0TDFpNEXSAcgBQVVfeXFMT2lsMzBEN3RDdkVNZ3NiS3lVcUljclRPeE50R05Fdko3VVZhQWVTUUlWTDlNeHVLOHNsaE5JNUtHamJTVXMzRXlvYVhBdWlCbUt2by15REU1QldSb0hhU2M5RUd3ckh5V1VMSHhwbmJrNXBZZEZfQ1VrOHRtN3hwSjJvY2JxV0lYSEd4MnFheHYxXy1yY2JkNWpjOTJzNWVkS3VULXo1WHhpWTZid3hpVDJENVhRa1VoaHdBVUpYRXc5NS1vN1FFdkU?oc=5",
+        "https://news.google.com/rss/articles/CBMiogFBVV95cUxPaW5qNnFHdTlkRUdXNFF0VWxhaTZ2Sy0waFpLbldvdVhDOWdSZC1jbGM5OWdWM0lKdEpRbEZLbU9TbVlKVm45SEhGLUVjdG5Na1h0bTMtRVFqaF9ydWxzWllyU244Z29URmFoYzVQS0hIQnFZaXFKN3l0dDNTOU9oMDlncDV6T3BtRW1GaVJLNzczRmcxVHF4RG1nWVFoMmpoSUE?oc=5",
+        "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNaVRCbmNaUndCR2ZMaUlnc0ZCVXJ3YnU2ekNobm84TFlBZ2RwTjJYWUQzemI1UldDV2ZsVmVYaUdLbGJQVmNKQXdaMnNiM0dPTHVQUUNSa09RSVIzNXdPdFktMHBPdXctNWplOVBycUtmUUhoRWxGbFhiRS1KbEtQbWdvV2ZYRkl0MEQwbkFWVGZnZDY0ZXU5ZlppQ3NmRlpTM3F5MEhiYzhBMEhURnpyOVRENmlEbDRiYTlB0gHIAUFVX3lxTE1YdHVLMEE2X3R1WnJGU3pOV2k3VkdWUnZGbTJVNDgzRnM2bDQ0LVJodkV1NC1kZWFORko5T2tjM2RnS2dGQkV4OXRZSXgyXzh4MlE3V2lYSkx0RlJ0QjNTWHRzYzc5djFRX20xT284WDQ2VFB3RFFqVUlQMHZtYkdLUlh5UTZKZlFqSHI3OC1JQlk5VVdRdE5WMDhtQ2Q3aEt1S0JfQzFhdFY3OVRkZWxDQ3IyMTR5Uk1BcVBHQUNKLThFLXF6QVJS?oc=5",
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxPNHFnakFHLVdEMm1PUEVUZUdJd3hEcUZMNnUxRVJ0anpFb0tRWENkQW5NZTd3UTZTOWNfRUZ3bE8yelFINF8waU1rN0tHcWRRdWdPN0FHSE9QZ29pMGRSOU1uZXBkVmhKejhvaDdROUdIRU85YmJDMGFGOWI2X1djYXJvUHVDblNqZDFPaFYtWkNVSTg?oc=5",
+        "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOZGg0QVFSQjJzV0lRcUswM2pWeGExdEVkczdrTHFxd0g3VlhnQnpIbDNJTlB6UHpTVFRMS3IxZWNzVGw4dnhKZXY1MGtSTDRPTFNxNXFxdnpXVXdJaEFBQVhTTWlOa01pelg5S0hfc3c4WVJRSloxZlBNT2N6T2ozTkNPQ3d5WElzb3pmTzItZGc2M2I0R25tM1pCV0tBZnpmYkJhaDZEU1ZhZXVfQkRFU0FDNG92cXludjRFajcwU0Zrd0ctTXc4QWZicmdLMFFDN1Y3VEVGcS1zcWw0T3lvVEFnekFxQVJPTi0zejJXbms0TVgzMURj0gH8AUFVX3lxTFBTMDIxd3AtSTdNcVhtaW02XzBwRGJ1VTNnYTRQQ1pwX19tVHBaeXJacjdkd2JlbzVYNkNrd21WeDlwdldyRFVUVThxV21ORzNPd3pDNDdlY1plSHF4WTFaRTlvWHV2aExqa0R6Zjl1RWRSWE94cDhvUzhCT3dWeWZzVG9mMm9YcksxTFJDenprSjhKemZjMUFMSmZsUFR4eTh6Y3Y2eS13MlI2TmNWY0o5VVB4RXJKcFBZYUdUWGRxQ291alZrN2xMNzNMd0sxT0syLXQzRWhYNkFTSk9kdERQUHBFTlo4b1puSG8tQ0Q1TXVoWDVldWJTN3ptRg?oc=5",
+        "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPZGlQcXJEQUJsbmpSQVBVdVFTRkpaYjg1bF9qVVJxT25oaVpiMWZJQlg0aFJnbUpNamNGRFdDOUtlTjYzLWtZX3RNMTlCME5XZDVaUHNZVmo5MWJjd2QxT1BrWXU4Z1NTWXR5YXhWM04xWDJhOFk1c3RpenUxTHVicXg2UW44dUw4eUlFT0ZGZ3I4ZFZabGlxWldmVktrUUdzU0J1b18zNEJaUnBvQk5fQzcxWkxMMWxIYkxOZWZCeVd2QWNBaV9SX1poWnJvandBU1hRWVpWcURUWkw2bkRmazYybGo4ZklHYktGMjVBQ3VEWndHdVpz0gH8AUFVX3lxTFBEQzRPMThLMktaOGxGRDRYWDAxcV9GVklMRFBIdmhYdXZzNlJDRGRnbzhvc09ZQTQtVmFIRWYxZERkU0FYRE5ld01rWl81MVBkdEhxRDkxblptRng4dWp4RDZTaEVxMGdFWktGX09iX2g4amNVZlBzb3JoWS1vc29uMVlHU25PTGNRbndIa1ZzX2lpNkZxa3NaNW5ZMXl3VU00dlNuUV9UYUMxY2g4SWRfYW9QaWZtTmlxT2RNMEtXelQ1cHh1aHcyQVlQcGtfdDBzbHpiN3FtTVNKdHc3RU4yeTFvRHZ3eHh6SzVYckltRGlZUzlwSUF4ZDF5WA?oc=5",
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOU0dMTEo5aWdrX1lRenhMdThDSmp3MjFiY2NiQTRhOGIyaVROb1hGV1lPUmE5OWhYY3Q0YU04aVBoVE5jN2w1WWJKVUQxQm9MdlFOMzE0LUNLYmc3M1hMcUx1dVBuYUdpR0k1cTBmbEh6bUYteUduYkd5Z19oSElTQjhQRlBnN0Jodmp1dU9WYnJJc3ZFVEc3NnBBUk1ZY0xhMG84Z3Z4WEZFUWkxX25lNndIRE0wVm5Q0gG-AUFVX3lxTE9Ra1NWYlRPWEEwLVJkdktTOGhXQm90WmptNGVVNEEyUW5Sd1h1NHhZcEpVaW45N2Z4ekdDQUxiRkZkd3hMVXJhU1h4Y2lJVzIwZDNUWXlPSGNnYlVrWDhsWUl4dndKVUhxbE1TQXNxcWlodF9LMVRTMFJkYVNsRzRka2FnN2ptYjFydmlJLVJ2d3ZnZG1zN3RldU54anhiUnAwSW1vOVljZEJvcmpna2N3UGplN0h5TjQ3QnV0OUE?oc=5",
+        "https://news.google.com/rss/articles/CBMizAFBVV95cUxPWjFrbG1qcm1LUEVyclNzZFdCc0hPMWtUNkluT3NVMndqeEN4cVYybGw2NXdXUko1RnFjd0dqejZ1TVQwSm1nbzhnZTl6Uml5NUl4VmN3dTd2M2hyb1dkQzE3WE1KM0lCdWNSU0paU3FmbDZmbXZTVmxvYVcydTVyRFU5NGd2Z1Jqck5mY1Y4UG0yTGpHYzY5TXlOY19ESFgxMEgxSllsV1RWN2cwV1ZfS21tSU1tSjBCdlliYUMzd2VfdEZaR2tTVHZsQXk?oc=5",
+        "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSHpUS3YtWUEybWhicm5fbjU1RzczcEFSRzJFblQ1a3JwNVpNWGNUU0VhMl9WUTU3ZEJ3Yk9DdWxHZnZBVEhxTTBFcFhXUWlscVdSb2JCM3B1NFFSQ2pXOFJlVE1fd0M3WDlPdU50ZTY3czczOEhjRHROUS10OEZ0cW9uNXJrb09kMGJtaFA1dXFjVkYtUVJMUXVZODF2MWM1ejZfOEhwd0QxdkU?oc=5"
+      ],
+      "source_names": [
+        "starnewskorea.com",
+        "The Straits Times",
+        "Outlook India",
+        "매일경제",
+        "chosun.com",
+        "Gulf News",
+        "streamlinefeed.co.ke",
+        "The Daily Jagran",
+        "Times Now",
+        "Korea JoongAng Daily",
+        "UA.NEWS",
+        "OtakuKart",
+        "India.com",
+        "english.mathrubhumi.com",
+        "indulgexpress.com",
+        "WION",
+        "ABP Live English",
+        "The Korea Times",
+        "스포츠조선",
+        "Allkpop",
+        "biz.chosun.com",
+        "The Times of India",
+        "The Statesman",
+        "The Korea Herald",
+        "헤럴드경제",
+        "Moneycontrol.com"
+      ],
+      "date_found": "2026-09-10T18:03:24.526582+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "e38f829b-72da-4e15-8deb-c8f37b9962e4",
+      "donor": "Darwin Forever",
+      "recipient": "SPA Monaco",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "renewed_partnership",
+      "summary": "Darwin Forever has renewed its partnership with SPA Monaco to support shelter animals.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 7,
+          "points": 3
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxORGlOd3hQOEFyRGlRd1hRRG1yT2pUYXg0TWdBM1ZDSHNfZm1YTGhtQ1poSy0wMGJOVG9vZ0JHemg0ZTlkcnd6aEJ3c2hvM2NTX19QT2JLRWpkdy05TVN6TDhuQ2FBdnhSUmNpTkhWTE1tcFprSU1EZUNiMDJobnRiWlh5emczZDAzT1gwMmF4eWhSa0U?oc=5",
+        "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5USDkyT3MxZXo3Unc2ZURBWkQwUjQxMzhPQXRPaHJHUDFfMzk5UUVTMFhHZGhfOXJVRm44TWdpbGVzdnJtMFRfUDBlNzBrY3NmV0lwUkN4QVVKMWFuQm00?oc=5",
+        "https://news.google.com/rss/articles/CBMigAFBVV95cUxPdUVORURkZUM0Ri1VQlFJMGw4V0RWYURKNVdrT0ZaWkI1OEhoME5yTVcwelh3S3ZxWU10MUNaenJLZDVxVFMwbzMtTlhoTm5LRmZrVkpsRS1XNFVScXdxQkFkcFNnME44NDJwc0J6ejd3bVM1M2QwSEpqQWtjRTdGRA?oc=5",
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxPUmw4RUFxc0xSekJVTUFpT3ZOVDkyZG9XbEg2WExsbzAzR0ltcFpHdDBXVC05SDZpVERvSXEzOU5nelZVWENFUU1jbllPLWEwMWpHVVBPQUt0ckJuN0t2Q3BQWUV4bjlzUGU2MUZES0d4SWpQUS1KczhfR3B2QlAzUjhxamxXRGdfZjFBM0Y0a2pFZmM?oc=5",
+        "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPc0lENVI3M2E4YnlCYThlU2c4djY3SGZQTVBSTUZLMElUcFZQMzVsNi1JcE5ob3FMMDhLeDBJY2dtXzYxeHFCdDRxWnZPWWxxUW9FTFBEMHAzNkp2ek54eWU4eTNhZnZyRVR1MkphcEJEWlBKN3VpM0hTU25XV04zVjA4QWZ1MV83bk5pd243THlsd0NwUi1TU1B0UDBXUE53Tks0enpNQWItbnhaQW1jVEFlcjRhNnRRQUlEMGIzY29XUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMivAFBVV95cUxPbUt3TFdQNHN5Y1R0clNIWFdWWGg2V2hrMmVHYmV2alA5SExzOTJGTWJvTC1Id0dEb0prbElwai1ydWdrQkdla0pHenVfM1BnTEYtTlktNTYwN2tUVlpaNjdFb0lNUGYzekNMbExsRDIzejNBczdNekdqaTlkQ3ZqV1pJN3VwaDBuNmpjTTFhZjFZOGVPWE5Hd2Fsd3F0ckFURDA2T0VKMGhaMDF6MFg5QTZHV1p1R0xPMHNzTA?oc=5",
+        "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPcVZrbWdKQlFnYXowT0tRUm5OanQyU1MtMXF2d3M5aWI0enhYMy1IdDZaUk4xak91WlpxVG1FbmNpY01UcjVXbjNsUXA2NWJjWGwyNlk0cXBVa3dtdW1VcnB6MWJma0kyT3ZqX29DT1lydjBtYzhuQlJUYU5YUWotc0JUWHFVakc4RTNmSXRhajBLRG80akZYb2Vsb0RhQzJyR0RBYnY1RHgyUlNmaGk5RV9aWnMwdWpxVXVPNUl5bXcyTW82dVoxYi05Tm5BWnM5ejBpaldFOA?oc=5"
+      ],
+      "source_names": [
+        "Direct Selling News",
+        "The Intermediary",
+        "Team Forces",
+        "Norwich City Football Club",
+        "Nice-Matin",
+        "وكالة الانباء الاردنية",
+        "St Vincent Times"
+      ],
+      "date_found": "2026-09-10T18:04:28.834729+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "9eb5f7a9-a1f0-453e-b791-615439134087",
+      "donor": "Arvest Foundation",
+      "recipient": "Elder Care",
+      "recipient_type": "INGO",
+      "amount_text": "$6,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "unclear",
+      "summary": "Arvest Foundation donated $6,000 to Elder Care in Bartlesville.",
+      "figure_quote": "$6K",
+      "assumptions": [],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOZUJVSTF3LTlMZmNKQkpNRmdPWmkyNXZ1TEozZlg5a0h0WUxad3VWbEdINUhHeHBJdjNZbTdOZHZUWDFtY3JfREVabXBIQjlBU0NYLUV6VzBaVXhJbWNjT21kbVJ6VHRPNFVlQmsxR3NCcnJjTUNCUjJNQXhaOHFUbXc5SVBnOUFjOUxycW5kOUViUFBBMHpBRngwdmxFWG53R19FMzNjenU5aFJDc1gxR1V3U3VYOTNTS1BoYUMxZ1pKOVF4VDNFMUUtUkdxMlRHWHdlY21uTHFOSHJSLWRXeW5nMkI3dw?oc=5",
+        "https://news.google.com/rss/articles/CBMijwFBVV95cUxQLUNLUUFOZkxEeGdnTW52cnJKbkNXTW5TSjE5OE1mVkgzMWI3Y1pNUE9qMDdCRlVCU3o0RVp0WWtPQzVkc0o3a1hfUXlodzdrUGE1RFZIMHhaTjZFSVZiREhTVEtXZnJGZnFzZF91T2ZBWWwyZHJNZ1Y3bGY1QUVUMjVVMHBrZS1QN2ZMenhiVdIBjwFBVV95cUxQLUNLUUFOZkxEeGdnTW52cnJKbkNXTW5TSjE5OE1mVkgzMWI3Y1pNUE9qMDdCRlVCU3o0RVp0WWtPQzVkc0o3a1hfUXlodzdrUGE1RFZIMHhaTjZFSVZiREhTVEtXZnJGZnFzZF91T2ZBWWwyZHJNZ1Y3bGY1QUVUMjVVMHBrZS1QN2ZMenhiVQ?oc=5"
+      ],
+      "source_names": [
+        "Voice Gambia",
+        "Bartlesville Radio"
+      ],
+      "date_found": "2026-09-10T18:04:54.301408+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "ef5f999d-0b45-4bd5-b62f-416d40e94633",
+      "donor": "D. Gunn Funeral Directors",
+      "recipient": "Heather's Heroes",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "D. Gunn Funeral Directors has partnered with the charity Heather's Heroes.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 14,
+          "points": 3
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcExJUFFocHFWVXc2NEhfbUVuSnNUbk1OS0NEdDJVM3pocm5DaEQ1MGpncGxiSTMwUHh1UVA5bF81RDJxN3hma0Z1TW80TUh2Vk5EamFwNHQ3VFVzNjI5OXNRUXM0YmFaaDhrb3J5aDZEVjJYVzRIQTJUS0ZNeEl1Vk5nbWpMci1CaVhsYUlZbW0yV2tsU1puVWI5MA?oc=5",
+        "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeURnOS14MnpDYmxZX0hCLU1fQ1RVb3VORzJfUXpvdU1ickNrOXJRb1BxeGJTYk1iTm1QVTgzOEVzcXVlTU41X0VhMnJMRlljNDh1aGNwRmhNb1ZpNUtPVHNBN21SamVNcUN0cjNaUjdTRG1uNXFiWThrR1pZX2R3OE45YWJ2WkVjRkxhREtLNDlKZ2RMT1hfWTd1M2NfY05R?oc=5",
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxNeTNaaUh2aTgwaDF4c1E4aW4xRHAwNnYwQnpHZTgtR19TZndDQkV2VnY2b2FqS0FpTFlDMHkxOGpNa0hWVlU2V0V1VUtlb0l0U1ZoeHdIWTQ1Vjd0a0ppc3JWYm43d2xwSl9QV1BrdXlzZDByYXpINWlzZ2UyU0NLSHl6bXAzOFBVR0xZNnlMYXByZw?oc=5",
+        "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNFRVNWpqZFYxbGc3Rm5NV1h2WS02MHJQTVBIRDRpZEtEczkyNXBfN1dGREExOXMwR29jUzJveW1UODhqU3hJN2FrV0ZHY1BWUkxnd2hPcnlIZFhfNjFwaTFUMjVKZldiV2doN25MTUl4aS1reS1INWlCeE9tdnFJWXBDblN6dXBNSlJlaE9jN05GLXJtUnppaUptUzlkNzVXX0NCdA?oc=5",
+        "https://news.google.com/rss/articles/CBMiogFBVV95cUxQS01mQUNRN0xBb2dEQ3hETXJuOVRmRjk2d0NGc1JfVldiX1Q5a3QzTVlNOWpNOTZZRWUzSUVPOW9FZ3h5dkNpOFc2VV9KYmluNTRzZU5SY2ZmWm94NjE4VGNubEQ2c2gzc2M3MmVBX3I0MXRUSVZNX3RoM2hSSk9LVkVybjZSZ25xajhqQVh5OVRVMmdybjRFdDFtTkg4eTZrM1E?oc=5",
+        "https://news.google.com/rss/articles/CBMirgFBVV95cUxQaHhqSXVEOTFCUzFTYk9lX0sxamd5Mi1wTXN6bjF3RW1KdDlBTTlhbTZsU2JqeWw5Q2xIZWx0LXdUeXVkVzk0SDVlUW5MVGNaNS1uVFNIelZBTGQtbDRwTGplUDRYR2kzaFlpa0pYT01sVHFqQXZlMVFob2JjTzR4WHRrVE1hSVd6b2NaYUloRjM1RmdiWWQxRGo5SHpsY0pfY0lXZDRtVUhfZ01pbWc?oc=5",
+        "https://news.google.com/rss/articles/CBMiogFBVV95cUxNOWFLQVlHRE9ScDRVV0NNcmItZWQxcmRSdUZCdmFBNjdCUjVBd3pZQmFsTTdIY1RjYTR6Qi01TEFYRzd0LVZxTmplOTJscEtMYlV0bWdQNVZ2SzFyVnBScDFNQ1MtWGlVTWNtV2tRTExUS3lNV3NuS3FXYkJZNTFOX2ZCMFdXRXJ4MGllVTJtZ1MxN3AzQzY1aEhvaDZyRGR2YlE?oc=5",
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZ2dvcVpXVzdCN2Nqc0NuZ284VER5VXVNemJkWUd2MHNWVWhmZjdSLV91OWg5ajFIR2tsYktDMkx2cFdpU1dZQ1RNYS1NOEpkNTFoa2xOVjJEM09VMzJuejYzRWUtWEJXYXY3SFJ4UGFUaWszajdtb0dWbi03a29EOS0yeS1JVGZHWElFNk93?oc=5",
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxQN2dlZExEQ19BUkhuclk4VUhJMkhqZzBNTk1CMGZxWHd0OE1EVjkwOEZRRTNBMFNtelJjRFNldlNvRlBDT1FUUmtaakJ6WGpscE5QLVBoajR3YTdQN2ZYc0k2VU5vVTlqa3d3UFBMLVVDZzZsbTNSYzlWNDhyX0lzTnVzamxIclJKRWw4ckln?oc=5",
+        "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPR2t3RHVmZ3BCb2RBZXNDMFdYSUhqWDFLYnBKazFzS2hVN0FvSmI0MGwwZE9BZFBfMFAxVWNIaDRWMmxtSUxaNGpZUXI2dndlVDhCSDFxTlhINjB6YUJqVkhRRWZ5UlkxRjJQVjhjdXh3XzQzaWFhMVVwSmNNQ2ZzSDlwMHVPQnZlTVVWMFdKbWNVLXBtOFlsR29WYnZkQWFCWmpOdXgxdHotd0E2NDdzYlM2ajNFblVKM0pMUC1pSW52dVV2N3h4M21CN1ZUNHc0MGR3aHBScWZfOUItaUhVZ1A1U3hYTFF4aFVpNXNiX0JXdW9ma1dMY1pNdGJCdw?oc=5",
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMmFUamFSaEtHNHJQQmRZczgwQjZoX2FjSm5qSE8xdGxtRi1HWExJWENqUFh5ckhJTU05eFR0UXgzalFZRGV0Nm4tOXdHQVpZSkRKbVpreXhCVVpHOGpRY2Z5M3lONVhKdWMxQ2cxbVpwZkdkc0tNR1FQOEYxMXBtNXlPSUF3R2d6UEhqMmk0T2tzZFduNjNncg?oc=5",
+        "https://news.google.com/rss/articles/CBMilAFBVV95cUxQeDc1bzFseVJGenJ6dFgxR1ZFdXdzUVk3dk0zTmhGQ24xdFhwNzc4ZkNaS0FFaXF3M2p5c3FJOGVWUlp5bGFNRDY3MnF6cnZXWnkwUmloajhpelU0ZkkyNWxKNTNSQmxTT0Y5Rl9GQzBMWXFfNjZhNUtDX3NtTTI2WVF0UDZJbk1JMmVIRUoxSDhQY1NG?oc=5",
+        "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVmRjbEgzMV96UnV1eU9BeVRCQldrakIzX29xRm45clpVa2dCTDBTUDBSaG1JNjltdmVJb0F3Vkl2QWhIOTRPRUFIbWlUNFloaFdJQ3JOdmNZUEpNMjNSY19CaTM5bFpSc0VRczFqWVNuQ1E5NmtJMTY4SFZrOGplTkxIMDgwTXR3ekhqeWJDdFlmcVBOYUtGMGlUQ2tlSE9LY251ZWg0VmRvYndjOVA5WWhYMjE4ZllYdFNORdIBwgFBVV95cUxORzBCZ2FhNEZ1SmhiVGVPQ3FPX2hRSEJoVGNKMjFzXzlLYUVYbFdaZnEybHgyYWlkS1MxdEp0MkF4MHdqVGx5VUs3V3FFeFdGUzlJWm10Q1hFUlN2ODA5eGEtaVZKSmJyZUk2cDVtOUw3YTI2NWQ1cmZFVWtFTVM3Tl9MRjF4Q3o2b1Q3TUFidGVaTEt3V19wbkdvY2d1YnpYZzRWQkVOUDItdmZPd3A4QzhjbGJOWm8zSU54emlXRWVQUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMirAFBVV95cUxNME03QXByXzE1SGZETHRlSDNxbGt3OUp1WENPR0RGa3Awa3JzUWdGMThLNDA5RVNFZXlBOXUyWDg4M18tQjIyaHh5X0pHRWtTNkhaV3BydE1EaUp1eXVuaTZFUi1yMUhXMUN6WEUwYnBQTkx1cEwweGN4ZzVrSUo3UWFudGo3UUhFMTU0OFhvT3NUU09rdXhiZE1WMzdLcjB2RG96dThzM2VFNlFs?oc=5",
+        "https://news.google.com/rss/articles/CBMiqgFBVV95cUxONHdIa0VObFB5OWxxZWpTSjF1OUtoOVNoR3lJZ0FTZ0VTQ2pwSWJzTUY2VE9PUDlEem5hWmQyVUtFUlBKQUZKQXRpQXRaZVo2U08zY2d6SEhsRERVSERIMGJDQURjcjhPQnpITXVNUlZGU3JvMmNmSkROZDNLdWpNRmhkc2lDa0RsZkUzOWk3a0VXa3FqdGpFT3hZLVdjOUpSRzVMN3Y0eVlZdw?oc=5",
+        "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOZEhMNG5mZHAtUGctbzlNSjBVYU5ZS0NwR0J0MGRxTTM5eFlXeUZWTUtxQTV5N2oxNVNFS0ZZdWhuNEpmTFFxai1TWEd2aUhJNGp2ZVcwVFR2eWxDMTdYMndTMl8xcEd3YnRFbEJFS0ZLM3dUQ1Q5V3N0LVdqN3dLMTdZOWJzSXJfQ0U0RDVnSzdSdmttTEZxZFRkZGVYaVVWTHhZWWR2R2d2bE1YeFZQRVZtY3pLSVRRSDN4QTQzTTFyRDlVTGNfaks1WE4wUU5Ja1hz?oc=5",
+        "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOMTJTOGxOY0JYeXRCd0lMcEpKR2htM0hxVVdZX1F2UmFlbS1zRXFvTFdqM3lxbzdLQm5UdWNXa0YwRE45REtQY0xfOGlrZUJURXdOOE14Z19lRWZzT0JKVzRHQl9fRWVWcDZvMFJRblN0bXV2QnBUQTF3a2VQTFNPZ2RrMjZCeXhYOVhLa3VzU3p4WXRacDFSSEtqQjVzWUdMMURUXzk3VzVKRWNqVjdWUTYxelZTdXBvYlhOYUp3cU5jaG11a0lDaVgzWTlOZHFoVHRkQnBR?oc=5"
+      ],
+      "source_names": [
+        "Caring Times",
+        "The Times and Democrat",
+        "aol.com",
+        "Ross-shire Journal",
+        "Yahoo",
+        "Yahoo Finance",
+        "Retail Jeweller",
+        "goduke.com",
+        "Ditch the Label",
+        "Yahoo Sports",
+        "PR Newswire",
+        "Business Standard",
+        "Packaging News",
+        "Belfast Telegraph"
+      ],
+      "date_found": "2026-09-10T18:05:27.286327+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "5c06cc84-f3f6-4580-8e47-3ad39da566be",
+      "donor": "Wildhorse Foundation",
+      "recipient": "Kooskooskie Commons",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$7,200",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Kooskooskie Commons received a $7,200 grant from the Wildhorse Foundation for salmon stream protection.",
+      "figure_quote": "$7,200",
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWG9QS19EdmZvRm5BMkxvWDd6Q1VPdFJyOUN2VXd6dklJQnFJTldueDVocFVpWEl3Q3d4Q0U2czhFU1V4LXl4V1FQTFV6S21PQ1ZpdzJIaTZfMnN5eVl3V2htZnUydjJickhQUDB1cGFGQWk3cHhONzYzOWxHbDluZFdPTnp1bmY2UDVtY2RVdkZNOXVBVGx6LW5uQUpYM1V3SF95WVRVWlZsVjdUSU1OaFRVUTZ2dll0cXNB?oc=5"
+      ],
+      "source_names": [
+        "Elkhorn Media Group"
+      ],
+      "date_found": "2026-09-10T18:06:05.871003+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "7211bb99-f4f2-45a6-bd84-0d797bd80fbb",
+      "donor": "GCB Bank",
+      "recipient": "Korle Bu Teaching Hospital",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "GH¢100k",
+      "is_in_kind": true,
+      "in_kind_description": "neonatal equipment",
+      "country_scope": "Ghana",
+      "status": "new_commitment",
+      "summary": "GCB Bank donated neonatal equipment worth GH¢100k to Korle Bu Teaching Hospital's Neonatal Intensive Care Unit.",
+      "figure_quote": "GH¢100k neonatal equipment",
+      "assumptions": [],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUlhsSDBmQ0hzT21QeksyN1B0TjhXU1RzZ0oxTHljNm9DQ1NiVW1VNkUwTVJodnVzenU5NWJob3FkV1hiVERDWTVEdTduakVxb08xZ2gxaVRYT2c1VzJSNjQ1V0R0QXN2bjlRc0Eyc05ManhRQlFyQ3N4QTVaVGdEMWFpRmN4OUFLeWh1Q055MDJ3R3VqRUNqSkZaX0tmX3ZHNEhjUjhn?oc=5",
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQkNZLTJYVndPSlRwMHJNdEZXWHB4d2t6QlloNkV6XzVpUTktRlRLbm1qS3d3UEJpRFNWd1ZSdFBIRmFUSmppRmZhU09CVktDZXc5RmJVTkxVbWRseVI4Y2RKU3ZyS1QxcWNBSTVIS3o3cmxHdTBIaEtqM1EydW1VWXFsQ3JBb2czeE9CN0N2aHVLV0JkcWRnVjFnMA?oc=5"
+      ],
+      "source_names": [
+        "CitiNewsroom.com",
+        "263Chat"
+      ],
+      "date_found": "2026-09-10T18:09:46.779904+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "02dc18d2-eb2d-4a9c-aeae-70dc48569015",
+      "donor": "LifeStance Health Foundation",
+      "recipient": "American Foundation for Suicide Prevention",
+      "recipient_type": "NGO",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "renewed_partnership",
+      "summary": "LifeStance Health Foundation has renewed its partnership with the American Foundation for Suicide Prevention to support mental health research.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMimAJBVV95cUxPd1BiQUlYQkFCcGg3aUFxM2VMdGVJRnlVanJJLUZicXlFclVWMXpwVWpiMTZ4LTRjVTFUTzhYU0dCcnNOc09KRjVmN2pEU1N4TFZTeHpkOXJxTHNoUHNLeDNPQTEtUVdfUm1KMTMzVC1OODF4ZHdHOHNCWUZCVXl0NVVOU3lQTDl2ZVN6eHRKZ2Vkb24zNjluMVo1Q1FqSzhpcm1vdDlMb0I2b1hHSFJNSU5lekRyYU55S2l5MzlEU3R6V2dNdTdmRW9TaGg2ZzBBWVBnc1hXYWhVM2llS3FJRGk5dFI2bmxhRVZKUnZXUW1fb0tQemxUU1hTc2VoMlc5dzdwY3VvTzFwVUlhTDE4M3RhNjdlNTVO?oc=5",
+        "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNE0xUEo3bWF3enpKaUlJbFhXdGdTQ3A4OFdVc1pHOFpjQ2RuM3haVExySVYycUFRTnhtTzlvTzFzaXdNMWQzeFVoVlRxc0VheGVNOVU5cGxCMDRYclN1b1VDS0tOMWUzbnRaZUo2YVdNVlZZUm5WSW10WkJyaWJqTjVab1pZVnJqSXRacElaMzFyYXJkTzM0U3MwdXBoUnZJckFHTw?oc=5"
+      ],
+      "source_names": [
+        "The Worcester News",
+        "PR Newswire"
+      ],
+      "date_found": "2026-09-10T18:10:25.704648+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "b240f3ad-28b6-4824-8a0a-c68e74cb6dd9",
+      "donor": "Uniqlo founder",
+      "recipient": "nonprofits coordinating aid for Lala recovery efforts",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$3 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Uniqlo founder donated $3 million to support recovery efforts in Lala.",
+      "figure_quote": "$3 million",
+      "assumptions": [
+        "The specific nonprofits receiving the funds are not named individually in the source text."
+      ],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxNd1l5ckdlVXAwRW5hR3dTRUpyZERSWUNoMkpjaEJUc0FpeXk1Q1hnWm5iaVNBa2J0M2g1VXg2TURkcXNUVnA3MjRVYWxNNWdpTnhKYkhEWWJvWDY4eTYzOG56bkR2RVZYTmE1SDQ3aU1lN3htUThXYTZEdDRHNmtqY0pxWUpfZ0czcm80M2l2U21GdU1SVlVYTGYyTjV1VmlmdGFWZm54TlZRZk91NEVBVDA5Yzg?oc=5"
+      ],
+      "source_names": [
+        "Honolulu Star-Advertiser"
+      ],
+      "date_found": "2026-09-10T18:11:04.862840+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "9bea3051-9555-42c7-b91f-819dceb583d8",
+      "donor": "AEP Ohio Foundation",
+      "recipient": "Bridgeport schools",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$2,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "AEP Ohio Foundation awarded a $2,000 grant to Bridgeport schools for the Puppy Pantry program.",
+      "figure_quote": "$2,000",
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQQVJWdDdfYW96dGdUUzdIQXVUNWhiXzlLWUljdmN5X1Bfb0RaY2RUNHcyQTc5clQzdWRIT3BPYWswUlVEU2lIX2ZPLUJjTWkyZUF0WWE5UlZZbEFGREdxWkprTTFTV0wyQ0M0YXdWR3M4SlZnY0pxMDVENHU3Ykt2b1hKY2RLc1RiaFZKdkJHdlk0UV9yN1ppQVFmQTJvbWsxS2VfTUs4YTVvTkxpSW9mM1drUmx6TjNOXzFwbnZwQ09tUG1TeG5kekFZMmE1LXdveUZtdjR3?oc=5",
+        "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOUUpMNGp4UkVDbWR5TW50Q0VnbTllakVSdWZvcm1rUVJ5YlVDbVhKalJxTmUyVjRGS3FXMElPRFFkV2c5NDV4cTFZal9MOFhhRnZ5S0w4R1BjOWwwLVRMS2hhZm1FX1NUNmVuS25mbDBacXExUjY3MmZHLUhxQW1wUjBLY2lwZ3NsaE1yZ08ySlE2SUY3d3R3NTZtVmVtVEhTYkQ0TGdDanV5eWpYS20wY3NwOUdBYVNLREFmMVpLY3NSMnFMUVZXZHF6WkdfNFJicXY1Q0UwNWE5dFpNbDJpcA?oc=5"
+      ],
+      "source_names": [
+        "WTOV"
+      ],
+      "date_found": "2026-09-10T18:12:29.262551+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "0dc24e54-05a2-4d49-98ef-95a72568ec6c",
+      "donor": "Sumitomo Foundation",
+      "recipient": "Research projects related to Japan",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Japan",
+      "status": "unclear",
+      "summary": "Sumitomo Foundation is offering grants for research projects related to Japan.",
+      "figure_quote": null,
+      "assumptions": [
+        "The specific amount of the grant is not mentioned.",
+        "The nature of the research projects is broad and not specified in detail."
+      ],
+      "confidence_score": 2,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMirwFBVV95cUxOcEZSZENDSVpuNlplNHVnZ1p5YmtLcWF5LTd5UjVGZDYzazJ0S181dHN0N1k1NlVNSVp3RVY1Qk5JbVdLSW0wUXZWbXBBWVZNMVk4OWJzTHB6aUFxcUcxdmdRb1o5Y0ktT1lrRk1BaGdoZXZCVFVMX3pzaTlDNEFGNERNa1JFZjRFc0otbFlJdVdfRkxGUmd1Y2xXMmxHTWFNZEZ5aHdBYThGT2FTRl9V0gGvAUFVX3lxTE5wRlJkQ0NJWm42WmU0dWdnWnlia0txYXktN3lSNUZkNjNrMnRLXzV0c3Q3WTU2VU1JWndFVjVCTkltV0tJbTBRdlZtcEFZVk0xWTg5YnNMcHppQXFxRzF2Z1FvWjljSS1PWWtGTUFoZ2hldkJUVUxfenNpOUM0QUY0RE1rUkVmNEVzSi1sWUl1V19GTEZSZ3VjbFcybEdNYU1kRnlod0FhOEZPYVNGX1U?oc=5",
+        "https://news.google.com/rss/articles/CBMiywFBVV95cUxNRjJZSUlPZGVsMnhSNEZTdkRKMTJsTm1sNkhBc2FKR2NudWlPNThBVnhBMXBta3F2UnVLN2g2LXBTX2d0MHQ0Z2lVRjQzZS1rWGVaREV2TDZkcUdpS0VUUDZ5bnh0MElGUEd2VWswaUwtZHM3V0M1OGUtYmo2X0pDcTBwU3Myb2g5T0NpMHBYczkyR1E2d3hub3ZKTWdQM0lNRmFJZ1pYY2Jkc1ZWbmxySlJ3SkN2YzE3elE5amVzUjZnQk4tYUZtWlVRSdIB0AFBVV95cUxNa1ptVnk4ZnpvTzBRWWFNQVNtQW9VU1htSTJuSDVKYUFDdUgyNkxmSmswWjB5RDc5bVc5WXZZN01YWExBbDlGVHlrSDhzLXBhM1BrVE03S2lTS25MOGQ5VklYQlQ4NVlyTE5fUUMxcmdWWDYzbWdvSXZYLVpwV01XcGpUUkpiV2VfX0JDZmJBX215OUhoR19vVHhNT1BWRXhaOERUVVZWaUstYzhRaUZHTDEwVFNpUWZJSTRuX0JTT3lHZVdWaUxOTjY5TnlxOEtN?oc=5"
+      ],
+      "source_names": [
+        "fundsforNGOs"
+      ],
+      "date_found": "2026-09-10T18:12:42.510377+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "763a05b5-7508-43de-9528-ffb9a4e445a5",
+      "donor": "Jacques Pépin Foundation",
+      "recipient": "Café Hope",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$10,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "The Jacques Pépin Foundation has awarded Café Hope a $10,000 grant to support its Westbank Culinary Program.",
+      "figure_quote": "$10,000",
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPWGo3VEpHMWM4c2hkeXlnNmdPTW40M2VwOWw5QW12QU91UTdaWE1WWEJZMWk5MnVBaGd3VHlJandMMGEwbUpfd3p5UzU0NWRiZ19ka3IzRXFZdGVHOEpBXy0wcGozTmZveVgtVGdMSnRuQ3NoYXJqbnJrdDlxRVhKeDBhc0toVTFsYVRjSFdsOFRqQkVwMkJDTFBPZEhBSDJPRlljdC1xN1lmSUVBNkllcTR5TXRMVURYQmdLSVgzM19fOGJaRjdEQXZqa1lmWDcyZTBTUE95MXF1UQ?oc=5"
+      ],
+      "source_names": [
+        "Big Easy Magazine"
+      ],
+      "date_found": "2026-09-10T18:12:55.348101+00:00",
+      "is_duplicate_of": null
+    }
+  ],
   "stats": {
     "feeds_checked": 203,
     "google_news_queries": 200,
-    "gdelt_files_processed": 1,
-    "gdelt_candidates_found": 0,
+    "gdelt_files_processed": 97,
+    "gdelt_candidates_found": 604,
     "recipients_watched": 50,
     "pr_wire_feeds": 3,
-    "items_considered": 2945,
-    "items_filtered_as_stale": 1825,
+    "items_considered": 3543,
+    "items_filtered_as_stale": 1819,
     "max_article_age_days": 60,
-    "items_after_trigger_filter": 549,
+    "items_after_trigger_filter": 560,
     "clusters_analysed": 100,
-    "skipped_due_to_ai_budget": 313,
+    "skipped_due_to_ai_budget": 218,
     "duplicates_skipped": 0,
-    "rejected_unnamed_recipient": 0,
+    "rejected_unnamed_recipient": 1,
     "rejected_no_named_donor": 0,
-    "entries_published": 0,
-    "high_confidence_count": 0
+    "entries_published": 13,
+    "high_confidence_count": 5
   },
   "fetch_failures": [
     {
