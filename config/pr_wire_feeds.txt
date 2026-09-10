@@ -27,6 +27,13 @@
 #     looks like a malformed-feed issue rather than a discontinued feed, so
 #     it's left active in case it self-resolves, but it currently is NOT
 #     contributing articles. Worth a closer look if it doesn't clear up.
+#   - CSRWire's feed (https://csrwire.com/feed/) is exactly the kind of
+#     content this project wants — real CSR/donation press releases — but
+#     when it was first reviewed, all 10 real sample items named recipients
+#     off the curated 50-organization list, so it would have contributed
+#     nothing while that list was a hard publishing gate. Added now that
+#     any specifically-named nonprofit is publishable (see extraction.py's
+#     is_generic_recipient / recipient_type tagging), not just curated ones.
 # =============================================================================
 
 # PR Newswire - Total CSR | https://www.prnewswire.com/rss/corporate-social-responsibility-latest-news.rss
@@ -34,3 +41,4 @@
 PR Newswire - All Public Company News | https://www.prnewswire.com/rss/news-releases-list.rss
 # Business Wire - CSR | https://www.businesswire.com/portal/site/home/news/subject/?vnsId=31382
 GlobeNewswire - Nonprofit | https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss
+CSRWire | https://csrwire.com/feed/
