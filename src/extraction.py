@@ -305,32 +305,33 @@ def _call_gemini(prompt: str, model: str, api_key: str) -> str:
 
 
 def _call_bedrock(prompt: str, model: str, region: str) -> str:
-    """Thin wrapper around Claude on Bedrock — same "isolated in one
-    function" pattern as _call_gemini, so switching providers again later
-    stays a contained change.
+    """Thin wrapper around AWS Bedrock's Converse API — same "isolated in
+    one function" pattern as _call_gemini, so switching providers again
+    later stays a contained change.
+
+    Converse is deliberately model-agnostic (works the same way for Nova,
+    Claude, Llama, etc. — whatever ai.bedrock_model in settings.yaml is
+    set to), unlike the old implementation which used the Anthropic SDK's
+    own Bedrock client and only ever worked with Claude. This means a
+    future provider switch back to Claude (if Marketplace approval comes
+    through later) is just a model ID change here, not new code.
 
     Auth is via whatever AWS credentials are already in the environment
     (set by the GitHub Actions OIDC step before this script runs) — nothing
     AWS-specific is configured here beyond the region. No response-format
-    parameter exists for Claude the way Gemini has response_mime_type; the
-    prompt's own "Return ONLY valid JSON" instruction plus the markdown-
-    fence-stripping in extract_from_cluster below handles this reliably.
-
-    No temperature/sampling parameter is set — verified against the
-    installed SDK that messages.create() on this client doesn't accept one
-    at all (confirmed via inspect.signature, not assumed), so there's
-    nothing to configure here; the model's default sampling behaviour is
-    used.
+    parameter exists the way Gemini has response_mime_type; the prompt's
+    own "Return ONLY valid JSON" instruction plus the markdown-fence-
+    stripping in extract_from_cluster below handles this reliably.
     """
-    from anthropic import AnthropicBedrock
+    import boto3
 
-    client = AnthropicBedrock(aws_region=region)
-    response = client.messages.create(
-        model=model,
-        max_tokens=1024,
-        messages=[{"role": "user", "content": prompt}],
+    client = boto3.client("bedrock-runtime", region_name=region)
+    response = client.converse(
+        modelId=model,
+        messages=[{"role": "user", "content": [{"text": prompt}]}],
+        inferenceConfig={"maxTokens": 1024, "temperature": 0.1},
     )
-    return "".join(block.text for block in response.content if block.type == "text")
+    return response["output"]["message"]["content"][0]["text"]
 
 
 def _mock_extract(cluster: ArticleCluster) -> str:
@@ -410,8 +411,19 @@ def _extract_via_gemini(prompt: str, model: str, cluster_id: str, max_retries: i
     return raw
 
 
+
+# Botocore error codes worth retrying: per-minute/account throttling, a
+# 5xx-equivalent server error, or the model not yet warmed up. Unlike
+# Gemini's free tier, Bedrock has no daily wall to hit — these are
+# transient and worth retrying rather than giving up immediately.
+BEDROCK_RETRYABLE_ERROR_CODES = {
+    "ThrottlingException", "ModelTimeoutException", "InternalServerException",
+    "ServiceUnavailableException", "ModelNotReadyException", "ServiceQuotaExceededException",
+}
+
+
 def _extract_via_bedrock(prompt: str, model: str, region: str, cluster_id: str, max_retries: int) -> str | None:
-    import anthropic
+    import botocore.exceptions
 
     raw = None
     for attempt in range(1, max_retries + 1):
@@ -419,49 +431,45 @@ def _extract_via_bedrock(prompt: str, model: str, region: str, cluster_id: str, 
             _pace_ai_calls()
             raw = _call_bedrock(prompt, model, region)
             break
-        except RuntimeError as e:
-            # The Bedrock client raises a plain RuntimeError (not one of
-            # the anthropic.* typed exceptions below) when it can't resolve
-            # AWS credentials at all — confirmed by testing, not assumed.
-            # This is a setup/config problem, not a transient one, so it
-            # gets the same "stop now" treatment as the typed auth errors.
-            if "credential" in str(e).lower():
+        except (botocore.exceptions.NoCredentialsError, botocore.exceptions.PartialCredentialsError) as e:
+            raise FatalExtractionError(
+                f"Bedrock call failed to resolve AWS credentials: {e}\n"
+                f"Check that the GitHub workflow's aws-actions/configure-aws-credentials "
+                f"step ran successfully before this step, that id-token: write is set in "
+                f"the workflow's permissions, and that the IAM role's trust policy actually "
+                f"matches this repo/branch."
+            ) from e
+        except botocore.exceptions.ClientError as e:
+            code = e.response.get("Error", {}).get("Code", "")
+            if code == "ResourceNotFoundException":
                 raise FatalExtractionError(
-                    f"Bedrock call failed to resolve AWS credentials: {e}\n"
-                    f"Check that the GitHub workflow's aws-actions/configure-aws-credentials "
-                    f"step ran successfully before this step, that id-token: write is set in "
-                    f"the workflow's permissions, and that the IAM role's trust policy actually "
-                    f"matches this repo/branch."
+                    f"Bedrock call failed: model '{model}' not found or not accessible in region "
+                    f"'{region}': {e}\n"
+                    f"Check that config/settings.yaml's ai.bedrock_model / ai.bedrock_region are "
+                    f"correct — some models (including some Nova variants outside their home region) "
+                    f"require a cross-region inference profile ID (e.g. 'eu.amazon.nova-pro-v1:0') "
+                    f"rather than the bare foundation-model ID; check the Bedrock console's "
+                    f"'Model access' page for the exact invokable ID in this region."
                 ) from e
-            raise  # an unrelated RuntimeError — a real bug, don't mask it as a Bedrock auth issue
-        except anthropic.NotFoundError as e:
-            raise FatalExtractionError(
-                f"Bedrock call failed: model '{model}' not found or not accessible in region "
-                f"'{region}': {e}\n"
-                f"Check that model access is enabled for this model in the AWS Bedrock console "
-                f"for this region, and that config/settings.yaml's ai.bedrock_model / "
-                f"ai.bedrock_region are correct."
-            ) from e
-        except (anthropic.AuthenticationError, anthropic.PermissionDeniedError) as e:
-            raise FatalExtractionError(
-                f"Bedrock call failed due to an authentication/permission error: {e}\n"
-                f"Check the IAM role's trust policy (GitHub OIDC provider + repo/branch condition) "
-                f"and its permission policy (bedrock:InvokeModel on the exact inference-profile and "
-                f"foundation-model ARNs), and that the GitHub workflow's "
-                f"aws-actions/configure-aws-credentials step is pointed at the right Role ARN."
-            ) from e
-        except anthropic.BadRequestError as e:
-            # A malformed request (bad params, bad prompt shape) — retrying
-            # the identical request will fail identically every time.
-            raise FatalExtractionError(f"Bedrock call failed with a bad-request error: {e}") from e
-        except (anthropic.RateLimitError, anthropic.APIStatusError, anthropic.APIConnectionError) as e:
-            # Transient: per-minute throttling, a 5xx, or a network hiccup.
-            # Unlike Gemini's free tier, Bedrock has no daily wall to hit —
-            # these are worth retrying.
-            wait = 2 ** attempt
-            logger.warning("Bedrock call failed (attempt %d/%d): %s. Retrying in %ds.",
-                            attempt, max_retries, e, wait)
-            time.sleep(wait)
+            if code == "AccessDeniedException":
+                raise FatalExtractionError(
+                    f"Bedrock call failed due to an access-denied error: {e}\n"
+                    f"Check two SEPARATE things: (1) the IAM role's permission policy grants "
+                    f"bedrock:InvokeModel on this exact model's ARN, and (2) model access is "
+                    f"explicitly enabled for it on the Bedrock console's 'Model access' page for "
+                    f"region '{region}' — this is a one-click, no-approval-wait step for first-party "
+                    f"Amazon models like Nova, but it's a distinct step from both the IAM policy and "
+                    f"from any AWS Marketplace subscription, and easy to miss."
+                ) from e
+            if code == "ValidationException":
+                raise FatalExtractionError(f"Bedrock call failed with a validation error: {e}") from e
+            if code in BEDROCK_RETRYABLE_ERROR_CODES:
+                wait = 2 ** attempt
+                logger.warning("Bedrock call failed (attempt %d/%d, %s): %s. Retrying in %ds.",
+                                attempt, max_retries, code, e, wait)
+                time.sleep(wait)
+                continue
+            raise  # an unrecognized error code — a real bug, don't mask it
     if raw is None:
         logger.error("Giving up on cluster %s after %d failed attempts.", cluster_id, max_retries)
         return None

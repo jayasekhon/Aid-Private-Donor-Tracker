@@ -38,37 +38,52 @@ search:
   gdelt_enabled: true
 
   # Per-source on/off switches, mainly for testing one source in isolation.
-  # Google News stays off for now (still isolating GDELT's own output);
-  # PR wire feeds are back on since they carry direct company-published
-  # content (CSR/donation press releases) that GDELT and Google News can
-  # both miss, and don't compete with GDELT for the AI call budget the
-  # same way Google News' 50-recipient query batch would.
-  google_news_enabled: false
+  # All three sources are on for normal running — GDELT-only isolation
+  # testing (see git history) has served its purpose; each source has
+  # real, distinct coverage gaps the others fill (GDELT: broad/regional/
+  # multilingual coverage but weak on some ambiguous-name companies and
+  # un-syndicated corporate blogs; Google News: reliable literal-text
+  # matching but recipient-anchored and English-heavy; PR wires: direct
+  # company-published CSR/donation releases GDELT/Google News can miss
+  # entirely).
+  google_news_enabled: true
   pr_wire_feeds_enabled: true
 
 ai:
-  # Which AI provider does the extraction step: "bedrock" (Claude Haiku 4.5
-  # via AWS, paid per-token, no daily request ceiling) or "gemini" (Google's
-  # free tier, hard-capped at ~20 requests/day).
+  # Which AI provider does the extraction step: "bedrock" (via AWS, paid
+  # per-token, no daily request ceiling) or "gemini" (Google's free tier,
+  # hard-capped at ~20 requests/day).
   #
-  # Temporarily back on "gemini" while the one-time AWS Marketplace/Private
-  # Marketplace approval for Claude on Bedrock is pending (see the Bedrock
-  # settings below — nothing there needs to change, they just aren't used
-  # while provider is "gemini"). Switch this back to "bedrock" once that
-  # approval comes through and max_ai_calls_per_run below is raised again.
-  provider: "gemini"
+  # AWS Marketplace/Private Marketplace approval for Claude on Bedrock was
+  # denied, so this now uses Amazon Nova Pro instead — a first-party AWS
+  # model that needs NO Marketplace approval at all (that's exactly the
+  # process that got denied for Claude), just the Bedrock console's
+  # "Model access" page enabled for it, which is an instant self-service
+  # step. Nova Pro was picked over the cheaper/faster Nova Micro and Nova
+  # Lite because this workload needs real judgment calls (rejecting vague
+  # donors/recipients, telling a corporate donation apart from a
+  # government one, following a strict JSON schema) that the smaller Nova
+  # tiers are more likely to get wrong.
+  provider: "bedrock"
 
   # --- Bedrock settings (only used when provider is "bedrock") ---
-  # Model ID as it appears on AWS Bedrock, including the routing prefix
-  # ("global." = routes to any commercial AWS region for the best price;
-  # an "eu." or region-specific prefix instead pins the call to stay within
-  # that geography, at roughly a 10% premium — only worth it if you have an
-  # actual data-residency requirement, which this project doesn't since it
-  # only processes public news snippets).
-  bedrock_model: "global.anthropic.claude-haiku-4-5-20251001-v1:0"
-  # AWS region the Bedrock inference profile itself lives in (separate from
-  # which region the "global." routing prefix actually sends the request
-  # to for inference).
+  # Model ID as it appears on AWS Bedrock. Calls go through AWS's own
+  # Converse API (see extraction.py's _call_bedrock), which is model-
+  # agnostic — this ID is the only thing that would need to change to
+  # switch models again later (e.g. back to Claude, if approval comes
+  # through eventually).
+  #
+  # IMPORTANT — verify this exact ID against the Bedrock console's "Model
+  # access" page for bedrock_region below before a real run: some models
+  # (including some Nova variants outside their home region) require a
+  # cross-region inference profile ID instead of the bare foundation-model
+  # ID shown here (e.g. "eu.amazon.nova-pro-v1:0" rather than
+  # "amazon.nova-pro-v1:0") — if the console shows only a profile ID as
+  # invokable, use that instead. A wrong ID here fails fast with a clear
+  # error (see _extract_via_bedrock's ResourceNotFoundException handling),
+  # not silently.
+  bedrock_model: "amazon.nova-pro-v1:0"
+  # AWS region to call Bedrock in.
   bedrock_region: "eu-north-1"
 
   # --- Gemini settings (only used when provider is "gemini") ---
@@ -80,22 +95,22 @@ ai:
   # Safety cap: the pipeline will never make more than this many AI calls in
   # one run, no matter how many stories are found. What this protects
   # against differs by provider:
-  #   - On Gemini's free tier, this guards the daily request quota — kept
-  #     just under the ~20/day ceiling. This is the active provider right
-  #     now, so this cap is back down to 18 (was raised to 100 for Bedrock's
-  #     cost math while that was the active provider — see provider above).
-  #   - On Bedrock, there's no free-tier wall — this instead bounds
-  #     worst-case COST. At Claude Haiku 4.5 pricing ($1 / $5 per million
-  #     input/output tokens) and this workload's typical prompt size, 100
-  #     calls/day costs roughly $10.50/month even in the pessimistic case of
-  #     hitting the cap every single day of the month — comfortably under a
-  #     $15/month target. Raise this back to 100 when switching provider
-  #     back to "bedrock".
+  #   - On Gemini's free tier, this guards the daily request quota.
+  #   - On Bedrock (the active provider now), there's no free-tier wall —
+  #     this instead bounds worst-case COST. At Nova Pro pricing ($0.80 /
+  #     $3.20 per million input/output tokens — noticeably cheaper than
+  #     Claude Haiku's $1 / $5) and this workload's typical prompt size
+  #     (~1,500 input / ~250 output tokens per call), each call costs
+  #     roughly $0.002. 100 calls/day costs about $6/month even in the
+  #     pessimistic case of hitting the cap every single day of the month
+  #     — comfortably under a $15/month target, and a real day's call
+  #     count (all three sources combined) is expected to land well under
+  #     this cap based on observed single-source volumes, not at it.
   # When there are more candidate clusters than this budget allows, the
   # highest-priority ones (most corroborated, clearest stated figures) are
   # processed first; the rest are logged as skipped rather than silently
   # dropped — see the "Sources & Limitations" page after a run.
-  max_ai_calls_per_run: 18
+  max_ai_calls_per_run: 100
   # How many days back a new story is checked against, to decide whether
   # it's a duplicate/renewal of something already published.
   dedupe_lookback_days: 180

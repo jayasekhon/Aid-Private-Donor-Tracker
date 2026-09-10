@@ -5,9 +5,7 @@ Jinja2==3.1.4
 PyYAML==6.0.2
 python-dateutil==2.9.0.post0
 google-generativeai==0.8.3
-# Unpinned deliberately: pulls in the Bedrock-capable Anthropic SDK (the
-# [bedrock] extra adds boto3 for AWS request signing). The exact latest
-# version wasn't verified against a live pip index at the time this was
-# written, so this installs whatever's current rather than risking a pin
-# to a version number that might not exist.
-anthropic[bedrock]
+# Talks to Bedrock via AWS's own Converse API (model-agnostic — Nova,
+# Claude, Llama, etc. — see extraction.py's _call_bedrock), not the
+# Anthropic SDK's Bedrock client, which only ever worked with Claude.
+boto3==1.43.91
