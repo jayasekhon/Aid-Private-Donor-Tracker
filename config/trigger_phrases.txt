@@ -13,7 +13,9 @@
 # clustering.py's module docstring on why this filter exists at all).
 #
 # That said, "donates", "contributes", "pledges", "sponsors", "commits",
-# and "partners with" below are deliberately bare, not paired with a
+# and "partners with" below (plus their past-tense forms — substring
+# matching doesn't do stemming, so "donated" doesn't match a "donates"
+# entry and needs its own line) are deliberately bare, not paired with a
 # business word like "company"/"corporate" the way earlier phrases in
 # this file were. Real headlines almost always name the actual company
 # rather than saying "the company" — a paired-only phrase like "company
@@ -38,11 +40,17 @@
 
 corporate donation
 donates
+donated
 contributes
+contributed
 pledges
+pledged
 sponsors
+sponsored
 commits
+committed
 partners with
+partnered with
 corporate foundation
 corporate social responsibility
 CSR partnership
@@ -59,5 +67,3 @@ foundation grant
 renews partnership with
 announces partnership with
 corporate partner
-donated to support
-pledged to support
