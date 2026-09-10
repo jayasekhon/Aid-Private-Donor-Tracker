@@ -37,6 +37,7 @@ class RawArticle:
     matched_recipient: Optional[str] = None
     matched_country: Optional[str] = None
     matched_trigger: Optional[str] = None
+    fetch_source: str = "Unknown"  # which fetch mechanism found this: "Google News", "PR Wire", or "GDELT GKG"
 
     def to_dict(self) -> dict:
         d = asdict(self)
@@ -84,6 +85,7 @@ class DonationEntry:
     confidence_breakdown: dict
     source_urls: list[str]
     source_names: list[str]
+    source_channels: list[str]        # which fetch mechanism(s) found this: "Google News" / "PR Wire" / "GDELT GKG" (can be more than one if the same event was independently found via multiple sources)
     date_found: str                   # ISO date this entry was first published on the site
     is_duplicate_of: Optional[str] = None   # entry_id of an earlier match, if any
 

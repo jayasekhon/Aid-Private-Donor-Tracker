@@ -267,6 +267,7 @@ def _parse_gkg_row(fields: list[str], name_lookup: dict[str, str]) -> RawArticle
         source_tier=SourceTier.GENERAL_NEWS,
         summary=_build_summary(orgs_raw, fields[24], fields[22]),
         matched_recipient=matched_recipient,
+        fetch_source="GDELT GKG",
     )
 
 

@@ -64,6 +64,8 @@
           <a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a>{{ ", " if not loop.last else "" }}
         {% endfor %}
         <span class="divider">&middot;</span>
+        Found via: {{ e.source_channels|join(", ") }}
+        <span class="divider">&middot;</span>
         Confidence breakdown: source tier {{ e.confidence_breakdown.source_tier.points }}pt,
         explicit figure {{ e.confidence_breakdown.explicit_amount_stated.points }}pt,
         {{ e.confidence_breakdown.multiple_independent_sources.value }} independent source(s) {{ e.confidence_breakdown.multiple_independent_sources.points }}pt

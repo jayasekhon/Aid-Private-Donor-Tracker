@@ -104,16 +104,22 @@ ai:
   #     $3.20 per million input/output tokens — noticeably cheaper than
   #     Claude Haiku's $1 / $5) and this workload's typical prompt size
   #     (~1,500 input / ~250 output tokens per call), each call costs
-  #     roughly $0.002. 100 calls/day costs about $6/month even in the
-  #     pessimistic case of hitting the cap every single day of the month
-  #     — comfortably under a $15/month target, and a real day's call
-  #     count (all three sources combined) is expected to land well under
-  #     this cap based on observed single-source volumes, not at it.
+  #     roughly $0.002.
+  #
+  #     A real full day's run with all three sources on (GDELT + Google
+  #     News + PR wires) produced ~318 event clusters — well above the
+  #     old cap of 100, which meant over two thirds of that day's real
+  #     candidates were skipped rather than analysed. Raised to 350 to
+  #     comfortably cover a normal day with some headroom, rather than
+  #     tuned to the exact observed number. Worst case (every day of the
+  #     month hits the cap): 350 x $0.002 x 30 = ~$21/month — a real
+  #     day's actual spend will typically be well under that, since 350
+  #     is a ceiling, not the expected daily count.
   # When there are more candidate clusters than this budget allows, the
   # highest-priority ones (most corroborated, clearest stated figures) are
   # processed first; the rest are logged as skipped rather than silently
   # dropped — see the "Sources & Limitations" page after a run.
-  max_ai_calls_per_run: 100
+  max_ai_calls_per_run: 350
   # How many days back a new story is checked against, to decide whether
   # it's a duplicate/renewal of something already published.
   dedupe_lookback_days: 180

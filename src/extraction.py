@@ -584,5 +584,6 @@ def build_donation_entry(
         confidence_breakdown=breakdown,
         source_urls=[a.url for a in cluster.articles],
         source_names=list({a.source_name for a in cluster.articles}),
+        source_channels=sorted({a.fetch_source for a in cluster.articles}),
         date_found=now_iso(),
     )

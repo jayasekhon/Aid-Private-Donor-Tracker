@@ -79,6 +79,7 @@ def fetch_google_news_query(url: str, recipient_name: str) -> tuple[list[RawArti
             source_tier=SourceTier.GENERAL_NEWS,
             summary=entry.get("summary", ""),
             matched_recipient=recipient_name,
+            fetch_source="Google News",
         ))
     return articles, failure
 
@@ -94,6 +95,7 @@ def fetch_pr_wire_feed(label: str, url: str) -> tuple[list[RawArticle], FetchFai
             source_name=label.split(" - ")[0],  # e.g. "PR Newswire"
             source_tier=SourceTier.WIRE,
             summary=entry.get("summary", ""),
+            fetch_source="PR Wire",
         ))
     return articles, failure
 
