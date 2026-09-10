@@ -212,12 +212,18 @@ If it IS relevant, extract the following as JSON. Follow these rules exactly:
    set "is_relevant" to false instead (see above).
 4. "recipient": the nonprofit organization's name, as stated.
 5. "recipient_type": your best classification of the recipient, exactly one of "UN agency" \
-   (a United Nations body, fund, or programme), "INGO" (a large international NGO operating \
-   across multiple countries, e.g. Save the Children, Oxfam, the Red Cross/Red Crescent \
-   movement), "NGO" (a national or regional NGO), or "Other nonprofit" (anything else — a \
-   local charity, a hospital, a school, a foundation, a community organization, or anything \
-   you're not confident fits the other three). If genuinely unsure between two, pick the \
-   broader/safer one rather than guessing narrowly.
+   (a United Nations body, fund, or programme), "INGO" (an NGO that ITSELF operates across \
+   MULTIPLE countries as one organization, e.g. Save the Children, Oxfam, the Red Cross/Red \
+   Crescent movement), "NGO" (a national or regional NGO operating within one country), or \
+   "Other nonprofit" (anything else — a single hospital, university, school, local charity, \
+   foundation, or community organization, EVEN IF it is large, prestigious, or well-known, or \
+   anything you're not confident fits the other three). INGO status depends ONLY on whether the \
+   organization itself operates across multiple countries — never on size, funding, or \
+   reputation. For example, a named hospital or university system (e.g. "Cooper University Health Care") \
+   is "Other nonprofit", NOT "INGO", even though it may be large and well-regarded, because it \
+   operates in one place, not across multiple countries as one organization. If \
+   genuinely unsure, default to "Other nonprofit" rather than guessing at a more specific category \
+   — it is the deliberately-safe fallback, not a last resort to avoid.
 6. "is_in_kind": true if this is a donation of goods/services/logistics rather than cash.
 7. "in_kind_description": if is_in_kind is true, describe what was given, in your own words, \
    with NO estimated dollar value invented. If is_in_kind is false, set to null.

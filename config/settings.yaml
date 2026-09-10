@@ -24,7 +24,15 @@ search:
   # feeds, which have no equivalent recency filter). Raise this if genuinely
   # current donations are being missed because their publish date is
   # missing/unreliable; lower it if stale stories still get through.
-  max_article_age_days: 60
+  #
+  # Lowered from 60 to 14: a real run at 60 discarded 1,819 of 3,543 raw
+  # items (over half) as stale — that's a lot of old content competing for
+  # Google's bounded per-query result slots ahead of genuinely current
+  # stories. GDELT and PR wires are effectively unaffected by this value
+  # (GDELT's own items are always near-real-time by construction; PR wire
+  # feeds only ever list recent releases anyway) — this mainly tightens
+  # Google News specifically.
+  max_article_age_days: 14
 
   # Whether to also pull from GDELT's Global Knowledge Graph (GKG) — a much
   # broader, more international/multilingual public news monitor, updated
