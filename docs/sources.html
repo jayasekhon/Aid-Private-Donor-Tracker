@@ -17,7 +17,7 @@
     <div class="wrap masthead-meta">
       <span></span>
       <span>Private donations to UN agencies &amp; NGOs, found daily</span>
-      <span>Printed: 12:45 UTC</span>
+      <span>Printed: 15:04 UTC</span>
     </div>
     <div class="wrap section-nav">
       <a href="index.html" class="">Today</a>
@@ -37,9 +37,13 @@
     <p><strong>How this works:</strong> every day, this tracker searches Google News, GDELT's global
     news index, and a set of PR wire feeds for stories mentioning a monitored UN agency, INGO, or
     NGO alongside donation-related language, published within the last 60
-    days. Candidate stories are grouped into events, read by an AI model, and turned into the
-    structured entries you see on the daily page. Anything the model is unsure about is flagged
-    under "Assumptions &amp; uncertainties" on that entry rather than silently resolved.</p>
+    days. Candidate stories are grouped into events and read by an AI model. The recipient does
+    NOT need to be one of the monitored organizations that anchors the search — a donation to any
+    other named nonprofit, however small or local, is published too, as long as the AI model
+    encounters it; only a recipient that's never actually named (e.g. "a local charity") is
+    rejected. Every entry is tagged UN Agency / INGO / NGO / Other Nonprofit so it's clear at a
+    glance which is which. Anything the model is unsure about is flagged under "Assumptions &amp;
+    uncertainties" on that entry rather than silently resolved.</p>
 
     <p><strong>What this will miss:</strong> donations that never appear in general news or PR
     wires at all — small or local gifts, donations announced only on social media, or ones
@@ -54,11 +58,11 @@
 
     <h3 style="font-family: var(--serif-display); margin-top: 30px;">Today's run, in numbers</h3>
     <ul>
-      <li>0 feed(s) checked (0 Google News queries across 50 monitored recipients, 0 PR wire feeds) + 10 GDELT 15-minute file(s) scanned (63 candidate mentions of a monitored recipient found)</li>
-      <li>63 raw item(s) considered</li>
+      <li>3 feed(s) checked (0 Google News queries across 50 monitored recipients, 3 PR wire feeds) + 97 GDELT 15-minute file(s) scanned (562 candidate mentions of a monitored recipient found)</li>
+      <li>582 raw item(s) considered</li>
       
-      <li>1 passed the keyword pre-filter</li>
-      <li>1 event cluster(s) sent to the AI model for extraction</li>      
+      <li>6 passed the keyword pre-filter</li>
+      <li>6 event cluster(s) sent to the AI model for extraction</li>      
       
       <li>0 flagged as duplicates/renewals of a previously published entry</li>
       
@@ -66,6 +70,12 @@
       <li>0 entries published today</li>
     </ul>
 
+    
+    <h3 style="font-family: var(--serif-display); margin-top: 30px;">Feed problems today</h3>
+    <p style="color: var(--muted);">The following sources could not be reached and were skipped for this run. If a feed keeps failing, its URL may need updating in <code>config/pr_wire_feeds.txt</code>.</p>
+    <ul>
+      <li><strong>GlobeNewswire - Nonprofit</strong> — Feed parse error: &lt;unknown&gt;:25:79: not well-formed (invalid token)</li><li><strong>CSRWire</strong> — 403 Client Error: Forbidden for url: https://csrwire.com/feed/</li>
+    </ul>
     
   </div>
 
@@ -77,7 +87,9 @@
       <div class="stat-row"><span>Other NGOs</span><span class="value">4</span></div>
     </div>
     <p style="font-size: 0.85rem; color: var(--muted); margin-top: 14px;">
-      Full recipient and geographic scope lists are maintained in the project's
+      These counts are the organizations this tracker's searches are anchored on, not a ceiling
+      on what gets published — a donation to any other named nonprofit is included too, tagged
+      "Other Nonprofit". Full recipient and geographic scope lists are maintained in the project's
       <code>config/</code> folder and can be edited without touching any code.
     </p>
   </aside>
