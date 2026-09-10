@@ -2,18 +2,18 @@
   "date": "2026-09-10",
   "entries": [],
   "stats": {
-    "feeds_checked": 3,
-    "google_news_queries": 0,
+    "feeds_checked": 207,
+    "google_news_queries": 204,
     "gdelt_files_processed": 97,
-    "gdelt_candidates_found": 579,
+    "gdelt_candidates_found": 1098,
     "recipients_watched": 51,
     "pr_wire_feeds": 3,
-    "items_considered": 599,
-    "items_filtered_as_stale": 0,
+    "items_considered": 4174,
+    "items_filtered_as_stale": 1827,
     "max_article_age_days": 60,
-    "items_after_trigger_filter": 7,
-    "clusters_analysed": 7,
-    "skipped_due_to_ai_budget": 2,
+    "items_after_trigger_filter": 615,
+    "clusters_analysed": 100,
+    "skipped_due_to_ai_budget": 354,
     "duplicates_skipped": 0,
     "rejected_unnamed_recipient": 0,
     "rejected_no_named_donor": 0,
@@ -29,7 +29,7 @@
     {
       "source_label": "CSRWire",
       "url": "https://csrwire.com/feed/",
-      "error": "Feed parse error: <unknown>:2:119: not well-formed (invalid token)"
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
     }
   ]
 }
