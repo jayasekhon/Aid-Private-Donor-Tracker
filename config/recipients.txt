@@ -29,7 +29,6 @@ UN Women | UN Women | UN
 Office of the UN High Commissioner for Human Rights | OHCHR | UN
 UN Relief and Works Agency for Palestine Refugees | UNRWA | UN
 World Bank | World Bank | UN
-Microsoft |  | UN
 # CERF's donations are publicly branded "UN Crisis Relief" (crisisrelief.un.org)
 # rather than the formal fund name — that's the name that actually shows up
 # in corporate press releases, e.g. "donate...to UN Crisis Relief".
