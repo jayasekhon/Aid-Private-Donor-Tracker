@@ -27,6 +27,24 @@ DEFAULT_STORE_PATH = Path(__file__).resolve().parent.parent / "data" / "seen_eve
 NAME_MATCH_THRESHOLD = 80        # rapidfuzz token_set_ratio, for donor/recipient names
 AMOUNT_MATCH_TOLERANCE = 0.15    # 15% — treats "$5.1M" and "$5M" reporting drift as the same event
 
+# When neither the candidate nor a matching prior entry has a parseable
+# dollar figure (in-kind gifts, or vaguely-worded "supports research"-style
+# partnership announcements), there's no numeric signal to confirm two
+# write-ups describe the EXACT same donation — which is why that case
+# below defaults to "likely_renewal" rather than silently skipping, so a
+# genuinely new no-amount donation to a repeat donor/recipient pair isn't
+# suppressed. But a match found within a few days is overwhelmingly more
+# likely the SAME real-world event surfacing via a second article that
+# clustering didn't merge (see clustering.py's TITLE_SIMILARITY_THRESHOLD)
+# than a coincidentally-timed second donation. A real run confirmed this:
+# two separate Sloan Foundation -> Stony Brook University clusters, and two
+# separate Sumitomo Foundation -> Japan research clusters, all four with no
+# stated amount, were published as four distinct entries in the same day's
+# edition instead of two, because the "always renewal" branch never gets
+# to compare a candidate against the OTHER copy of itself found minutes
+# earlier in the same run.
+SAME_EVENT_WINDOW_DAYS = 3
+
 
 class EventStore:
     def __init__(self, path: Path = DEFAULT_STORE_PATH):
@@ -44,17 +62,31 @@ class EventStore:
         with open(self.path, "w", encoding="utf-8") as f:
             json.dump(self.entries, f, indent=2, ensure_ascii=False)
 
+    @staticmethod
+    def _parse_found_date(date_found: str | None) -> datetime | None:
+        if not date_found:
+            return None
+        try:
+            return datetime.fromisoformat(date_found)
+        except ValueError:
+            return None
+
     def _recent_entries(self, lookback_days: int) -> list[dict]:
+        """Returns entries within lookback_days, MOST RECENT FIRST. Order
+        matters: find_possible_match() below returns on the first name
+        match it finds, so checking recent entries first means a same-run
+        (or same-week) duplicate is compared against its own freshest
+        copy — not against some much older entry that happens to appear
+        earlier in the store's on-disk (oldest-first, append-only) order.
+        """
         cutoff = datetime.now(timezone.utc) - timedelta(days=lookback_days)
         out = []
         for e in self.entries:
-            try:
-                found = datetime.fromisoformat(e["date_found"])
-            except (KeyError, ValueError):
-                continue
-            if found >= cutoff:
-                out.append(e)
-        return out
+            found = self._parse_found_date(e.get("date_found"))
+            if found is not None and found >= cutoff:
+                out.append((found, e))
+        out.sort(key=lambda pair: pair[0], reverse=True)
+        return [e for _, e in out]
 
     @staticmethod
     def _parse_amount_number(amount_text: str | None) -> float | None:
@@ -99,7 +131,14 @@ class EventStore:
                     # names+amount alone, so we flag it rather than assume.
                     return prior, "likely_renewal"
             elif candidate_amount is None and prior_amount is None:
-                # Both in-kind / no figure — same donor+recipient pair recurring.
+                # Both in-kind / no figure — same donor+recipient pair
+                # recurring. Treat a RECENT such match as the same event
+                # reported twice (see SAME_EVENT_WINDOW_DAYS above); an
+                # older one is genuinely ambiguous, so stays "likely_renewal".
+                prior_found = self._parse_found_date(prior.get("date_found"))
+                if prior_found is not None and \
+                        datetime.now(timezone.utc) - prior_found <= timedelta(days=SAME_EVENT_WINDOW_DAYS):
+                    return prior, "exact_duplicate"
                 return prior, "likely_renewal"
 
         return None, "no_match"
