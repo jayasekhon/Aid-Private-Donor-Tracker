@@ -23,6 +23,25 @@ from .config_loader import Recipient
 
 GOOGLE_NEWS_RSS_BASE = "https://news.google.com/rss/search"
 
+# Aliases that double as ordinary English words are unusable as bare Google
+# News search terms: Google matches the word anywhere in the article, not
+# just as an org reference, so searching `"WHO"` alone matches the pronoun
+# "who" in effectively any headline. A real run found 108 of 303 candidates
+# that passed the trigger-phrase filter were false WHO matches (Taylor
+# Swift donations, Trump policy news, etc.) — pure noise that still cost an
+# AI call each to correctly reject. Dropped here, in query construction,
+# only: "WHO" stays in recipients.txt and is still used everywhere alias
+# matching runs against actual article text/domains rather than free-text
+# search (e.g. tag_official_sources() matching a GDELT source against
+# "who.int"), where the false-positive risk is negligible. The World
+# Health Organization's full name is still searched via r.name, so WHO
+# coverage isn't lost — just no longer keyed on the bare acronym.
+AMBIGUOUS_SEARCH_ALIASES = {"who"}
+
+
+def _searchable_names(r: Recipient) -> list[str]:
+    return [n for n in r.all_names if n.strip().lower() not in AMBIGUOUS_SEARCH_ALIASES]
+
 
 def build_recipient_trigger_queries(
     recipients: list[Recipient],
@@ -61,7 +80,7 @@ def build_recipient_trigger_queries(
     """
     pairs = []
     for r in recipients:
-        name_clause = " OR ".join(f'"{n}"' for n in r.all_names)
+        name_clause = " OR ".join(f'"{n}"' for n in _searchable_names(r))
         for i in range(0, len(triggers), triggers_per_query):
             batch = triggers[i:i + triggers_per_query]
             trigger_clause = " OR ".join(f'"{t}"' for t in batch)
@@ -83,7 +102,7 @@ def build_recipient_country_queries(
     """
     pairs = []
     for r, c in itertools.product(recipients, countries):
-        name_clause = " OR ".join(f'"{n}"' for n in r.all_names)
+        name_clause = " OR ".join(f'"{n}"' for n in _searchable_names(r))
         query = f'({name_clause}) "{c}" donation'
         if max_age_days:
             query += f" when:{max_age_days}d"
