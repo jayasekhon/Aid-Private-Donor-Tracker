@@ -131,13 +131,18 @@ def tag_country(articles: list[RawArticle], countries: list[str]) -> None:
 # Aliases shorter than this are excluded from the official-source check
 # below. 3 is deliberately low enough to still catch the exact case this
 # was built for — short acronyms (WFP, WHO, IOM) that genuinely appear
-# in an org's own domain (wfp.org, who.int) — even though a couple of
-# those (e.g. "who", a real English word) carry some real false-positive
-# risk against an unrelated source name. Accepted: this is a confidence
-# SIGNAL that nudges a score, not a publish/reject gate, so the cost of
-# an occasional undeserved bump is low. A 1-2 character alias (if one
-# ever existed) would still be excluded here as too risky even for that.
+# in an org's own domain (wfp.org, who.int).
 OFFICIAL_SOURCE_MIN_NAME_LENGTH = 3
+
+# On top of the length cutoff above, a couple of specific short aliases
+# are also ordinary English words ("who", "care") and carry real
+# false-positive risk even against a source NAME/domain rather than free
+# article text — e.g. a source called "Care2" would otherwise wrongly
+# upgrade a CARE International-matched article to OFFICIAL tier. Same
+# alias set as extraction.py's match_curated_recipient() fix for the same
+# underlying class of bug (see that docstring for the real-world case that
+# motivated it: "Charlotte Animal Care & Control" false-matching "CARE").
+AMBIGUOUS_OFFICIAL_SOURCE_ALIASES = {"who", "care"}
 
 
 def tag_official_sources(articles: list[RawArticle], recipients: list[Recipient]) -> None:
@@ -173,6 +178,8 @@ def tag_official_sources(articles: list[RawArticle], recipients: list[Recipient]
         for name in recipient.all_names:
             name_l = name.strip().lower()
             if len(name_l) < OFFICIAL_SOURCE_MIN_NAME_LENGTH:
+                continue
+            if name_l in AMBIGUOUS_OFFICIAL_SOURCE_ALIASES and name_l != source_l:
                 continue
             if name_l in source_l or source_l in name_l:
                 a.source_tier = SourceTier.OFFICIAL

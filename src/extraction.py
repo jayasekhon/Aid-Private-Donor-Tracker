@@ -50,6 +50,23 @@ def is_generic_donor(donor: str) -> bool:
     return any(marker in d for marker in GENERIC_DONOR_MARKERS)
 
 
+# Aliases that double as ordinary English words are unsafe for the loose
+# substring/fuzzy matching below: "CARE" (CARE International's alias)
+# matches as a literal substring of "Charlotte Animal Care & Control",
+# which is exactly what happened in a real run — that entry (a local
+# animal shelter, unrelated to CARE International) was wrongly tagged
+# "INGO" and given an undeserved monitored-recipient confidence bonus.
+# "WHO" carries the same risk (it's a common standalone word in English
+# text, e.g. "Anyone Who Cares Foundation"). Same class of bug as
+# query_builder.py's Google News "WHO" fix, just hitting a different
+# matcher. Only the loose checks (substring, fuzzy ratio) are skipped for
+# these aliases — an EXACT match (candidate == name_l) is still trusted,
+# so a genuine extraction of "WHO" or "CARE" as the recipient's full name
+# still correctly resolves to World Health Organization / CARE
+# International.
+AMBIGUOUS_CURATED_ALIASES = {"who", "care"}
+
+
 def match_curated_recipient(recipient: str, recipients: list[Recipient]) -> Recipient | None:
     """Returns the curated recipients.txt entry the extracted recipient
     corresponds to (including alias matches), or None if it names a real
@@ -67,7 +84,11 @@ def match_curated_recipient(recipient: str, recipients: list[Recipient]) -> Reci
             name_l = name.strip().lower()
             if not name_l:
                 continue
-            if candidate == name_l or candidate in name_l or name_l in candidate:
+            if candidate == name_l:
+                return r
+            if name_l in AMBIGUOUS_CURATED_ALIASES:
+                continue
+            if candidate in name_l or name_l in candidate:
                 return r
             if fuzz.token_set_ratio(candidate, name_l) >= 88:
                 return r
