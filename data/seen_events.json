@@ -2324,5 +2324,51 @@
     ],
     "date_found": "2026-09-11T13:38:39.319812+00:00",
     "is_duplicate_of": "9c8be85a-dbb8-45e6-95ec-dcfdbe0be440"
+  },
+  {
+    "entry_id": "53026ece-c02a-44fa-a823-a14d2abc4660",
+    "donor": "Housebuilder",
+    "recipient": "Francis House Children's Hospice",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "£1,500",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "A housebuilding company donated £1,500 to Francis House Children's Hospice.",
+    "figure_quote": "£1,500",
+    "assumptions": [
+      "The specific name of the housebuilding company is not provided in the source text."
+    ],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVGFrMVZCQ1hjM1plYlNuSi1tNzVTZERHZmFVRENhbjB6bWk2TlNPTUR6d1FCN3V4Y2RMMDhJbVFtNy1RcW9iSXRXTkZyTmlSTmhFTC1LbFlZc296QW54YTcwVVg1aV9OQzVyUnJscWtZYVNKYVFkMnRlUUdISXl0RkZUc2xaVVZLck4zTllNME9rbEFTaGFhSEdpYw?oc=5"
+    ],
+    "source_names": [
+      "InYourArea"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T15:04:16.284527+00:00",
+    "is_duplicate_of": null
   }
 ]
