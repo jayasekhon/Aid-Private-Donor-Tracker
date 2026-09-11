@@ -60,11 +60,52 @@ def _entry_view(e: DonationEntry) -> dict:
 
 
 def save_edition_json(date_str: str, entries: list[DonationEntry], stats: dict, fetch_failures: list[dict]) -> Path:
+    """Writes data/editions/{date_str}.json.
+
+    Re-running the pipeline more than once for the same date (common
+    during this project's own testing -- deleting today's edition to pick
+    up a fresh code change and re-running) is NOT the same as a genuinely
+    empty day: EventStore persists across runs (see store.py), so a
+    second same-day run correctly recognizes everything the first run
+    already found as "already known" and won't re-derive it into its own
+    `entries` list. If this function simply overwrote the file with just
+    that list, every already-published entry from earlier runs today
+    would silently vanish from the site the moment a later run found
+    fewer NEW things -- which is exactly what happened in practice
+    (Visa -> World Bank and Church -> UNICEF, both real, correctly-found
+    entries from an earlier run today, disappeared when a later run's
+    edition overwrote theirs with a near-empty one). So: carry forward
+    any entry already in today's on-disk edition that this run's own
+    entries don't already include (matched by entry_id -- this run never
+    reuses an old id, so there's no risk of a double-count), then
+    re-sort and recompute the two stats fields that describe the final
+    published set. Every other stat stays this run's own real numbers --
+    they describe what THIS run's process did, not the cumulative day.
+    """
     EDITIONS_DATA_DIR.mkdir(parents=True, exist_ok=True)
     path = EDITIONS_DATA_DIR / f"{date_str}.json"
+    entry_dicts = [e.to_dict() for e in entries]
+
+    if path.exists():
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                existing_entries = json.load(f).get("entries", [])
+        except (json.JSONDecodeError, OSError):
+            existing_entries = []
+        fresh_ids = {d["entry_id"] for d in entry_dicts}
+        carried_over = [d for d in existing_entries if d["entry_id"] not in fresh_ids]
+        entry_dicts = carried_over + entry_dicts
+        entry_dicts.sort(key=lambda d: d.get("confidence_score", 0), reverse=True)
+
+    stats = dict(stats)
+    stats["entries_published"] = len(entry_dicts)
+    stats["high_confidence_count"] = sum(
+        1 for d in entry_dicts if d.get("confidence_score", 0) >= CONFIDENCE_HIGH
+    )
+
     payload = {
         "date": date_str,
-        "entries": [e.to_dict() for e in entries],
+        "entries": entry_dicts,
         "stats": stats,
         "fetch_failures": fetch_failures,
     }
