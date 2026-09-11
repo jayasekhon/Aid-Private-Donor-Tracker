@@ -133,9 +133,11 @@ ai:
   dedupe_lookback_days: 180
 
 confidence:
-  # The three-part scoring rubric. Do not change the field names, only the
-  # points, if you want to rebalance how confidence is calculated.
-  # An entry's final score is the sum of the points below (max 10).
+  # The four-part scoring rubric. Do not change the field names, only the
+  # points, if you want to rebalance how confidence is calculated. The
+  # four factors can sum above 10 (e.g. an official source + a stated
+  # amount + multiple sources + a monitored recipient) — the final score
+  # is clipped to 10 so the "X/10" badge never reads oddly.
   source_tier_points:
     official_press_release_or_agency_newsroom: 4
     wire_service: 3
@@ -143,6 +145,21 @@ confidence:
     social_media_or_blog: 1
   explicit_amount_stated_points: 3
   multiple_independent_sources_points: 3
+  # Bonus for the recipient being one of the curated 50 organizations
+  # this tracker is specifically anchored on (see recipients.txt) — a
+  # different kind of signal from the other three, which are all about
+  # how well-EVIDENCED a story is. This one is about how squarely it's
+  # in scope for the project's actual purpose. Added after a real entry
+  # ("Visa partners with the World Bank," single source, no dollar
+  # figure) scored a bare 2/10 despite being exactly the kind of finding
+  # this tracker exists to surface — under the old three-factor rubric,
+  # a monitored recipient with weak sourcing scored identically to an
+  # off-list local charity with equally weak sourcing, which didn't
+  # reflect that the former is core to this project's purpose and the
+  # latter is a bonus catch. Set close to the other factors' weight (3)
+  # so it can meaningfully lift a weakly-sourced monitored-recipient
+  # story out of "low confidence" on its own, not just nudge it.
+  monitored_recipient_points: 3
   # Entries scoring below this are still published, but visually marked
   # "Low confidence" and excluded from the weekly email highlights.
   low_confidence_threshold: 5

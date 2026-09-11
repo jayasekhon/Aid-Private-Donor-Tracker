@@ -19,6 +19,7 @@ from datetime import datetime, timedelta, timezone
 
 from rapidfuzz import fuzz
 
+from .config_loader import Recipient
 from .models import ArticleCluster, RawArticle, SourceTier
 
 logger = logging.getLogger(__name__)
@@ -115,6 +116,57 @@ def tag_country(articles: list[RawArticle], countries: list[str]) -> None:
         for country in countries:
             if country.lower() in haystack.lower():
                 a.matched_country = country
+                break
+
+
+# Aliases shorter than this are excluded from the official-source check
+# below. 3 is deliberately low enough to still catch the exact case this
+# was built for — short acronyms (WFP, WHO, IOM) that genuinely appear
+# in an org's own domain (wfp.org, who.int) — even though a couple of
+# those (e.g. "who", a real English word) carry some real false-positive
+# risk against an unrelated source name. Accepted: this is a confidence
+# SIGNAL that nudges a score, not a publish/reject gate, so the cost of
+# an occasional undeserved bump is low. A 1-2 character alias (if one
+# ever existed) would still be excluded here as too risky even for that.
+OFFICIAL_SOURCE_MIN_NAME_LENGTH = 3
+
+
+def tag_official_sources(articles: list[RawArticle], recipients: list[Recipient]) -> None:
+    """Mutates articles in place, upgrading source_tier to OFFICIAL when
+    the article's source_name matches the matched recipient's own name or
+    an alias — i.e. this looks like the recipient's own press channel
+    talking about itself, the single most credible source there is.
+
+    This is genuinely checkable at fetch time for GDELT and Google News,
+    which both already carry a matched_recipient. It matters most for
+    GDELT specifically: its source_name is the article's actual domain
+    (e.g. "wfp.org"), and recipients.txt's aliases already include the
+    short-form names ("WFP") that commonly appear IN such a domain —
+    added specifically because press/domains refer to orgs that way (see
+    query_builder.py's docstring on why aliases were added to Google
+    News queries in the first place). Google News' source_name is a
+    publisher display name rather than a domain, so this fires less
+    often there, but still correctly catches cases where Google
+    attributes an article directly to the org's own name.
+
+    PR wire articles have no matched_recipient (PR wires aren't
+    recipient-anchored at fetch time) and are left untouched — they keep
+    their existing WIRE tier regardless.
+    """
+    recipients_by_name = {r.name: r for r in recipients}
+    for a in articles:
+        if not a.matched_recipient:
+            continue
+        recipient = recipients_by_name.get(a.matched_recipient)
+        if recipient is None:
+            continue
+        source_l = a.source_name.strip().lower()
+        for name in recipient.all_names:
+            name_l = name.strip().lower()
+            if len(name_l) < OFFICIAL_SOURCE_MIN_NAME_LENGTH:
+                continue
+            if name_l in source_l or source_l in name_l:
+                a.source_tier = SourceTier.OFFICIAL
                 break
 
 

@@ -547,8 +547,29 @@ def extract_from_cluster(
         return None
 
 
-def score_confidence(cluster: ArticleCluster, result: ExtractionResult, confidence_cfg: dict) -> tuple[int, dict]:
-    """Implements the rubric defined in settings.yaml. Returns (total_score, breakdown_dict)."""
+def score_confidence(
+    cluster: ArticleCluster, result: ExtractionResult, confidence_cfg: dict, recipients: list[Recipient],
+) -> tuple[int, dict]:
+    """Implements the rubric defined in settings.yaml. Returns (total_score, breakdown_dict).
+
+    Four factors, not three: source tier, explicit amount, multiple
+    sources, and (new) whether the recipient is one of the curated 50
+    this tracker is specifically anchored on. That last one is a
+    deliberately different KIND of signal from the other three — it's
+    not about how well-evidenced the story is, it's about how squarely
+    it's in scope for this project's actual purpose. A single-source
+    story with no dollar figure about a real donation to a recipient
+    this tracker exists to watch (e.g. the World Bank) is a stronger
+    hit for THIS project than the same evidentiary strength for an
+    off-list local charity, even though "confidence the story is real"
+    is arguably similar in both cases — see the settings.yaml comment
+    on monitored_recipient_points for the concrete example that
+    motivated adding this.
+
+    The four factors can sum above 10 (e.g. official source + amount +
+    multiple sources + monitored recipient); clipped to 10 so the "X/10"
+    badge never reads oddly.
+    """
     breakdown = {}
 
     tier_points = confidence_cfg["source_tier_points"]
@@ -561,8 +582,12 @@ def score_confidence(cluster: ArticleCluster, result: ExtractionResult, confiden
     multi_source_points = confidence_cfg["multiple_independent_sources_points"] if cluster.independent_source_count > 1 else 0
     breakdown["multiple_independent_sources"] = {"value": cluster.independent_source_count, "points": multi_source_points}
 
-    total = breakdown["source_tier"]["points"] + breakdown["explicit_amount_stated"]["points"] + breakdown["multiple_independent_sources"]["points"]
-    return total, breakdown
+    is_monitored = match_curated_recipient(result.recipient, recipients) is not None
+    monitored_points = confidence_cfg["monitored_recipient_points"] if is_monitored else 0
+    breakdown["monitored_recipient"] = {"value": is_monitored, "points": monitored_points}
+
+    total = sum(component["points"] for component in breakdown.values())
+    return min(total, 10), breakdown
 
 
 def build_donation_entry(
@@ -571,7 +596,7 @@ def build_donation_entry(
     confidence_cfg: dict,
     recipients: list[Recipient],
 ) -> DonationEntry:
-    score, breakdown = score_confidence(cluster, result, confidence_cfg)
+    score, breakdown = score_confidence(cluster, result, confidence_cfg, recipients)
     recipient_type = classify_recipient_type(result.recipient, recipients, result.recipient_type_guess)
     return DonationEntry(
         entry_id=str(uuid.uuid4()),

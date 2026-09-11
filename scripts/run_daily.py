@@ -47,7 +47,7 @@ from src.config_loader import load_all
 from src.query_builder import build_recipient_trigger_queries, google_news_rss_url
 from src.sources import fetch_all
 from src.gdelt_gkg import fetch_gdelt_gkg_articles, fetch_gdelt_gkg_articles_for_range
-from src.clustering import filter_by_recency, filter_by_trigger_phrase, tag_country, cluster_articles, rank_clusters_by_priority
+from src.clustering import filter_by_recency, filter_by_trigger_phrase, tag_country, tag_official_sources, cluster_articles, rank_clusters_by_priority
 from src.extraction import extract_from_cluster, build_donation_entry
 from src.store import EventStore
 from src.models import today_str, DonationEntry
@@ -168,6 +168,7 @@ def main():
     logger.info("%d/%d articles passed the trigger-phrase filter.", len(filtered), items_considered)
 
     tag_country(filtered, countries)
+    tag_official_sources(filtered, recipients)
 
     # --- Cluster ---
     clusters = cluster_articles(filtered)
@@ -263,6 +264,12 @@ def main():
     logger.info("%s %d entries (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no named donor).",
                  "Would publish" if is_gdelt_test else "Published", len(entries),
                  duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor)
+
+    # Highest confidence first -- the site should lead with its strongest,
+    # best-evidenced findings rather than whatever order clusters happened
+    # to be processed in (which is really just fetch/AI-call order, not a
+    # meaningful ranking for a reader).
+    entries.sort(key=lambda e: e.confidence_score, reverse=True)
 
     # --- Save + build site ---
     high_confidence_threshold = 8
