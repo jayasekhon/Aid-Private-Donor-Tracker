@@ -17,7 +17,7 @@
     <div class="wrap masthead-meta">
       <span></span>
       <span>Private donations to UN agencies &amp; NGOs, found daily</span>
-      <span>Printed: 10:37 UTC</span>
+      <span>Printed: 13:39 UTC</span>
     </div>
     <div class="wrap section-nav">
       <a href="index.html" class="">Today</a>
@@ -40,10 +40,18 @@
     days. Candidate stories are grouped into events and read by an AI model. The recipient does
     NOT need to be one of the monitored organizations that anchors the search — a donation to any
     other named nonprofit, however small or local, is published too, as long as the AI model
-    encounters it; only a recipient that's never actually named (e.g. "a local charity") is
-    rejected. Every entry is tagged UN Agency / INGO / NGO / Other Nonprofit so it's clear at a
-    glance which is which. Anything the model is unsure about is flagged under "Assumptions &amp;
-    uncertainties" on that entry rather than silently resolved.</p>
+    encounters it and (see below) it operates in a country this tracker actually covers; only a
+    recipient that's never actually named (e.g. "a local charity") is rejected outright. Every
+    entry is tagged UN Agency / INGO / NGO / Other Nonprofit so it's clear at a glance which is
+    which. Anything the model is unsure about is flagged under "Assumptions &amp; uncertainties" on
+    that entry rather than silently resolved.</p>
+
+    <p><strong>Geographic scope:</strong> this tracker is anchored on OCHA's Global Humanitarian
+    Overview (GHO) country list plus Nepal — see the recipient's own operating country/context, not
+    the donor's. A donation with no country named at all is still published, tagged "scope:
+    unspecified" — donors often don't earmark a specific place. A donation to a real, named
+    recipient in a country outside this list (e.g. general corporate philanthropy to a US
+    university or hospital) is not published; that's a deliberate scope boundary, not a bug.</p>
 
     <p><strong>What this will miss:</strong> donations that never appear in general news or PR
     wires at all — small or local gifts, donations announced only on social media, or ones
@@ -58,16 +66,17 @@
 
     <h3 style="font-family: var(--serif-display); margin-top: 30px;">Today's run, in numbers</h3>
     <ul>
-      <li>203 feed(s) checked (200 Google News queries across 50 monitored recipients, 3 PR wire feeds) + 65 GDELT 15-minute file(s) scanned (285 candidate mentions of a monitored recipient found)</li>
-      <li>2784 raw item(s) considered</li>
-      <li>1920 discarded as older than 14 days</li>
-      <li>297 passed the keyword pre-filter</li>
-      <li>183 event cluster(s) sent to the AI model for extraction</li>      
+      <li>203 feed(s) checked (200 Google News queries across 50 monitored recipients, 3 PR wire feeds) + 97 GDELT 15-minute file(s) scanned (642 candidate mentions of a monitored recipient found)</li>
+      <li>3145 raw item(s) considered</li>
+      <li>1917 discarded as older than 14 days</li>
+      <li>303 passed the keyword pre-filter</li>
+      <li>186 event cluster(s) sent to the AI model for extraction</li>      
       
-      <li>2 flagged as duplicates/renewals of a previously published entry</li>
-      <li>6 rejected — the story was real, but no specific recipient organization was actually named</li>
+      <li>5 flagged as duplicates/renewals of a previously published entry</li>
+      <li>5 rejected — the story was real, but no specific recipient organization was actually named</li>
       <li>1 rejected — no specific donor company could be identified</li>
-      <li>22 entries published today</li>
+      <li>5 rejected — a real donation, but to a recipient operating in a country outside this tracker's scope</li>
+      <li>14 entries published today</li>
     </ul>
 
     
