@@ -28,6 +28,7 @@ TEMPLATES_DIR = ROOT / "templates"
 STATIC_DIR = ROOT / "static"
 DOCS_DIR = ROOT / "docs"
 EDITIONS_DATA_DIR = ROOT / "data" / "editions"
+TEST_OUTPUT_DIR = ROOT / "test_output"  # gitignored — local-only, never part of the live site
 
 CONFIDENCE_HIGH = 8
 CONFIDENCE_MID = 5
@@ -73,10 +74,20 @@ def save_edition_json(date_str: str, entries: list[DonationEntry], stats: dict, 
 
 
 def load_all_editions() -> list[dict]:
+    """Real editions only — deliberately excludes TEST-<date>.json files
+    (see run_daily.py's --gdelt-start/--gdelt-end override), which use a
+    non-YYYY-MM-DD name specifically so they're never picked up here. A
+    real editions/*.json filename always starts with the year's leading
+    digit; the "[0-9]*" glob is what actually enforces that exclusion.
+    Without it, a leftover TEST-*.json would either crash _date_display()
+    (which assumes strict YYYY-MM-DD) or — since "TEST-..." string-sorts
+    after every real date — get treated as the latest edition and become
+    the live site's homepage.
+    """
     if not EDITIONS_DATA_DIR.exists():
         return []
     editions = []
-    for path in sorted(EDITIONS_DATA_DIR.glob("*.json")):
+    for path in sorted(EDITIONS_DATA_DIR.glob("[0-9]*.json")):
         with open(path, "r", encoding="utf-8") as f:
             editions.append(json.load(f))
     return editions  # sorted ascending by filename == date
@@ -210,3 +221,42 @@ def _entry_view_from_dict(e: dict) -> dict:
     d["source_links"] = list(zip(source_names, source_urls)) if len(source_names) == len(source_urls) else \
         [(n, source_urls[i] if i < len(source_urls) else "#") for i, n in enumerate(source_names)]
     return d
+
+
+def render_test_edition(date_str: str, entries: list[DonationEntry], stats: dict, site_cfg: dict) -> Path:
+    """Renders a single GDELT-override test edition (see run_daily.py's
+    --gdelt-start/--gdelt-end) to a standalone HTML file for local
+    inspection, using the exact same template/styling as a real edition
+    page. Deliberately written OUTSIDE docs/ entirely, into its own
+    self-contained folder with its own copy of the stylesheet — docs/ is
+    the live, publicly-served GitHub Pages tree, and test/mock data
+    (e.g. "Example Corp (mock)") must never end up reachable there, even
+    unlinked. Not wired into build_site()/load_all_editions() at all, so
+    it can never affect the real site's archive, nav, or homepage.
+    """
+    env = _env()
+    edition_template = env.get_template("edition.html")
+
+    TEST_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    test_static_dir = TEST_OUTPUT_DIR / "static"
+    test_static_dir.mkdir(exist_ok=True)
+    shutil.copy(STATIC_DIR / "style.css", test_static_dir / "style.css")
+
+    entries_view = [_entry_view(e) for e in entries]
+    printed_time = datetime.now(timezone.utc).strftime("%H:%M UTC")
+
+    html = edition_template.render(
+        site=site_cfg,
+        asset_prefix="",
+        edition_date_display=f"TEST PREVIEW — {date_str}",
+        printed_time=printed_time,
+        active_nav="",
+        entries=entries_view,
+        stats=stats,
+        prev_edition_url=None,
+        next_edition_url=None,
+        is_latest=False,
+    )
+    out_path = TEST_OUTPUT_DIR / f"{date_str}.html"
+    out_path.write_text(html, encoding="utf-8")
+    return out_path

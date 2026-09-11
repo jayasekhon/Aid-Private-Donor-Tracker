@@ -17,12 +17,28 @@ Usage:
     python scripts/run_daily.py                 # live run (needs AWS creds for Bedrock, or GEMINI_API_KEY if ai.provider is "gemini")
     python scripts/run_daily.py --mock           # no API calls, fake data throughout
     python scripts/run_daily.py --max-clusters 5 # cap AI calls for a cheap smoke test
+
+    # TESTING ONLY: override GDELT's normal incremental fetch with a specific
+    # UTC date/time range (Google News and PR wires are untouched -- they
+    # always run their normal "today" behavior). Does NOT touch
+    # data/gdelt_gkg_state.json, so the next normal scheduled run resumes
+    # from wherever it actually left off, completely unaffected by this.
+    # Unlike scripts/gdelt_backfill_test.py, this runs the REAL pipeline --
+    # real AI extraction, real backstops against real history -- so it
+    # checks whether a known real-world event would actually have been
+    # caught, not just whether it shows up as a raw candidate. But it's
+    # still fully isolated from the real site and event store: the edition
+    # is saved as data/editions/TEST-<date>.json (not overwriting today's
+    # real edition), nothing is written to data/seen_events.json, and the
+    # live site (docs/) is not rebuilt at all.
+    python scripts/run_daily.py --gdelt-start 2026-09-09 --gdelt-end 2026-09-10
 """
 from __future__ import annotations
 
 import argparse
 import logging
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -30,15 +46,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.config_loader import load_all
 from src.query_builder import build_recipient_trigger_queries, google_news_rss_url
 from src.sources import fetch_all
-from src.gdelt_gkg import fetch_gdelt_gkg_articles
+from src.gdelt_gkg import fetch_gdelt_gkg_articles, fetch_gdelt_gkg_articles_for_range
 from src.clustering import filter_by_recency, filter_by_trigger_phrase, tag_country, cluster_articles, rank_clusters_by_priority
 from src.extraction import extract_from_cluster, build_donation_entry
 from src.store import EventStore
 from src.models import today_str, DonationEntry
-from src.site_builder import save_edition_json, build_site
+from src.site_builder import save_edition_json, build_site, render_test_edition
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("run_daily")
+
+
+def _parse_gdelt_override_date(s: str) -> datetime:
+    dt = datetime.fromisoformat(s)
+    return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt.astimezone(timezone.utc)
 
 
 def main():
@@ -46,7 +67,23 @@ def main():
     parser.add_argument("--mock", action="store_true", help="Run with no external API calls (Gemini mocked, still fetches real RSS unless --mock-fetch too).")
     parser.add_argument("--mock-fetch", action="store_true", help="Also skip real RSS fetching and use built-in sample articles.")
     parser.add_argument("--max-clusters", type=int, default=None, help="Cap AI extraction calls for this run (overrides settings.yaml for a cheap test).")
+    parser.add_argument("--gdelt-start", type=str, default=None,
+                         help="TESTING ONLY: UTC start date/time (YYYY-MM-DD or YYYY-MM-DDTHH:MM) to fetch GDELT "
+                              "from, instead of its normal incremental window. Must be paired with --gdelt-end. "
+                              "Does not affect Google News/PR wires, and does not touch "
+                              "data/gdelt_gkg_state.json (the next normal run is unaffected).")
+    parser.add_argument("--gdelt-end", type=str, default=None,
+                         help="TESTING ONLY: UTC end date/time (inclusive), paired with --gdelt-start.")
     args = parser.parse_args()
+
+    if bool(args.gdelt_start) != bool(args.gdelt_end):
+        parser.error("--gdelt-start and --gdelt-end must be given together.")
+
+    is_gdelt_test = bool(args.gdelt_start)
+    gdelt_start = gdelt_end = None
+    if is_gdelt_test:
+        gdelt_start = _parse_gdelt_override_date(args.gdelt_start)
+        gdelt_end = _parse_gdelt_override_date(args.gdelt_end)
 
     cfg = load_all()
     settings = cfg["settings"]
@@ -55,8 +92,18 @@ def main():
     triggers = cfg["triggers"]
     pr_wire_feeds = cfg["pr_wire_feeds"] if cfg["settings"]["search"].get("pr_wire_feeds_enabled", True) else []
 
-    date_str = today_str()
+    # A GDELT-override run gets its own TEST-<date> edition label rather than
+    # today's real date -- today_str() would silently overwrite (not merge
+    # with) whatever the real scheduled run already saved for today. See
+    # the "Save + build site" section below for the rest of this run's
+    # isolation from real site/event-store state.
+    date_str = f"TEST-{gdelt_start:%Y-%m-%d}" if is_gdelt_test else today_str()
     logger.info("=== Daily run for %s ===", date_str)
+    if is_gdelt_test:
+        logger.warning("GDELT DATE OVERRIDE ACTIVE: fetching %s to %s instead of the normal incremental "
+                        "window. This is a TESTING run -- data/gdelt_gkg_state.json, data/seen_events.json, "
+                        "and the live site (docs/) are all left untouched; results are saved only to "
+                        "data/editions/%s.json.", gdelt_start, gdelt_end, date_str)
 
     # --- Fetch ---
     if args.mock_fetch:
@@ -92,7 +139,11 @@ def main():
             # recipient" itself; the existing trigger-phrase filter below
             # then applies to these candidates exactly like any other
             # source's, with no GDELT-specific filtering code needed there.
-            gdelt_articles, gdelt_failures, gdelt_stats = fetch_gdelt_gkg_articles(recipients)
+            if is_gdelt_test:
+                gdelt_articles, gdelt_failures, gdelt_stats = fetch_gdelt_gkg_articles_for_range(
+                    recipients, gdelt_start, gdelt_end)
+            else:
+                gdelt_articles, gdelt_failures, gdelt_stats = fetch_gdelt_gkg_articles(recipients)
             raw_articles.extend(gdelt_articles)
             fetch_failures.extend(f.__dict__ for f in gdelt_failures)
             gdelt_files_processed = gdelt_stats.files_processed
@@ -199,9 +250,19 @@ def main():
         store.add(entry)
         entries.append(entry)
 
-    store.save()
-    logger.info("Published %d entries today (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no named donor).",
-                 len(entries), duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor)
+    # A GDELT-override test run still checks candidates against real
+    # history via store.find_possible_match() above (so it correctly
+    # recognizes an already-published donation as a duplicate), but must
+    # NOT persist anything it finds back into the real store -- otherwise
+    # a later real run would wrongly think this test-only entry was
+    # already published for real, and silently skip actually publishing
+    # it. store.add() above only mutates the in-memory object; store.save()
+    # is what writes to disk, so skipping it here is sufficient.
+    if not is_gdelt_test:
+        store.save()
+    logger.info("%s %d entries (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no named donor).",
+                 "Would publish" if is_gdelt_test else "Published", len(entries),
+                 duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor)
 
     # --- Save + build site ---
     high_confidence_threshold = 8
@@ -227,11 +288,25 @@ def main():
 
     save_edition_json(date_str, entries, stats, fetch_failures)
 
-    recipient_counts = {"UN": 0, "INGO": 0, "NGO": 0}
-    for r in recipients:
-        recipient_counts[r.org_type] += 1
+    if is_gdelt_test:
+        # Deliberately does not call build_site(): the live site's homepage
+        # is always "the latest edition" and its date-sorted archive/nav
+        # expects real YYYY-MM-DD edition dates, neither of which a
+        # TEST-<date> edition should ever become. Instead render a
+        # standalone local HTML preview (same template/styling as a real
+        # edition page) into test_output/ -- gitignored, entirely outside
+        # docs/, so test/mock data can never end up reachable on the live
+        # public site even unlinked.
+        preview_path = render_test_edition(date_str, entries, stats, settings["site"])
+        logger.info("GDELT date override run complete -- results saved to data/editions/%s.json, "
+                     "preview page at %s. The live site was NOT rebuilt (this is a test run, "
+                     "not a real edition).", date_str, preview_path)
+    else:
+        recipient_counts = {"UN": 0, "INGO": 0, "NGO": 0}
+        for r in recipients:
+            recipient_counts[r.org_type] += 1
 
-    build_site(settings, recipient_counts, settings["confidence"]["low_confidence_threshold"])
+        build_site(settings, recipient_counts, settings["confidence"]["low_confidence_threshold"])
     logger.info("Done.")
 
 
