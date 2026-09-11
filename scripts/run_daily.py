@@ -196,8 +196,9 @@ def main():
     duplicates_skipped = 0
     rejected_unnamed_recipient = 0
     rejected_no_named_donor = 0
+    rejected_out_of_scope_country = 0
 
-    from src.extraction import FatalExtractionError, is_generic_donor, is_generic_recipient
+    from src.extraction import FatalExtractionError, is_generic_donor, is_generic_recipient, is_out_of_scope_country
 
     def _cluster_sources(cluster) -> str:
         return ", ".join(sorted({a.fetch_source for a in cluster.articles}))
@@ -243,6 +244,22 @@ def main():
             logger.info("Rejecting cluster %s (via %s): no specific recipient organization named (%r).",
                          cluster.cluster_id, _cluster_sources(cluster), result.recipient)
             continue
+        # Recipient's own operating country/context must be one this
+        # tracker is actually scoped to (GHO + Nepal, see countries.txt) —
+        # the donor's own HQ/nationality is irrelevant and deliberately
+        # unconstrained (query_builder.py's whole design anchors on the
+        # recipient, not the donor, for exactly this reason). The AI
+        # extracts country_scope as free text from the source article with
+        # no constraint to the curated list at all, which is what let
+        # entries about US university/hospital/community philanthropy
+        # ("South Korea", "Singapore", a Cortland or Santa Barbara facility)
+        # reach publication despite being outside this project's actual
+        # geographic scope.
+        if is_out_of_scope_country(result.country_scope, countries):
+            rejected_out_of_scope_country += 1
+            logger.info("Rejecting cluster %s (via %s): recipient's country/context %r isn't on the "
+                         "monitored list.", cluster.cluster_id, _cluster_sources(cluster), result.country_scope)
+            continue
 
         entry = build_donation_entry(cluster, result, settings["confidence"], recipients)
 
@@ -276,9 +293,10 @@ def main():
     # is what writes to disk, so skipping it here is sufficient.
     if not is_gdelt_test:
         store.save()
-    logger.info("%s %d entries (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no named donor).",
+    logger.info("%s %d entries (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no "
+                 "named donor, %d rejected as out-of-scope country).",
                  "Would publish" if is_gdelt_test else "Published", len(entries),
-                 duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor)
+                 duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor, rejected_out_of_scope_country)
 
     # Highest confidence first -- the site should lead with its strongest,
     # best-evidenced findings rather than whatever order clusters happened
@@ -304,6 +322,7 @@ def main():
         "duplicates_skipped": duplicates_skipped,
         "rejected_unnamed_recipient": rejected_unnamed_recipient,
         "rejected_no_named_donor": rejected_no_named_donor,
+        "rejected_out_of_scope_country": rejected_out_of_scope_country,
         "entries_published": len(entries),
         "high_confidence_count": sum(1 for e in entries if e.confidence_score >= high_confidence_threshold),
     }

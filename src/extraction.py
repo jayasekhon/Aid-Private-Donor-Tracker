@@ -101,6 +101,46 @@ def is_generic_recipient(recipient: str) -> bool:
     return any(marker in r for marker in GENERIC_RECIPIENT_MARKERS)
 
 
+UNSPECIFIED_SCOPE = "unspecified / global"
+
+
+def is_out_of_scope_country(country_scope: str, countries: list[str]) -> bool:
+    """True if country_scope names a SPECIFIC place that isn't on the
+    curated GHO+Nepal list (config/countries.txt) — a real, named
+    location, just not one this tracker is scoped to (e.g. "South Korea",
+    "Singapore", or a US city/state attached to domestic university/
+    hospital/community philanthropy). "Unspecified / global" is NOT out
+    of scope on its own — that's governed separately by
+    publishing.include_unspecified_scope; this only catches a named-but-
+    wrong place.
+
+    The extraction prompt asks the AI to extract country_scope as free
+    text from the source article, entirely independent of countries.txt
+    — nothing upstream constrains it to the curated list, which is
+    exactly the gap that let country_scope values like "South Korea" or
+    "Singapore" reach publication. This is the backstop that closes it,
+    matching the is_generic_donor/is_generic_recipient pattern.
+
+    Matching is substring-based (e.g. "Syria" is a real substring of the
+    curated "Syrian Arab Republic", "Congo" of "Democratic Republic of
+    the Congo"), not exact — the AI tends to use the common/casual name
+    for a place, not the formal one in countries.txt. This won't catch
+    every real phrasing (a bare acronym like "DRC" won't match "Democratic
+    Republic of the Congo" this way) — if that turns out to cause real
+    false rejections in practice (visible via the "Rejecting cluster...
+    out of scope country" log line), add the acronym as its own line in
+    countries.txt rather than trying to guess every variant up front.
+    """
+    if not country_scope or country_scope.strip().lower() == UNSPECIFIED_SCOPE:
+        return False
+    candidate = country_scope.strip().lower()
+    for c in countries:
+        c_l = c.strip().lower()
+        if candidate == c_l or candidate in c_l or c_l in candidate:
+            return False
+    return True
+
+
 # Display labels for the type tag shown on every published entry. Curated
 # recipients (recipients.txt) use their authoritative org_type; anything
 # off-list falls back to the AI's own "recipient_type" guess from the
