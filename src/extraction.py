@@ -42,12 +42,34 @@ GENERIC_DONOR_MARKERS = (
     "a company", "companies involved", "not named", "n/a", "undisclosed",
 )
 
+# The prompt tells the model to set is_relevant=false when it can't name a
+# specific donor, but it sometimes complies with the letter of "give a
+# name" rather than the spirit -- extracting a bare industry descriptor as
+# if it were the company's own name (a real case: donor="Housebuilder" for
+# a story that never actually said which housebuilding company gave,
+# with the model's own "assumptions" field admitting as much). Checked as
+# an (article-stripped) EXACT match, never a substring -- a substring
+# check would wrongly reject real single-word/short company names that
+# happen to contain one of these words, e.g. "Bank of America".
+GENERIC_DONOR_INDUSTRY_NOUNS = {
+    "housebuilder", "house builder", "retailer", "developer", "manufacturer",
+    "automaker", "car maker", "airline", "bank", "firm", "business",
+    "company", "corporation", "organisation", "organization", "supermarket",
+    "builder", "construction company", "property developer",
+}
+
 
 def is_generic_donor(donor: str) -> bool:
     if not donor or not donor.strip():
         return True
     d = donor.strip().lower()
-    return any(marker in d for marker in GENERIC_DONOR_MARKERS)
+    if any(marker in d for marker in GENERIC_DONOR_MARKERS):
+        return True
+    for article in ("a ", "an ", "the "):
+        if d.startswith(article):
+            d = d[len(article):]
+            break
+    return d in GENERIC_DONOR_INDUSTRY_NOUNS
 
 
 # Aliases that double as ordinary English words are unsafe for the loose
