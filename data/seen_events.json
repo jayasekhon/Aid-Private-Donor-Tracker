@@ -765,5 +765,921 @@
     ],
     "date_found": "2026-09-10T18:12:55.348101+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "c9126424-78f8-4e9f-8501-89c917a183e1",
+    "donor": "AIWIBI Australia",
+    "recipient": "Nepal Flood Relief Efforts",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "Rs. 5 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Nepal",
+    "status": "new_commitment",
+    "summary": "AIWIBI Australia has donated Rs. 5 million to support flood relief efforts in Nepal.",
+    "figure_quote": "Rs. 5 million",
+    "assumptions": [
+      "The exact nonprofit or agency managing the flood relief efforts in Nepal is not specified."
+    ],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcnl2SUgtQXc0amRzU0kzdkFGQUdQZHRWX3pvSmhTRFNXZlBUZ1B3dXlYb3FISWFtSzEwbW1PVHR6UENWY05BM05ELU5nekU2cUVzUmQtZGdtbi1qWWY5VVZ3YmxQa3NkVGR3WTVQQk1BNzg1Rlh2TVctSFhadjF5ZkxFeDdZQXU2TnF2RFAxQUlteGh1TXNSdl9tUWpJckdLWFZVcG14SnFkdHhrX2p1dg?oc=5"
+    ],
+    "source_names": [
+      "The Times Australia"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:21:38.639355+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "d0c7a776-fc24-4c8f-93d5-87538cd8d7c6",
+    "donor": "Sloan Foundation",
+    "recipient": "Stony Brook University",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "The Sloan Foundation has awarded a grant to Stony Brook University to enhance doctoral education programs.",
+    "figure_quote": null,
+    "assumptions": [
+      "The exact monetary amount of the grant is not specified in the source text."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMitwFBVV95cUxQT3NBdldXd1c3aTZoNUhJVzhrOTVvMXVTUTNwR3JkSU1Bc0Z0cWdaay0xWTRBVjQ5blFQcFdWbE1TZHJZczJpdHF4Q0NITGEtb1Q0SkdHWFNOVUFiUjVvSXVUOXZVdHlyRy1DYlZDNm9vUlBLWlJ6eDBCampRUl9ZRWZGa19YeEVoaVN3aVVhR3kyVkVTaFRreUE5Nlkta2FURlRqbEFWSGFyQjR3M2FFVmNlMUdZcGc?oc=5"
+    ],
+    "source_names": [
+      "SBU News"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:23:22.112963+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "72772bbd-5628-49e6-982e-6074a78c6872",
+    "donor": "Hutton Parker Foundation",
+    "recipient": "Santa Barbara Revels",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Hutton Parker Foundation has granted Santa Barbara Revels, marking a new phase for the organization.",
+    "figure_quote": null,
+    "assumptions": [
+      "The exact monetary amount of the grant is not specified."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQU1QzWFhwLTJNcE9DbUJzWWZGOGd0Ung0bEpPckdpUE9JVW9OR3Q0M2RNVWswdVdDdjRsYVh5ckpMVnhwM3FManRycG1zQi1JZlAybU1sMzNQVWhaTWtiRW95dWxTdU8yUkVfUGtJdmlyZWoxUW9jSDF5NmlpalFtNk1DX3M4NFIwSmFfUUotcl90ZWI5TjFVQXZlb3MxRE5mT0VXZGdhOG5ELWNaamVSX1VwVmFnNGlIRG92Z3VEUTg5ZXVxazBEMDFjSDRJb2Ux?oc=5"
+    ],
+    "source_names": [
+      "Santa Barbara News-Press"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:23:28.767167+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "e51d7689-b257-4249-b506-0a6d548b0c61",
+    "donor": "Sumitomo Foundation",
+    "recipient": "Research projects related to Japan",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Japan",
+    "status": "renewed_partnership",
+    "summary": "Sumitomo Foundation is offering grants for research projects related to Japan.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific amount and details of the grants are not provided in the source text."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMirwFBVV95cUxOcEZSZENDSVpuNlplNHVnZ1p5YmtLcWF5LTd5UjVGZDYzazJ0S181dHN0N1k1NlVNSVp3RVY1Qk5JbVdLSW0wUXZWbXBBWVZNMVk4OWJzTHB6aUFxcUcxdmdRb1o5Y0ktT1lrRk1BaGdoZXZCVFVMX3pzaTlDNEFGNERNa1JFZjRFc0otbFlJdVdfRkxGUmd1Y2xXMmxHTWFNZEZ5aHdBYThGT2FTRl9V0gGvAUFVX3lxTE5wRlJkQ0NJWm42WmU0dWdnWnlia0txYXktN3lSNUZkNjNrMnRLXzV0c3Q3WTU2VU1JWndFVjVCTkltV0tJbTBRdlZtcEFZVk0xWTg5YnNMcHppQXFxRzF2Z1FvWjljSS1PWWtGTUFoZ2hldkJUVUxfenNpOUM0QUY0RE1rUkVmNEVzSi1sWUl1V19GTEZSZ3VjbFcybEdNYU1kRnlod0FhOEZPYVNGX1U?oc=5",
+      "https://news.google.com/rss/articles/CBMiywFBVV95cUxNRjJZSUlPZGVsMnhSNEZTdkRKMTJsTm1sNkhBc2FKR2NudWlPNThBVnhBMXBta3F2UnVLN2g2LXBTX2d0MHQ0Z2lVRjQzZS1rWGVaREV2TDZkcUdpS0VUUDZ5bnh0MElGUEd2VWswaUwtZHM3V0M1OGUtYmo2X0pDcTBwU3Myb2g5T0NpMHBYczkyR1E2d3hub3ZKTWdQM0lNRmFJZ1pYY2Jkc1ZWbmxySlJ3SkN2YzE3elE5amVzUjZnQk4tYUZtWlVRSdIB0AFBVV95cUxNa1ptVnk4ZnpvTzBRWWFNQVNtQW9VU1htSTJuSDVKYUFDdUgyNkxmSmswWjB5RDc5bVc5WXZZN01YWExBbDlGVHlrSDhzLXBhM1BrVE03S2lTS25MOGQ5VklYQlQ4NVlyTE5fUUMxcmdWWDYzbWdvSXZYLVpwV01XcGpUUkpiV2VfX0JDZmJBX215OUhoR19vVHhNT1BWRXhaOERUVVZWaUstYzhRaUZHTDEwVFNpUWZJSTRuX0JTT3lHZVdWaUxOTjY5TnlxOEtN?oc=5"
+    ],
+    "source_names": [
+      "fundsforNGOs"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:24:01.773295+00:00",
+    "is_duplicate_of": "0dc24e54-05a2-4d49-98ef-95a72568ec6c"
+  },
+  {
+    "entry_id": "eef0f196-def5-44b5-ba2a-ca960e7a97ee",
+    "donor": "BankNewport Charitable Foundation",
+    "recipient": "Empowerment Factory",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$4,000",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "BankNewport Charitable Foundation has granted $4,000 to support the enrichment programming of Empowerment Factory.",
+    "figure_quote": "$4K",
+    "assumptions": [],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMingJBVV95cUxOQzRxUTZJdzBqM1hhVkpiVnZBYmh6ZTBuUVhJTi1ydW5EdzJEOVotYWotaUxzVEU5TUE1RC1GRGtRN05ZQU5rZEYwZVlNV2gtNHpfV1hyZkdlRzdIMnZ6RTkzSzhIU1JKbmNkQUFOc1ZRTHRIUnlRT2pEUmcxSTNFVnFBQU55azJLTERkYTZBeTFQSTZ4UmZ1ZGNHUmtBWTRkcXZvSDBwRndJUW40RnJXWkkzTWExN3FfMFR6UEd6VUZkWnV4NjdMYm1MZWxMdEo2aWhPQmtqbW5MbHR3RG5lOHlLbGoxd3ktSTlTUXpXNXJoZDJMcVBxNmI4alJ3NkxuM3psSURRNENORVBSQ0JVMjkta0VDZ2tvZjZqUE5n?oc=5"
+    ],
+    "source_names": [
+      "valleybreeze.com"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:24:14.228614+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "014ba13a-8f7a-4911-81df-00272c935ede",
+    "donor": "NICO Group",
+    "recipient": "Institute of Internal Auditors",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "K20 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "NICO Group donated K20 million to the Institute of Internal Auditors for their annual conference.",
+    "figure_quote": "K20 million",
+    "assumptions": [],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNd3dsNkwyZGlhUFFIaTBSZEFqQjlCbUoxbjlMa1pNX1B2b1ZGVkx6R3RuX2VTbWZOLXFNQWtzNmFlNzZqSnlZNFM3alZ5TnVNSDM4TGlFUkpKM2RrdGNhLXUtZTZVM2NaTkpacnhrWjExOGdwTmV3b0ltelVRc3lZQVNHd0MxLTkweXpLOEdVTTMzQ3o5aEVINGl1LWRLNnMzelJYYm50SEtMSGFiWmtsSUJjdlg2VVJMWVlR?oc=5"
+    ],
+    "source_names": [
+      "Nyasa Times"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:26:04.864068+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "a6c4c66d-9447-4719-a388-b992494f6981",
+    "donor": "Visa",
+    "recipient": "World Bank",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Visa has partnered with the World Bank to enhance digital financial services in emerging markets.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQM2Z4VU9lRkhlQlV6eWszT1R0SWFnTlNSU01JWG0tRzJhcjRGbzJMa0xXSy11WmR1NjJ3LXZNc2R1cl84cmtscndLcXNSVjVBLWtfR0NfMWNhTkNrcC0tUGRLdGlEVExkQURWaEZLbnVFdXNsREpJSm1uY2RNVnIycWg2UW5PdzF0cGtVLVRrRE9XYnFNQTZ1d1FJQ09JZkRsaXFMNG5OeWtrdDYwMW5CTE82N2hiMnFScHZBUmQzTzNUd2VfdWY2RW1zWFR0VVJpMkF4ZmRIcWhIQ2RIZllmWlg0MUt1UE5nRzRmY1VrTnpCcjhsQkE?oc=5"
+    ],
+    "source_names": [
+      "TradingView"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:26:24.355419+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "5024f7c6-8ebd-419b-9981-4bddd5dd7054",
+    "donor": "Arsenal Foundation",
+    "recipient": "Nepal flood relief",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Nepal",
+    "status": "new_commitment",
+    "summary": "The Arsenal Foundation has contributed to flood relief efforts in Nepal.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific recipient organization within the flood relief efforts is not named, but the context implies a charitable cause."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMimgFBVV95cUxQaW4yWWZJbE1LRW5LNjIzQzBnbUN0VlJ1eWFGT3hrTElKY0FUTXVDTEJjVEpzNV9HTXhWZmxwY0N6NGI4LWtLd1E5MU5YdGpCVlF1enVlVXZOQTJxdGNRdlpwRnR1b0VYbVExTFJtSlRSOXVBU0dpSmFvanQzOUpjclpxTThNZjFRWWJza2NOYU9hcG42Y3hXekZB?oc=5"
+    ],
+    "source_names": [
+      "The Kathmandu Post"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:27:03.581598+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "68dec76a-4a6f-4f67-b1fb-cc9bdd304a43",
+    "donor": "Hyundai Motor Company",
+    "recipient": "Korea Heritage Service",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "wearable robots",
+    "country_scope": "South Korea",
+    "status": "new_commitment",
+    "summary": "Hyundai Motor Company donated wearable robots to the Korea Heritage Service to aid in heritage preservation efforts.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 3,
+        "points": 3
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiV0FVX3lxTE41NThNQllKRENxS3V3OG1HaTdrQTM4MUZfMEcwYkREV3BiSUxaV2hBR3VtTkYteDRTVVNGOEYxQlFUbFBrYWFNTWEwQWhpOWNFckFNNWwycw?oc=5",
+      "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5uYWxtdVFMVVNNVEM4RXBfMGdfbGFmdGFjRlU3WjdrVU5BUVBQUFpfX2tTa1MzakI0bDg5cGx0MHBodW1qSWdQODdfQXY4U2tiazF5Zm5SaFFnYkpxUi13ajFMUVE?oc=5",
+      "https://news.google.com/rss/articles/CBMiU0FVX3lxTE03b3U5QWM0VGd1T1psN0tzV1NNdExUM0xBSU5xRktHa1hDOGRZa1RvbkhxeENFM0ZIQ0hHVGQ1eU5nWVhnZElpRERyUUZFY3FFWmJR?oc=5"
+    ],
+    "source_names": [
+      "매일경제",
+      "아시아경제",
+      "헤럴드경제"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:29:13.224037+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "b2e62bff-40ce-40c8-9426-a2d847725e61",
+    "donor": "Bricon Foundation",
+    "recipient": "600 cancer survivors",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "N50 million",
+    "is_in_kind": true,
+    "in_kind_description": "bras and prostheses",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "Bricon Foundation donated bras and prostheses worth N50 million to 600 cancer survivors.",
+    "figure_quote": "N50m Bras, prostheses",
+    "assumptions": [
+      "The recipients are described as '600 cancer survivors', which is classified as 'Other nonprofit' since they are not a named organization."
+    ],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWHJjTGQ4S3NEek14LU1TQklqRU00UDlLS1YwVkFWVUVYZzRZN0dGdktkVGNpV2prMG80cGh1cHJpZEZGTzRLYnlhaDVPSlJpanlzNjZudmhLVi02MWlzaU5BNUdDbVBpaUlWd0VOckJ4U0g1T3VSWnJlUndkaGhWQ1BqVE5EQktjZXR3ZXVTMWNlQ2JRVWR1RVpSM1V5T3JxR2hWeGYzLVV2eWPSAbABQVVfeXFMT2V3WVA3b21tVnJNdzFFWlN3bUtkc0dXMU5WREUzRHFCZnVzQno4b2NJZ0pjdkdleEU2S0EyWUpNR0hQQUNpMm4wVTJTckNDM2xocDdFU1V0NlVXcDB1NGhWNG4tazN4MGtfSWFINTZhWjBIUW8xUEVxVHVmWFBMeGczZmNHVk43ZnV1QnBUTU45Z3BWT1ZxZUhESXJEYjhmdjNySm11cTNmOHJJdkJhZzM?oc=5"
+    ],
+    "source_names": [
+      "vanguardngr.com"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:29:52.525970+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "e318275c-e65b-4d20-9b69-dce8195340f7",
+    "donor": "Hughes Floor Covering and Mohawk Pet Premier",
+    "recipient": "Charlotte Animal Care & Control",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "unclear",
+    "summary": "Hughes Floor Covering and Mohawk Pet Premier sponsored a segment on WCNC featuring Mama Stormy from Charlotte Animal Care & Control.",
+    "figure_quote": null,
+    "assumptions": [
+      "The nature of the sponsorship (financial or in-kind) is not specified."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi3gJBVV95cUxPOG5jakFqMXRPNC1PcFUxUWVKM1E0U0o3M21Xd0x2b0dRZS1jRkU4cEtEMk9Mb0tjMGNQcDM5elFGT19YdUVNSXl1QkpNNURrcW8tNmtwWXZkLWZfMmlZN3F4bUN6TUQzNkc3WmhEcHBzaDdzWWItZzdsLW1SNjN2V050Xzhxd1ZKUF9SVzhSME5yb2lHRDZTM0wwR3hpWi1PWkIzZXZYaFpBQTg3UldpY3BuWTFFT2JlWHU0Ym1lZ0lwRm00Qm5uek9ZVUVhdDV0MEJ1SGZjbFFTWVZ1cXAtZ3BSWjNoUGhnQVhac2phNVhOVXBuNWJTSDRkTXJjejhrX3ZRaU92TXBqbHk2VEpPTS1ya0d5czVEQWNkZ29KUG5VOFBQc0NCVWRlb3Y0R0lJazJPdkVidE1XQncwbjJwLTd3YVZjWWRnQ1M4TDdscnZ1cXVTdjBZazJVN2FKUQ?oc=5",
+      "https://news.google.com/rss/articles/CBMi4AJBVV95cUxQMmphV1VQQkwzdU45TGY5UktRbTJPUVZrX1UyalBFWDhRenFvTEY5djB0N0Z3dU1zRzFjWTZZSWg4YTBmZkxGRVltd0R1QWUtNGVvWFlkOUVEejR4VHBtc2tvXzFmNDg0MmwtQnh1RU9zNGhIZjBpMzVndEhndlhFWUdhLUdpeTJhZkpVYWFrNEM2RVhVZ2hHcWlXUmpURWlLeXJXRUZvYkdzekdocmVuVUdFaThaczUwRXhzMzE1VkVWYXVlTnd1ellTdnFDQXl0aGpFSXJDMWlyS2lNWEVlQS02MEUyVThXOEJqSXhzbUdSSlItZktnZnI0Uk85UVl1ckZnOExlUFVlTVNPMURQM1Y1a21sbm1CZ3FTM1ZaTHhFQmNMQnF4TFFial85SGd3d01nSkxZZzlUU0V0cXZORVg0N3I1Z2xKMm9OT0VyOExBb0tIT0xVbmJFQW5WUkpI?oc=5"
+    ],
+    "source_names": [
+      "WCNC"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:32:28.338002+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "58bed1f4-2803-43a5-ba95-dd2511910bba",
+    "donor": "BATUK",
+    "recipient": "Beyond Zero",
+    "recipient_type": "NGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "free medical care",
+    "country_scope": "Kenya",
+    "status": "new_commitment",
+    "summary": "Beyond Zero has partnered with BATUK to offer free medical services to 3,900 residents in Laikipia.",
+    "figure_quote": "free medical care to 3,900 Laikipia residents",
+    "assumptions": [],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMivAFBVV95cUxOcWFoemVhSUZRQ0J4dHFqSGNWTkVfUkFGaGszMWNXZTMyWko1bjF5U0hUc3pLQ0hrWjZVamZUVVZUTU1rVndFanFWTm8tdmxGN3BQY1hMLVlfZGk5UDBIUXY5UEIzTXZaRkJNbVNDd0k3OHZhM19PLXMyYVA4Nnd2SzBwWG9PUXVYZ3RfYTl1TzB1UUFqTjdxQjhTc0JZTUIyQy0yQThVSnlGMUpIV0diaFEwSU9mVWc1Vk52Vg?oc=5"
+    ],
+    "source_names": [
+      "People Daily"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:33:46.221361+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "e7ae4b05-6c96-4124-a744-7de973c3df48",
+    "donor": "V Aesthetics Holdings",
+    "recipient": "Society for the Prevention of Cruelty to Animals (SPCA) Singapore",
+    "recipient_type": "NGO",
+    "amount_text": "S$400,000",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Singapore",
+    "status": "new_commitment",
+    "summary": "V Aesthetics Holdings has committed S$400,000 to support dogs in the care of the Society for the Prevention of Cruelty to Animals (SPCA) Singapore.",
+    "figure_quote": "S$400,000",
+    "assumptions": [],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPalpDM3N3aVFNM1lFZWhZSFkxTFo3RTdSVU8xNU1kTEthQUpaeFpQejJqekxLLTkyMFA3YWZtR19sN1pSU001VDkxWHVUajhiay1qVHB1bVZtc19LbWlFci1DMlk2N3Nnb05Wb0Q4UUs2WTUzUUpiOEV3eXBsc0F4NVlkaFZESUxfZFpYMTdzUUQ4OEJzS1lnX1c0M3czX2RRWlNMNUhMU1o5Zw?oc=5"
+    ],
+    "source_names": [
+      "pan african visions"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:33:52.986085+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "152dc9cc-f35c-424d-a76d-a09a7e46ce26",
+    "donor": "Blue & You Foundation",
+    "recipient": "UAMS and Our House Shelter",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "unclear",
+    "summary": "Blue & You Foundation provided funding for a pilot program between UAMS and Our House Shelter.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaHktV2ZJZ2JsOVdnb1IxcUpaNTc3LTFTR1hJcUZBSjBWWDR1UHZ2c3drSzBxWjBheXZ0S1dIZGpmUVl4SzBjUVdSSU9YM0Ezdmw4bkJ5NWh4aHNKcVVOczlWdDhEV0xTU1RDY0p1bHl3U3VPN2h1VHE1SE5vazNOaXMxWVlpN0RPQkhwMHN1c3RZNGU3azZCSVoyekhnSGl1aHJwdGxpWERFdw?oc=5"
+    ],
+    "source_names": [
+      "UAMS News"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:34:05.528519+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "8a1f6083-7307-49cd-8071-2d99a345c6d0",
+    "donor": "Sloan Foundation",
+    "recipient": "Stony Brook University",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "The Sloan Foundation has awarded a grant to Stony Brook University to enhance doctoral education programs.",
+    "figure_quote": null,
+    "assumptions": [
+      "The exact monetary amount of the grant is not specified in the source text."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMitwFBVV95cUxQT3NBdldXd1c3aTZoNUhJVzhrOTVvMXVTUTNwR3JkSU1Bc0Z0cWdaay0xWTRBVjQ5blFQcFdWbE1TZHJZczJpdHF4Q0NITGEtb1Q0SkdHWFNOVUFiUjVvSXVUOXZVdHlyRy1DYlZDNm9vUlBLWlJ6eDBCampRUl9ZRWZGa19YeEVoaVN3aVVhR3kyVkVTaFRreUE5Nlkta2FURlRqbEFWSGFyQjR3M2FFVmNlMUdZcGc?oc=5"
+    ],
+    "source_names": [
+      "SBU News"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:34:18.701366+00:00",
+    "is_duplicate_of": "d0c7a776-fc24-4c8f-93d5-87538cd8d7c6"
+  },
+  {
+    "entry_id": "bc64d6a1-0af7-4a52-b3a8-5c6c81a98d72",
+    "donor": "Packers Foundation",
+    "recipient": "Area charities and organizations",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "unclear",
+    "summary": "The Packers Foundation has granted funds to various local charities and organizations.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific amounts granted to each charity are not detailed in the source text.",
+      "The status of the grants (new or renewed) is not specified."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMipAFBVV95cUxQTnV4RkZLUVNsRnBPYWd0Y0J3bWVXb055N3pOZDRGTzF1cEtsaGpYZi1XcFNMcHh6QW0wRnlBLW8zeklqNzExVlh2R01tRXVuRVZSb0RFOGlhNmFLckFkbWNOc1dwVkxRX3NCelBfeEVMb2lfTlUySFVrWmhnMGJIcFNsclRxbVB6UDlfaE51My0zR0hpbGxTWnBiUDNJWWk2bmlzRtIBpAFBVV95cUxQTnV4RkZLUVNsRnBPYWd0Y0J3bWVXb055N3pOZDRGTzF1cEtsaGpYZi1XcFNMcHh6QW0wRnlBLW8zeklqNzExVlh2R01tRXVuRVZSb0RFOGlhNmFLckFkbWNOc1dwVkxRX3NCelBfeEVMb2lfTlUySFVrWmhnMGJIcFNsclRxbVB6UDlfaE51My0zR0hpbGxTWnBiUDNJWWk2bmlzRg?oc=5"
+    ],
+    "source_names": [
+      "wizmnews.com"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:34:45.181631+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "a1ca0b7a-3616-48b4-bb02-678e3ef92ecc",
+    "donor": "Saint Agatha Foundation",
+    "recipient": "Cortland facility (specific name not provided)",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "unclear",
+    "summary": "Saint Agatha Foundation provided a grant to bring new breast cancer surgical technology to a facility in Cortland.",
+    "figure_quote": null,
+    "assumptions": [
+      "Specific name of the Cortland facility not provided in the source text."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSmRrZ1lveFNnNzY0OXRSX3lOVk5FR2l1QmJva3FVMzVwREk0bHc1OWhfaTFlcTRyYk5oZHpHV180Q3Zjd2h3RVNvUUQzYVJKLVlFcmNJQnRkcm1PSU0yRW5yYm5WaW43NzdRS2RrUHlWUE0xZGo1RFNtbFc1VFEyWFI0cmR0N2RQOFozbXFMSUU2VWRsWllBZ0NDeGtIX3lHQ0ZBZzdSbFdPVkZm?oc=5"
+    ],
+    "source_names": [
+      "WXHC.com"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:34:51.305311+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "cdfc28f8-f449-4674-a844-0501bfa46afd",
+    "donor": "Sumitomo Foundation",
+    "recipient": "Research projects related to Japan",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Japan",
+    "status": "renewed_partnership",
+    "summary": "Sumitomo Foundation is offering grants for research projects related to Japan.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific amount of the grant is not mentioned.",
+      "The status of the grant (new or renewed) is not specified."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNel9JWkExaEh2ZF9jaFoxOFFsek9hYVZjVnJ2THB3NGhULVctTHdaaXR6eUFqbVBBZ1hFQXdmSU9tNk5kakc2V0o4T3c2aVZWWHJRRHBUQnlZak5LbmVHZmtva01ybzcyT2psQXhpeE5QRF9YNzE1cHE0ZTdZbDR3aXIyeXBVV0dweXhFVkFSM2R2dkNTek9uRHJ2bUlhdWo3WWdaclRubmp2QdIBrwFBVV95cUxOcEZSZENDSVpuNlplNHVnZ1p5YmtLcWF5LTd5UjVGZDYzazJ0S181dHN0N1k1NlVNSVp3RVY1Qk5JbVdLSW0wUXZWbXBBWVZNMVk4OWJzTHB6aUFxcUcxdmdRb1o5Y0ktT1lrRk1BaGdoZXZCVFVMX3pzaTlDNEFGNERNa1JFZjRFc0otbFlJdVdfRkxGUmd1Y2xXMmxHTWFNZEZ5aHdBYThGT2FTRl9V?oc=5",
+      "https://news.google.com/rss/articles/CBMiywFBVV95cUxNRjJZSUlPZGVsMnhSNEZTdkRKMTJsTm1sNkhBc2FKR2NudWlPNThBVnhBMXBta3F2UnVLN2g2LXBTX2d0MHQ0Z2lVRjQzZS1rWGVaREV2TDZkcUdpS0VUUDZ5bnh0MElGUEd2VWswaUwtZHM3V0M1OGUtYmo2X0pDcTBwU3Myb2g5T0NpMHBYczkyR1E2d3hub3ZKTWdQM0lNRmFJZ1pYY2Jkc1ZWbmxySlJ3SkN2YzE3elE5amVzUjZnQk4tYUZtWlVRSdIB0AFBVV95cUxNa1ptVnk4ZnpvTzBRWWFNQVNtQW9VU1htSTJuSDVKYUFDdUgyNkxmSmswWjB5RDc5bVc5WXZZN01YWExBbDlGVHlrSDhzLXBhM1BrVE03S2lTS25MOGQ5VklYQlQ4NVlyTE5fUUMxcmdWWDYzbWdvSXZYLVpwV01XcGpUUkpiV2VfX0JDZmJBX215OUhoR19vVHhNT1BWRXhaOERUVVZWaUstYzhRaUZHTDEwVFNpUWZJSTRuX0JTT3lHZVdWaUxOTjY5TnlxOEtN?oc=5"
+    ],
+    "source_names": [
+      "fundsforNGOs"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:35:10.989662+00:00",
+    "is_duplicate_of": "0dc24e54-05a2-4d49-98ef-95a72568ec6c"
+  },
+  {
+    "entry_id": "12ef7c83-ff47-4224-9363-02090e7537d3",
+    "donor": "Darwin Forever",
+    "recipient": "SPA Monaco",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "renewed_partnership",
+    "summary": "Darwin Forever has renewed its partnership with SPA Monaco to support shelter animals.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPc0lENVI3M2E4YnlCYThlU2c4djY3SGZQTVBSTUZLMElUcFZQMzVsNi1JcE5ob3FMMDhLeDBJY2dtXzYxeHFCdDRxWnZPWWxxUW9FTFBEMHAzNkp2ek54eWU4eTNhZnZyRVR1MkphcEJEWlBKN3VpM0hTU25XV04zVjA4QWZ1MV83bk5pd243THlsd0NwUi1TU1B0UDBXUE53Tks0enpNQWItbnhaQW1jVEFlcjRhNnRRQUlEMGIzY29XUQ?oc=5"
+    ],
+    "source_names": [
+      "Nice-Matin"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:35:17.393235+00:00",
+    "is_duplicate_of": "e38f829b-72da-4e15-8deb-c8f37b9962e4"
+  },
+  {
+    "entry_id": "13215b2a-f7e0-4f67-9ec6-b7394c6d6528",
+    "donor": "Bengaluru FC",
+    "recipient": "StepOut",
+    "recipient_type": "NGO",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "renewed_partnership",
+    "summary": "Bengaluru FC has extended its partnership with StepOut for the third consecutive year.",
+    "figure_quote": null,
+    "assumptions": [
+      "The nature of the partnership (financial, in-kind, or other support) is not specified in the source text."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMid0FVX3lxTE5iYWtYaEVQeXA5ZGtyUExqR3pCWFA5QzdvT3hZcXRkb1Y4NXp4TktMd1ZBT3dLVTFCei1pMkRDRlgzOFZTS0JFX1U4SE5TdFNDNGZXcXQzU2xsME9GUkJ2TnEtWDR5VDZtUEVNOVRydFUzNTlfMm1N0gF8QVVfeXFMTm1HSFFTSUx4UG9paUkwSVV1SGpLQUVHdlpqSDZJZV9QWUt6Um1YTmc3WFV5bENZUmpuSmh5TnRLMzRIVExGNjZES2p3S2lBbmNsRDlHelVtWXN0QXdNYTZHU3g0LWpneVpfX0R4U2puLWJ2U0ZrMllOQXVYMA?oc=5"
+    ],
+    "source_names": [
+      "MediaBrief"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:35:30.475181+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "7dbcea88-c18c-4994-a800-1784063e91be",
+    "donor": "Plymouth developer",
+    "recipient": "children’s group",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "renewed_partnership",
+    "summary": "A Plymouth-based developer has made a repeated donation to a local children’s group.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific name of the children’s group is not provided.",
+      "The monetary amount of the donation is not specified."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMihwFBVV95cUxNcW9hWXQ5NHh0UzBNWDdmWWdjZExSc2FJakFNcFdDSWo1ejB5ejcxUXB5T1ZyLUdzTWxIQWQzSG5MM3J1Q3ltNDRPV2g0WndHTGpaMnB0d3JsVFFtcHlGUHEzcnpqRnA5WUJKSzRZY3lPZ2FPWldvVTZwelVma2UwenB1b1N0UGc?oc=5"
+    ],
+    "source_names": [
+      "wearesouthdevon.com"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:36:09.548318+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "9c8be85a-dbb8-45e6-95ec-dcfdbe0be440",
+    "donor": "enGen Global",
+    "recipient": "Seva Bharathi hospital",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "surgical equipment",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "enGen Global has donated surgical equipment to Seva Bharathi hospital.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMitgFBVV95cUxObkl5bG52MHQ5TDBOb0NRUlBOOTNvaThROFRrZ1JiSVNGZk5xYmR4RkRaLUFKckpDM3BKaHFsYkFJMTRRUmxzNWkxbWhmLXlLd01rM3M4RkdyX3E3WkU3Y3VuZUVYdWZwcVUyQVlWOEV0bGNYUGNLOHNhTDFac0lrT2FNel9RdXU2NjhtczlONkxSeUp3aGNqMUxsTkZJWXEtT2VnYjdHTW5sdFg2ZktyZXdGZ3JMZw?oc=5"
+    ],
+    "source_names": [
+      "metroindia.net"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-11T10:36:28.887545+00:00",
+    "is_duplicate_of": null
   }
 ]
