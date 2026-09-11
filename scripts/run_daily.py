@@ -199,6 +199,9 @@ def main():
 
     from src.extraction import FatalExtractionError, is_generic_donor, is_generic_recipient
 
+    def _cluster_sources(cluster) -> str:
+        return ", ".join(sorted({a.fetch_source for a in cluster.articles}))
+
     for i, cluster in enumerate(clusters, start=1):
         if i == 1 or i % 5 == 0 or i == len(clusters):
             logger.info("Processing cluster %d/%d...", i, len(clusters))
@@ -211,7 +214,16 @@ def main():
             skipped_due_to_budget += (len(clusters) - i + 1)
             break
         if result is None:
-            continue  # not relevant, or extraction failed after retries
+            # Previously silent -- no way to tell from the log whether the
+            # AI judged this not relevant or extraction failed after
+            # retries, let alone which fetch source(s) it came from. That
+            # blind spot mattered in practice: GDELT/PR-wire candidates
+            # were passing the trigger-phrase filter but zero of them ever
+            # showed up in a published entry, and this was the one place
+            # in the pipeline with no visibility into why.
+            logger.info("Cluster %s (via %s) not judged relevant by the AI (or extraction failed).",
+                         cluster.cluster_id, _cluster_sources(cluster))
+            continue
 
         # Backstop behind the extraction prompt's own instructions — the
         # model is told to set is_relevant=false for these cases, but
@@ -223,11 +235,13 @@ def main():
         # named at all, since that isn't a usable finding.
         if is_generic_donor(result.donor):
             rejected_no_named_donor += 1
-            logger.info("Rejecting cluster %s: no specific donor named (%r).", cluster.cluster_id, result.donor)
+            logger.info("Rejecting cluster %s (via %s): no specific donor named (%r).",
+                         cluster.cluster_id, _cluster_sources(cluster), result.donor)
             continue
         if is_generic_recipient(result.recipient):
             rejected_unnamed_recipient += 1
-            logger.info("Rejecting cluster %s: no specific recipient organization named (%r).", cluster.cluster_id, result.recipient)
+            logger.info("Rejecting cluster %s (via %s): no specific recipient organization named (%r).",
+                         cluster.cluster_id, _cluster_sources(cluster), result.recipient)
             continue
 
         entry = build_donation_entry(cluster, result, settings["confidence"], recipients)
@@ -238,7 +252,8 @@ def main():
         prior, reason = store.find_possible_match(entry, lookback_days=lookback)
         if reason == "exact_duplicate":
             duplicates_skipped += 1
-            logger.info("Skipping exact duplicate: %s -> %s", entry.donor, entry.recipient)
+            logger.info("Skipping exact duplicate (via %s): %s -> %s",
+                         ", ".join(entry.source_channels), entry.donor, entry.recipient)
             continue
         elif reason == "likely_renewal" and prior is not None:
             entry.is_duplicate_of = prior.get("entry_id")

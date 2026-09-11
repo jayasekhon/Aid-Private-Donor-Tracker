@@ -95,12 +95,21 @@ def filter_by_trigger_phrase(articles: list[RawArticle], triggers: list[str]) ->
                      "filter) — eyeball these for real donation stories the phrase list is missing:",
                      len(rejected_sample), len(articles) - len(kept))
         for a in rejected_sample:
-            logger.info("  [%s] %s", a.matched_recipient or "?", a.title)
+            logger.info("  [%s, via %s] %s", a.matched_recipient or "?", a.fetch_source, a.title)
 
     if kept:
-        logger.info("%d candidate(s) passed the trigger-phrase filter and are headed to the AI step:", len(kept))
+        # Per-source breakdown up front — without this, it's impossible to
+        # tell from the log alone whether GDELT/PR-wire candidates are
+        # even reaching this stage, versus Google News dominating simply
+        # because it contributes far more raw volume to begin with.
+        by_source: dict[str, int] = {}
         for a in kept:
-            logger.info("  [%s, matched %r] %s", a.matched_recipient or "?", a.matched_trigger, a.title)
+            by_source[a.fetch_source] = by_source.get(a.fetch_source, 0) + 1
+        breakdown = ", ".join(f"{count} {source}" for source, count in sorted(by_source.items()))
+        logger.info("%d candidate(s) passed the trigger-phrase filter and are headed to the AI step (%s):",
+                     len(kept), breakdown)
+        for a in kept:
+            logger.info("  [%s, matched %r, via %s] %s", a.matched_recipient or "?", a.matched_trigger, a.fetch_source, a.title)
 
     return kept
 
