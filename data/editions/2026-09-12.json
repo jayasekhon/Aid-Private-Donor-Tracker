@@ -1,0 +1,215 @@
+{
+  "date": "2026-09-12",
+  "entries": [
+    {
+      "entry_id": "311c3c59-c559-49d7-8a8c-4de139cbc668",
+      "donor": "Cascade Comprehensive Care",
+      "recipient": "Ross Ragland Theater",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$50,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Cascade Comprehensive Care has donated $50,000 to the Ross Ragland Theater.",
+      "figure_quote": "$50,000",
+      "assumptions": [],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTFNJOWtHN0U2bmNpdkhjY2NYc0RaX1BYSm5UUE1CXzZXWE4xb2ZiVE9rYmNjRUlfMUFXdk1tNkN2M2I1ZUhROXhVMTJoNG1oRU9TNU90VHBkd04ybmpZZVlZTkRKY2RHZzR3QkMtc0poYUJZVmtoM2p0ZkVMV1JoVXhfd1VUdllaZ0txSkFHaEoxZjRnRUZEajU4cUt2bGZxQ043UVgwc3k?oc=5",
+        "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOQ0RDeVd2dGpqUXpmbS1SbmJvQ2pXTHRmN1NWSG5KZ0F4eXNzbDd5VkEwNi10TV81YnNYMEJrNHpfNWkxS3lZVlZGZmFzX0xmU1BoTnpFdlRNa0x3ZGFzT1RyemlRdUdDWE5tcnFFbjNoT21fRWtpVjRJT0RIUGtlczhnTHRPZnF1VU81Y0k1WHEyaDBvT09PRTQyc01OWXVZY2VoSjFjODQzYlhtNy1Wc2MtbkZIWGRGbzdEX2dtNHdQQWtXanpjbElIUnVKRWppWnhDd1U3NlV3T2t5MzVFQXZGblI?oc=5"
+      ],
+      "source_names": [
+        "kobi5.com",
+        "Herald and News"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-12T09:54:29.487202+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "df335172-4d94-4b02-a2f8-08fb95375045",
+      "donor": "The Gordon Foundation",
+      "recipient": "Bluewater Health",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$5 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "The Gordon Foundation has made a $5 million donation to Bluewater Health to support local healthcare.",
+      "figure_quote": "$5M",
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQY2dzV0NRNTRVSF9HdkppS25tc19JLWNkaW5oc0VGM1BNc1JCNVVTZ00wTS1zZkgyYk1QNHpiZnpYNXpCTUZIXzhXUkt5dlZlNTJrdE5JaXJ3UXlobVlIRkhidGlCeE80VUR2dDRrekNkMDFrdlcyeHhhNUJwLWU1MF82ZUxyd0g2ZjhCUldyZXlHRjRGX0FYZXNWaU5BdXBLT2pWa0tsTXVLM2xnTGlTdzE0SThsYzlybUpTVnhlMGRJSGI3Smc4ZTUtbmdROVRfMDNn?oc=5"
+      ],
+      "source_names": [
+        "Sarnia News Today"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-12T09:56:00.134971+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "7daa628f-c553-4885-9ea5-5af7eab3e1bd",
+      "donor": "Barratt Homes",
+      "recipient": "Francis House",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "£1,500",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Barratt Homes has donated £1,500 to Francis House, a local charity.",
+      "figure_quote": "£1,500",
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZFdQbWgzZlo5a2VMaExQQVdGY1VDSWF1aHpCSFhsVmtFRklHdWNDRHJZOHljN3M1bHBzWWtlWUU3eEkwcTBCb0pDZzVmQnlidE4tbXU4eEVMU20tRE1iRmZIZ3htaWMzZTZSZE9MX3hzTmUwWGsxVGd2QTMtNkRHUFkydDBkVWhNdGtTcFlfdGk0VDlJTkVwcmhiM05ubk5vcXREVWZSSDB1MVdrNUtZ?oc=5"
+      ],
+      "source_names": [
+        "Oldham Evening Chronicle"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-12T09:58:30.064027+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "477af5fb-950d-4790-b4ba-c33df8f7899d",
+      "donor": "PepsiCo Foundation",
+      "recipient": "Prairie Fire Foundation",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$5,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "PepsiCo Foundation awarded a $5,000 grant to the Prairie Fire Foundation.",
+      "figure_quote": "$5,000",
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSk43cGhBNkFNZnBUYnk3azlGVk1fN0doWHFacGN4UmxMc3c0ZmVTRW9HQUVoTlZIeE95am5FaWRycnJZT3hKNkZwSW5jc0Q1dlBWSm9JTFpzODNkV0hLTy16QkI3dUFnZTZWNDBjTUdYaTZTcU5PVWoyQlJ2VjlKVi1Hc0dSTlFzeHN5WXA1YnRDWnhLSXQ4T2dn?oc=5"
+      ],
+      "source_names": [
+        "cbs2iowa.com"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-12T10:01:25.019474+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 76,
+    "gdelt_candidates_found": 251,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2639,
+    "items_filtered_as_stale": 1906,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 193,
+    "clusters_analysed": 124,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 10,
+    "rejected_unnamed_recipient": 4,
+    "rejected_no_named_donor": 0,
+    "rejected_out_of_scope_country": 5,
+    "entries_published": 4,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "Feed parse error: <unknown>:2:119: not well-formed (invalid token)"
+    }
+  ]
+}
