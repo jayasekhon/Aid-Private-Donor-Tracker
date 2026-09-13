@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-13",
+  "entries": [
+    {
+      "entry_id": "9cd1f4b0-95ce-49da-b815-049f16b1bad1",
+      "donor": "NASCAR Foundation",
+      "recipient": "Schuyler Hospital",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$10,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "NASCAR Foundation donated $10,000 to support pediatric care at Schuyler Hospital.",
+      "figure_quote": "$10,000",
+      "assumptions": [],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMivAFBVV95cUxObkRJMkZSbU1HVzNrY3dHLVE3RDJWQlZJV21CcGdZOEREV01Oc3lTRlpHQWtndGtZSXQ3T2ZHS3V5NXNISVlRaXFJcGZfOF9DOWFJVy1ZMDh0b2R6UnI5LXNvVGxYYkNJZ21wdkJsUlp5YTZ5Vi1qYXg5bkxQV2xKVGFXc2xmakpSSFAwc0c4Z09vcXBtalFaMC1uTDIyY3FWMWViRF9jdjRNa0w5WUVWblJaZWs5SFJXeFp3WA?oc=5"
+      ],
+      "source_names": [
+        "Finger Lakes Daily News"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-13T10:54:34.767419+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 100,
+    "gdelt_candidates_found": 522,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2913,
+    "items_filtered_as_stale": 1913,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 189,
+    "clusters_analysed": 123,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 14,
+    "rejected_unnamed_recipient": 2,
+    "rejected_no_named_donor": 0,
+    "rejected_out_of_scope_country": 5,
+    "entries_published": 1,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
