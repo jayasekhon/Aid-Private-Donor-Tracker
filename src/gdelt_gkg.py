@@ -220,6 +220,20 @@ def _build_summary(orgs: list[str], amounts_field: str, quotes_field: str) -> st
     return " ".join(parts)
 
 
+# A couple of short aliases are also ordinary English words, and GDELT's
+# own NLP is noisy enough to mis-tag one of them as a standalone
+# "organization" mention even with nothing organization-like nearby in the
+# source text — a real run saw "WHO" attributed as an organization mention
+# on an article about food-waste rescuers in Jerusalem, with no actual
+# connection to the World Health Organization, causing a false match.
+# Exact-match alone (see _build_name_lookup's docstring) isn't enough
+# protection for these two specifically, unlike a genuine acronym like
+# "IRC" or "WFP" that GDELT's NLP has no comparable reason to invent from
+# thin air. Same alias set as query_builder.py's Google News fix and
+# extraction.py's match_curated_recipient() fix, for the same reason.
+AMBIGUOUS_GDELT_ALIASES = {"who", "care"}
+
+
 def _build_name_lookup(recipients: list[Recipient]) -> dict[str, str]:
     """Maps every recipient name/alias (lowercased) to its canonical
     recipient name, for exact matching against GKG's organization mentions.
@@ -230,7 +244,10 @@ def _build_name_lookup(recipients: list[Recipient]) -> dict[str, str]:
     lookup = {}
     for r in recipients:
         for n in r.all_names:
-            lookup[n.lower().strip()] = r.name
+            name_l = n.lower().strip()
+            if name_l in AMBIGUOUS_GDELT_ALIASES:
+                continue
+            lookup[name_l] = r.name
     return lookup
 
 

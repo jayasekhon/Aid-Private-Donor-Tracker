@@ -36,7 +36,22 @@ GOOGLE_NEWS_RSS_BASE = "https://news.google.com/rss/search"
 # "who.int"), where the false-positive risk is negligible. The World
 # Health Organization's full name is still searched via r.name, so WHO
 # coverage isn't lost — just no longer keyed on the bare acronym.
-AMBIGUOUS_SEARCH_ALIASES = {"who"}
+#
+# "CARE" (CARE International's alias) turned out to be the same bug at a
+# much larger scale: a real run found 106 of 189 candidates that passed
+# the trigger-phrase filter (56% of the ENTIRE day's candidate pool) were
+# CARE International false matches — "Trump pledges $500 ObamaCare rebate
+# checks", "Men Who Care donates $3,400...", "Cascade Comprehensive Care
+# donates $50k...", none of them about the organization at all. This
+# wasn't just wasted AI calls: it was crowding out genuine stories about
+# every OTHER recipient (UNICEF and World Food Programme got 1-2
+# candidates each that same run) within Google News' bounded per-query
+# result window, and very likely the direct cause of small-nonprofit
+# noise (a "Cares"/"donates" story that happens to mention a hospital)
+# reaching publication ahead of real donations to the big monitored
+# agencies. Same fix, same reasoning as WHO: dropped from search only,
+# "CARE International" (the full name) still fully searched via r.name.
+AMBIGUOUS_SEARCH_ALIASES = {"who", "care"}
 
 
 def _searchable_names(r: Recipient) -> list[str]:
