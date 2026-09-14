@@ -2592,5 +2592,95 @@
     ],
     "date_found": "2026-09-13T10:54:34.767419+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "e7f67ab2-1329-4455-8dec-561f0a6d7064",
+    "donor": "Hyundai Motor",
+    "recipient": "World Food Programme (WFP)",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "100,000 trees",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Hyundai Motor has committed to donating 100,000 trees to the World Food Programme (WFP) following the Forest Run 2026 event.",
+    "figure_quote": "100,000 trees",
+    "assumptions": [],
+    "confidence_score": 8,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTGpaY0Mwa3llRTBjMng2QS1kMkExWU1oY092dVJ0Uzc5R3p4QURjSXo1ZkozMHZCbXNnaDgzUHFNQ3RaRFc4WWhYYzI2Xzl2cFBQRjFHMlY3UUYyZTZlOGdwbVRLYldzVG5leU5LeVpQOExGSXhaMnhfRk5IOVRiYWhUbXZHSDBqakRrQVJMQjdZS0tWSHJYcVdDaU9BMUlDM1E?oc=5"
+    ],
+    "source_names": [
+      "Seoul Economic Daily"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-14T11:19:14.027165+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "be7f45e6-9472-44e3-a627-da53c5aaf5e4",
+    "donor": "Direct Relief",
+    "recipient": "Safety-net clinics",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$750,000",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Direct Relief has committed $750,000 to support safety-net clinics.",
+    "figure_quote": "$750K",
+    "assumptions": [
+      "The term'safety-net clinics' refers to a category of healthcare providers, not a single named organization."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "official_press_release_or_agency_newsroom",
+        "points": 4
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMihwFBVV95cUxOb2d3TFBhQ0pFTE1sNk9RUGoxdjZtNXE3TlA3cnFLSmtEeGNhT3c2LWpVdW1KcHR5dWdmb1V6U2ZMMl8zRE4tUVF2a3FOUFhaU3pfVGRVQ3ZaV3YzUDBLTzdWbHk0VUNyXzUwWHNhckVCaUxCdkQ4cUlFWk5qNjRfU01oLTRyeHc?oc=5"
+    ],
+    "source_names": [
+      "Direct Relief"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-14T11:23:26.810468+00:00",
+    "is_duplicate_of": null
   }
 ]
