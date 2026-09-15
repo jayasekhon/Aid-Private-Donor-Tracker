@@ -2682,5 +2682,144 @@
     ],
     "date_found": "2026-09-14T11:23:26.810468+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "a76ac876-2008-4e26-8794-edbe5ed23942",
+    "donor": "Arsenal Foundation",
+    "recipient": "Nepal flood relief",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Nepal",
+    "status": "new_commitment",
+    "summary": "The Arsenal Foundation has made a donation to support flood relief efforts in Nepal.",
+    "figure_quote": null,
+    "assumptions": [
+      "The exact recipient organization within Nepal is not specified, only the general cause ('flood relief')."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMimgFBVV95cUxQaW4yWWZJbE1LRW5LNjIzQzBnbUN0VlJ1eWFGT3hrTElKY0FUTXVDTEJjVEpzNV9HTXhWZmxwY0N6NGI4LWtLd1E5MU5YdGpCVlF1enVlVXZOQTJxdGNRdlpwRnR1b0VYbVExTFJtSlRSOXVBU0dpSmFvanQzOUpjclpxTThNZjFRWWJza2NOYU9hcG42Y3hXekZB?oc=5"
+    ],
+    "source_names": [
+      "The Kathmandu Post"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-15T10:47:20.335060+00:00",
+    "is_duplicate_of": "cdecc51b-320b-4405-83dd-e61400f9b149"
+  },
+  {
+    "entry_id": "8ba10323-abb0-4b94-87e1-97afe6bf9ba5",
+    "donor": "Plymouth developer",
+    "recipient": "children’s group",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "renewed_partnership",
+    "summary": "A Plymouth-based developer has made a repeated donation to a children's group.",
+    "figure_quote": null,
+    "assumptions": [
+      "The exact name of the children's group is not specified.",
+      "The monetary amount of the donation is not specified."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMihwFBVV95cUxNcW9hWXQ5NHh0UzBNWDdmWWdjZExSc2FJakFNcFdDSWo1ejB5ejcxUXB5T1ZyLUdzTWxIQWQzSG5MM3J1Q3ltNDRPV2g0WndHTGpaMnB0d3JsVFFtcHlGUHEzcnpqRnA5WUJKSzRZY3lPZ2FPWldvVTZwelVma2UwenB1b1N0UGc?oc=5"
+    ],
+    "source_names": [
+      "We Are South Devon"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-15T10:48:38.713197+00:00",
+    "is_duplicate_of": "271a5c39-5beb-42d7-91a8-eaedb784b527"
+  },
+  {
+    "entry_id": "a1d79d1d-3141-447f-9fc9-7f4c87d67b46",
+    "donor": "enGen Global",
+    "recipient": "Seva Bharathi hospital",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "surgical equipment",
+    "country_scope": "Unspecified / global",
+    "status": "renewed_partnership",
+    "summary": "enGen Global donated surgical equipment to Seva Bharathi hospital.",
+    "figure_quote": null,
+    "assumptions": [
+      "The status of the donation (new or renewed) is not specified in the source text."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMitgFBVV95cUxObkl5bG52MHQ5TDBOb0NRUlBOOTNvaThROFRrZ1JiSVNGZk5xYmR4RkRaLUFKckpDM3BKaHFsYkFJMTRRUmxzNWkxbWhmLXlLd01rM3M4RkdyX3E3WkU3Y3VuZUVYdWZwcVUyQVlWOEV0bGNYUGNLOHNhTDFac0lrT2FNel9RdXU2NjhtczlONkxSeUp3aGNqMUxsTkZJWXEtT2VnYjdHTW5sdFg2ZktyZXdGZ3JMZw?oc=5"
+    ],
+    "source_names": [
+      "metroindia.net"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-15T10:48:51.441168+00:00",
+    "is_duplicate_of": "5ed0d859-b1fd-4f7d-8499-9ee879f9b7f6"
   }
 ]
