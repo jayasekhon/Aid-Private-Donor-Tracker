@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-17",
+  "entries": [],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 96,
+    "gdelt_candidates_found": 622,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2733,
+    "items_filtered_as_stale": 1799,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 76,
+    "clusters_analysed": 48,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 2,
+    "rejected_unnamed_recipient": 0,
+    "rejected_no_named_donor": 0,
+    "rejected_out_of_scope_country": 1,
+    "entries_published": 0,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
