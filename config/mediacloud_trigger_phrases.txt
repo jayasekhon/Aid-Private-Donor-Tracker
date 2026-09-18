@@ -1,0 +1,54 @@
+# =============================================================================
+# MEDIA CLOUD TRIGGER PHRASES — a tighter subset of trigger_phrases.txt,
+# used ONLY to build the boolean query sent to Media Cloud's search API
+# (see mediacloud_source.py). trigger_phrases.txt itself is unaffected —
+# Google News, GDELT, and PR wire feeds still use the full list.
+# =============================================================================
+# WHY A SEPARATE, SMALLER LIST: trigger_phrases.txt's own docstring accepts
+# bare, generic verbs ("commits", "contributes", "partners with", "sponsors")
+# on the reasoning that "the worst case is one extra AI call spent on a
+# story that gets correctly rejected" -- true for Google News, where each
+# query is already anchored to ONE recipient with a naturally bounded
+# result window. It's NOT true for Media Cloud: one query here searches
+# ~1,600 sources' full article text for 8 recipients at once, and a bare
+# generic verb matches constantly in totally unrelated contexts ("FG
+# committed to funding priority projects", "Rellevate Partners with Taylor
+# Regional Hospital", dozens of others). A real run: 845 candidates passed
+# the local trigger-phrase filter, 764 of them from Media Cloud, the
+# overwhelming majority noise (BRICS summit coverage, Houthi/Yemen war
+# reporting, market-research-report spam) -- burning most of a day's AI
+# call budget (350 calls, ~$0.70) for close to zero real, net-new
+# donations: the only two entries that survived from Media Cloud in that
+# run were later rejected anyway as having no actual evidence a donation
+# occurred (see run_daily.py's "no evidence" check).
+#
+# Dropped here (kept in trigger_phrases.txt): "contributes"/"contributed",
+# "commits"/"committed", "sponsors"/"sponsored", "partners with"/
+# "partnered with"/"renews partnership with"/"announces partnership with"/
+# "corporate partner" -- every one of these is common, unremarkable
+# language in ordinary political/economic/business-partnership reporting
+# that has nothing to do with a donation. What's kept below is
+# consistently donation-specific: "donates"/"pledges" and their inflections
+# still cover the bulk of real donation headlines (Macklemore, Ms Rachel,
+# Pop Base all matched "donates"/"pledges" in real runs), plus the more
+# formal philanthropic/CSR phrasing corporate press releases actually use.
+# =============================================================================
+
+corporate donation
+donates
+donated
+pledges
+pledged
+corporate foundation
+corporate social responsibility
+CSR partnership
+CSR commitment
+private sector support
+private sector donation
+philanthropic gift
+philanthropic donation
+charitable giving
+in-kind donation
+in-kind contribution
+foundation gift
+foundation grant

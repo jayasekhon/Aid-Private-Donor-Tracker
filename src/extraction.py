@@ -208,15 +208,22 @@ def is_government_entity(name: str) -> bool:
 # admission directly, rather than trying to keep pace with every new way
 # of writing "no name given" as a hardcoded phrase.
 #
-# Deliberately just "name", not "name of the": a real run's actual
-# assumption text for the Plymouth case above was "The specific COMPANY
-# NAME is not provided" (name AFTER the noun), not "name OF THE company
-# is not provided" -- an earlier, narrower version of this pattern
-# required the latter word order specifically and silently let that
-# exact admission through uncaught, publishing the entry it was written
-# to catch.
+# Deliberately no "name" anchor at all, just the "is not X" shape plus a
+# context word somewhere in the same sentence. Two real, narrower
+# versions of this pattern each missed a real case:
+#   - requiring "name of the X is not provided" specifically missed "The
+#     specific COMPANY NAME is not provided" (name AFTER the noun, not
+#     "name of the company").
+#   - requiring the word "name" at all (the fix for the above) still
+#     missed "The exact recipient ORGANIZATION is not specified" -- an
+#     equally common admission that never uses the word "name" -- which
+#     is why three same-day "Stray Kids' Felix" donations (recipients
+#     "children in need" / "sick children" / "children affected by Nepal
+#     floods", each with this exact assumption shape) were never
+#     recognized as vague at all, let alone linked to each other as
+#     probably the same story (see store.py's find_possible_match).
 NAME_MISSING_ADMISSION_PATTERN = re.compile(
-    r"\bname\b.*\b(?:is not|isn't|wasn't|was not)\b.*\b(?:provided|specified|given|named|disclosed|stated)\b"
+    r"\b(?:is not|isn't|wasn't|was not)\b.*\b(?:provided|specified|given|named|disclosed|stated)\b"
 )
 # Which side (donor vs. recipient) an admission is about is inferred from
 # a word in the admission itself -- e.g. "name of the HOUSEBUILDING

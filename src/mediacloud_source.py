@@ -64,16 +64,23 @@ Each batch query ORs together a group of recipients' searchable_names
 (see config_loader.Recipient.searchable_names — excludes "WHO"/"CARE"-
 style ambiguous aliases, the same fix already made for Google News and
 GDELT) AND ORs together a batch of trigger phrases, mirroring the
-boolean shape query_builder.py already uses for Google News. At the
-default batch sizes (8 recipients/query, 15 triggers/query), one daily
-run costs 7 x 2 = 14 requests, correctly paced ~31s apart, adding
-roughly 7 minutes to the run -- against Media Cloud's default quota of
-4,000 requests/week (~98/week at this size), still comfortable headroom.
-Deliberately fetches only the first page of results per batch (no
-pagination_token follow-up) to keep total request count -- and therefore
-total runtime -- fully predictable given the 2/minute limit; if real
-runs show this under-fetching, pagination can be added later against
-that same rate-limit budget.
+boolean shape query_builder.py already uses for Google News. The trigger
+phrases come from config/mediacloud_trigger_phrases.txt, NOT the general
+trigger_phrases.txt every other source uses -- a deliberately smaller,
+higher-precision subset (see that file's own docstring for why: a real
+run showed 764 of 845 candidates passing the local filter that day came
+from Media Cloud, almost all noise, because generic verbs that are fine
+for Google News' per-recipient-anchored queries match constantly across
+Media Cloud's full-text search of ~1,600 sources). At the default batch
+sizes (8 recipients/query, the 18-phrase curated list fitting in a
+single trigger batch), one daily run costs 7 requests, correctly paced
+~31s apart, adding roughly 4 minutes to the run -- against Media Cloud's
+default quota of 4,000 requests/week (~49/week at this size), still
+comfortable headroom. Deliberately fetches only the first page of
+results per batch (no pagination_token follow-up) to keep total request
+count -- and therefore total runtime -- fully predictable given the
+2/minute limit; if real runs show this under-fetching, pagination can be
+added later against that same rate-limit budget.
 
 Unlike Google News (one query per recipient, so the match is by
 construction) or GDELT (recipient mentions come from GKG's own structured

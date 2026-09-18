@@ -159,6 +159,12 @@ def load_all() -> dict:
             "recipients": load_recipients(),
             "countries": load_countries(),
             "triggers": load_trigger_phrases(),
+            # A separate, tighter subset used only to build Media Cloud's
+            # own query -- see mediacloud_trigger_phrases.txt's own
+            # docstring for why the full list (fine for Google News, whose
+            # queries are already anchored to one recipient) floods Media
+            # Cloud's full-text search with noise instead.
+            "mediacloud_triggers": load_trigger_phrases(CONFIG_DIR / "mediacloud_trigger_phrases.txt"),
             "pr_wire_feeds": load_pr_wire_feeds(),
             "settings": load_settings(),
         }

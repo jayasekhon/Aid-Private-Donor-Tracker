@@ -91,6 +91,7 @@ def main():
     recipients = cfg["recipients"]
     countries = cfg["countries"]
     triggers = cfg["triggers"]
+    mediacloud_triggers = cfg["mediacloud_triggers"]
     pr_wire_feeds = cfg["pr_wire_feeds"] if cfg["settings"]["search"].get("pr_wire_feeds_enabled", True) else []
 
     # A GDELT-override run gets its own TEST-<date> edition label rather than
@@ -165,11 +166,11 @@ def main():
             # every batch would fail identically -- see that function's
             # docstring.
             mc_articles, mc_failures, mc_stats = fetch_mediacloud_articles(
-                recipients, triggers,
+                recipients, mediacloud_triggers,
                 collection_id=settings["search"]["mediacloud_collection_id"],
                 max_age_days=settings["search"]["max_article_age_days"],
                 recipients_per_query=settings["search"].get("mediacloud_recipients_per_query", 8),
-                triggers_per_query=settings["search"].get("mediacloud_triggers_per_query", 15),
+                triggers_per_query=settings["search"].get("mediacloud_triggers_per_query", 20),
             )
             raw_articles.extend(mc_articles)
             fetch_failures.extend(f.__dict__ for f in mc_failures)

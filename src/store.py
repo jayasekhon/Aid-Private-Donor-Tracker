@@ -20,6 +20,7 @@ from pathlib import Path
 
 from rapidfuzz import fuzz
 
+from .extraction import RECIPIENT_NAME_CONTEXT_WORDS, assumptions_admit_missing_name, is_generic_recipient
 from .models import DonationEntry
 
 DEFAULT_STORE_PATH = Path(__file__).resolve().parent.parent / "data" / "seen_events.json"
@@ -114,12 +115,50 @@ class EventStore:
 
         reason is one of: "exact_duplicate", "likely_renewal", "no_match"
         """
+        def _is_vague(recipient: str, assumptions: list[str]) -> bool:
+            return is_generic_recipient(recipient) or \
+                assumptions_admit_missing_name(assumptions, RECIPIENT_NAME_CONTEXT_WORDS)
+
         candidate_amount = self._parse_amount_number(candidate.amount_text)
+        candidate_recipient_vague = _is_vague(candidate.recipient, candidate.assumptions)
         for prior in self._recent_entries(lookback_days):
             donor_score = fuzz.token_set_ratio(candidate.donor.lower(), prior["donor"].lower())
-            recipient_score = fuzz.token_set_ratio(candidate.recipient.lower(), prior["recipient"].lower())
-            if donor_score < NAME_MATCH_THRESHOLD or recipient_score < NAME_MATCH_THRESHOLD:
+            if donor_score < NAME_MATCH_THRESHOLD:
                 continue
+            # A real run published three same-day "Stray Kids' Felix"
+            # entries as fully separate, unlinked findings, each with a
+            # differently-worded vague recipient ("children in need" /
+            # "sick children" / "children affected by Nepal floods") --
+            # none scored above ~76 on this fuzzy check against another,
+            # just under NAME_MATCH_THRESHOLD, despite being the same
+            # donor and (very likely) the same underlying story. Fuzzy
+            # string similarity is the wrong tool for this: these aren't
+            # the same organization's name reworded, they're independently
+            # vague, freely-worded DESCRIPTIONS with no stable string to
+            # match on at all -- comparing them at all is what silently
+            # missed the connection. (That specific case is now instead
+            # caught earlier, as an outright rejection rather than a
+            # dedup match, once GENERIC_RECIPIENT_MARKERS/
+            # assumptions_admit_missing_name correctly recognize those
+            # phrasings as vague -- see extraction.py. This check remains
+            # for the case that still legitimately publishes: a vague
+            # recipient tied to a specific in-scope place, e.g. two
+            # same-day "Ms Rachel" -> "Gaza Aid"-shaped entries, which
+            # would hit the exact same fuzzy-match gap.) When BOTH sides
+            # are vague (the same is_generic_recipient/
+            # assumptions_admit_missing_name signal run_daily.py and
+            # score_confidence already use), skip the recipient check
+            # entirely and rely on donor + date proximity instead -- a
+            # real amount mismatch still routes this to "likely_renewal"
+            # below (flagged, not silently merged), rather than
+            # fabricating false confidence from two unrelated vague
+            # phrasings happening to overlap a few tokens.
+            both_recipients_vague = candidate_recipient_vague and \
+                _is_vague(prior["recipient"], prior.get("assumptions") or [])
+            if not both_recipients_vague:
+                recipient_score = fuzz.token_set_ratio(candidate.recipient.lower(), prior["recipient"].lower())
+                if recipient_score < NAME_MATCH_THRESHOLD:
+                    continue
 
             prior_amount = self._parse_amount_number(prior.get("amount_text"))
             if candidate_amount is not None and prior_amount is not None:

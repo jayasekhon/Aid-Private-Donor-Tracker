@@ -103,10 +103,25 @@ search:
   # not requesting expanded=1; results now carry title/url/publish_date/
   # media_name only, no body text. Trigger-phrase batching (15/batch) is
   # kept regardless, as a real improvement on its own merits even though
-  # it didn't turn out to explain the 403s. At these sizes, one daily run
-  # costs 7 x 2 = 14 requests (~98/week) against a 4,000/week default
-  # quota, adding roughly 7 minutes of paced runtime.
-  mediacloud_triggers_per_query: 15
+  # it didn't turn out to explain the 403s.
+  #
+  # Once Media Cloud actually started returning results, a real run
+  # showed a second, separate problem: 845 candidates passed the local
+  # trigger-phrase filter that day, 764 of them from Media Cloud, almost
+  # all noise (BRICS summit coverage, Houthi/Yemen war reporting,
+  # market-research spam) -- burning most of the day's 350-call AI
+  # budget for close to zero net-new real donations. Root cause: Media
+  # Cloud's query uses config/mediacloud_trigger_phrases.txt, a
+  # deliberately smaller, higher-precision subset of trigger_phrases.txt
+  # (see that file's own docstring) -- it drops bare, generic verbs like
+  # "commits"/"contributes"/"partners with" that are fine for Google
+  # News (each query already anchored to one recipient) but match
+  # constantly in Media Cloud's full-text search across ~1,600 sources.
+  # At 18 phrases, the whole curated list fits in one batch, halving the
+  # request count: 7 recipient-batches x 1 trigger-batch = 7 requests/day
+  # (~49/week) against a 4,000/week default quota, roughly 4 minutes of
+  # paced runtime.
+  mediacloud_triggers_per_query: 20
 
 ai:
   # Which AI provider does the extraction step: "bedrock" (via AWS, paid
