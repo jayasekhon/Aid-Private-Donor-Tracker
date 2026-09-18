@@ -227,6 +227,7 @@ def main():
     rejected_no_named_donor = 0
     rejected_out_of_scope_country = 0
     rejected_government_entity = 0
+    rejected_unspecified_scope_excluded = 0
 
     from src.extraction import (
         FatalExtractionError, is_generic_donor, is_generic_recipient, is_out_of_scope_country,
@@ -267,9 +268,17 @@ def main():
             # cluster occasionally yields more than one real entry (a real
             # case: a dominant vague-recipient celebrity pledge that had a
             # second, specifically-named, unrelated donation mentioned in
-            # just one of its ~20 syndicated articles).
-            logger.info("Cluster %s (via %s) contained %d distinct events.",
+            # just one of its ~20 syndicated articles). Logging each
+            # event's donor/recipient here (not just the count) is what
+            # made it possible to diagnose a real case where a multi-event
+            # cluster ended up publishing only ONE of its events with no
+            # rejection line logged for the other at all -- without this,
+            # that kind of silent drop is invisible until someone notices
+            # a real finding missing from the site days later.
+            logger.info("Cluster %s (via %s) contained %d distinct events:",
                          cluster.cluster_id, _cluster_sources(cluster), len(results))
+            for idx, r in enumerate(results, start=1):
+                logger.info("  event %d/%d: %r -> %r", idx, len(results), r.donor, r.recipient)
 
         for result in results:
             # This tracker exists to track PRIVATE-SECTOR donations to
@@ -350,6 +359,16 @@ def main():
             entry = build_donation_entry(cluster, result, settings["confidence"], recipients)
 
             if not settings["publishing"]["include_unspecified_scope"] and entry.country_scope == "Unspecified / global":
+                # Currently a dormant path (include_unspecified_scope is
+                # true by default) -- but it had no log line at all, which
+                # would make a real drop here silently invisible the same
+                # way a real one just was for a different reason (see the
+                # per-event logging added above). Logged now on principle:
+                # every path that can discard a built entry should say so.
+                rejected_unspecified_scope_excluded += 1
+                logger.info("Rejecting cluster %s (via %s): unspecified/global scope excluded by "
+                             "publishing.include_unspecified_scope=false.",
+                             cluster.cluster_id, _cluster_sources(cluster))
                 continue
 
             prior, reason = store.find_possible_match(entry, lookback_days=lookback)
@@ -380,10 +399,11 @@ def main():
     if not is_gdelt_test:
         store.save()
     logger.info("%s %d entries (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no "
-                 "named donor, %d rejected as out-of-scope country, %d rejected as a government entity).",
+                 "named donor, %d rejected as out-of-scope country, %d rejected as a government entity, "
+                 "%d rejected as unspecified scope).",
                  "Would publish" if is_gdelt_test else "Published", len(entries),
                  duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor,
-                 rejected_out_of_scope_country, rejected_government_entity)
+                 rejected_out_of_scope_country, rejected_government_entity, rejected_unspecified_scope_excluded)
 
     # Highest confidence first -- the site should lead with its strongest,
     # best-evidenced findings rather than whatever order clusters happened
@@ -413,6 +433,7 @@ def main():
         "rejected_no_named_donor": rejected_no_named_donor,
         "rejected_out_of_scope_country": rejected_out_of_scope_country,
         "rejected_government_entity": rejected_government_entity,
+        "rejected_unspecified_scope_excluded": rejected_unspecified_scope_excluded,
         "entries_published": len(entries),
         "high_confidence_count": sum(1 for e in entries if e.confidence_score >= high_confidence_threshold),
     }

@@ -851,24 +851,50 @@ def score_confidence(
     return min(total, 10), breakdown
 
 
+def _articles_for_event(cluster: ArticleCluster, result: ExtractionResult) -> list:
+    """Narrows a multi-event cluster's full article list down to the ones
+    that actually mention THIS event's donor — without this, every event
+    split out of one cluster (see extract_from_cluster) would cite every
+    article in the WHOLE cluster, including ones entirely about a
+    different event. A real case: a $10,000 Pop Base donation ended up
+    citing 24 sources, 23 of which were actually about an unrelated $1M
+    Macklemore pledge that shared the same cluster — genuinely confusing
+    to a reader ("why does this cite so many sources about someone
+    else?"), not the merely-cosmetic over-attribution this was first
+    treated as.
+
+    Matches on the DONOR name specifically, not recipient — it's normally
+    the more distinctive, reliably-literal string in a headline (a
+    company/person's actual name is far less likely to coincidentally
+    appear in an unrelated article than a generic recipient description
+    is). Falls back to the full cluster if the donor name doesn't
+    literally appear in ANY article (a paraphrased/reworded donor name,
+    or the normal single-event case where this is a no-op safety net)
+    rather than publish an entry with zero sources.
+    """
+    donor_l = result.donor.strip().lower()
+    if not donor_l:
+        return cluster.articles
+    matching = [a for a in cluster.articles if donor_l in f"{a.title} {a.summary}".lower()]
+    return matching or cluster.articles
+
+
 def build_donation_entry(
     cluster: ArticleCluster,
     result: ExtractionResult,
     confidence_cfg: dict,
     recipients: list[Recipient],
 ) -> DonationEntry:
-    """Known limitation when a cluster yields more than one event (see
-    extract_from_cluster): source_urls/source_names/source_channels below
-    are still built from EVERY article in the cluster, not just the one(s)
-    that actually mention this specific event — a cluster's second,
-    smaller finding will show the whole cluster's sources, not just its
-    own. Precise per-event source attribution would need the model to
-    also report which article(s) support each event; not worth that
-    added prompt complexity for what's a cosmetic over-attribution, not a
-    correctness issue (the sources shown are still real articles from
-    this exact cluster, just more of them than strictly necessary).
-    """
-    score, breakdown = score_confidence(cluster, result, confidence_cfg, recipients)
+    source_articles = _articles_for_event(cluster, result)
+    # score_confidence()'s source-tier/independent-source-count signals
+    # must come from the SAME narrowed article set as the sources shown
+    # on the entry -- not the full cluster. Without this, Pop Base's
+    # $10,000 entry (see _articles_for_event's docstring) scored a full
+    # 3/3 "multiple independent sources" credit for 23 articles, when
+    # only 1 of them was actually about Pop Base at all; the other 22
+    # corroborate a completely different ($1M Macklemore) donation.
+    scoring_cluster = ArticleCluster(cluster.cluster_id, source_articles)
+    score, breakdown = score_confidence(scoring_cluster, result, confidence_cfg, recipients)
     recipient_type = classify_recipient_type(result.recipient, recipients, result.recipient_type_guess)
     return DonationEntry(
         entry_id=str(uuid.uuid4()),
@@ -885,8 +911,8 @@ def build_donation_entry(
         assumptions=result.assumptions,
         confidence_score=score,
         confidence_breakdown=breakdown,
-        source_urls=[a.url for a in cluster.articles],
-        source_names=list({a.source_name for a in cluster.articles}),
-        source_channels=sorted({a.fetch_source for a in cluster.articles}),
+        source_urls=[a.url for a in source_articles],
+        source_names=list({a.source_name for a in source_articles}),
+        source_channels=sorted({a.fetch_source for a in source_articles}),
         date_found=now_iso(),
     )
