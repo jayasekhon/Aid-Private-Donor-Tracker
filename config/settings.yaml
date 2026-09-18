@@ -65,8 +65,9 @@ search:
   # MEDIACLOUD_API_KEY secret (see .github/workflows/daily.yml) — leave
   # this false until that secret is actually set, since enabling it
   # without a key fails the whole run immediately (a clear error, not a
-  # silent skip — see mediacloud_source.py).
-  mediacloud_enabled: false
+  # silent skip — see mediacloud_source.py). MEDIACLOUD_API_KEY is set as
+  # of 2026-09-18, so this is now on.
+  mediacloud_enabled: true
   # Which Media Cloud collection to query. #9272347 = "Global English
   # Language Sources" (~1,600 curated English-language sources) —
   # recommended: this pipeline is English-only throughout (trigger
