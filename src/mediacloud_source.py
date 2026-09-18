@@ -17,45 +17,53 @@ phrases, extraction prompt, alias matching), so the smaller curated
 English collection is both more relevant and far lower-noise.
 
 Query shape: BOTH recipients AND trigger phrases are batched into groups,
-not ORed together all at once. Two separate real-run problems drove this:
+not ORed together all at once.
 
 1. Media Cloud's own setup documentation states its API is rate-limited
    to "roughly 2 requests/minute" and explicitly recommends pacing calls
    31 seconds apart -- one query per recipient across 50 recipients would
    take 25+ minutes for this source alone even paced correctly, hence
    batching recipients. Pacing is done explicitly here (_pace_queries()
-   below) rather than trusting the client library, which a real run
-   showed does NOT self-throttle despite an unrelated-looking
-   RATE_LIMIT_PER_MINUTE constant on its base class -- 7 batch queries
-   fired within 0.79 seconds of each other in that run.
+   below) rather than trusting a client library, since a real run showed
+   nothing here self-throttles -- 7 batch queries fired within 0.79
+   seconds of each other in that run.
 
-2. Separately, even the FIRST query of a paced run -- before rate
-   limiting could be a factor at all -- got "API Server Error 403".
-   Pulling the actual mediacloud==4.3.0 source from PyPI confirmed the
-   auth header format is correct (Authorization: Token <key>, matching
-   Media Cloud's own docs), ruling that out. The remaining, much more
-   likely cause: query size. Querying 8 recipients' names against all 29
-   trigger phrases in one boolean expression produces a ~1,150-character,
-   48-OR-clause query -- Media Cloud's own worked example (built by their
-   "Simple Search" tool, the same kind of request) is roughly a tenth
-   that size. Batching trigger phrases into groups (like Google News
-   already does, and like recipients already were) cuts each query
-   substantially. At the default batch sizes (8 recipients/query, 15
-   triggers/query), one daily run costs 7 x 2 = 14 requests, correctly
-   paced ~31s apart, adding roughly 7 minutes to the run -- against
-   Media Cloud's default quota of 4,000 requests/week (~98/week at this
-   size), still comfortable headroom.
+2. A real run also showed EVERY batch query -- not just the first, and
+   regardless of query size -- failing with "API Server Error 403",
+   correctly paced 31s apart, ruling both rate-limiting AND query size
+   out as the cause (an earlier attempt shrank the query size on that
+   hypothesis; it made no difference -- still 403 on literally every
+   batch). Account/key/collection permissions are fine (a simple query
+   worked in Media Cloud's own web UI). What's different between "works
+   in the browser" and "always 403 from here": the requesting User-Agent.
+   This now talks to the API directly via `requests` (bypassing the
+   `mediacloud` pip client entirely) for two reasons: (a) to set a
+   browser-like User-Agent, since the pip client leaves this at
+   `requests`' default ("python-requests/x.y.z") -- a well-known
+   automated-client signature that a WAF in front of search.mediacloud.org
+   could easily be blocking on, independent of IP or content; and (b)
+   because the pip client's own error handling
+   (`RuntimeError(f"API Server Error {status}. Params: {params}")`)
+   discards the actual response body/headers on a non-200 -- if this
+   User-Agent change turns out not to be the fix either, the next run's
+   logs need that real response text to diagnose further, which the
+   library was structurally throwing away. This is not yet confirmed
+   against a live run.
 
 Each batch query ORs together a group of recipients' searchable_names
 (see config_loader.Recipient.searchable_names — excludes "WHO"/"CARE"-
 style ambiguous aliases, the same fix already made for Google News and
 GDELT) AND ORs together a batch of trigger phrases, mirroring the
-boolean shape query_builder.py already uses for Google News. Deliberately
-fetches only the first page of results per batch (no pagination_token
-follow-up) to keep total request count -- and therefore total runtime --
-fully predictable given the 2/minute limit; if real runs show this
-under-fetching, pagination can be added later against that same
-rate-limit budget.
+boolean shape query_builder.py already uses for Google News. At the
+default batch sizes (8 recipients/query, 15 triggers/query), one daily
+run costs 7 x 2 = 14 requests, correctly paced ~31s apart, adding
+roughly 7 minutes to the run -- against Media Cloud's default quota of
+4,000 requests/week (~98/week at this size), still comfortable headroom.
+Deliberately fetches only the first page of results per batch (no
+pagination_token follow-up) to keep total request count -- and therefore
+total runtime -- fully predictable given the 2/minute limit; if real
+runs show this under-fetching, pagination can be added later against
+that same rate-limit budget.
 
 Unlike Google News (one query per recipient, so the match is by
 construction) or GDELT (recipient mentions come from GKG's own structured
@@ -73,7 +81,9 @@ import logging
 import os
 import time
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
+
+import requests
 
 from .config_loader import Recipient
 from .models import RawArticle, SourceTier
@@ -81,14 +91,23 @@ from .sources import FetchFailure
 
 logger = logging.getLogger(__name__)
 
-# A real run exposed that mediacloud.api.SearchApi does NOT actually
-# self-throttle the way its own RATE_LIMIT_PER_MINUTE=2 constant implies
-# (or at least not in a way this triggered) -- all 7 batch queries in one
-# run fired within 0.79 SECONDS of each other, not the ~30s apart 2/minute
-# would require. The first got "API Server Error 403", the rest cascaded
-# into 429s. Rather than trust the client's internals again, this paces
-# calls explicitly, the same way extraction.py's _pace_ai_calls() already
-# does for Bedrock/Gemini. 31s (not a bare 30s) leaves a small margin for
+MEDIACLOUD_API_BASE = "https://search.mediacloud.org/api/"
+MEDIACLOUD_PLATFORM = "onlinenews-mediacloud"
+
+# A generic, current-looking desktop Chrome UA -- see module docstring for
+# why this is set explicitly rather than left at requests' default
+# ("python-requests/x.y.z"), which is a well-known automated-client
+# signature.
+BROWSER_USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+)
+
+# A real run showed nothing between requests here self-throttles -- 7
+# batch queries fired within 0.79 SECONDS of each other despite Media
+# Cloud's own documented "roughly 2 requests/minute" limit. Paces calls
+# explicitly, the same way extraction.py's _pace_ai_calls() already does
+# for Bedrock/Gemini. 31s (not a bare 30s) leaves a small margin for
 # clock/measurement slack rather than sitting exactly on the limit.
 MIN_SECONDS_BETWEEN_QUERIES = 31.0
 _last_query_time: float = 0.0
@@ -112,6 +131,12 @@ def _pace_queries() -> None:
 # articles, which lead with their most newsworthy fact.
 SUMMARY_CHARS_FROM_TEXT = 1000
 
+# How much of a failed response's body to keep in a FetchFailure/log line
+# -- enough to show a Cloudflare/WAF block page's telltale text (or a
+# proper JSON auth-error message) without dumping an entire HTML page
+# into the log.
+FAILURE_BODY_CHARS = 500
+
 
 @dataclass
 class MediaCloudFetchStats:
@@ -131,9 +156,47 @@ def _build_query(recipients: list[Recipient], triggers: list[str]) -> str:
     return f"({name_clause}) AND ({trigger_clause})"
 
 
+def _fetch_stories(api_key: str, query: str, start_date: date, end_date: date,
+                    collection_id: int) -> list[dict]:
+    """Calls Media Cloud's search/story-list endpoint directly with
+    `requests` rather than through the `mediacloud` pip client -- see
+    module docstring. Raises RuntimeError (with the real response status,
+    headers, and a body excerpt) on anything other than 200.
+    """
+    params = {
+        "q": query,
+        "start": start_date.isoformat(),
+        "end": end_date.isoformat(),
+        "platform": MEDIACLOUD_PLATFORM,
+        "cs": str(collection_id),
+        "expanded": 1,
+    }
+    headers = {
+        "Authorization": f"Token {api_key}",
+        "Accept": "application/json",
+        "User-Agent": BROWSER_USER_AGENT,
+    }
+    r = requests.get(MEDIACLOUD_API_BASE + "search/story-list", params=params,
+                      headers=headers, timeout=60)
+    if r.status_code != 200:
+        raise RuntimeError(
+            f"API Server Error {r.status_code}. "
+            f"Response headers: {dict(r.headers)!r}. "
+            f"Body (first {FAILURE_BODY_CHARS} chars): {r.text[:FAILURE_BODY_CHARS]!r}"
+        )
+    stories = r.json()["stories"]
+    for s in stories:
+        # Mirrors mediacloud.api.SearchApi.story_list's own post-
+        # processing -- publish_date comes back as a string (sometimes a
+        # full timestamp), converted here to a plain date so downstream
+        # code (_story_to_article below) can treat it uniformly.
+        s["publish_date"] = date.fromisoformat(s["publish_date"][:10]) if s.get("publish_date") else None
+    return stories
+
+
 def _story_to_article(story: dict) -> RawArticle:
     publish_date = story.get("publish_date")
-    # publish_date is a plain date (see mediacloud.types.Story), and
+    # publish_date is a plain date (see _fetch_stories above), and
     # datetime.fromisoformat() (used downstream by clustering.py's
     # _parse_published) happily parses a bare "YYYY-MM-DD" string as
     # midnight UTC, so no extra conversion is needed here.
@@ -175,27 +238,21 @@ def fetch_mediacloud_articles(
             "(see .github/workflows/daily.yml)."
         )
 
-    import mediacloud.api
-
-    search_api = mediacloud.api.SearchApi(api_key)
     end_date = datetime.now(timezone.utc).date()
     start_date = end_date - timedelta(days=max_age_days)
 
     def run_one_query(query: str, label: str) -> tuple[list, FetchFailure | None]:
         _pace_queries()
         try:
-            stories, _pagination_token = search_api.story_list(
-                query, start_date=start_date, end_date=end_date,
-                collection_ids=[collection_id], expanded=True,
-            )
-            return stories, None
+            return _fetch_stories(api_key, query, start_date, end_date, collection_id), None
         except Exception as e:
             error_text = str(e)
-            if "429" not in error_text:
-                # Broad on purpose: the client can raise its own MCException/
-                # APIResponseError for auth/quota/HTTP issues, or a plain
-                # requests exception for a network blip — none of them should
-                # take down the whole run (see sources.py's module docstring).
+            if "API Server Error 429" not in error_text:
+                # Broad on purpose: a real HTTP error surfaces as the
+                # RuntimeError _fetch_stories raises above, but a network
+                # blip surfaces as a plain requests exception instead --
+                # neither should take down the whole run (see sources.py's
+                # module docstring).
                 logger.warning("Media Cloud fetch failed for %s: %s", label, e)
                 return [], FetchFailure(label, f"collection {collection_id}", str(e))
             # A real run hit this even with pacing intended (the pacing
@@ -210,11 +267,7 @@ def fetch_mediacloud_articles(
                             label, MIN_SECONDS_BETWEEN_QUERIES * 2, e)
             time.sleep(MIN_SECONDS_BETWEEN_QUERIES * 2)
             try:
-                stories, _pagination_token = search_api.story_list(
-                    query, start_date=start_date, end_date=end_date,
-                    collection_ids=[collection_id], expanded=True,
-                )
-                return stories, None
+                return _fetch_stories(api_key, query, start_date, end_date, collection_id), None
             except Exception as retry_e:
                 logger.warning("Media Cloud fetch failed for %s (after retry): %s", label, retry_e)
                 return [], FetchFailure(label, f"collection {collection_id}", str(retry_e))

@@ -88,19 +88,26 @@ search:
   # _pace_queries()), matching Media Cloud's own documented "roughly 2
   # requests/minute" limit.
   mediacloud_recipients_per_query: 8
-  # Separately, even the FIRST query of a paced run — before rate
-  # limiting could be a factor — got "API Server Error 403". Account/key/
-  # collection permissions were ruled out (a simple query worked fine in
-  # Media Cloud's own web UI), as was the auth header format (verified
-  # correct against the real client source). The remaining, well-
-  # evidenced-but-not-yet-confirmed suspect: query size — 8 recipients'
-  # names against all ~29 trigger phrases in one boolean expression
-  # produces a ~1,150-character, 48-OR-clause query, roughly 10x the size
-  # of Media Cloud's own worked example query. Batching trigger phrases
-  # too (moderate setting, 15/batch) cuts each query well under that. At
-  # these sizes, one daily run costs 7 x 2 = 14 requests (~98/week)
-  # against a 4,000/week default quota, adding roughly 7 minutes of
-  # paced runtime — comfortable headroom either way.
+  # Separately, a real run showed EVERY batch query — not just the
+  # first, and regardless of query size — failing with "API Server Error
+  # 403", correctly paced 31s apart. That ruled out rate limiting, and a
+  # follow-up run after shrinking query size this way (batching trigger
+  # phrases too, not just recipients) made no difference either — still
+  # 403 on literally every batch, so query size is ruled out too.
+  # Account/key/collection permissions are fine (a simple query worked
+  # in Media Cloud's own web UI) and the auth header format is correct
+  # (verified against the real client source). mediacloud_source.py now
+  # talks to the API directly (not through the `mediacloud` pip client)
+  # so it can set a browser-like User-Agent — the pip client leaves this
+  # at requests' default ("python-requests/x.y.z"), a well-known
+  # automated-client signature a WAF could be blocking on regardless of
+  # IP or content — and so a real response body is available in the logs
+  # if that turns out not to be it either. Not yet confirmed against a
+  # live run. Trigger-phrase batching (15/batch) is kept regardless,
+  # since it's a real improvement on its own merits even though it
+  # didn't turn out to explain the 403s. At these sizes, one daily run
+  # costs 7 x 2 = 14 requests (~98/week) against a 4,000/week default
+  # quota, adding roughly 7 minutes of paced runtime.
   mediacloud_triggers_per_query: 15
 
 ai:
