@@ -90,26 +90,121 @@
       ],
       "date_found": "2026-09-18T10:23:09.091058+00:00",
       "is_duplicate_of": null
+    },
+    {
+      "entry_id": "4a627241-7ea2-4a82-94f6-7b4fb03d2807",
+      "donor": "Arsenal Foundation",
+      "recipient": "Nepal flood relief",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Nepal",
+      "status": "new_commitment",
+      "summary": "Arsenal Foundation has provided a donation to support flood relief efforts in Nepal.",
+      "figure_quote": null,
+      "assumptions": [
+        "The exact recipient organization within the Nepal flood relief efforts is not specified."
+      ],
+      "confidence_score": 2,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxQaW4yWWZJbE1LRW5LNjIzQzBnbUN0VlJ1eWFGT3hrTElKY0FUTXVDTEJjVEpzNV9HTXhWZmxwY0N6NGI4LWtLd1E5MU5YdGpCVlF1enVlVXZOQTJxdGNRdlpwRnR1b0VYbVExTFJtSlRSOXVBU0dpSmFvanQzOUpjclpxTThNZjFRWWJza2NOYU9hcG42Y3hXekZB?oc=5"
+      ],
+      "source_names": [
+        "The Kathmandu Post"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-18T12:09:16.934584+00:00",
+      "is_duplicate_of": "a76ac876-2008-4e26-8794-edbe5ed23942"
+    },
+    {
+      "entry_id": "1ce7a15a-0aa6-46b7-9725-a35fdda1a972",
+      "donor": "Plymouth developer",
+      "recipient": "children’s group",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "renewed_partnership",
+      "summary": "A Plymouth-based developer has made a repeated donation to a local children's group.",
+      "figure_quote": null,
+      "assumptions": [
+        "The specific name of the children's group is not provided.",
+        "The monetary amount of the donation is not specified."
+      ],
+      "confidence_score": 2,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMihwFBVV95cUxNcW9hWXQ5NHh0UzBNWDdmWWdjZExSc2FJakFNcFdDSWo1ejB5ejcxUXB5T1ZyLUdzTWxIQWQzSG5MM3J1Q3ltNDRPV2g0WndHTGpaMnB0d3JsVFFtcHlGUHEzcnpqRnA5WUJKSzRZY3lPZ2FPWldvVTZwelVma2UwenB1b1N0UGc?oc=5"
+      ],
+      "source_names": [
+        "We Are South Devon"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-18T12:10:22.326038+00:00",
+      "is_duplicate_of": "8ba10323-abb0-4b94-87e1-97afe6bf9ba5"
     }
   ],
   "stats": {
     "feeds_checked": 203,
     "google_news_queries": 200,
-    "gdelt_files_processed": 95,
-    "gdelt_candidates_found": 555,
+    "gdelt_files_processed": 7,
+    "gdelt_candidates_found": 60,
+    "mediacloud_queries_made": 0,
+    "mediacloud_candidates_found": 0,
     "recipients_watched": 50,
     "pr_wire_feeds": 3,
-    "items_considered": 2684,
-    "items_filtered_as_stale": 1774,
+    "items_considered": 2208,
+    "items_filtered_as_stale": 1799,
     "max_article_age_days": 14,
-    "items_after_trigger_filter": 85,
-    "clusters_analysed": 52,
+    "items_after_trigger_filter": 81,
+    "clusters_analysed": 46,
     "skipped_due_to_ai_budget": 0,
-    "duplicates_skipped": 3,
+    "duplicates_skipped": 1,
     "rejected_unnamed_recipient": 1,
     "rejected_no_named_donor": 0,
     "rejected_out_of_scope_country": 2,
-    "entries_published": 2,
+    "entries_published": 4,
     "high_confidence_count": 1
   },
   "fetch_failures": [
