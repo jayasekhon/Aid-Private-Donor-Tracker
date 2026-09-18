@@ -189,6 +189,18 @@ confidence:
   # so it can meaningfully lift a weakly-sourced monitored-recipient
   # story out of "low confidence" on its own, not just nudge it.
   monitored_recipient_points: 3
+  # Bonus for the recipient being an actual, specifically named
+  # organization rather than a vague description ("Palestinian aid
+  # groups", "the flood relief effort") that only publishes at all
+  # because it's tied to a specific, in-scope place -- see
+  # run_daily.py's recipient-vagueness handling. A real case: Macklemore
+  # pledging $1M "to Palestinian aid groups" without ever naming which
+  # one -- still worth publishing (it's a real, sourced, in-scope
+  # donation), but a materially weaker finding than a story that names
+  # exactly who the money went to, and the score should say so.
+  # Entries with a properly named recipient (the normal case) get this
+  # automatically; only the vague-but-in-scope exception ever misses it.
+  specific_recipient_named_points: 2
   # Entries scoring below this are still published, but visually marked
   # "Low confidence" and excluded from the weekly email highlights.
   low_confidence_threshold: 5

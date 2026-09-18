@@ -134,6 +134,17 @@ GENERIC_RECIPIENT_MARKERS = (
     "local charity", "local charities", "local nonprofit", "local ngo",
     "a nonprofit", "a non-profit", "a charity", "an ngo", "an ingo",
     "aid organizations", "humanitarian organizations", "not named", "n/a", "undisclosed",
+    # Plural/collective phrasings missed above — real cases: "Palestinian
+    # aid groups" (Macklemore's $1M pledge) and "Nepal flood relief"
+    # neither matched anything here, despite being just as generic as "an
+    # aid organization". Deliberately 2-word phrases (not a bare "relief"
+    # or "aid") since several REAL curated recipients have one of those
+    # words as part of their actual proper name (Direct Relief, Islamic
+    # Relief Worldwide, Catholic Relief Services) — these compounds don't
+    # match any of them.
+    "aid group", "relief group", "flood relief", "disaster relief",
+    "humanitarian relief", "relief effort", "aid effort", "relief agenc",
+    "aid agenc", "charitable organization",
 )
 
 
@@ -325,17 +336,23 @@ foundation (only vague language like "corporate partners", "several companies", 
 that is also not relevant: set "is_relevant" to false rather than inventing a placeholder donor. \
 This includes a description that SOUNDS specific but isn't actually a name — "a Plymouth \
 developer" or "the housebuilder" name the donor's location or industry, not the company itself, \
-and are exactly as unusable as "a company" or "corporate partners". The recipient does NOT need \
-to be a major/well-known organization — a donation to a small local nonprofit is just as relevant \
-a finding as one to a large UN agency — but it DOES need to be a SPECIFIC, NAMED organization. If \
-the source text only says something vague like "a local charity", "several nonprofits", or "an \
-aid organization" without ever naming which one, that is not relevant either: set "is_relevant" \
-to false rather than inventing a placeholder recipient. Same trap as above applies here too — \
-"a children's group" or "the children's group" describes a category, not a name, even though \
-"children's" makes it read as more specific than it is. The test for BOTH donor and recipient is \
-the same: could a reader look this exact string up and find the one real organization it refers \
-to? If not — if it would match countless similar companies or charities — it isn't a name, and \
-the finding isn't relevant no matter how many outlets ran the story with the same vague wording.
+and are exactly as unusable as "a company" or "corporate partners". Never make an exception for \
+the donor, no matter how newsworthy the story is otherwise — identifying WHICH company gave is \
+this tracker's entire purpose, so an unnamed donor is never a usable finding.
+
+The recipient does NOT need to be a major/well-known organization — a donation to a small local \
+nonprofit is just as relevant a finding as one to a large UN agency — and it should normally be a \
+SPECIFIC, NAMED organization. If the source text only says something vague like "a local \
+charity", "several nonprofits", or "the children's group" without ever naming which one, do NOT \
+invent a placeholder — extract it as stated. There is ONE narrow exception where a vague \
+recipient description is still worth capturing rather than discarding: when the donation is \
+clearly tied to a SPECIFIC, NAMED place or crisis response (e.g. "Palestinian aid groups" when \
+the story is plainly about Gaza/Palestine, or "Nepal flood relief efforts") — extract it normally \
+with "country_scope" set to that specific place, and let a human reader judge whether the finding \
+is useful despite the missing org name; this system scores that case lower automatically, it does \
+not need you to pre-filter it. Outside that one exception — no specific place or crisis tying it \
+down, just a bare category like "a local charity" or "the children's group" with nothing else — \
+set "is_relevant" to false rather than inventing a placeholder recipient.
 
 If it IS relevant, extract the following as JSON. Follow these rules exactly:
 
@@ -723,6 +740,18 @@ def score_confidence(
     is_monitored = match_curated_recipient(result.recipient, recipients) is not None
     monitored_points = confidence_cfg["monitored_recipient_points"] if is_monitored else 0
     breakdown["monitored_recipient"] = {"value": is_monitored, "points": monitored_points}
+
+    # Almost every entry reaching this point has a properly named
+    # recipient and gets this automatically — the one exception is the
+    # vague-but-in-scope-place case run_daily.py publishes anyway rather
+    # than rejecting outright (see is_generic_recipient's caller), which
+    # should score lower precisely because the recipient isn't actually
+    # named. Recomputed here rather than threaded through as a parameter
+    # since result.recipient/assumptions are already right here.
+    recipient_is_vague = is_generic_recipient(result.recipient) or \
+        assumptions_admit_missing_name(result.assumptions, RECIPIENT_NAME_CONTEXT_WORDS)
+    named_points = 0 if recipient_is_vague else confidence_cfg["specific_recipient_named_points"]
+    breakdown["specific_recipient_named"] = {"value": not recipient_is_vague, "points": named_points}
 
     total = sum(component["points"] for component in breakdown.values())
     return min(total, 10), breakdown

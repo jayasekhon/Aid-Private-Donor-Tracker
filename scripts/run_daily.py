@@ -230,6 +230,7 @@ def main():
     from src.extraction import (
         FatalExtractionError, is_generic_donor, is_generic_recipient, is_out_of_scope_country,
         assumptions_admit_missing_name, DONOR_NAME_CONTEXT_WORDS, RECIPIENT_NAME_CONTEXT_WORDS,
+        UNSPECIFIED_SCOPE,
     )
 
     def _cluster_sources(cluster) -> str:
@@ -271,11 +272,6 @@ def main():
             logger.info("Rejecting cluster %s (via %s): no specific donor named (%r).",
                          cluster.cluster_id, _cluster_sources(cluster), result.donor)
             continue
-        if is_generic_recipient(result.recipient) or assumptions_admit_missing_name(result.assumptions, RECIPIENT_NAME_CONTEXT_WORDS):
-            rejected_unnamed_recipient += 1
-            logger.info("Rejecting cluster %s (via %s): no specific recipient organization named (%r).",
-                         cluster.cluster_id, _cluster_sources(cluster), result.recipient)
-            continue
         # Recipient's own operating country/context must be one this
         # tracker is actually scoped to (GHO + Nepal, see countries.txt) —
         # the donor's own HQ/nationality is irrelevant and deliberately
@@ -286,12 +282,38 @@ def main():
         # entries about US university/hospital/community philanthropy
         # ("South Korea", "Singapore", a Cortland or Santa Barbara facility)
         # reach publication despite being outside this project's actual
-        # geographic scope.
+        # geographic scope. Checked before the recipient-name check below
+        # because it feeds that decision too.
         if is_out_of_scope_country(result.country_scope, countries):
             rejected_out_of_scope_country += 1
             logger.info("Rejecting cluster %s (via %s): recipient's country/context %r isn't on the "
                          "monitored list.", cluster.cluster_id, _cluster_sources(cluster), result.country_scope)
             continue
+        recipient_is_vague = is_generic_recipient(result.recipient) or \
+            assumptions_admit_missing_name(result.assumptions, RECIPIENT_NAME_CONTEXT_WORDS)
+        if recipient_is_vague:
+            # An unnamed recipient is still rejected outright when there's
+            # no other anchor to make it a meaningful, trackable finding
+            # (e.g. "children's group" with country_scope "Unspecified /
+            # global" — no name AND no context). But when it's tied to a
+            # specific, real, in-scope place, the donation is still worth
+            # publishing even without the exact org name — a real case:
+            # Macklemore pledging $1M "to Palestinian aid groups" without
+            # ever naming which one, country_scope "Occupied Palestinian
+            # Territory". score_confidence() scores this lower via
+            # specific_recipient_named_points precisely because the name
+            # is missing, rather than discarding a real, sourced, in-scope
+            # donation just because press coverage didn't name a specific
+            # group.
+            if result.country_scope.strip().lower() == UNSPECIFIED_SCOPE:
+                rejected_unnamed_recipient += 1
+                logger.info("Rejecting cluster %s (via %s): no specific recipient organization named (%r).",
+                             cluster.cluster_id, _cluster_sources(cluster), result.recipient)
+                continue
+            logger.info("Publishing cluster %s (via %s) despite an unnamed/vague recipient (%r) -- tied "
+                         "to a specific in-scope place (%r), so still a meaningful finding; scored "
+                         "lower for the missing name.", cluster.cluster_id, _cluster_sources(cluster),
+                         result.recipient, result.country_scope)
 
         entry = build_donation_entry(cluster, result, settings["confidence"], recipients)
 

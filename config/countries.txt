@@ -29,6 +29,14 @@ Myanmar
 Niger
 Nigeria
 Occupied Palestinian Territory
+# Gaza/Palestine/Palestinian territories: added as their own lines rather
+# than relying on "Occupied Palestinian Territory" alone -- this file's
+# matching is plain substring, so a real donation tagged with any of the
+# names press/AI extraction actually uses for this place (a real case:
+# "Gaza") was being wrongly treated as out-of-scope.
+Gaza
+Palestine
+Palestinian territories
 Pakistan
 Somalia
 South Sudan
