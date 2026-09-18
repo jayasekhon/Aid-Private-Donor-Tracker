@@ -227,7 +227,10 @@ def main():
     rejected_no_named_donor = 0
     rejected_out_of_scope_country = 0
 
-    from src.extraction import FatalExtractionError, is_generic_donor, is_generic_recipient, is_out_of_scope_country
+    from src.extraction import (
+        FatalExtractionError, is_generic_donor, is_generic_recipient, is_out_of_scope_country,
+        assumptions_admit_missing_name, DONOR_NAME_CONTEXT_WORDS, RECIPIENT_NAME_CONTEXT_WORDS,
+    )
 
     def _cluster_sources(cluster) -> str:
         return ", ".join(sorted({a.fetch_source for a in cluster.articles}))
@@ -263,12 +266,12 @@ def main():
         # curated vs. off-list recipients rather than rejecting the latter);
         # what's still rejected is a recipient that was never actually
         # named at all, since that isn't a usable finding.
-        if is_generic_donor(result.donor):
+        if is_generic_donor(result.donor) or assumptions_admit_missing_name(result.assumptions, DONOR_NAME_CONTEXT_WORDS):
             rejected_no_named_donor += 1
             logger.info("Rejecting cluster %s (via %s): no specific donor named (%r).",
                          cluster.cluster_id, _cluster_sources(cluster), result.donor)
             continue
-        if is_generic_recipient(result.recipient):
+        if is_generic_recipient(result.recipient) or assumptions_admit_missing_name(result.assumptions, RECIPIENT_NAME_CONTEXT_WORDS):
             rejected_unnamed_recipient += 1
             logger.info("Rejecting cluster %s (via %s): no specific recipient organization named (%r).",
                          cluster.cluster_id, _cluster_sources(cluster), result.recipient)

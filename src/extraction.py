@@ -144,6 +144,53 @@ def is_generic_recipient(recipient: str) -> bool:
     return any(marker in r for marker in GENERIC_RECIPIENT_MARKERS)
 
 
+# GENERIC_DONOR_MARKERS/GENERIC_RECIPIENT_MARKERS above are a fixed
+# phrase list, which will always be one step behind the open-ended ways
+# a source can describe an unnamed entity — a real run published "A
+# Plymouth-based developer has made a repeated donation to a local
+# children's group" (donor "Plymouth developer", recipient "children's
+# group") because neither string matched any marker, even though both
+# are exactly as unusable as "a company" or "a local charity" ("Plymouth"
+# and "children's" make them READ more specific without actually naming
+# anyone). Model prompt strengthened for this case too (see
+# EXTRACTION_PROMPT_TEMPLATE), but a code backstop shouldn't rely on
+# prompt compliance alone -- and here there's a much more general signal
+# than yet another marker to add: the model's OWN "assumptions" field
+# already tends to admit the gap in its own words ("The specific name of
+# the children's group is not provided", "...housebuilding company is
+# not provided in the source text" -- both real, from entries that
+# should have been rejected). This checks for that admission directly,
+# rather than trying to keep pace with every new way of writing "no name
+# given" as a hardcoded phrase.
+NAME_MISSING_ADMISSION_PATTERN = re.compile(
+    r"name of the .*\b(?:is not|isn't|wasn't|was not)\b.*\b(?:provided|specified|given|named|disclosed|stated)\b"
+)
+# Which side (donor vs. recipient) an admission is about is inferred from
+# a word in the admission itself -- e.g. "name of the HOUSEBUILDING
+# COMPANY is not provided" vs "name of the CHILDREN'S GROUP is not
+# provided". Deliberately two separate small sets rather than one shared
+# one: "company"/"business" is unambiguously donor-side, "charity"/
+# "group"/"organization" unambiguously recipient-side, and keeping them
+# apart avoids an admission about one field ever suppressing the other.
+DONOR_NAME_CONTEXT_WORDS = {
+    "company", "companies", "donor", "business", "firm", "corporation",
+    "sponsor", "developer", "builder", "retailer", "manufacturer", "bank",
+}
+RECIPIENT_NAME_CONTEXT_WORDS = {
+    "group", "organization", "organisation", "charity", "charities",
+    "nonprofit", "non-profit", "ngo", "ingo", "association", "recipient",
+    "shelter", "hospital", "school", "foundation", "fund",
+}
+
+
+def assumptions_admit_missing_name(assumptions: list[str], context_words: set[str]) -> bool:
+    for a in assumptions or []:
+        a_l = a.lower()
+        if NAME_MISSING_ADMISSION_PATTERN.search(a_l) and any(w in a_l for w in context_words):
+            return True
+    return False
+
+
 UNSPECIFIED_SCOPE = "unspecified / global"
 
 
@@ -276,11 +323,19 @@ with no confirmed commitment), say so clearly and set "is_relevant" to false. Th
 to identify WHICH company gave — if the source text never names a specific company or corporate \
 foundation (only vague language like "corporate partners", "several companies", or "a donor"), \
 that is also not relevant: set "is_relevant" to false rather than inventing a placeholder donor. \
-The recipient does NOT need to be a major/well-known organization — a donation to a small local \
-nonprofit is just as relevant a finding as one to a large UN agency — but it DOES need to be a \
-SPECIFIC, NAMED organization. If the source text only says something vague like "a local charity", \
-"several nonprofits", or "an aid organization" without ever naming which one, that is not \
-relevant either: set "is_relevant" to false rather than inventing a placeholder recipient.
+This includes a description that SOUNDS specific but isn't actually a name — "a Plymouth \
+developer" or "the housebuilder" name the donor's location or industry, not the company itself, \
+and are exactly as unusable as "a company" or "corporate partners". The recipient does NOT need \
+to be a major/well-known organization — a donation to a small local nonprofit is just as relevant \
+a finding as one to a large UN agency — but it DOES need to be a SPECIFIC, NAMED organization. If \
+the source text only says something vague like "a local charity", "several nonprofits", or "an \
+aid organization" without ever naming which one, that is not relevant either: set "is_relevant" \
+to false rather than inventing a placeholder recipient. Same trap as above applies here too — \
+"a children's group" or "the children's group" describes a category, not a name, even though \
+"children's" makes it read as more specific than it is. The test for BOTH donor and recipient is \
+the same: could a reader look this exact string up and find the one real organization it refers \
+to? If not — if it would match countless similar companies or charities — it isn't a name, and \
+the finding isn't relevant no matter how many outlets ran the story with the same vague wording.
 
 If it IS relevant, extract the following as JSON. Follow these rules exactly:
 
