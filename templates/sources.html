@@ -8,9 +8,10 @@
     <h2 class="section-title">Sources &amp; limitations</h2>
 
     <p><strong>How this works:</strong> every day, this tracker searches Google News, GDELT's global
-    news index, and a set of PR wire feeds for stories mentioning a monitored UN agency, INGO, or
-    NGO alongside donation-related language, published within the last {{ stats.max_article_age_days }}
-    days. Candidate stories are grouped into events and read by an AI model. The recipient does
+    news index, Media Cloud's news archive, and a set of PR wire feeds for stories mentioning a
+    monitored UN agency, INGO, or NGO alongside donation-related language, published within the
+    last {{ stats.max_article_age_days }} days. Candidate stories are grouped into events and read
+    by an AI model. The recipient does
     NOT need to be one of the monitored organizations that anchors the search — a donation to any
     other named nonprofit, however small or local, is published too, as long as the AI model
     encounters it and (see below) it operates in a country this tracker actually covers; only a
@@ -39,7 +40,7 @@
 
     <h3 style="font-family: var(--serif-display); margin-top: 30px;">Today's run, in numbers</h3>
     <ul>
-      <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries across {{ stats.recipients_watched }} monitored recipients, {{ stats.pr_wire_feeds }} PR wire feeds) + {{ stats.gdelt_files_processed }} GDELT 15-minute file(s) scanned ({{ stats.gdelt_candidates_found }} candidate mentions of a monitored recipient found)</li>
+      <li>{{ stats.feeds_checked }} feed(s) checked ({{ stats.google_news_queries }} Google News queries across {{ stats.recipients_watched }} monitored recipients, {{ stats.pr_wire_feeds }} PR wire feeds) + {{ stats.gdelt_files_processed }} GDELT 15-minute file(s) scanned ({{ stats.gdelt_candidates_found }} candidate mentions of a monitored recipient found){% if stats.mediacloud_queries_made %} + {{ stats.mediacloud_queries_made }} Media Cloud queries ({{ stats.mediacloud_candidates_found }} candidate articles found){% endif %}</li>
       <li>{{ stats.items_considered }} raw item(s) considered</li>
       {% if stats.items_filtered_as_stale %}<li>{{ stats.items_filtered_as_stale }} discarded as older than {{ stats.max_article_age_days }} days</li>{% endif %}
       <li>{{ stats.items_after_trigger_filter }} passed the keyword pre-filter</li>

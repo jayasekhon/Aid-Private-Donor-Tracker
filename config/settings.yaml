@@ -57,6 +57,34 @@ search:
   google_news_enabled: true
   pr_wire_feeds_enabled: true
 
+  # Media Cloud (mediacloud.org) — a real structured news search API/
+  # index, complementary to Google News (an RSS-search-string hack — see
+  # query_builder.py's docstring on its reliability quirks) and GDELT (a
+  # much broader, noisier, multilingual firehose — see gdelt_gkg.py).
+  # Needs a free API key from search.mediacloud.org, set as the
+  # MEDIACLOUD_API_KEY secret (see .github/workflows/daily.yml) — leave
+  # this false until that secret is actually set, since enabling it
+  # without a key fails the whole run immediately (a clear error, not a
+  # silent skip — see mediacloud_source.py).
+  mediacloud_enabled: false
+  # Which Media Cloud collection to query. #9272347 = "Global English
+  # Language Sources" (~1,600 curated English-language sources) —
+  # recommended: this pipeline is English-only throughout (trigger
+  # phrases, extraction prompt, alias matching), so a curated English
+  # collection is both more relevant and dramatically lower-noise than
+  # the alternative, #8876987 "Global Voices Cited Sources" (11,000+
+  # sources, heavily multilingual, weighted toward citizen/alternative
+  # media rather than mainstream press).
+  mediacloud_collection_id: 9272347
+  # Recipients grouped into one query per batch, not one query per
+  # recipient (unlike Google News): Media Cloud's API client self-
+  # throttles to 2 requests/minute, so batching keeps this source's
+  # runtime to a few minutes instead of 25+. At 8/batch, one daily run is
+  # ~7 requests (~49/week) against a 4,000/week default quota — comfortable
+  # headroom to lower this later if per-recipient attribution ever
+  # matters more than query count.
+  mediacloud_recipients_per_query: 8
+
 ai:
   # Which AI provider does the extraction step: "bedrock" (via AWS, paid
   # per-token, no daily request ceiling) or "gemini" (Google's free tier,

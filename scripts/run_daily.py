@@ -47,6 +47,7 @@ from src.config_loader import load_all
 from src.query_builder import build_recipient_trigger_queries, google_news_rss_url
 from src.sources import fetch_all
 from src.gdelt_gkg import fetch_gdelt_gkg_articles, fetch_gdelt_gkg_articles_for_range
+from src.mediacloud_source import fetch_mediacloud_articles
 from src.clustering import filter_by_recency, filter_by_trigger_phrase, tag_country, tag_official_sources, cluster_articles, rank_clusters_by_priority
 from src.extraction import extract_from_cluster, build_donation_entry
 from src.store import EventStore
@@ -119,6 +120,8 @@ def main():
         google_news_query_count = 0
         gdelt_files_processed = 0
         gdelt_candidates_found = 0
+        mediacloud_queries_made = 0
+        mediacloud_candidates_found = 0
     else:
         recipient_queries = []
         if settings["search"].get("google_news_enabled", True):
@@ -149,10 +152,36 @@ def main():
             gdelt_files_processed = gdelt_stats.files_processed
             gdelt_candidates_found = gdelt_stats.candidates_found
 
+        mediacloud_queries_made = 0
+        mediacloud_candidates_found = 0
+        if settings["search"].get("mediacloud_enabled", False):
+            # A third, again completely different fetch shape: a real
+            # structured search API (not an RSS hack like Google News, not
+            # a global bulk-file firehose like GDELT) — see
+            # mediacloud_source.py's module docstring for the collection
+            # choice and why recipients are batched into few queries
+            # rather than one per recipient. Raises immediately (not a
+            # per-batch FetchFailure) if enabled without an API key, since
+            # every batch would fail identically -- see that function's
+            # docstring.
+            mc_articles, mc_failures, mc_stats = fetch_mediacloud_articles(
+                recipients, triggers,
+                collection_id=settings["search"]["mediacloud_collection_id"],
+                max_age_days=settings["search"]["max_article_age_days"],
+                recipients_per_query=settings["search"].get("mediacloud_recipients_per_query", 8),
+            )
+            raw_articles.extend(mc_articles)
+            fetch_failures.extend(f.__dict__ for f in mc_failures)
+            mediacloud_queries_made = mc_stats.queries_made
+            mediacloud_candidates_found = mc_stats.candidates_found
+
         logger.info("Fetched %d raw articles: %d Google News queries (%d recipients, batched) + "
-                     "%d GDELT GKG file(s) processed (%d candidates) + %d PR wire feeds (%d fetch failures).",
+                     "%d GDELT GKG file(s) processed (%d candidates) + %d Media Cloud queries "
+                     "(%d candidates) + %d PR wire feeds (%d fetch failures).",
                      len(raw_articles), google_news_query_count, len(recipients),
-                     gdelt_files_processed, gdelt_candidates_found, len(pr_wire_feeds), len(fetch_failures))
+                     gdelt_files_processed, gdelt_candidates_found,
+                     mediacloud_queries_made, mediacloud_candidates_found,
+                     len(pr_wire_feeds), len(fetch_failures))
 
     items_considered = len(raw_articles)
 
@@ -311,6 +340,8 @@ def main():
         "google_news_queries": google_news_query_count,
         "gdelt_files_processed": gdelt_files_processed,
         "gdelt_candidates_found": gdelt_candidates_found,
+        "mediacloud_queries_made": mediacloud_queries_made,
+        "mediacloud_candidates_found": mediacloud_candidates_found,
         "recipients_watched": len(recipients),
         "pr_wire_feeds": len(pr_wire_feeds),
         "items_considered": items_considered,
