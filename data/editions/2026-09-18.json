@@ -2,10 +2,172 @@
   "date": "2026-09-18",
   "entries": [
     {
-      "entry_id": "9be7dcb0-c908-4d77-b2d5-dbf289ce5668",
+      "entry_id": "640630e9-4c68-4284-ba14-9f9ee083a86d",
+      "donor": "Stray Kids’ Felix",
+      "recipient": "children in need",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$222,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Stray Kids' Felix donated over $222,000 to support children in need after his birthday.",
+      "figure_quote": "over $222,000",
+      "assumptions": [
+        "The exact recipient organization is not specified."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNRDdGZENJSWFpRTZoOWRXdjIzdXVtTDVtVE9leEtzSmp0ZENSOVA3aGFUM0VSaEFoS1pwaW1KQkJEX09GV2gxLTAyWVZ3dk1vMUJYdW14QVFlcDBMSTlOd00zOGZsNXp5SldpNVpJd0lDa296ajhnaWUwZnpmT0tMUm1VWXk1ajc3bkFlZlRmT0FVZnVxenhwQTZOazRNenBweWt0bS1WSHlXRUFlb3RBUVA0ZlNQNnk0c3J5MEdkUDRZYUdmaDRRQk56Nm5yQ2NWS1lycXJ3?oc=5",
+        "https://www.straitstimes.com/life/stray-kids-felix-donates-280k-on-birthday-to-help-sick-children",
+        "https://www.straitstimes.com/life/stray-kids-felix-donates-280k-on-birthday-to-help-sick-children"
+      ],
+      "source_names": [
+        "Business Upturn",
+        "straitstimes.com"
+      ],
+      "source_channels": [
+        "Google News",
+        "Media Cloud"
+      ],
+      "date_found": "2026-09-18T15:14:59.717908+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "e9fd1e7d-e403-4642-9455-ed9c061bbc96",
+      "donor": "Stray Kids’ Felix",
+      "recipient": "sick children",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$280,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Stray Kids' Felix donated $280,000 on his birthday to help sick children.",
+      "figure_quote": "$280,000",
+      "assumptions": [
+        "The exact recipient organization is not specified."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNRDdGZENJSWFpRTZoOWRXdjIzdXVtTDVtVE9leEtzSmp0ZENSOVA3aGFUM0VSaEFoS1pwaW1KQkJEX09GV2gxLTAyWVZ3dk1vMUJYdW14QVFlcDBMSTlOd00zOGZsNXp5SldpNVpJd0lDa296ajhnaWUwZnpmT0tMUm1VWXk1ajc3bkFlZlRmT0FVZnVxenhwQTZOazRNenBweWt0bS1WSHlXRUFlb3RBUVA0ZlNQNnk0c3J5MEdkUDRZYUdmaDRRQk56Nm5yQ2NWS1lycXJ3?oc=5",
+        "https://www.straitstimes.com/life/stray-kids-felix-donates-280k-on-birthday-to-help-sick-children",
+        "https://www.straitstimes.com/life/stray-kids-felix-donates-280k-on-birthday-to-help-sick-children"
+      ],
+      "source_names": [
+        "Business Upturn",
+        "straitstimes.com"
+      ],
+      "source_channels": [
+        "Google News",
+        "Media Cloud"
+      ],
+      "date_found": "2026-09-18T15:14:59.718834+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "a978760d-194d-47d7-9d1e-4bd3d1d2afa1",
+      "donor": "Private capital investors",
+      "recipient": "World Bank",
+      "recipient_type": "UN Agency",
+      "amount_text": "$112 billion",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "The World Bank has attracted a record $112 billion in private capital.",
+      "figure_quote": "$112 billion",
+      "assumptions": [
+        "The source text refers to 'private capital investors' in general, not specific companies."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 3,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.freemalaysiatoday.com/category/business/2026/09/17/world-bank-attracts-record-us-112bil-in-private-capital",
+        "https://www.brecorder.com/news/40439969/world-bank-boosts-private-capital-mobilization-to-record-112-billion",
+        "https://sg.finance.yahoo.com/news/world-bank-boosts-private-capital-111139843.html"
+      ],
+      "source_names": [
+        "freemalaysiatoday.com",
+        "yahoo.com",
+        "brecorder.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-09-18T15:15:17.907396+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "0bcb2590-15b7-49fd-9ada-ee0815e57bb5",
       "donor": "Pop Base",
       "recipient": "Palestine Children's Relief Fund",
-      "recipient_type": "NGO",
+      "recipient_type": "Other Nonprofit",
       "amount_text": "over $10,000",
       "is_in_kind": false,
       "in_kind_description": null,
@@ -14,226 +176,7 @@
       "summary": "Pop Base donated over $10,000 to the Palestine Children's Relief Fund.",
       "figure_quote": "over $10,000",
       "assumptions": [],
-      "confidence_score": 10,
-      "confidence_breakdown": {
-        "source_tier": {
-          "value": "general_news",
-          "points": 2
-        },
-        "explicit_amount_stated": {
-          "value": true,
-          "points": 3
-        },
-        "multiple_independent_sources": {
-          "value": 23,
-          "points": 3
-        },
-        "monitored_recipient": {
-          "value": false,
-          "points": 0
-        },
-        "specific_recipient_named": {
-          "value": true,
-          "points": 2
-        }
-      },
-      "source_urls": [
-        "https://news.google.com/rss/articles/CBMisgFBVV95cUxOTkhzVjRKd0paN2pfVUlfLXNselJXOXZuZ2cxN1FMTHhfRWgyNUFra25zRkpXYkg4bXJHSkRvek5FRWtqeUJJZ3JrckVpSWtoZUk3NU9waElkd0FwSERVb0ttOGQ2RjdTQXRJWGFoTm00eGp5a0VmYU9aVFpSeEVXc3lPWmV3XzN0Nmx3cFFDZFFDc2JKVUtnb3RFVTlBLVQ0czJSRlQza3Y5VmdoQzlBLXZ3?oc=5",
-        "https://news.google.com/rss/articles/CBMieEFVX3lxTE5SNExlWktfNnJTbHowZXFfMjJ0aUVCQnk2ZkZpUWpQTXdXUUI1QW1tS2VZTjhhNmNiS1ZQVm45aDM1bEx5TER1ZUpwUUxNVDNtNmZYWllFWmc5WEZ5RU1oZWpnem9KVHdlLVhHczFIWVNnUUZHckZwMg?oc=5",
-        "https://news.google.com/rss/articles/CBMiywFBVV95cUxOekFLLWJsQmVlODdhRXB5T2doRFI0eW9VRkxSSjRzTFhDU1lkcGJyaEJwWGs2OXdkSlY0SEliTEFfcHI1amJwbmJYZWVPenkyVmU2ZHVuSE1JUTZkaEQzdlZTQU5NMEFzRVlTRDNHamEtdGxLXzNLSTl2Sld0cUZTcFBsNm55RGtxMXVNSWxmN1dzRnJsQkZuMXRDWF95UFNHWjRISHB1X1R3RFN4bjliSFRjMmowYmJMS0tuNTZlc3FlN3QzWVdXc2lTRdIBywFBVV95cUxOekFLLWJsQmVlODdhRXB5T2doRFI0eW9VRkxSSjRzTFhDU1lkcGJyaEJwWGs2OXdkSlY0SEliTEFfcHI1amJwbmJYZWVPenkyVmU2ZHVuSE1JUTZkaEQzdlZTQU5NMEFzRVlTRDNHamEtdGxLXzNLSTl2Sld0cUZTcFBsNm55RGtxMXVNSWxmN1dzRnJsQkZuMXRDWF95UFNHWjRISHB1X1R3RFN4bjliSFRjMmowYmJMS0tuNTZlc3FlN3QzWVdXc2lTRQ?oc=5",
-        "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOaTd0dnd6S0lOeVQtYjJpbDJsVzNuMXVXcVJ2MmFxU3QwY1REMWdfRVQwOHlwUXpIemVJNS1Xa0NmZXJhUkd5cXB5LXVTTHlxQ2lHUWVjNEZlbWVncU15SmF0QXZCUzRGdG1RMFpUOC0zc1FNbXF5NDdxSElZZndiNlg5a2dTeFBxdXRPUENISlZQVmxldDdfdWw1b2xWSlpULUpvV2o2UWI1czl3Tzg5ajR2VkNObFBGM0NlaURId0VvVnpYZnJyc3ZaRGVnUW1IUmI1Y1Vn0gHqAUFVX3lxTE1sVkJrLW15bHdHYVRJelN3enJKbzVxTTIyYVA3bXFKQjM3b0p6Z29pZjFSRFJJdWd6alRJaWg3T3JDdHBxelBzV0JwV3AyQVpZMjltZlRwTUMtc0hmVXNidTNLcDJReW9SVzdzeGJqVnU2OEJCX3pyX19vc1VOeTBjRHJVeTJFWmRzNkNBeF9QTTVCbUo3SXRjSy1HVWxyNjFZOE45by12VjZmckpseU9FWG81d040amZjUmZNbVJhOUEtckFrdDBkS2pGel9oMWhIdVoxZmNSU3l6cG01cWhWVjhBdzZfVUJ6QQ?oc=5",
-        "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNGEzaVEwdGpsR3BxaE8xb0FhUlRIYkNOak9zWFhNVmExTkdxTEtkeFQwRTJxRmYyNDlhMEo1OGRjWGVsVVZpTDExalBSTWluVkJpaS1RRFRiNEhLbi03cjZJek51VWJGT0g0UDhMazEzb2FhY3JUZ1pRVTRYRGJzWE1aUUtKVzRzSUtsOXdMYTd6NWRBQXRPR3lBX1o5OWIybUN5X0phVFM4RlFE0gGyAUFVX3lxTE9xTWlVck1SaXg0Wk4wVEtuSEJnUktDUktIU2VacUk4WWNucVAtb3EtU1FmTnhVWEdfSm1lbGZ2MlJ1czROcG1iOGRWaS1JS09PbFg2dVlUbXZkcGZJRmkzZTlMUURGODZucmsxbnNsS2ZEakRERjd3RmIzakM3dURFU1hlM3VNczJ6ekoyajhmZU5BVkFkVTFMMG1nSnFuYnRKWGdkcmE0ZlE2cDY3azNTYlE?oc=5",
-        "https://news.google.com/rss/articles/CBMingFBVV95cUxQZkJqZGtkb3RfV3BndGJBYWRVY0MzNVdVTldHaXJKWjdoWmlURXVLUFpwWWV6WXJJNnBUMFgtUnMyR0RmUkhRTHdGSGl4UVozWkR1aWx2cVpDOHUyNG9PWDdSTU1kcW44Tk0zYzBxWUdsdDlyUl9NZnNSVUxtUDNsN0dVQl9WX2VHTVNMejltLVpMVU5Temd2bnBuRjVjUQ?oc=5",
-        "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOYU1lTXh3dk9vTXNBM0ZCMUlEVFJTMXNObGw0clpLc09HMFVZZi04M19IcGpJdkN1THJiUmJNZUNiZG5FWGluaGRDdDdVWEF5TzdRRkNSOW1WcVJ0YTUxYjZRQWhCOGRqTGh6R040Q01SN0VqdDZPZUZKNEJzT1ZtTkpZTUFiSHdGV0FkaXpMeHdZclJkUC1rOVhqc2JOX2NiVmhDVFVVYk9hQm1VQUVzZ2k1WlFpM2NjNW1naHpKaXpUTzlFNTZxSFE0RFR2T0tadVpIcw?oc=5",
-        "https://news.google.com/rss/articles/CBMilAJBVV95cUxNSlNlbzNWZ1NpVFNNNkN0RjR1LXE2VHRvSHNzU2k0Y2llRm5ldWY1OG5wYzMzS1RZR2lVQnphVzV1OXp4ZTdGS1R0MHNRZVFJVHJsbnBNZ3BXUXZMYWtfd0JKcEM5cGJiNHdhOHFWX2xzc2VsTlBtQ041amIwRm1laWplQVhnckRManVRWHZuSWtsUHlSTkM4SkJGSU5tdlpLOW9DUXFFdGRITW1vV2wyck03UTJYNFFiVWpmNjRDZzR4eGhUdng4YXdqaU1sMDhyWEhkX24tVzRhQ0tTOThqZzlJNDczX19ldHN4ZW1aMHd4bjZhZUwxUV85UVUyNTFqc3c4WVRiZGwwZnVKa2VFcEZFXzPSAZQCQVVfeXFMTUpTZW8zVmdTaVRTTTZDdEY0dS1xNlR0b0hzc1NpNGNpZUZuZXVmNThucGMzM0tUWUdpVUJ6YVc1dTl6eGU3RktUdDBzUWVRSVRybG5wTWdwV1F2TGFrX3dCSnBDOXBiYjR3YThxVl9sc3NlbE5QbUNONWpiMEZtZWlqZUFYZ3JETGp1UVh2bklrbFB5Uk5DOEpCRklObXZaSzlvQ1FxRXRkSE1tb1dsMnJNN1EyWDRRYlVqZjY0Q2c0eHhoVHZ4OGF3amlNbDA4clhIZF9uLVc0YUNLUzk4amc5STQ3M19fZXRzeGVtWjB3eG42YWVMMVFfOVFVMjUxanN3OFlUYmRsMGZ1SmtlRXBGRV8z?oc=5",
-        "https://news.google.com/rss/articles/CBMikgFBVV95cUxQc294SmJqaHRDbHZrZm9KU05mbTNOeUR4NUtwdVJ2bUd4c1dOMlFlVWxacmtOQ2ZtY1RJUUc2QXJFU3VrWFkzeXBKNkNBMXYwUTlVN094aDRzLUV5bm92Y19keUpNNTE3MHEzVHpKdUdwVmpJemxWS0VTTHhMc3dRajd1V21UR0FYb1p6TElkZm1Mdw?oc=5",
-        "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSmt6MzE1N2lySjdIbHkzX0pfcG9tSXlZS3hSU1pZM0dBZlMzamRUYWxyOTNUMEJTamRPNW1zSEtkMi1VbDJJZkhUUU0zdkI5ZUktVm1aQ29Eb1RsaXd0UjUyZExTNzlLbEgwZm5KODBNYTF0OVQtVXh6QnFIU2djRC1ERjRYbGVrZ1NQV09obGhicjFOV2RDTHl4QmotYmRtQjRGcmluMms5VEU5d21oQ9IBtgFBVV95cUxOVWZOdzhCLXdXd1Qxbk5zWlVKaTFfNjFnNU1fVUtnazNmbFlWVkYza3J6bUE3QVhTaXBBb2QyYkltLTM3ZVVJUXBFOXZSQWxmTkFFOXNsa3BCN2xGbXl3MmE3YkxxY2Uwa00xcWowVllHTThKd01Kem9MVmdNM2tTVkZvN0FlU0lFY19teUJoYnh3QmsxMGFXQmVqVWxJRWNPVlBKeF9qVUNkdmFZQTRaRkZfdkpiZw?oc=5",
-        "https://news.google.com/rss/articles/CBMihAJBVV95cUxNT0x0ZHR1RUpNYlVPWl91WFVVTU02aVo3bWNfTXNFcDlMU1U1dzNRZ3QwcDJ4cEk3WnJaVlRVMVZsNXp0Z0tCLW1hTkc1ZkVTUGpwQWI5YTk3b0dNb05vbEVUV0JQRENJbEd0SS1mNTVmN3pfTW1IVGFLc3ZERUgzRVlBUjZQU2V6aEdEczBaWG9WbUplWkg2TVVwR3NabjRuUWpOeGY0MDIxaGd2Y3pUSXZmNnphcWtMeUJINGhCY080U2pzTHcwdnlkRnVQaUFOdXRwb1lrSlpscVZUYjd4VEpxdHc5Yldqb3hqaHBXNTNwNklDOU53OXRhQUZsLWVyNXZfVNIBigJBVV95cUxNUjJ5Z2tNck9kYjd1LVkxSXcxaExkQUExaFd1MlVRaG1rQ3pvS2ZQXzVVcW9UTlU3TGlBcW9mS0JTdGZrLXE3Rk9POC10dFRUdmhpWXNuQ25WTlRaVnAtMFNTemVVbnF4OG1PYVN3ZWdiM0hMTldka1JwTzZ0UTBVZmlPaGRCN1NwTUl1cFRLN21JMHl5cThrT1BWaFo2OTBxU0RMaFE5NU5taFBZQ0s5c2tBR1VlVUxoX0xjY1VQYmN3LUhBRkRCZ3A5bmlJUDhqdnJlOXFOOXZ2cnNNOHhTeHozQnVTNk43Um8ySDRfbGc2cVlHOGlnN2RzWmNzdlpxX1B1RXNBMHk5dw?oc=5",
-        "https://news.google.com/rss/articles/CBMimgFBVV95cUxNVzllbEtqU1dlODB2Z3JCSENnNGNuRkhCTl9Mcm9lUHFhWHFTMDJkOEg0X0lKVXdhUUhJeXRhNFZtN1ZrMmVuVWp4ZWV4QWFnZ0t4aUx3U1k2aXFzbTV2bm1qQURTQkZieE9zeDdiOWpYYlVGRmdXM0drNXhrQXpoeU5LSHRjb1EwZEY4a3pzLWlKeVg2U0F2d0V3?oc=5",
-        "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOTkdGVk0wMmVLNkpfenpOaGdMaFNIa28za3ZveHlVX1VaN3dvUVV1eFdHdGh3TzVZZ1J3UDUwc19LRVUxX19lM1pEZ1hqcGhDSWE2ZTJkTUkxMG1pVzdhR1VNRURRS0xpVHVzUjdtVEZDQng2eXpvelZxdHFMQ0pGNjVpRTJjbmhpZ3JpUzFWR1RETVQ2cDVPNzFCS21VT2VGbUo1Z2xPYzNRdGlpc1FITFlwTVJKRVVsZzh3WWNEcGtxZDFyVi1FVy1GbTJXUGlCajVwVHJ4QTFmeTVnY0ZB?oc=5",
-        "https://news.google.com/rss/articles/CBMiywFBVV95cUxQMDFXR3hnUkZrYW1PaE44REpReW15RWFZM0QzaUZQaDdhejZDS0czSW5kbjM1YWNTenpUTWYza0YtNV9IOHgtNzQ5SzVqV1djdXNPTzdGcnZkTjlEVlNKN0QzVlBHTnpUVHVOTFltM1c1Z2dNVkFzbGliQWUtNHlTS0R1Q2gtbHRvS3pFU1ZIZzRwLVIxZTNQODlrdWlvZElCT0V6WFJuWGJoZkZqNXZnMVhJNTBEOFNQSHRCYW5veTVOWW93UnVHazRFNA?oc=5",
-        "https://news.google.com/rss/articles/CBMivgFBVV95cUxOR1EwbjNvczdnS2V4dkFMU21Rb0dKRGVoak1pZ2dhVG5mZFg2VXkzQUtVdy1MWnZFQjF0aWxXVXF4VW9rNUJfMldiVjFZQkVQT0ZYUlhMRXNjcFRldGFhaGtPMWVFTGxxWU1qSXI3QmZEbWZXdWhFMTY1eHlaR3Q3cVMyVVAxR3RBSEZ3eG9VRWwySXBJUmpQVHY1TGowNHFzOVJZOUsyTDVhaHR1NUNUQms0bFQ5d3d3ZGRoRkxR?oc=5",
-        "https://news.google.com/rss/articles/CBMikgFBVV95cUxNWjAyNVpCU29GenJETjdhZHFRSEtjdURzYUhWMTR4MmFJcU5UR0hIRTJQdjJEc0IxekRuQVNwRTBwckloSU05ZUZWSzlFRUZMQkFMNm1JSHpyRmItdHdpejFrUmRvQ05kV1ZZUmFOMVR6RzdhdWs0MzNFeU1WWklrT1ZVV3R1RXgtNG1Oa1c4ekU2QdIBlwFBVV95cUxPeGtPeUwzaXlvOHI0UVBVWjFhSmwzNjQwaVhpUEpzLUN0NVVLTVNfd01kN1FVdGNmTWk3ekZpRTZjR2xNUWdkWHhSSlpaQlFEUkN4N1ZDOTNka01LaWtLYUVoRjBaUW11blpmTDh0LVYtSVZFQUtnR05mOTg2azYzYllHQmlUM0djOE1KMzJ4dWFXTEdsbDc0?oc=5",
-        "https://news.google.com/rss/articles/CBMiygFBVV95cUxNU0l1YVZ1WGJ5VUZGeUZpUU4tMGNzMi1fcEVxRk5kWFYxTHZwYnVIUW1MYWdjQjVCSEphQmQ5S3g2TXFFLVlselFXNG01b04tS2U2cFZPWUszMEoxZUxoSW5EUHZqTHFkNzc4U0hFLU81SVdDQW9wVzZ2S01zLTFxcHZVM0lwWXliYjh6c1NpVThhcnNCYW9ob20xNTVwWF9JMEZZdnVmLU4tWGpkdlQ0WHZIYnJ3bW11RTZtaVZlSDhfMVZiYUJ6RWtB?oc=5",
-        "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZk1pdVZRNGFjdF9CeXlGSldLVC1IUDJwRjdzZ3pfM1lzWnhObGpXcGFvLW1lb3A2STE0TE1mQ2VSbWc0VzJNLWZvT0VUbmdRRVRqUDFTMktUcUZCX0ZtTFBPazJDXzE2MUh6eFB1MERNWTNpaUlWSXI2ak1kNkxVMEpxeHpYQ04wY2tWbk9yd29OaDgwRXAzd1YyWkdZb0VyZEE5WURpZ0pOT0llRFcwQVhzUk1DcmJvRVpMOFRKNHI5WGVJQ2oxVjBVR054cDJuT3hpSXF4eW1iajBz?oc=5",
-        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPX0p5YUtHVkZMa0E5aFpydGFnbWVkcDk5TlBkbHpiM05VQmQtbF8xa0p0RWpVd2JiVU4zZUhXSnNKQ2RBSHpfMHd0bjlLRVk3dFZNeExINzJfd3A5cktKcXVZWTM5dTZ5OENXUXlTWW1ySlFhTlRuYk1VZTZ2Zk9zSU5yWWxXUzZPcDFZYWk1cWhSS0FQMnVxZ2xTQ2xHVE50X0FmNFN4OGFiejI1WmVSdUFZSzFuUzdX?oc=5",
-        "https://news.google.com/rss/articles/CBMitwFBVV95cUxNWE5iYUpreWtqVEhHWjBHeE1HVTdHWUF2Qlc5LWoyVlcxRWU5U0NiSGY2VzNrWGtQZ1cza2gtZlpIYnRrbGZsc3p1eEZhcUZ2aU1JNWxsSkJMMldRb2pYQ1pHMGNTNWIzckxHb1RHTzNrS29MdC11SWU4dklQVFlHUXdTZWFfVlZTdkhTRWlvX2gxLVJZSFNOSDIyT1o2ZjhGZVpoWEVmdnAzdXJFZkdBMVN5OTlDNmc?oc=5",
-        "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOVDBiUUxsN3FLTzkzVTNlVzBJMnlFSlhDNlVhUEhDalJxbGJqeGtWd3pmYS1wWEVGLXNHSHBKWjJnT09DWW9NbEdDYkdXOUdhUWxUSGJRdzBOUHQwU3dFUXd4YlZ2bHBzUkozNU1wVlBWTHBTbThiWC04bE4yaWlTYzFEQWd5d0RMT3kwamktYUtuMmRFWmpDRnMzYnpYODZkU0Ytc2lGZlpmT0Nnam1XV1lDZWJxVFZHQ0tBWUxaeWpQM1IxVlViRnFFRXRKaVg0S2laUFBzbGJUNGt4cTlPRlVzUGVDYnIyREZJ?oc=5",
-        "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPUFZIbnJmU1BHdUtoQWlxR2txMnpYNm5acENyWWxUWURyY05VdjBpWWtidFBZTU53MzhkQV94OTc1MDBNUFNrSE5ZV2JaOUh0U3U0SWE0NUg5WDFOWUota09RUFNzSUVZYWx3Ql9WTk5Od1MtdllPTHhyRGNXaTZ2QW5yTnVPQm42TEZ1VlQzZGdaYWE5WWRWMlIyOHR5M3JoekR2RWs3SmJXRGRoV1N6ZEtFckhuNndnUXEyVVdoSkRDd3ZXamNoZnVPNXVRTVVrbHVWLURiaml3dE1MbTdRSnVTVXRHd3RnRmw2TGJybw?oc=5",
-        "https://news.google.com/rss/articles/CBMinwFBVV95cUxOUVhKTDlFZkMzOGwzRUtoSFQzbnAxeHh3cS1uRWlEYURzaGxRemJseUhvdlhYY09BQ1dPNjRzMy1yRDIxWEdVUm5YNTZIcy1hVGU3X19hdXZNMmJrLWJDTXJ3STdLS1VNbGVpMVA2Qmk2em1XeE1ta2VIN0tYRTFCbUw5VkJHNl94ckZydkJYWUxNdU1IaG5QUHF3Q3JXcTg?oc=5",
-        "https://news.google.com/rss/articles/CBMisAFBVV95cUxONkZlVFFvMTBjeDFkRUlOSmtRN2lmYUhjNzNiLWhldG8wNFRQSXA0RDZ1ckFjV2RLWWxHZDdjNGM2ai1HUzhJQmUtdEJ1TFZkSEZSU1RtQWQ5enJUVm52ZXBDZHlCX0ktRzNGcnh2VE1jcFQzcFQzMUpCR0xDM0JzeVQxcDZRY3B0WHZ2MnVSWE95cURKRDNreGEwNXFJVTlwbEZFTU1fcnRNTkY4NnhNUw?oc=5"
-      ],
-      "source_names": [
-        "Music Times",
-        "The Hindu",
-        "Algemeiner.com",
-        "The Mirror US",
-        "Far Out Magazine",
-        "Billboard",
-        "Belfast Telegraph",
-        "LADbible",
-        "thepostmillennial.com",
-        "WBAY",
-        "PenangToday",
-        "Newswav",
-        "streamlinefeed.co.ke",
-        "primetimer.com",
-        "SSBCrack",
-        "The Statesman",
-        "Novara Media",
-        "Arise News",
-        "WZDM",
-        "MassLive",
-        "South African Jewish Report",
-        "tmz.com",
-        "That Grape Juice.net"
-      ],
-      "source_channels": [
-        "Google News"
-      ],
-      "date_found": "2026-09-18T13:43:19.880075+00:00",
-      "is_duplicate_of": null
-    },
-    {
-      "entry_id": "df55c01f-9d04-4809-8431-7cbf42f5aaba",
-      "donor": "Lagos State Government",
-      "recipient": "Nigerian Railway Corporation",
-      "recipient_type": "Other Nonprofit",
-      "amount_text": null,
-      "is_in_kind": true,
-      "in_kind_description": "Two patrol vehicles for security",
-      "country_scope": "Nigeria",
-      "status": "new_commitment",
-      "summary": "Lagos State Government donated two patrol vehicles to the Nigerian Railway Corporation to enhance railway security.",
-      "figure_quote": "2 patrol vehicles",
-      "assumptions": [],
-      "confidence_score": 10,
-      "confidence_breakdown": {
-        "source_tier": {
-          "value": "general_news",
-          "points": 2
-        },
-        "explicit_amount_stated": {
-          "value": true,
-          "points": 3
-        },
-        "multiple_independent_sources": {
-          "value": 8,
-          "points": 3
-        },
-        "monitored_recipient": {
-          "value": false,
-          "points": 0
-        },
-        "specific_recipient_named": {
-          "value": true,
-          "points": 2
-        }
-      },
-      "source_urls": [
-        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbFNPc3VtRUlhajI2OG1PWU81THl1aHJ0V0RVNmlaM0xLY1hVMTF4TWZqUDdILWY4cEF5MnhtUTZjc05NTU5QYVltMk81UjVkam5SU0RuZlJIbzhlLUM1MnluMGxnZzgtOU5pRExjZHkzaWQwblMzRDdRNjkySUYydVQ0VU1vVFdlaE9LYXBBXzBVdw?oc=5",
-        "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRU5OMjVyRHZnSlAwcVJmazNjbFlwVEpYNVgtYVlKQ2NmM1JWWUd1ZmFFblZPYzdsZTJYRUFrQ2JGQ2c4RlFQVUttNnhYbVNka1U3R1FhNEVzY2h0Zjd3cmE1NkZTOEV1RkNpNnZCTXpyRzItY21EU1BpaWpvZmhwM2QxMjVaRUhv0gGOAUFVX3lxTFBucmxvWjNRSzZybnNJQXRqaTBxdjdUbTVyQ1E2aHlMOTVpMHJHZURicGhwb29yQjBGVklmN2NUblFnWE9tVVZvRi1ERFBUZDZ0Y3YzU3NGazkwNm92NVhGRmtiSmcxaVBzWGJaeDNXajJyaFNQckZzYVU2SUxsS3drTDVBZDZXRDRkU0tXWnc?oc=5",
-        "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSXR4enN2QWE2NzY0RWhuaGtYV05vc1Bkd3ZmSlRCeXkwaEVZdTFhdGdDYTlBRFZ0b01HMi1uU2I4MkFzeXBORG9GT2JkRmVOR1psNG55UUN0dEdTWXBwZkt2bW9qanlTbmNGb2IwU2VuSzVuSENQTklubUVaRWVnRnZNeE5YTGpnT2JmVG5IUXIxVl9QdUNWRTZicVU5eTFaRHhKY2tQYWQxcDk1S1E?oc=5",
-        "https://news.google.com/rss/articles/CBMimgFBVV95cUxQYUtuYVBBdjJvRVEzbjJ6VlBDTWZLbjhzb2xlSmlpY1g5V2trOFJiQ3Z2Um1lUlZFZWpzSlJTbjMtbVJoSnZDd0VRV1FXb2tkMlhDeUVPYjNQbWdUdUxIYUhLUGd5cVFLcXRuTlVoTmZlZXJycmRLVnhXOVlNaDJNYjJ4c1JDTVN1NDZlT0xUUGpMakNNQ0xTbTF3?oc=5",
-        "https://news.google.com/rss/articles/CBMilAFBVV95cUxOb2l1ZFQtczRhSlp2c0xqemtfQ29zaXJpZjJlT1JlSENFbFprWGUtaXhnMW9oZXFvVVVsMk1odG82WXF1dkZNWWtKTC1VOFotYk9tVHVwdHVob05RMVBkUmFCS2x6UkdmZFROQ1ZZbGVYLXRkTTR3N3cyWUFBbGJOeEhMaWZRTmtjazJyZW9VSDdRb05o?oc=5",
-        "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdXVoYW03dlNrNDVWY0RJM3dhX2M5RDBzSzZhRWx0RFc3c1NCSWdtb1ZIcGx5Mm85M0FGN28xajFzZjR0T2g1VE51SkZSdlZ2cWpDSjhqRTNHVTZqbkJIZDJ0R3g4NGNrQ3NFdlA5cHp1TlVXaWtpV1hENkxSazdtaDYtdk5jOW5mV1R0RjNsc09RM3c0TVF4VzlOdXg?oc=5",
-        "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVGpNNzlOUHFvVlRNZmtSVVNTQm5ObEh6WHluYVhyOWJ0LWhPVHJMb19Ea2s1eVVKcWxYWDgzeHpWaG1sbHpTQ1pETGUxSC1wSWVDTzAxVjdmUG9kM0pJMWs5dUtacGxXV0tZZWpqMVpxVGRmNF9kUkIwcmw5Y2dYeTZ2V01CUzVtN0NVZUUxeFFzV1hweVBzUXJRWEpWUnpoUHFJOUl6N1NwTmlMNVE?oc=5",
-        "https://news.google.com/rss/articles/CBMingFBVV95cUxQNE1kNmFKbXFIdEYxYUxFUUpSbjNnek02bldZTXFtUkZVR09iOEVPQ1R2RnVYX3ZBWkc5UzRkWnp1R0drV0dkLTJGaVV0Yzg2SWtGT1RwRTlQbVUwc0xqUDl0MXl1TGx0eE12VzBCWXZBcTdGVlVmX09hUEZaTU84Mm5HN25wLXZwQ3N0emppVlVGUURWTmFVZEdiNlA4Z9IBowFBVV95cUxOT3VXeUpMZk9pMURDMnFOd3FUNnBXcXVPaFZncGdSNThVdHh1QjNOaTNrbkdUR1pzWFVwR19zSzN5MFVsV01NUGFlczBLZDU4YzdWM2dHTGFJM2F5dFhNRXM4M2RuT2p0RVFVdGFyS1lVeWdMVjRCOXRnWjhqeTM3Qng4akc5NmRtMDR4eGMzNTl4Z3E2bC1YeUNhZlplNUdRNmg0?oc=5",
-        "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZEw0Y0lJY1c3cHBRSFh1anRRQ3FjVER2REU4OEhtZFY1cE9mMFFVdF83Q2F2Z2pBczZJZ2xndHZ6TF9nVm05bkdrSVlwNmdERXl1LUlJUVZmbnVuallsVmVNMFJfczB4aDFFYlNnRjFOSUpKaWVKLTBJUXY0b2xBa0Q3OG9od1BJSmpFQ1Q0bW0wVkU1c015NVdkMGxDZ0dDNVZLcXQ1NG4zVXlPZ2Y3RA?oc=5"
-      ],
-      "source_names": [
-        "Independent Newspaper Nigeria",
-        "The Guardian Nigeria News",
-        "PM News Nigeria",
-        "Daily Champion Newspaper",
-        "The Sun Nigeria",
-        "Realnews Magazine",
-        "The Nation Newspaper",
-        "theeyewitnessnews.com"
-      ],
-      "source_channels": [
-        "Google News"
-      ],
-      "date_found": "2026-09-18T13:45:16.892540+00:00",
-      "is_duplicate_of": null
-    },
-    {
-      "entry_id": "a4a1c83b-ab2e-4610-a832-aa53086c3923",
-      "donor": "Lagos State Security Trust Fund",
-      "recipient": "Lagos railway security agencies",
-      "recipient_type": "Other Nonprofit",
-      "amount_text": null,
-      "is_in_kind": true,
-      "in_kind_description": "Patrol vehicles for security",
-      "country_scope": "Nigeria",
-      "status": "new_commitment",
-      "summary": "Lagos State Security Trust Fund donated patrol vehicles to Lagos railway security agencies.",
-      "figure_quote": "patrol vehicles",
-      "assumptions": [],
-      "confidence_score": 10,
-      "confidence_breakdown": {
-        "source_tier": {
-          "value": "general_news",
-          "points": 2
-        },
-        "explicit_amount_stated": {
-          "value": true,
-          "points": 3
-        },
-        "multiple_independent_sources": {
-          "value": 8,
-          "points": 3
-        },
-        "monitored_recipient": {
-          "value": false,
-          "points": 0
-        },
-        "specific_recipient_named": {
-          "value": true,
-          "points": 2
-        }
-      },
-      "source_urls": [
-        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbFNPc3VtRUlhajI2OG1PWU81THl1aHJ0V0RVNmlaM0xLY1hVMTF4TWZqUDdILWY4cEF5MnhtUTZjc05NTU5QYVltMk81UjVkam5SU0RuZlJIbzhlLUM1MnluMGxnZzgtOU5pRExjZHkzaWQwblMzRDdRNjkySUYydVQ0VU1vVFdlaE9LYXBBXzBVdw?oc=5",
-        "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRU5OMjVyRHZnSlAwcVJmazNjbFlwVEpYNVgtYVlKQ2NmM1JWWUd1ZmFFblZPYzdsZTJYRUFrQ2JGQ2c4RlFQVUttNnhYbVNka1U3R1FhNEVzY2h0Zjd3cmE1NkZTOEV1RkNpNnZCTXpyRzItY21EU1BpaWpvZmhwM2QxMjVaRUhv0gGOAUFVX3lxTFBucmxvWjNRSzZybnNJQXRqaTBxdjdUbTVyQ1E2aHlMOTVpMHJHZURicGhwb29yQjBGVklmN2NUblFnWE9tVVZvRi1ERFBUZDZ0Y3YzU3NGazkwNm92NVhGRmtiSmcxaVBzWGJaeDNXajJyaFNQckZzYVU2SUxsS3drTDVBZDZXRDRkU0tXWnc?oc=5",
-        "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSXR4enN2QWE2NzY0RWhuaGtYV05vc1Bkd3ZmSlRCeXkwaEVZdTFhdGdDYTlBRFZ0b01HMi1uU2I4MkFzeXBORG9GT2JkRmVOR1psNG55UUN0dEdTWXBwZkt2bW9qanlTbmNGb2IwU2VuSzVuSENQTklubUVaRWVnRnZNeE5YTGpnT2JmVG5IUXIxVl9QdUNWRTZicVU5eTFaRHhKY2tQYWQxcDk1S1E?oc=5",
-        "https://news.google.com/rss/articles/CBMimgFBVV95cUxQYUtuYVBBdjJvRVEzbjJ6VlBDTWZLbjhzb2xlSmlpY1g5V2trOFJiQ3Z2Um1lUlZFZWpzSlJTbjMtbVJoSnZDd0VRV1FXb2tkMlhDeUVPYjNQbWdUdUxIYUhLUGd5cVFLcXRuTlVoTmZlZXJycmRLVnhXOVlNaDJNYjJ4c1JDTVN1NDZlT0xUUGpMakNNQ0xTbTF3?oc=5",
-        "https://news.google.com/rss/articles/CBMilAFBVV95cUxOb2l1ZFQtczRhSlp2c0xqemtfQ29zaXJpZjJlT1JlSENFbFprWGUtaXhnMW9oZXFvVVVsMk1odG82WXF1dkZNWWtKTC1VOFotYk9tVHVwdHVob05RMVBkUmFCS2x6UkdmZFROQ1ZZbGVYLXRkTTR3N3cyWUFBbGJOeEhMaWZRTmtjazJyZW9VSDdRb05o?oc=5",
-        "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdXVoYW03dlNrNDVWY0RJM3dhX2M5RDBzSzZhRWx0RFc3c1NCSWdtb1ZIcGx5Mm85M0FGN28xajFzZjR0T2g1VE51SkZSdlZ2cWpDSjhqRTNHVTZqbkJIZDJ0R3g4NGNrQ3NFdlA5cHp1TlVXaWtpV1hENkxSazdtaDYtdk5jOW5mV1R0RjNsc09RM3c0TVF4VzlOdXg?oc=5",
-        "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVGpNNzlOUHFvVlRNZmtSVVNTQm5ObEh6WHluYVhyOWJ0LWhPVHJMb19Ea2s1eVVKcWxYWDgzeHpWaG1sbHpTQ1pETGUxSC1wSWVDTzAxVjdmUG9kM0pJMWs5dUtacGxXV0tZZWpqMVpxVGRmNF9kUkIwcmw5Y2dYeTZ2V01CUzVtN0NVZUUxeFFzV1hweVBzUXJRWEpWUnpoUHFJOUl6N1NwTmlMNVE?oc=5",
-        "https://news.google.com/rss/articles/CBMingFBVV95cUxQNE1kNmFKbXFIdEYxYUxFUUpSbjNnek02bldZTXFtUkZVR09iOEVPQ1R2RnVYX3ZBWkc5UzRkWnp1R0drV0dkLTJGaVV0Yzg2SWtGT1RwRTlQbVUwc0xqUDl0MXl1TGx0eE12VzBCWXZBcTdGVlVmX09hUEZaTU84Mm5HN25wLXZwQ3N0emppVlVGUURWTmFVZEdiNlA4Z9IBowFBVV95cUxOT3VXeUpMZk9pMURDMnFOd3FUNnBXcXVPaFZncGdSNThVdHh1QjNOaTNrbkdUR1pzWFVwR19zSzN5MFVsV01NUGFlczBLZDU4YzdWM2dHTGFJM2F5dFhNRXM4M2RuT2p0RVFVdGFyS1lVeWdMVjRCOXRnWjhqeTM3Qng4akc5NmRtMDR4eGMzNTl4Z3E2bC1YeUNhZlplNUdRNmg0?oc=5",
-        "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZEw0Y0lJY1c3cHBRSFh1anRRQ3FjVER2REU4OEhtZFY1cE9mMFFVdF83Q2F2Z2pBczZJZ2xndHZ6TF9nVm05bkdrSVlwNmdERXl1LUlJUVZmbnVuallsVmVNMFJfczB4aDFFYlNnRjFOSUpKaWVKLTBJUXY0b2xBa0Q3OG9od1BJSmpFQ1Q0bW0wVkU1c015NVdkMGxDZ0dDNVZLcXQ1NG4zVXlPZ2Y3RA?oc=5"
-      ],
-      "source_names": [
-        "Independent Newspaper Nigeria",
-        "The Guardian Nigeria News",
-        "PM News Nigeria",
-        "Daily Champion Newspaper",
-        "The Sun Nigeria",
-        "Realnews Magazine",
-        "The Nation Newspaper",
-        "theeyewitnessnews.com"
-      ],
-      "source_channels": [
-        "Google News"
-      ],
-      "date_found": "2026-09-18T13:45:16.893346+00:00",
-      "is_duplicate_of": null
-    },
-    {
-      "entry_id": "b7096f12-d0e9-4815-ba7a-9660d1c74bf5",
-      "donor": "Nachtigal Hydro Power Company",
-      "recipient": "International Labour Organization",
-      "recipient_type": "UN Agency",
-      "amount_text": "CFAF 300 million",
-      "is_in_kind": false,
-      "in_kind_description": null,
-      "country_scope": "Cameroon",
-      "status": "new_commitment",
-      "summary": "Nachtigal Hydro Power Company (NHPC) has committed CFAF 300 million to support youth vocational training near Nachtigal.",
-      "figure_quote": "CFAF 300m",
-      "assumptions": [],
-      "confidence_score": 8,
+      "confidence_score": 7,
       "confidence_breakdown": {
         "source_tier": {
           "value": "general_news",
@@ -248,36 +191,198 @@
           "points": 0
         },
         "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
           "value": true,
-          "points": 3
+          "points": 2
         }
       },
       "source_urls": [
-        "https://www.businessincameroon.com/public-management/1809-16771-nhpc-commits-cfaf-300m-to-youth-vocational-training-near-nachtigal"
+        "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOVDBiUUxsN3FLTzkzVTNlVzBJMnlFSlhDNlVhUEhDalJxbGJqeGtWd3pmYS1wWEVGLXNHSHBKWjJnT09DWW9NbEdDYkdXOUdhUWxUSGJRdzBOUHQwU3dFUXd4YlZ2bHBzUkozNU1wVlBWTHBTbThiWC04bE4yaWlTYzFEQWd5d0RMT3kwamktYUtuMmRFWmpDRnMzYnpYODZkU0Ytc2lGZlpmT0Nnam1XV1lDZWJxVFZHQ0tBWUxaeWpQM1IxVlViRnFFRXRKaVg0S2laUFBzbGJUNGt4cTlPRlVzUGVDYnIyREZJ?oc=5"
       ],
       "source_names": [
-        "businessincameroon.com"
+        "primetimer.com"
       ],
       "source_channels": [
-        "GDELT GKG"
+        "Google News"
       ],
-      "date_found": "2026-09-18T10:23:54.713598+00:00",
+      "date_found": "2026-09-18T15:14:53.950618+00:00",
       "is_duplicate_of": null
     },
     {
-      "entry_id": "c9537ea8-a5e4-464b-a730-e9494396259e",
-      "donor": "Jensen Huang (personal donation, not through Nvidia)",
-      "recipient": "Nepal flood relief efforts",
+      "entry_id": "344adcd1-d714-4a1f-825c-bc36f23969d5",
+      "donor": "Stray Kids’ Felix",
+      "recipient": "children affected by Nepal floods",
       "recipient_type": "Other Nonprofit",
-      "amount_text": "$10 million",
+      "amount_text": null,
       "is_in_kind": false,
       "in_kind_description": null,
       "country_scope": "Nepal",
       "status": "new_commitment",
-      "summary": "Nvidia CEO Jensen Huang, acting in a personal capacity, donated $10 million for Nepal flood relief efforts.",
-      "figure_quote": "$10 million",
+      "summary": "Stray Kids' Felix donated to relief aid for children affected by Nepal floods.",
+      "figure_quote": null,
       "assumptions": [
-        "The donation is personal from Jensen Huang, not through Nvidia as a company."
+        "The exact recipient organization is not specified.",
+        "The amount donated is not specified."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNRDdGZENJSWFpRTZoOWRXdjIzdXVtTDVtVE9leEtzSmp0ZENSOVA3aGFUM0VSaEFoS1pwaW1KQkJEX09GV2gxLTAyWVZ3dk1vMUJYdW14QVFlcDBMSTlOd00zOGZsNXp5SldpNVpJd0lDa296ajhnaWUwZnpmT0tMUm1VWXk1ajc3bkFlZlRmT0FVZnVxenhwQTZOazRNenBweWt0bS1WSHlXRUFlb3RBUVA0ZlNQNnk0c3J5MEdkUDRZYUdmaDRRQk56Nm5yQ2NWS1lycXJ3?oc=5",
+        "https://www.straitstimes.com/life/stray-kids-felix-donates-280k-on-birthday-to-help-sick-children",
+        "https://www.straitstimes.com/life/stray-kids-felix-donates-280k-on-birthday-to-help-sick-children"
+      ],
+      "source_names": [
+        "Business Upturn",
+        "straitstimes.com"
+      ],
+      "source_channels": [
+        "Google News",
+        "Media Cloud"
+      ],
+      "date_found": "2026-09-18T15:14:59.719702+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "c9559b1f-1b76-493b-bbdc-a1bed6477df7",
+      "donor": "Ms Rachel",
+      "recipient": "Gaza Aid",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$1 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Gaza",
+      "status": "new_commitment",
+      "summary": "Ms Rachel has pledged $1 million to support aid efforts in Gaza.",
+      "figure_quote": "One Million Dollars",
+      "assumptions": [
+        "The exact nonprofit organization within Gaza is not specified."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMia0FVX3lxTE1qZzUtcU9zbXhocG9WS0sxejBUX3VncUtFb19ON2dEYnlnTVNzRm5LaVlxaHZLUXdOaVlKazZCaE9vT1RJaXE5YlJLQzBYU1lPWE1ZaGR1SUtaZzZDdmFwdkRJMVpQM1FGaFVF?oc=5"
+      ],
+      "source_names": [
+        "SuaraGarut.ID"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-18T15:18:25.586010+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "5a4d32ff-abfc-471b-9005-b5e0dddc4ec1",
+      "donor": "The Jockey Club",
+      "recipient": "PBC 2026 forum",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "unclear",
+      "summary": "The Jockey Club's PBC 2026 forum celebrates its 10th anniversary with a gathering of global leaders to discuss and enhance its impact.",
+      "figure_quote": null,
+      "assumptions": [
+        "The nature of the support (financial or otherwise) is not explicitly stated.",
+        "The recipient type is inferred as 'Other nonprofit' based on the context of the forum."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.prnewswire.co.uk/news-releases/jockey-clubs-pbc-2026-forum-marks-its-10th-anniversary-with-global-leaders-gathering-to-leap-for-impact-302871507.html",
+        "https://www.prnewswire.com/news-releases/jockey-clubs-pbc-2026-forum-marks-its-10th-anniversary-with-global-leaders-gathering-to-leap-for-impact-302871495.html"
+      ],
+      "source_names": [
+        "prnewswire.co.uk",
+        "prnewswire.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-09-18T15:23:12.250014+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "3e098dd8-2b64-4423-aa0d-bcca7fe447a8",
+      "donor": "Ed Sheeran and Robert Kraft",
+      "recipient": "Gaza aid groups",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$4 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Gaza",
+      "status": "new_commitment",
+      "summary": "Ed Sheeran and Robert Kraft pledged $4 million for Gaza aid, but the specific recipients within Gaza are not detailed in the source text.",
+      "figure_quote": "$4 million",
+      "assumptions": [
+        "The specific nonprofit organizations receiving the funds are not named in the source text."
       ],
       "confidence_score": 5,
       "confidence_breakdown": {
@@ -303,30 +408,32 @@
         }
       },
       "source_urls": [
-        "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVk9xSG5SSEZGMjA0QzdDNFBDUGQtSEdOUU9oMW5wWDd5Z3BYT19aNnVlRHYxU3UzSmJOWG1JMTh2UHBZcks5NHFFTHVwZ2I0bnlYZ1NMb2szQ2RUcWxvTWNrblM1eW1qREFzZVctNXVHeEM1UkhocXB2Z2hKSGZ5enRCNTdpQURKd3k0ZXdFclZyc3ZEdFM1S3Rn?oc=5"
+        "https://www.ibtimes.co.uk/ed-sheeran-robert-kraft-pledge-gaza-aid-1820406"
       ],
       "source_names": [
-        "INDIA New England News"
+        "ibtimes.co.uk"
       ],
       "source_channels": [
-        "Google News"
+        "Media Cloud"
       ],
-      "date_found": "2026-09-18T13:43:32.132619+00:00",
+      "date_found": "2026-09-18T15:20:10.208835+00:00",
       "is_duplicate_of": null
     },
     {
-      "entry_id": "b236a487-d2f5-4b86-92af-b0010c458223",
+      "entry_id": "8486ee6c-208e-46cb-8809-d9eb648e99f2",
       "donor": "inDrive",
       "recipient": "Prime Minister's Disaster Relief Fund",
       "recipient_type": "Other Nonprofit",
-      "amount_text": "NPR 75 million",
+      "amount_text": "NPR 75 Million",
       "is_in_kind": false,
       "in_kind_description": null,
       "country_scope": "Nepal",
       "status": "new_commitment",
-      "summary": "inDrive donated NPR 75 million to the Prime Minister's Disaster Relief Fund for disaster relief efforts.",
+      "summary": "inDrive donated NPR 75 million to the Prime Minister's Disaster Relief Fund.",
       "figure_quote": "NPR 75 Million",
-      "assumptions": [],
+      "assumptions": [
+        "The Prime Minister's Disaster Relief Fund is classified as 'Other nonprofit' as it is a specific fund, not a general UN agency, INGO, or NGO."
+      ],
       "confidence_score": 5,
       "confidence_breakdown": {
         "source_tier": {
@@ -359,20 +466,171 @@
       "source_channels": [
         "Google News"
       ],
-      "date_found": "2026-09-18T13:46:14.624786+00:00",
+      "date_found": "2026-09-18T15:26:59.362273+00:00",
       "is_duplicate_of": null
     },
     {
-      "entry_id": "87854536-7b17-41a3-aa7d-2f07276daae4",
-      "donor": "enGen Global",
-      "recipient": "Seva Bharathi hospital",
+      "entry_id": "2d314b60-591d-4042-8b1a-09bf44413b3f",
+      "donor": "NEC Uzima",
+      "recipient": "NFSU Uganda Cyber Run",
       "recipient_type": "Other Nonprofit",
       "amount_text": null,
       "is_in_kind": true,
-      "in_kind_description": "surgical equipment",
-      "country_scope": "Unspecified / global",
+      "in_kind_description": "Water",
+      "country_scope": "Uganda",
       "status": "new_commitment",
-      "summary": "enGen Global donated surgical equipment to Seva Bharathi hospital.",
+      "summary": "NEC Uzima donated water in preparation for the NFSU Uganda Cyber Run event.",
+      "figure_quote": null,
+      "assumptions": [
+        "The recipient is classified as 'Other nonprofit' based on the context of the event being a cyber run, which is likely a specific, localized event rather than a global or multi-country organization."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNl9VVXUyMldadk5fQkFJazJET19rX0xwY3RGV1g4MEF2a3RXY3JXQlJ6SkFrVGQ1ZE9FdXEzNzZtTW1XaVAyNF85OGRpV1pjMEhoa3FweUZQWDRoYU5Pd00tUW8zU1ZaNG0yZVNYWkY3YmtTMUZBRFJ1YnJISGtvUXVyYWlNc3BsblFVanVLYld1UdIBlwFBVV95cUxPc2Fib2dYQXdIOXplZzE3MGVFUGVNWENrMWw2bWs4Nkc1QnpteWoweGxnY3B0WmczdVJlQzBnYVd0bURRWlpiV2h1MWtuOS1qVGswUF9peWVNSy1NSlpuTjNUaWFWeE9LbVdhMy1xRjFmZU9vQUNNRFQ1VGQ5Q2E5M3l5SENjNnpCV0gzWUcyYnpPV3JaMVBJ?oc=5"
+      ],
+      "source_names": [
+        "UPDF"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-18T15:26:52.924516+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "b4a91578-75ff-4b0d-bf2b-cd9933fd4480",
+      "donor": "World Bank",
+      "recipient": "Training program in Niger",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Niger",
+      "status": "unclear",
+      "summary": "The World Bank sponsored training for 385 people in Niger, but this is not a private-sector donation to a nonprofit.",
+      "figure_quote": null,
+      "assumptions": [
+        "World Bank is not a private-sector entity."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMipgFBVV95cUxNVTlCeGZlU01FV2FTd1QwNHRycDFGSlFPbG1PWHpMek5BQVV0VVQwSlZPcHpaTkE0TlB5TVdmTTBMS0pUaTVuUUd1TWlWbnlTUVRyZnktUjF0UGtGVldCMUNUTEFZTklYUE9oNHdmTTFpams2Z0tQNHdzZlBOZnBUTE56TGlqdmJmamxIQU5SakJqcDlZNDM3Tm93Tl9tOUVnOEZsQUJ3?oc=5"
+      ],
+      "source_names": [
+        "FRCN HQ"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-18T15:39:00.885919+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "2f47f35e-92c8-42f5-99b4-8d3b4e676fa4",
+      "donor": "Plymouth developer",
+      "recipient": "children’s group",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "renewed_partnership",
+      "summary": "A Plymouth developer has made a donation to a children's group, though the specific company name and the exact amount are not mentioned.",
+      "figure_quote": null,
+      "assumptions": [
+        "The specific company name is not provided.",
+        "The exact amount of the donation is not specified."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMihwFBVV95cUxNcW9hWXQ5NHh0UzBNWDdmWWdjZExSc2FJakFNcFdDSWo1ejB5ejcxUXB5T1ZyLUdzTWxIQWQzSG5MM3J1Q3ltNDRPV2g0WndHTGpaMnB0d3JsVFFtcHlGUHEzcnpqRnA5WUJKSzRZY3lPZ2FPWldvVTZwelVma2UwenB1b1N0UGc?oc=5"
+      ],
+      "source_names": [
+        "We Are South Devon"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-18T15:50:03.686273+00:00",
+      "is_duplicate_of": "8ba10323-abb0-4b94-87e1-97afe6bf9ba5"
+    },
+    {
+      "entry_id": "1fbb11e0-ef73-4cca-bb35-c38f02267e4c",
+      "donor": "Newport Healthcare",
+      "recipient": "To Write Love on Her Arms (TWLOHA)",
+      "recipient_type": "NGO",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "renewed_partnership",
+      "summary": "Newport Healthcare has been partnering with To Write Love on Her Arms (TWLOHA) for ten years to support suicide prevention efforts.",
       "figure_quote": null,
       "assumptions": [],
       "confidence_score": 4,
@@ -399,77 +657,31 @@
         }
       },
       "source_urls": [
-        "https://news.google.com/rss/articles/CBMitgFBVV95cUxObkl5bG52MHQ5TDBOb0NRUlBOOTNvaThROFRrZ1JiSVNGZk5xYmR4RkRaLUFKckpDM3BKaHFsYkFJMTRRUmxzNWkxbWhmLXlLd01rM3M4RkdyX3E3WkU3Y3VuZUVYdWZwcVUyQVlWOEV0bGNYUGNLOHNhTDFac0lrT2FNel9RdXU2NjhtczlONkxSeUp3aGNqMUxsTkZJWXEtT2VnYjdHTW5sdFg2ZktyZXdGZ3JMZw?oc=5"
+        "https://www.prnewswire.com/news-releases/newport-healthcare-and-to-write-love-on-her-arms-twloha-mark-a-decade-of-partnership-for-suicide-prevention-302874661.html"
       ],
       "source_names": [
-        "metroindia.net"
+        "prnewswire.com"
       ],
       "source_channels": [
-        "Google News"
+        "Media Cloud"
       ],
-      "date_found": "2026-09-18T13:45:55.179742+00:00",
-      "is_duplicate_of": "a1d79d1d-3141-447f-9fc9-7f4c87d67b46"
-    },
-    {
-      "entry_id": "6b7f1178-40d7-47f5-abe2-a6bfd1b4a9b7",
-      "donor": "NEC Uzima",
-      "recipient": "NFSU Uganda Cyber Run",
-      "recipient_type": "Other Nonprofit",
-      "amount_text": null,
-      "is_in_kind": true,
-      "in_kind_description": "Water for participants",
-      "country_scope": "Uganda",
-      "status": "unclear",
-      "summary": "NEC Uzima provided water for participants in the NFSU Uganda Cyber Run.",
-      "figure_quote": null,
-      "assumptions": [
-        "The nature of the NFSU Uganda Cyber Run as a specific, named event allows classification as 'Other nonprofit', though it may be part of a larger organization."
-      ],
-      "confidence_score": 2,
-      "confidence_breakdown": {
-        "source_tier": {
-          "value": "general_news",
-          "points": 2
-        },
-        "explicit_amount_stated": {
-          "value": false,
-          "points": 0
-        },
-        "multiple_independent_sources": {
-          "value": 1,
-          "points": 0
-        },
-        "monitored_recipient": {
-          "value": false,
-          "points": 0
-        }
-      },
-      "source_urls": [
-        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNl9VVXUyMldadk5fQkFJazJET19rX0xwY3RGV1g4MEF2a3RXY3JXQlJ6SkFrVGQ1ZE9FdXEzNzZtTW1XaVAyNF85OGRpV1pjMEhoa3FweUZQWDRoYU5Pd00tUW8zU1ZaNG0yZVNYWkY3YmtTMUZBRFJ1YnJISGtvUXVyYWlNc3BsblFVanVLYld1UdIBlwFBVV95cUxPc2Fib2dYQXdIOXplZzE3MGVFUGVNWENrMWw2bWs4Nkc1QnpteWoweGxnY3B0WmczdVJlQzBnYVd0bURRWlpiV2h1MWtuOS1qVGswUF9peWVNSy1NSlpuTjNUaWFWeE9LbVdhMy1xRjFmZU9vQUNNRFQ1VGQ5Q2E5M3l5SENjNnpCV0gzWUcyYnpPV3JaMVBJ?oc=5"
-      ],
-      "source_names": [
-        "UPDF"
-      ],
-      "source_channels": [
-        "Google News"
-      ],
-      "date_found": "2026-09-18T10:23:09.091058+00:00",
+      "date_found": "2026-09-18T15:52:33.360448+00:00",
       "is_duplicate_of": null
     },
     {
-      "entry_id": "4a627241-7ea2-4a82-94f6-7b4fb03d2807",
+      "entry_id": "64526d70-dc29-4ec7-b4c5-98ecf735af9e",
       "donor": "Arsenal Foundation",
       "recipient": "Nepal flood relief",
       "recipient_type": "Other Nonprofit",
       "amount_text": null,
-      "is_in_kind": false,
-      "in_kind_description": null,
+      "is_in_kind": true,
+      "in_kind_description": "Donation to flood relief efforts",
       "country_scope": "Nepal",
       "status": "new_commitment",
-      "summary": "Arsenal Foundation has provided a donation to support flood relief efforts in Nepal.",
+      "summary": "Arsenal Foundation has contributed to the Nepal flood relief efforts.",
       "figure_quote": null,
       "assumptions": [
-        "The exact recipient organization within the Nepal flood relief efforts is not specified."
+        "The specific recipient organization within the flood relief efforts is not named."
       ],
       "confidence_score": 2,
       "confidence_breakdown": {
@@ -486,6 +698,10 @@
           "points": 0
         },
         "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
           "value": false,
           "points": 0
         }
@@ -499,78 +715,33 @@
       "source_channels": [
         "Google News"
       ],
-      "date_found": "2026-09-18T12:09:16.934584+00:00",
+      "date_found": "2026-09-18T15:49:50.724971+00:00",
       "is_duplicate_of": "a76ac876-2008-4e26-8794-edbe5ed23942"
-    },
-    {
-      "entry_id": "1ce7a15a-0aa6-46b7-9725-a35fdda1a972",
-      "donor": "Plymouth developer",
-      "recipient": "children’s group",
-      "recipient_type": "Other Nonprofit",
-      "amount_text": null,
-      "is_in_kind": false,
-      "in_kind_description": null,
-      "country_scope": "Unspecified / global",
-      "status": "renewed_partnership",
-      "summary": "A Plymouth-based developer has made a repeated donation to a local children's group.",
-      "figure_quote": null,
-      "assumptions": [
-        "The specific name of the children's group is not provided.",
-        "The monetary amount of the donation is not specified."
-      ],
-      "confidence_score": 2,
-      "confidence_breakdown": {
-        "source_tier": {
-          "value": "general_news",
-          "points": 2
-        },
-        "explicit_amount_stated": {
-          "value": false,
-          "points": 0
-        },
-        "multiple_independent_sources": {
-          "value": 1,
-          "points": 0
-        },
-        "monitored_recipient": {
-          "value": false,
-          "points": 0
-        }
-      },
-      "source_urls": [
-        "https://news.google.com/rss/articles/CBMihwFBVV95cUxNcW9hWXQ5NHh0UzBNWDdmWWdjZExSc2FJakFNcFdDSWo1ejB5ejcxUXB5T1ZyLUdzTWxIQWQzSG5MM3J1Q3ltNDRPV2g0WndHTGpaMnB0d3JsVFFtcHlGUHEzcnpqRnA5WUJKSzRZY3lPZ2FPWldvVTZwelVma2UwenB1b1N0UGc?oc=5"
-      ],
-      "source_names": [
-        "We Are South Devon"
-      ],
-      "source_channels": [
-        "Google News"
-      ],
-      "date_found": "2026-09-18T12:10:22.326038+00:00",
-      "is_duplicate_of": "8ba10323-abb0-4b94-87e1-97afe6bf9ba5"
     }
   ],
   "stats": {
     "feeds_checked": 203,
     "google_news_queries": 200,
     "gdelt_files_processed": 6,
-    "gdelt_candidates_found": 52,
-    "mediacloud_queries_made": 7,
-    "mediacloud_candidates_found": 0,
+    "gdelt_candidates_found": 63,
+    "mediacloud_queries_made": 14,
+    "mediacloud_candidates_found": 821,
     "recipients_watched": 50,
     "pr_wire_feeds": 3,
-    "items_considered": 2205,
-    "items_filtered_as_stale": 1796,
+    "items_considered": 3027,
+    "items_filtered_as_stale": 1844,
     "max_article_age_days": 14,
-    "items_after_trigger_filter": 85,
-    "clusters_analysed": 49,
-    "skipped_due_to_ai_budget": 0,
-    "duplicates_skipped": 5,
-    "rejected_unnamed_recipient": 2,
-    "rejected_no_named_donor": 0,
-    "rejected_out_of_scope_country": 5,
-    "entries_published": 10,
-    "high_confidence_count": 4
+    "items_after_trigger_filter": 845,
+    "clusters_analysed": 350,
+    "skipped_due_to_ai_budget": 149,
+    "duplicates_skipped": 2,
+    "rejected_unnamed_recipient": 8,
+    "rejected_no_named_donor": 4,
+    "rejected_out_of_scope_country": 7,
+    "rejected_government_entity": 2,
+    "rejected_unspecified_scope_excluded": 0,
+    "entries_published": 14,
+    "high_confidence_count": 3
   },
   "fetch_failures": [
     {
@@ -581,42 +752,7 @@
     {
       "source_label": "CSRWire",
       "url": "https://csrwire.com/feed/",
-      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
-    },
-    {
-      "source_label": "Media Cloud: World Food Programme, United Nations Children's Fund, United Nations High Commissioner for Refugees, United Nations Development Programme, World Health Organization, International Organization for Migration, UN Office for the Coordination of Humanitarian Affairs, UN Population Fund",
-      "url": "collection 9272347",
-      "error": "API Server Error 403. Params: {'start': '2026-09-04', 'end': '2026-09-18', 'q': '(\"World Food Programme\" OR \"WFP\" OR \"World Food Program\" OR \"World Food Program USA\" OR \"United Nations Children\\'s Fund\" OR \"UNICEF\" OR \"UNICEF USA\" OR \"U.S. Fund for UNICEF\" OR \"United Nations High Commissioner for Refugees\" OR \"UNHCR\" OR \"UN Refugee Agency\" OR \"USA for UNHCR\" OR \"United Nations Development Programme\" OR \"UNDP\" OR \"World Health Organization\" OR \"International Organization for Migration\" OR \"IOM\" OR \"UN Office for the Coordination of Humanitarian Affairs\" OR \"OCHA\" OR \"UN Population Fund\" OR \"UNFPA\") AND (\"corporate donation\" OR \"donates\" OR \"donated\" OR \"contributes\" OR \"contributed\" OR \"pledges\" OR \"pledged\" OR \"sponsors\" OR \"sponsored\" OR \"commits\" OR \"committed\" OR \"partners with\" OR \"partnered with\" OR \"corporate foundation\" OR \"corporate social responsibility\" OR \"csr partnership\" OR \"csr commitment\" OR \"private sector support\" OR \"private sector donation\" OR \"philanthropic gift\" OR \"philanthropic donation\" OR \"charitable giving\" OR \"in-kind donation\" OR \"in-kind contribution\" OR \"foundation gift\" OR \"foundation grant\" OR \"renews partnership with\" OR \"announces partnership with\" OR \"corporate partner\")', 'platform': 'onlinenews-mediacloud', 'cs': ('9272347',), 'expanded': 1}"
-    },
-    {
-      "source_label": "Media Cloud: UN Women, Office of the UN High Commissioner for Human Rights, UN Relief and Works Agency for Palestine Refugees, World Bank, UN Central Emergency Response Fund, Afghanistan Humanitarian Fund, Central African Republic Humanitarian Fund, Democratic Republic of the Congo Humanitarian Fund",
-      "url": "collection 9272347",
-      "error": "API Server Error 403. Params: {'start': '2026-09-04', 'end': '2026-09-18', 'q': '(\"UN Women\" OR \"UN Women\" OR \"Office of the UN High Commissioner for Human Rights\" OR \"OHCHR\" OR \"UN Relief and Works Agency for Palestine Refugees\" OR \"UNRWA\" OR \"World Bank\" OR \"World Bank\" OR \"UN Central Emergency Response Fund\" OR \"CERF\" OR \"UN Crisis Relief\" OR \"Afghanistan Humanitarian Fund\" OR \"Central African Republic Humanitarian Fund\" OR \"Democratic Republic of the Congo Humanitarian Fund\" OR \"DRC Humanitarian Fund\") AND (\"corporate donation\" OR \"donates\" OR \"donated\" OR \"contributes\" OR \"contributed\" OR \"pledges\" OR \"pledged\" OR \"sponsors\" OR \"sponsored\" OR \"commits\" OR \"committed\" OR \"partners with\" OR \"partnered with\" OR \"corporate foundation\" OR \"corporate social responsibility\" OR \"csr partnership\" OR \"csr commitment\" OR \"private sector support\" OR \"private sector donation\" OR \"philanthropic gift\" OR \"philanthropic donation\" OR \"charitable giving\" OR \"in-kind donation\" OR \"in-kind contribution\" OR \"foundation gift\" OR \"foundation grant\" OR \"renews partnership with\" OR \"announces partnership with\" OR \"corporate partner\")', 'platform': 'onlinenews-mediacloud', 'cs': ('9272347',), 'expanded': 1}"
-    },
-    {
-      "source_label": "Media Cloud: Ethiopia Humanitarian Fund, Lebanon Humanitarian Fund, Myanmar Humanitarian Fund, Nigeria Humanitarian Fund, occupied Palestinian territory Humanitarian Fund, Somalia Humanitarian Fund, South Sudan Humanitarian Fund, Sudan Humanitarian Fund",
-      "url": "collection 9272347",
-      "error": "API Server Error 429. Params: {'start': '2026-09-04', 'end': '2026-09-18', 'q': '(\"Ethiopia Humanitarian Fund\" OR \"Lebanon Humanitarian Fund\" OR \"Myanmar Humanitarian Fund\" OR \"Nigeria Humanitarian Fund\" OR \"occupied Palestinian territory Humanitarian Fund\" OR \"oPt Humanitarian Fund\" OR \"oPt HF\" OR \"Somalia Humanitarian Fund\" OR \"South Sudan Humanitarian Fund\" OR \"Sudan Humanitarian Fund\") AND (\"corporate donation\" OR \"donates\" OR \"donated\" OR \"contributes\" OR \"contributed\" OR \"pledges\" OR \"pledged\" OR \"sponsors\" OR \"sponsored\" OR \"commits\" OR \"committed\" OR \"partners with\" OR \"partnered with\" OR \"corporate foundation\" OR \"corporate social responsibility\" OR \"csr partnership\" OR \"csr commitment\" OR \"private sector support\" OR \"private sector donation\" OR \"philanthropic gift\" OR \"philanthropic donation\" OR \"charitable giving\" OR \"in-kind donation\" OR \"in-kind contribution\" OR \"foundation gift\" OR \"foundation grant\" OR \"renews partnership with\" OR \"announces partnership with\" OR \"corporate partner\")', 'platform': 'onlinenews-mediacloud', 'cs': ('9272347',), 'expanded': 1}"
-    },
-    {
-      "source_label": "Media Cloud: Syria Humanitarian Fund, Syria Cross-border Humanitarian Fund, Ukraine Humanitarian Fund, Venezuela Humanitarian Fund, Yemen Humanitarian Fund, Regional Humanitarian Fund for West and Central Africa, Latin America and Caribbean Humanitarian Fund, International Committee of the Red Cross",
-      "url": "collection 9272347",
-      "error": "API Server Error 429. Params: {'start': '2026-09-04', 'end': '2026-09-18', 'q': '(\"Syria Humanitarian Fund\" OR \"Syria Cross-border Humanitarian Fund\" OR \"Syria Cross-Border Fund\" OR \"Ukraine Humanitarian Fund\" OR \"Venezuela Humanitarian Fund\" OR \"Yemen Humanitarian Fund\" OR \"Regional Humanitarian Fund for West and Central Africa\" OR \"West and Central Africa Humanitarian Fund\" OR \"Latin America and Caribbean Humanitarian Fund\" OR \"International Committee of the Red Cross\" OR \"ICRC\") AND (\"corporate donation\" OR \"donates\" OR \"donated\" OR \"contributes\" OR \"contributed\" OR \"pledges\" OR \"pledged\" OR \"sponsors\" OR \"sponsored\" OR \"commits\" OR \"committed\" OR \"partners with\" OR \"partnered with\" OR \"corporate foundation\" OR \"corporate social responsibility\" OR \"csr partnership\" OR \"csr commitment\" OR \"private sector support\" OR \"private sector donation\" OR \"philanthropic gift\" OR \"philanthropic donation\" OR \"charitable giving\" OR \"in-kind donation\" OR \"in-kind contribution\" OR \"foundation gift\" OR \"foundation grant\" OR \"renews partnership with\" OR \"announces partnership with\" OR \"corporate partner\")', 'platform': 'onlinenews-mediacloud', 'cs': ('9272347',), 'expanded': 1}"
-    },
-    {
-      "source_label": "Media Cloud: International Federation of Red Cross and Red Crescent Societies, Save the Children, Médecins Sans Frontières, Oxfam, International Rescue Committee, CARE International, Norwegian Refugee Council, Mercy Corps",
-      "url": "collection 9272347",
-      "error": "API Server Error 429. Params: {'start': '2026-09-04', 'end': '2026-09-18', 'q': '(\"International Federation of Red Cross and Red Crescent Societies\" OR \"IFRC\" OR \"Save the Children\" OR \"Save the Children International\" OR \"Médecins Sans Frontières\" OR \"MSF\" OR \"Doctors Without Borders\" OR \"Oxfam\" OR \"Oxfam International\" OR \"International Rescue Committee\" OR \"IRC\" OR \"CARE International\" OR \"Norwegian Refugee Council\" OR \"NRC\" OR \"Mercy Corps\" OR \"Prosper Global\") AND (\"corporate donation\" OR \"donates\" OR \"donated\" OR \"contributes\" OR \"contributed\" OR \"pledges\" OR \"pledged\" OR \"sponsors\" OR \"sponsored\" OR \"commits\" OR \"committed\" OR \"partners with\" OR \"partnered with\" OR \"corporate foundation\" OR \"corporate social responsibility\" OR \"csr partnership\" OR \"csr commitment\" OR \"private sector support\" OR \"private sector donation\" OR \"philanthropic gift\" OR \"philanthropic donation\" OR \"charitable giving\" OR \"in-kind donation\" OR \"in-kind contribution\" OR \"foundation gift\" OR \"foundation grant\" OR \"renews partnership with\" OR \"announces partnership with\" OR \"corporate partner\")', 'platform': 'onlinenews-mediacloud', 'cs': ('9272347',), 'expanded': 1}"
-    },
-    {
-      "source_label": "Media Cloud: World Vision, Action Against Hunger, Plan International, Catholic Relief Services, Danish Refugee Council, Islamic Relief Worldwide, Direct Relief, GiveDirectly",
-      "url": "collection 9272347",
-      "error": "API Server Error 429. Params: {'start': '2026-09-04', 'end': '2026-09-18', 'q': '(\"World Vision\" OR \"World Vision International\" OR \"Action Against Hunger\" OR \"ACF\" OR \"Action Contre la Faim\" OR \"Plan International\" OR \"Plan International\" OR \"Catholic Relief Services\" OR \"CRS\" OR \"Danish Refugee Council\" OR \"DRC\" OR \"Islamic Relief Worldwide\" OR \"Islamic Relief\" OR \"Direct Relief\" OR \"Direct Relief\" OR \"GiveDirectly\" OR \"GiveDirectly\") AND (\"corporate donation\" OR \"donates\" OR \"donated\" OR \"contributes\" OR \"contributed\" OR \"pledges\" OR \"pledged\" OR \"sponsors\" OR \"sponsored\" OR \"commits\" OR \"committed\" OR \"partners with\" OR \"partnered with\" OR \"corporate foundation\" OR \"corporate social responsibility\" OR \"csr partnership\" OR \"csr commitment\" OR \"private sector support\" OR \"private sector donation\" OR \"philanthropic gift\" OR \"philanthropic donation\" OR \"charitable giving\" OR \"in-kind donation\" OR \"in-kind contribution\" OR \"foundation gift\" OR \"foundation grant\" OR \"renews partnership with\" OR \"announces partnership with\" OR \"corporate partner\")', 'platform': 'onlinenews-mediacloud', 'cs': ('9272347',), 'expanded': 1}"
-    },
-    {
-      "source_label": "Media Cloud: Handicap International, Samaritan's Purse",
-      "url": "collection 9272347",
-      "error": "API Server Error 429. Params: {'start': '2026-09-04', 'end': '2026-09-18', 'q': '(\"Handicap International\" OR \"Humanity & Inclusion\" OR \"Samaritan\\'s Purse\" OR \"Samaritan\\'s Purse\") AND (\"corporate donation\" OR \"donates\" OR \"donated\" OR \"contributes\" OR \"contributed\" OR \"pledges\" OR \"pledged\" OR \"sponsors\" OR \"sponsored\" OR \"commits\" OR \"committed\" OR \"partners with\" OR \"partnered with\" OR \"corporate foundation\" OR \"corporate social responsibility\" OR \"csr partnership\" OR \"csr commitment\" OR \"private sector support\" OR \"private sector donation\" OR \"philanthropic gift\" OR \"philanthropic donation\" OR \"charitable giving\" OR \"in-kind donation\" OR \"in-kind contribution\" OR \"foundation gift\" OR \"foundation grant\" OR \"renews partnership with\" OR \"announces partnership with\" OR \"corporate partner\")', 'platform': 'onlinenews-mediacloud', 'cs': ('9272347',), 'expanded': 1}"
+      "error": "Feed parse error: <unknown>:2:119: not well-formed (invalid token)"
     }
   ]
 }
