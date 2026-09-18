@@ -229,11 +229,13 @@ def main():
     rejected_out_of_scope_country = 0
     rejected_government_entity = 0
     rejected_unspecified_scope_excluded = 0
+    rejected_donor_is_monitored_recipient = 0
+    rejected_no_evidence = 0
 
     from src.extraction import (
         FatalExtractionError, is_generic_donor, is_generic_recipient, is_out_of_scope_country,
         assumptions_admit_missing_name, DONOR_NAME_CONTEXT_WORDS, RECIPIENT_NAME_CONTEXT_WORDS,
-        UNSPECIFIED_SCOPE, is_government_entity,
+        UNSPECIFIED_SCOPE, is_government_entity, match_curated_recipient,
     )
 
     def _cluster_sources(cluster) -> str:
@@ -301,6 +303,22 @@ def main():
                              "recipient %r) -- not a private-sector-to-nonprofit donation.",
                              cluster.cluster_id, _cluster_sources(cluster), result.donor, result.recipient)
                 continue
+            # This tracker watches donations TO the curated 50 (UNICEF, WFP,
+            # World Bank, etc.) -- one of them should never itself be the
+            # DONOR. A real run published "World Bank" -> "Training program
+            # in Niger" (the World Bank funding/sponsoring training, not
+            # receiving a private donation) -- a direction mix-up, not a
+            # private company giving to a recipient at all. The model's own
+            # summary even said so ("this is not a private-sector donation")
+            # but nothing acted on that free-text admission; this is the
+            # same class of signal as is_government_entity above, checked
+            # structurally instead of by pattern-matching prose.
+            if match_curated_recipient(result.donor, recipients) is not None:
+                rejected_donor_is_monitored_recipient += 1
+                logger.info("Rejecting cluster %s (via %s): donor %r is itself one of the monitored "
+                             "recipients -- likely a donor/recipient direction mix-up, not a private "
+                             "donation TO it.", cluster.cluster_id, _cluster_sources(cluster), result.donor)
+                continue
             # Backstop behind the extraction prompt's own instructions — the
             # model is told not to include an entry for these cases, but
             # doesn't always comply. A recipient no longer has to be on the
@@ -330,6 +348,29 @@ def main():
                 rejected_out_of_scope_country += 1
                 logger.info("Rejecting cluster %s (via %s): recipient's country/context %r isn't on the "
                              "monitored list.", cluster.cluster_id, _cluster_sources(cluster), result.country_scope)
+                continue
+            # A named donor and a named recipient aren't enough on their own
+            # -- there also has to be some actual evidence a gift happened
+            # at all. A real run published "The Jockey Club" -> "PBC 2026
+            # forum" (a PR-wire anniversary announcement for a conference,
+            # no amount, not in-kind, status "unclear", and the model's own
+            # assumptions admitted "the nature of the support ... is not
+            # explicitly stated") and "Newport Healthcare" -> "TWLOHA" (a
+            # ten-year partnership mention, same shape: no amount, not
+            # in-kind) -- both real organization names, neither describing
+            # an actual donation/gift the source text ever states. Requiring
+            # at least one of a stated amount, a quoted figure, or an
+            # in-kind description with what it was is a low bar any genuine
+            # donation story clears, and catches exactly this "named
+            # entities, zero substance" shape without penalizing real
+            # donations that just don't state a dollar amount (those still
+            # have an in-kind description, or a figure_quote like "an
+            # undisclosed sum").
+            if not (result.amount_text or result.figure_quote or (result.is_in_kind and result.in_kind_description)):
+                rejected_no_evidence += 1
+                logger.info("Rejecting cluster %s (via %s): no amount, figure, or in-kind description -- "
+                             "no actual evidence a donation happened (donor %r, recipient %r).",
+                             cluster.cluster_id, _cluster_sources(cluster), result.donor, result.recipient)
                 continue
             recipient_is_vague = is_generic_recipient(result.recipient) or \
                 assumptions_admit_missing_name(result.assumptions, RECIPIENT_NAME_CONTEXT_WORDS)
@@ -401,10 +442,12 @@ def main():
         store.save()
     logger.info("%s %d entries (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no "
                  "named donor, %d rejected as out-of-scope country, %d rejected as a government entity, "
-                 "%d rejected as unspecified scope).",
+                 "%d rejected as unspecified scope, %d rejected as donor-is-monitored-recipient, %d rejected "
+                 "for no evidence).",
                  "Would publish" if is_gdelt_test else "Published", len(entries),
                  duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor,
-                 rejected_out_of_scope_country, rejected_government_entity, rejected_unspecified_scope_excluded)
+                 rejected_out_of_scope_country, rejected_government_entity, rejected_unspecified_scope_excluded,
+                 rejected_donor_is_monitored_recipient, rejected_no_evidence)
 
     # Highest confidence first -- the site should lead with its strongest,
     # best-evidenced findings rather than whatever order clusters happened
@@ -435,6 +478,8 @@ def main():
         "rejected_out_of_scope_country": rejected_out_of_scope_country,
         "rejected_government_entity": rejected_government_entity,
         "rejected_unspecified_scope_excluded": rejected_unspecified_scope_excluded,
+        "rejected_donor_is_monitored_recipient": rejected_donor_is_monitored_recipient,
+        "rejected_no_evidence": rejected_no_evidence,
         "entries_published": len(entries),
         "high_confidence_count": sum(1 for e in entries if e.confidence_score >= high_confidence_threshold),
     }

@@ -51,6 +51,8 @@
       {% if stats.rejected_no_named_donor %}<li>{{ stats.rejected_no_named_donor }} rejected — no specific donor company could be identified</li>{% endif %}
       {% if stats.rejected_out_of_scope_country %}<li>{{ stats.rejected_out_of_scope_country }} rejected — a real donation, but to a recipient operating in a country outside this tracker's scope</li>{% endif %}
       {% if stats.rejected_government_entity %}<li>{{ stats.rejected_government_entity }} rejected — a government body was on one side (donor or recipient), not a private-sector donation to a nonprofit</li>{% endif %}
+      {% if stats.rejected_donor_is_monitored_recipient %}<li>{{ stats.rejected_donor_is_monitored_recipient }} rejected — the "donor" was itself one of the monitored recipients (a donor/recipient direction mix-up)</li>{% endif %}
+      {% if stats.rejected_no_evidence %}<li>{{ stats.rejected_no_evidence }} rejected — named donor and recipient, but no amount, figure, or in-kind description showing a donation actually happened</li>{% endif %}
       <li>{{ stats.entries_published }} entries published today</li>
     </ul>
 

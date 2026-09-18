@@ -204,14 +204,19 @@ def is_government_entity(name: str) -> bool:
 # EXTRACTION_PROMPT_TEMPLATE), but a code backstop shouldn't rely on
 # prompt compliance alone -- and here there's a much more general signal
 # than yet another marker to add: the model's OWN "assumptions" field
-# already tends to admit the gap in its own words ("The specific name of
-# the children's group is not provided", "...housebuilding company is
-# not provided in the source text" -- both real, from entries that
-# should have been rejected). This checks for that admission directly,
-# rather than trying to keep pace with every new way of writing "no name
-# given" as a hardcoded phrase.
+# already tends to admit the gap in its own words. This checks for that
+# admission directly, rather than trying to keep pace with every new way
+# of writing "no name given" as a hardcoded phrase.
+#
+# Deliberately just "name", not "name of the": a real run's actual
+# assumption text for the Plymouth case above was "The specific COMPANY
+# NAME is not provided" (name AFTER the noun), not "name OF THE company
+# is not provided" -- an earlier, narrower version of this pattern
+# required the latter word order specifically and silently let that
+# exact admission through uncaught, publishing the entry it was written
+# to catch.
 NAME_MISSING_ADMISSION_PATTERN = re.compile(
-    r"name of the .*\b(?:is not|isn't|wasn't|was not)\b.*\b(?:provided|specified|given|named|disclosed|stated)\b"
+    r"\bname\b.*\b(?:is not|isn't|wasn't|was not)\b.*\b(?:provided|specified|given|named|disclosed|stated)\b"
 )
 # Which side (donor vs. recipient) an admission is about is inferred from
 # a word in the admission itself -- e.g. "name of the HOUSEBUILDING
@@ -568,16 +573,16 @@ def _mock_extract(cluster: ArticleCluster) -> str:
     """
     first = cluster.articles[0]
     return json.dumps({"events": [{
-        "summary": f"[MOCK] A company reportedly announced support for {first.matched_recipient or 'a monitored organisation'}.",
-        "figure_quote": None,
+        "summary": f"[MOCK] A company reportedly donated $1 million to {first.matched_recipient or 'a monitored organisation'}.",
+        "figure_quote": "$1 million",
         "donor": "Example Corp (mock)",
         "recipient": first.matched_recipient or "Unknown",
         "recipient_type": "NGO",
         "is_in_kind": False,
         "in_kind_description": None,
-        "amount_text": None,
+        "amount_text": "$1 million",
         "country_scope": first.matched_country or "Unspecified / global",
-        "status": "unclear",
+        "status": "new_commitment",
         "assumptions": ["This is placeholder mock data — run with --mock."],
     }]})
 
