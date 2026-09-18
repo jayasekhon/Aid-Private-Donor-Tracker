@@ -17,14 +17,20 @@ phrases, extraction prompt, alias matching), so the smaller curated
 English collection is both more relevant and far lower-noise.
 
 Query shape: recipients are BATCHED into one query per batch, not one
-query per recipient like Google News does. Media Cloud's official client
-self-throttles to 2 requests/minute (mediacloud.api.BaseApi.
-RATE_LIMIT_PER_MINUTE) — one query per recipient across 50 recipients
-would take 25+ minutes for this source alone. At the default batch size
-(8 recipients/query), one daily run costs ~7 requests (~49/week) against
-Media Cloud's default quota of 4,000 requests/week — comfortable
-headroom for the batch size to shrink later if per-recipient attribution
-turns out to matter more than query count. Each batch query ORs
+query per recipient like Google News does. Media Cloud's API is rate-
+limited to 2 requests/minute — one query per recipient across 50
+recipients would take 25+ minutes for this source alone even if paced
+correctly. (The client class advertises a RATE_LIMIT_PER_MINUTE constant
+that looks like it self-throttles; a real run showed it does NOT — 7
+batch queries fired within 0.79 seconds of each other and got hit with
+a 403 then cascading 429s, so pacing is done explicitly here instead,
+see _pace_queries() below.) At the default batch size (8 recipients/
+query), one daily run costs ~7 requests, correctly paced to ~30s apart
+so the whole source adds a predictable ~4 minutes to the run — against
+Media Cloud's default quota of 4,000 requests/week (~49/week at this
+size), comfortable headroom for the batch size to shrink later if
+per-recipient attribution turns out to matter more than query count.
+Each batch query ORs
 together a group of recipients' searchable_names (see
 config_loader.Recipient.searchable_names — excludes "WHO"/"CARE"-style
 ambiguous aliases, the same fix already made for Google News and GDELT)
@@ -49,6 +55,7 @@ from __future__ import annotations
 
 import logging
 import os
+import time
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 
@@ -57,6 +64,26 @@ from .models import RawArticle, SourceTier
 from .sources import FetchFailure
 
 logger = logging.getLogger(__name__)
+
+# A real run exposed that mediacloud.api.SearchApi does NOT actually
+# self-throttle the way its own RATE_LIMIT_PER_MINUTE=2 constant implies
+# (or at least not in a way this triggered) -- all 7 batch queries in one
+# run fired within 0.79 SECONDS of each other, not the ~30s apart 2/minute
+# would require. The first got "API Server Error 403", the rest cascaded
+# into 429s. Rather than trust the client's internals again, this paces
+# calls explicitly, the same way extraction.py's _pace_ai_calls() already
+# does for Bedrock/Gemini. 31s (not a bare 30s) leaves a small margin for
+# clock/measurement slack rather than sitting exactly on the limit.
+MIN_SECONDS_BETWEEN_QUERIES = 31.0
+_last_query_time: float = 0.0
+
+
+def _pace_queries() -> None:
+    global _last_query_time
+    elapsed = time.monotonic() - _last_query_time
+    if elapsed < MIN_SECONDS_BETWEEN_QUERIES:
+        time.sleep(MIN_SECONDS_BETWEEN_QUERIES - elapsed)
+    _last_query_time = time.monotonic()
 
 # How much of a story's full body text (only returned when expanded=True)
 # to keep as the RawArticle summary. Uncapped, a Media Cloud story's
@@ -145,19 +172,43 @@ def fetch_mediacloud_articles(
         label = f"Media Cloud: {', '.join(r.name for r in batch)}"
         query = _build_query(batch, triggers)
         queries_made += 1
+        _pace_queries()
         try:
             stories, _pagination_token = search_api.story_list(
                 query, start_date=start_date, end_date=end_date,
                 collection_ids=[collection_id], expanded=True,
             )
         except Exception as e:
-            # Broad on purpose: the client can raise its own MCException/
-            # APIResponseError for auth/quota/HTTP issues, or a plain
-            # requests exception for a network blip — none of them should
-            # take down the whole run (see sources.py's module docstring).
-            logger.warning("Media Cloud fetch failed for %s: %s", label, e)
-            failures.append(FetchFailure(label, f"collection {collection_id}", str(e)))
-            continue
+            error_text = str(e)
+            if "429" in error_text:
+                # A real run hit this even with pacing intended (the pacing
+                # just added turned out to be needed because it wasn't
+                # actually happening before -- see MIN_SECONDS_BETWEEN_
+                # QUERIES above). One retry after a longer, deliberately
+                # generous wait, on the chance the account is still
+                # working off a burst from before this fix existed;
+                # anything past that is treated as a real failure rather
+                # than burning the rest of this source's time budget.
+                logger.warning("Media Cloud rate-limited for %s, waiting %.0fs before one retry: %s",
+                                label, MIN_SECONDS_BETWEEN_QUERIES * 2, e)
+                time.sleep(MIN_SECONDS_BETWEEN_QUERIES * 2)
+                try:
+                    stories, _pagination_token = search_api.story_list(
+                        query, start_date=start_date, end_date=end_date,
+                        collection_ids=[collection_id], expanded=True,
+                    )
+                except Exception as retry_e:
+                    logger.warning("Media Cloud fetch failed for %s (after retry): %s", label, retry_e)
+                    failures.append(FetchFailure(label, f"collection {collection_id}", str(retry_e)))
+                    continue
+            else:
+                # Broad on purpose: the client can raise its own MCException/
+                # APIResponseError for auth/quota/HTTP issues, or a plain
+                # requests exception for a network blip — none of them should
+                # take down the whole run (see sources.py's module docstring).
+                logger.warning("Media Cloud fetch failed for %s: %s", label, e)
+                failures.append(FetchFailure(label, f"collection {collection_id}", str(e)))
+                continue
 
         all_articles.extend(_story_to_article(s) for s in stories)
 
