@@ -324,17 +324,29 @@ QUOTA_EXHAUSTED_MARKERS = (
 
 EXTRACTION_PROMPT_TEMPLATE = """You are a careful research assistant helping track private-sector \
 (corporate) donations to UN agencies, INGOs, and NGOs. You will be shown one or more news \
-items that a keyword filter believes describe the SAME real-world donation/partnership event.
+items that a keyword filter GROUPED TOGETHER because they looked like they describe the same \
+real-world donation/partnership event. That grouping is done by a cheap keyword/title-similarity \
+check, not by you, and it is sometimes wrong: the source text(s) below can actually describe TWO \
+OR MORE genuinely different donations that happen to share similar wording (most often one \
+dominant, widely-syndicated story plus a smaller, distinct donation mentioned only in passing \
+within one of the same articles). A real case this caused: a cluster of ~20 articles about a \
+celebrity's $1M pledge "to Palestinian aid groups" (no specific org named) included one article \
+that also reported a completely different, unrelated $10,000 donation from a different company to \
+a specifically named recipient — extracting only the dominant story would silently lose that \
+second, more specific, equally real finding. So: read ALL the source text carefully, and if you \
+can identify more than one genuinely distinct donor+recipient combination, extract EACH as its \
+own separate event below rather than merging them into one or defaulting to just the dominant one. \
+The overwhelming majority of the time there is genuinely only one event — extract one.
 
-Your job: decide if this is genuinely a private company (or corporate foundation) donating to, \
+Your job, for EACH distinct event you identify: decide if this is genuinely a private company (or corporate foundation) donating to, \
 partnering with, or otherwise financially/materially supporting a nonprofit organization — a UN \
 agency, INGO, NGO, or any other named charity/nonprofit, of any size. If it is NOT (e.g. it's a \
 government donation, an unrelated story that matched keywords by coincidence, or pure speculation \
-with no confirmed commitment), say so clearly and set "is_relevant" to false. This tracker exists \
-to identify WHICH company gave — if the source text never names a specific company or corporate \
-foundation (only vague language like "corporate partners", "several companies", or "a donor"), \
-that is also not relevant: set "is_relevant" to false rather than inventing a placeholder donor. \
-This includes a description that SOUNDS specific but isn't actually a name — "a Plymouth \
+with no confirmed commitment), it is not a real event — do not include an entry for it. This \
+tracker exists to identify WHICH company gave — if the source text never names a specific company \
+or corporate foundation (only vague language like "corporate partners", "several companies", or \
+"a donor"), that is also not a real event: do not include an entry, and never invent a placeholder \
+donor. This includes a description that SOUNDS specific but isn't actually a name — "a Plymouth \
 developer" or "the housebuilder" name the donor's location or industry, not the company itself, \
 and are exactly as unusable as "a company" or "corporate partners". Never make an exception for \
 the donor, no matter how newsworthy the story is otherwise — identifying WHICH company gave is \
@@ -352,9 +364,9 @@ with "country_scope" set to that specific place, and let a human reader judge wh
 is useful despite the missing org name; this system scores that case lower automatically, it does \
 not need you to pre-filter it. Outside that one exception — no specific place or crisis tying it \
 down, just a bare category like "a local charity" or "the children's group" with nothing else — \
-set "is_relevant" to false rather than inventing a placeholder recipient.
+do not include an entry for it, and never invent a placeholder recipient.
 
-If it IS relevant, extract the following as JSON. Follow these rules exactly:
+For each event that IS relevant, extract the following fields. Follow these rules exactly:
 
 1. "summary": a short PARAPHRASED description in your own words (2-3 sentences max). \
    Never copy sentences or distinctive phrasing from the source text.
@@ -364,7 +376,7 @@ If it IS relevant, extract the following as JSON. Follow these rules exactly:
    be the exact wording used for the number, and nothing more.
 3. "donor": the SPECIFIC company or corporate foundation name, as stated. Never write a \
    placeholder like "unspecified corporate partners" here — if you can't name a specific donor, \
-   set "is_relevant" to false instead (see above).
+   don't include an entry for this event at all instead (see above).
 4. "recipient": the nonprofit organization's name, as stated.
 5. "recipient_type": your best classification of the recipient, exactly one of "UN agency" \
    (a United Nations body, fund, or programme), "INGO" (an NGO that ITSELF operates across \
@@ -396,22 +408,28 @@ If it IS relevant, extract the following as JSON. Follow these rules exactly:
     between the two sources provided", "unclear whether this is a one-time gift or annual \
     pledge", "recipient name is a national committee, not the global agency". If there is \
     truly nothing ambiguous, return an empty list — do not invent caveats for the sake of it.
-12. "is_relevant": true/false as described above.
 
-Return ONLY valid JSON, no other text, matching this shape:
+Return ONLY valid JSON, no other text: a single object with one key, "events", holding a JSON \
+array with one object per distinct real event (matching the shape below), in the order you found \
+them. If NOTHING relevant was found anywhere in the source text — no real event at all — return \
+{{"events": []}}, an empty array, not an empty object and not an array with a placeholder inside.
+
 {{
-  "is_relevant": true,
-  "summary": "...",
-  "figure_quote": "..." or null,
-  "donor": "...",
-  "recipient": "...",
-  "recipient_type": "UN agency",
-  "is_in_kind": false,
-  "in_kind_description": null,
-  "amount_text": "..." or null,
-  "country_scope": "...",
-  "status": "new_commitment",
-  "assumptions": []
+  "events": [
+    {{
+      "summary": "...",
+      "figure_quote": "..." or null,
+      "donor": "...",
+      "recipient": "...",
+      "recipient_type": "UN agency",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "amount_text": "..." or null,
+      "country_scope": "...",
+      "status": "new_commitment",
+      "assumptions": []
+    }}
+  ]
 }}
 
 SOURCE TEXT(S):
@@ -503,8 +521,7 @@ def _mock_extract(cluster: ArticleCluster) -> str:
     change without spending anything.
     """
     first = cluster.articles[0]
-    return json.dumps({
-        "is_relevant": True,
+    return json.dumps({"events": [{
         "summary": f"[MOCK] A company reportedly announced support for {first.matched_recipient or 'a monitored organisation'}.",
         "figure_quote": None,
         "donor": "Example Corp (mock)",
@@ -516,7 +533,7 @@ def _mock_extract(cluster: ArticleCluster) -> str:
         "country_scope": first.matched_country or "Unspecified / global",
         "status": "unclear",
         "assumptions": ["This is placeholder mock data — run with --mock."],
-    })
+    }]})
 
 
 def _extract_via_gemini(prompt: str, model: str, cluster_id: str, max_retries: int) -> str | None:
@@ -637,15 +654,43 @@ def _extract_via_bedrock(prompt: str, model: str, region: str, cluster_id: str, 
     return raw
 
 
+def _parse_event(data: dict) -> ExtractionResult:
+    """Raises (ValueError, KeyError) on unexpected shape — caller decides
+    whether that sinks the whole cluster or just this one event."""
+    return ExtractionResult(
+        is_relevant=True,
+        summary=data.get("summary", ""),
+        figure_quote=data.get("figure_quote"),
+        donor=data.get("donor", "").strip(),
+        recipient=data.get("recipient", "").strip(),
+        recipient_type_guess=data.get("recipient_type"),
+        is_in_kind=bool(data.get("is_in_kind", False)),
+        in_kind_description=data.get("in_kind_description"),
+        amount_text=data.get("amount_text"),
+        country_scope=data.get("country_scope") or "Unspecified / global",
+        status=EventStatus(data.get("status", "unclear")),
+        assumptions=data.get("assumptions", []) or [],
+    )
+
+
 def extract_from_cluster(
     cluster: ArticleCluster,
     ai_settings: dict,
     mock: bool = False,
     max_retries: int = 3,
-) -> ExtractionResult | None:
-    """Returns None if the model judged the cluster not actually relevant,
-    or if extraction failed after retries (logged, never raised — one bad
-    cluster should not kill the whole day's run).
+) -> list[ExtractionResult]:
+    """Returns a list of events found in this cluster — usually zero or
+    one, occasionally more than one. A cluster is a keyword/title-
+    similarity GUESS that a group of articles describes the same event;
+    that guess is sometimes wrong (a real case: ~20 articles about one
+    celebrity's vague-recipient pledge included a completely different,
+    specifically-named $10,000 donation mentioned in just one of them —
+    extracting only the dominant story silently lost the second, more
+    useful finding). The prompt now asks for every distinct event it can
+    find rather than assuming there's exactly one, so this returns all of
+    them. Empty list if nothing relevant was found, or if extraction
+    failed after retries (logged, never raised — one bad cluster should
+    not kill the whole day's run).
 
     ai_settings is the full settings.yaml "ai:" block — which provider-
     specific fields it needs depends on ai_settings["provider"].
@@ -669,7 +714,7 @@ def extract_from_cluster(
                 f"Unknown ai.provider '{provider}' in settings.yaml — must be 'bedrock' or 'gemini'."
             )
         if raw is None:
-            return None
+            return []
 
     try:
         cleaned = re.sub(r"^```json|```$", "", raw.strip(), flags=re.MULTILINE).strip()
@@ -677,29 +722,32 @@ def extract_from_cluster(
     except json.JSONDecodeError as e:
         logger.error("Could not parse model output as JSON for cluster %s: %s\nRaw: %s",
                      cluster.cluster_id, e, raw[:500])
-        return None
+        return []
 
-    if not data.get("is_relevant", False):
-        return None
+    if isinstance(data, dict) and "events" in data:
+        event_dicts = data.get("events") or []
+    elif isinstance(data, dict) and ("donor" in data or "recipient" in data):
+        # Defensive fallback: the model occasionally ignores the "events"
+        # wrapper and returns a single old-style object directly despite
+        # the prompt's explicit shape. Treat it as a one-item list rather
+        # than discarding a perfectly usable extraction over a formatting
+        # slip.
+        event_dicts = [data]
+    else:
+        event_dicts = []
 
-    try:
-        return ExtractionResult(
-            is_relevant=True,
-            summary=data.get("summary", ""),
-            figure_quote=data.get("figure_quote"),
-            donor=data.get("donor", "").strip(),
-            recipient=data.get("recipient", "").strip(),
-            recipient_type_guess=data.get("recipient_type"),
-            is_in_kind=bool(data.get("is_in_kind", False)),
-            in_kind_description=data.get("in_kind_description"),
-            amount_text=data.get("amount_text"),
-            country_scope=data.get("country_scope") or "Unspecified / global",
-            status=EventStatus(data.get("status", "unclear")),
-            assumptions=data.get("assumptions", []) or [],
-        )
-    except (ValueError, KeyError) as e:
-        logger.error("Model output for cluster %s had unexpected shape: %s", cluster.cluster_id, e)
-        return None
+    results = []
+    for event_data in event_dicts:
+        if not isinstance(event_data, dict):
+            continue
+        try:
+            results.append(_parse_event(event_data))
+        except (ValueError, KeyError) as e:
+            # One malformed event in the array shouldn't cost every OTHER
+            # genuine event the model found in the same cluster.
+            logger.error("One event for cluster %s had unexpected shape, skipping just that "
+                         "one: %s", cluster.cluster_id, e)
+    return results
 
 
 def score_confidence(
@@ -763,6 +811,17 @@ def build_donation_entry(
     confidence_cfg: dict,
     recipients: list[Recipient],
 ) -> DonationEntry:
+    """Known limitation when a cluster yields more than one event (see
+    extract_from_cluster): source_urls/source_names/source_channels below
+    are still built from EVERY article in the cluster, not just the one(s)
+    that actually mention this specific event — a cluster's second,
+    smaller finding will show the whole cluster's sources, not just its
+    own. Precise per-event source attribution would need the model to
+    also report which article(s) support each event; not worth that
+    added prompt complexity for what's a cosmetic over-attribution, not a
+    correctness issue (the sources shown are still real articles from
+    this exact cluster, just more of them than strictly necessary).
+    """
     score, breakdown = score_confidence(cluster, result, confidence_cfg, recipients)
     recipient_type = classify_recipient_type(result.recipient, recipients, result.recipient_type_guess)
     return DonationEntry(

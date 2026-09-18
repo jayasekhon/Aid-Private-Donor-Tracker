@@ -240,14 +240,14 @@ def main():
         if i == 1 or i % 5 == 0 or i == len(clusters):
             logger.info("Processing cluster %d/%d...", i, len(clusters))
         try:
-            result = extract_from_cluster(cluster, ai_settings=settings["ai"], mock=args.mock)
+            results = extract_from_cluster(cluster, ai_settings=settings["ai"], mock=args.mock)
         except FatalExtractionError as e:
             logger.error("Stopping run early: %s", e)
             logger.error("No further clusters will be processed this run. Fix the issue above and "
                          "re-run manually from the Actions tab once resolved.")
             skipped_due_to_budget += (len(clusters) - i + 1)
             break
-        if result is None:
+        if not results:
             # Previously silent -- no way to tell from the log whether the
             # AI judged this not relevant or extraction failed after
             # retries, let alone which fetch source(s) it came from. That
@@ -258,84 +258,96 @@ def main():
             logger.info("Cluster %s (via %s) not judged relevant by the AI (or extraction failed).",
                          cluster.cluster_id, _cluster_sources(cluster))
             continue
+        if len(results) > 1:
+            # A cluster is a keyword/title-similarity GUESS that a group of
+            # articles describes one event; extract_from_cluster's prompt
+            # now asks the model to pull out every distinct event it can
+            # actually find rather than assuming there's exactly one, so a
+            # cluster occasionally yields more than one real entry (a real
+            # case: a dominant vague-recipient celebrity pledge that had a
+            # second, specifically-named, unrelated donation mentioned in
+            # just one of its ~20 syndicated articles).
+            logger.info("Cluster %s (via %s) contained %d distinct events.",
+                         cluster.cluster_id, _cluster_sources(cluster), len(results))
 
-        # Backstop behind the extraction prompt's own instructions — the
-        # model is told to set is_relevant=false for these cases, but
-        # doesn't always comply. A recipient no longer has to be on the
-        # curated watchlist to be published (any named nonprofit counts —
-        # see classify_recipient_type/build_donation_entry below, which tag
-        # curated vs. off-list recipients rather than rejecting the latter);
-        # what's still rejected is a recipient that was never actually
-        # named at all, since that isn't a usable finding.
-        if is_generic_donor(result.donor) or assumptions_admit_missing_name(result.assumptions, DONOR_NAME_CONTEXT_WORDS):
-            rejected_no_named_donor += 1
-            logger.info("Rejecting cluster %s (via %s): no specific donor named (%r).",
-                         cluster.cluster_id, _cluster_sources(cluster), result.donor)
-            continue
-        # Recipient's own operating country/context must be one this
-        # tracker is actually scoped to (GHO + Nepal, see countries.txt) —
-        # the donor's own HQ/nationality is irrelevant and deliberately
-        # unconstrained (query_builder.py's whole design anchors on the
-        # recipient, not the donor, for exactly this reason). The AI
-        # extracts country_scope as free text from the source article with
-        # no constraint to the curated list at all, which is what let
-        # entries about US university/hospital/community philanthropy
-        # ("South Korea", "Singapore", a Cortland or Santa Barbara facility)
-        # reach publication despite being outside this project's actual
-        # geographic scope. Checked before the recipient-name check below
-        # because it feeds that decision too.
-        if is_out_of_scope_country(result.country_scope, countries):
-            rejected_out_of_scope_country += 1
-            logger.info("Rejecting cluster %s (via %s): recipient's country/context %r isn't on the "
-                         "monitored list.", cluster.cluster_id, _cluster_sources(cluster), result.country_scope)
-            continue
-        recipient_is_vague = is_generic_recipient(result.recipient) or \
-            assumptions_admit_missing_name(result.assumptions, RECIPIENT_NAME_CONTEXT_WORDS)
-        if recipient_is_vague:
-            # An unnamed recipient is still rejected outright when there's
-            # no other anchor to make it a meaningful, trackable finding
-            # (e.g. "children's group" with country_scope "Unspecified /
-            # global" — no name AND no context). But when it's tied to a
-            # specific, real, in-scope place, the donation is still worth
-            # publishing even without the exact org name — a real case:
-            # Macklemore pledging $1M "to Palestinian aid groups" without
-            # ever naming which one, country_scope "Occupied Palestinian
-            # Territory". score_confidence() scores this lower via
-            # specific_recipient_named_points precisely because the name
-            # is missing, rather than discarding a real, sourced, in-scope
-            # donation just because press coverage didn't name a specific
-            # group.
-            if result.country_scope.strip().lower() == UNSPECIFIED_SCOPE:
-                rejected_unnamed_recipient += 1
-                logger.info("Rejecting cluster %s (via %s): no specific recipient organization named (%r).",
-                             cluster.cluster_id, _cluster_sources(cluster), result.recipient)
+        for result in results:
+            # Backstop behind the extraction prompt's own instructions — the
+            # model is told not to include an entry for these cases, but
+            # doesn't always comply. A recipient no longer has to be on the
+            # curated watchlist to be published (any named nonprofit counts —
+            # see classify_recipient_type/build_donation_entry below, which tag
+            # curated vs. off-list recipients rather than rejecting the latter);
+            # what's still rejected is a recipient that was never actually
+            # named at all, since that isn't a usable finding.
+            if is_generic_donor(result.donor) or assumptions_admit_missing_name(result.assumptions, DONOR_NAME_CONTEXT_WORDS):
+                rejected_no_named_donor += 1
+                logger.info("Rejecting cluster %s (via %s): no specific donor named (%r).",
+                             cluster.cluster_id, _cluster_sources(cluster), result.donor)
                 continue
-            logger.info("Publishing cluster %s (via %s) despite an unnamed/vague recipient (%r) -- tied "
-                         "to a specific in-scope place (%r), so still a meaningful finding; scored "
-                         "lower for the missing name.", cluster.cluster_id, _cluster_sources(cluster),
-                         result.recipient, result.country_scope)
+            # Recipient's own operating country/context must be one this
+            # tracker is actually scoped to (GHO + Nepal, see countries.txt) —
+            # the donor's own HQ/nationality is irrelevant and deliberately
+            # unconstrained (query_builder.py's whole design anchors on the
+            # recipient, not the donor, for exactly this reason). The AI
+            # extracts country_scope as free text from the source article with
+            # no constraint to the curated list at all, which is what let
+            # entries about US university/hospital/community philanthropy
+            # ("South Korea", "Singapore", a Cortland or Santa Barbara facility)
+            # reach publication despite being outside this project's actual
+            # geographic scope. Checked before the recipient-name check below
+            # because it feeds that decision too.
+            if is_out_of_scope_country(result.country_scope, countries):
+                rejected_out_of_scope_country += 1
+                logger.info("Rejecting cluster %s (via %s): recipient's country/context %r isn't on the "
+                             "monitored list.", cluster.cluster_id, _cluster_sources(cluster), result.country_scope)
+                continue
+            recipient_is_vague = is_generic_recipient(result.recipient) or \
+                assumptions_admit_missing_name(result.assumptions, RECIPIENT_NAME_CONTEXT_WORDS)
+            if recipient_is_vague:
+                # An unnamed recipient is still rejected outright when there's
+                # no other anchor to make it a meaningful, trackable finding
+                # (e.g. "children's group" with country_scope "Unspecified /
+                # global" — no name AND no context). But when it's tied to a
+                # specific, real, in-scope place, the donation is still worth
+                # publishing even without the exact org name — a real case:
+                # Macklemore pledging $1M "to Palestinian aid groups" without
+                # ever naming which one, country_scope "Occupied Palestinian
+                # Territory". score_confidence() scores this lower via
+                # specific_recipient_named_points precisely because the name
+                # is missing, rather than discarding a real, sourced, in-scope
+                # donation just because press coverage didn't name a specific
+                # group.
+                if result.country_scope.strip().lower() == UNSPECIFIED_SCOPE:
+                    rejected_unnamed_recipient += 1
+                    logger.info("Rejecting cluster %s (via %s): no specific recipient organization named (%r).",
+                                 cluster.cluster_id, _cluster_sources(cluster), result.recipient)
+                    continue
+                logger.info("Publishing cluster %s (via %s) despite an unnamed/vague recipient (%r) -- tied "
+                             "to a specific in-scope place (%r), so still a meaningful finding; scored "
+                             "lower for the missing name.", cluster.cluster_id, _cluster_sources(cluster),
+                             result.recipient, result.country_scope)
 
-        entry = build_donation_entry(cluster, result, settings["confidence"], recipients)
+            entry = build_donation_entry(cluster, result, settings["confidence"], recipients)
 
-        if not settings["publishing"]["include_unspecified_scope"] and entry.country_scope == "Unspecified / global":
-            continue
+            if not settings["publishing"]["include_unspecified_scope"] and entry.country_scope == "Unspecified / global":
+                continue
 
-        prior, reason = store.find_possible_match(entry, lookback_days=lookback)
-        if reason == "exact_duplicate":
-            duplicates_skipped += 1
-            logger.info("Skipping exact duplicate (via %s): %s -> %s",
-                         ", ".join(entry.source_channels), entry.donor, entry.recipient)
-            continue
-        elif reason == "likely_renewal" and prior is not None:
-            entry.is_duplicate_of = prior.get("entry_id")
-            # Leave entry.status as extracted by the model, UNLESS the model
-            # said "unclear" — in that case, defer to the store's own signal.
-            from src.models import EventStatus
-            if entry.status == EventStatus.UNCLEAR:
-                entry.status = EventStatus.RENEWAL
+            prior, reason = store.find_possible_match(entry, lookback_days=lookback)
+            if reason == "exact_duplicate":
+                duplicates_skipped += 1
+                logger.info("Skipping exact duplicate (via %s): %s -> %s",
+                             ", ".join(entry.source_channels), entry.donor, entry.recipient)
+                continue
+            elif reason == "likely_renewal" and prior is not None:
+                entry.is_duplicate_of = prior.get("entry_id")
+                # Leave entry.status as extracted by the model, UNLESS the model
+                # said "unclear" — in that case, defer to the store's own signal.
+                from src.models import EventStatus
+                if entry.status == EventStatus.UNCLEAR:
+                    entry.status = EventStatus.RENEWAL
 
-        store.add(entry)
-        entries.append(entry)
+            store.add(entry)
+            entries.append(entry)
 
     # A GDELT-override test run still checks candidates against real
     # history via store.find_possible_match() above (so it correctly
