@@ -1,0 +1,127 @@
+{
+  "date": "2026-09-18",
+  "entries": [
+    {
+      "entry_id": "b7096f12-d0e9-4815-ba7a-9660d1c74bf5",
+      "donor": "Nachtigal Hydro Power Company",
+      "recipient": "International Labour Organization",
+      "recipient_type": "UN Agency",
+      "amount_text": "CFAF 300 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Cameroon",
+      "status": "new_commitment",
+      "summary": "Nachtigal Hydro Power Company (NHPC) has committed CFAF 300 million to support youth vocational training near Nachtigal.",
+      "figure_quote": "CFAF 300m",
+      "assumptions": [],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        }
+      },
+      "source_urls": [
+        "https://www.businessincameroon.com/public-management/1809-16771-nhpc-commits-cfaf-300m-to-youth-vocational-training-near-nachtigal"
+      ],
+      "source_names": [
+        "businessincameroon.com"
+      ],
+      "source_channels": [
+        "GDELT GKG"
+      ],
+      "date_found": "2026-09-18T10:23:54.713598+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "6b7f1178-40d7-47f5-abe2-a6bfd1b4a9b7",
+      "donor": "NEC Uzima",
+      "recipient": "NFSU Uganda Cyber Run",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Water for participants",
+      "country_scope": "Uganda",
+      "status": "unclear",
+      "summary": "NEC Uzima provided water for participants in the NFSU Uganda Cyber Run.",
+      "figure_quote": null,
+      "assumptions": [
+        "The nature of the NFSU Uganda Cyber Run as a specific, named event allows classification as 'Other nonprofit', though it may be part of a larger organization."
+      ],
+      "confidence_score": 2,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNl9VVXUyMldadk5fQkFJazJET19rX0xwY3RGV1g4MEF2a3RXY3JXQlJ6SkFrVGQ1ZE9FdXEzNzZtTW1XaVAyNF85OGRpV1pjMEhoa3FweUZQWDRoYU5Pd00tUW8zU1ZaNG0yZVNYWkY3YmtTMUZBRFJ1YnJISGtvUXVyYWlNc3BsblFVanVLYld1UdIBlwFBVV95cUxPc2Fib2dYQXdIOXplZzE3MGVFUGVNWENrMWw2bWs4Nkc1QnpteWoweGxnY3B0WmczdVJlQzBnYVd0bURRWlpiV2h1MWtuOS1qVGswUF9peWVNSy1NSlpuTjNUaWFWeE9LbVdhMy1xRjFmZU9vQUNNRFQ1VGQ5Q2E5M3l5SENjNnpCV0gzWUcyYnpPV3JaMVBJ?oc=5"
+      ],
+      "source_names": [
+        "UPDF"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-18T10:23:09.091058+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 95,
+    "gdelt_candidates_found": 555,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2684,
+    "items_filtered_as_stale": 1774,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 85,
+    "clusters_analysed": 52,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 3,
+    "rejected_unnamed_recipient": 1,
+    "rejected_no_named_donor": 0,
+    "rejected_out_of_scope_country": 2,
+    "entries_published": 2,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
