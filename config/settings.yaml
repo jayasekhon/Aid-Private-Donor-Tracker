@@ -77,14 +77,31 @@ search:
   # sources, heavily multilingual, weighted toward citizen/alternative
   # media rather than mainstream press).
   mediacloud_collection_id: 9272347
-  # Recipients grouped into one query per batch, not one query per
-  # recipient (unlike Google News): Media Cloud's API client self-
-  # throttles to 2 requests/minute, so batching keeps this source's
-  # runtime to a few minutes instead of 25+. At 8/batch, one daily run is
-  # ~7 requests (~49/week) against a 4,000/week default quota — comfortable
-  # headroom to lower this later if per-recipient attribution ever
-  # matters more than query count.
+  # Recipients AND trigger phrases are both batched into groups, not
+  # ORed together all at once — two separate real-run problems drove
+  # this (see mediacloud_source.py's module docstring for the full
+  # investigation). Pulling the real mediacloud==4.3.0 client source
+  # from PyPI confirmed it does NOT self-throttle requests despite an
+  # unrelated-looking constant on its base class — a real run fired 7
+  # batch queries within 0.79 seconds of each other. This pipeline paces
+  # calls itself instead (31s apart, mediacloud_source.py's
+  # _pace_queries()), matching Media Cloud's own documented "roughly 2
+  # requests/minute" limit.
   mediacloud_recipients_per_query: 8
+  # Separately, even the FIRST query of a paced run — before rate
+  # limiting could be a factor — got "API Server Error 403". Account/key/
+  # collection permissions were ruled out (a simple query worked fine in
+  # Media Cloud's own web UI), as was the auth header format (verified
+  # correct against the real client source). The remaining, well-
+  # evidenced-but-not-yet-confirmed suspect: query size — 8 recipients'
+  # names against all ~29 trigger phrases in one boolean expression
+  # produces a ~1,150-character, 48-OR-clause query, roughly 10x the size
+  # of Media Cloud's own worked example query. Batching trigger phrases
+  # too (moderate setting, 15/batch) cuts each query well under that. At
+  # these sizes, one daily run costs 7 x 2 = 14 requests (~98/week)
+  # against a 4,000/week default quota, adding roughly 7 minutes of
+  # paced runtime — comfortable headroom either way.
+  mediacloud_triggers_per_query: 15
 
 ai:
   # Which AI provider does the extraction step: "bedrock" (via AWS, paid

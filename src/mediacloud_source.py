@@ -16,30 +16,46 @@ alternative media) — this pipeline is English-only throughout (trigger
 phrases, extraction prompt, alias matching), so the smaller curated
 English collection is both more relevant and far lower-noise.
 
-Query shape: recipients are BATCHED into one query per batch, not one
-query per recipient like Google News does. Media Cloud's API is rate-
-limited to 2 requests/minute — one query per recipient across 50
-recipients would take 25+ minutes for this source alone even if paced
-correctly. (The client class advertises a RATE_LIMIT_PER_MINUTE constant
-that looks like it self-throttles; a real run showed it does NOT — 7
-batch queries fired within 0.79 seconds of each other and got hit with
-a 403 then cascading 429s, so pacing is done explicitly here instead,
-see _pace_queries() below.) At the default batch size (8 recipients/
-query), one daily run costs ~7 requests, correctly paced to ~30s apart
-so the whole source adds a predictable ~4 minutes to the run — against
-Media Cloud's default quota of 4,000 requests/week (~49/week at this
-size), comfortable headroom for the batch size to shrink later if
-per-recipient attribution turns out to matter more than query count.
-Each batch query ORs
-together a group of recipients' searchable_names (see
-config_loader.Recipient.searchable_names — excludes "WHO"/"CARE"-style
-ambiguous aliases, the same fix already made for Google News and GDELT)
-AND ORs together every trigger phrase, mirroring the boolean shape
-query_builder.py already uses. Deliberately fetches only the first page
-of results per batch (no pagination_token follow-up) to keep total
-request count -- and therefore total runtime -- fully predictable given
-the 2/minute limit; if real runs show this under-fetching, pagination can
-be added later against that same rate-limit budget.
+Query shape: BOTH recipients AND trigger phrases are batched into groups,
+not ORed together all at once. Two separate real-run problems drove this:
+
+1. Media Cloud's own setup documentation states its API is rate-limited
+   to "roughly 2 requests/minute" and explicitly recommends pacing calls
+   31 seconds apart -- one query per recipient across 50 recipients would
+   take 25+ minutes for this source alone even paced correctly, hence
+   batching recipients. Pacing is done explicitly here (_pace_queries()
+   below) rather than trusting the client library, which a real run
+   showed does NOT self-throttle despite an unrelated-looking
+   RATE_LIMIT_PER_MINUTE constant on its base class -- 7 batch queries
+   fired within 0.79 seconds of each other in that run.
+
+2. Separately, even the FIRST query of a paced run -- before rate
+   limiting could be a factor at all -- got "API Server Error 403".
+   Pulling the actual mediacloud==4.3.0 source from PyPI confirmed the
+   auth header format is correct (Authorization: Token <key>, matching
+   Media Cloud's own docs), ruling that out. The remaining, much more
+   likely cause: query size. Querying 8 recipients' names against all 29
+   trigger phrases in one boolean expression produces a ~1,150-character,
+   48-OR-clause query -- Media Cloud's own worked example (built by their
+   "Simple Search" tool, the same kind of request) is roughly a tenth
+   that size. Batching trigger phrases into groups (like Google News
+   already does, and like recipients already were) cuts each query
+   substantially. At the default batch sizes (8 recipients/query, 15
+   triggers/query), one daily run costs 7 x 2 = 14 requests, correctly
+   paced ~31s apart, adding roughly 7 minutes to the run -- against
+   Media Cloud's default quota of 4,000 requests/week (~98/week at this
+   size), still comfortable headroom.
+
+Each batch query ORs together a group of recipients' searchable_names
+(see config_loader.Recipient.searchable_names — excludes "WHO"/"CARE"-
+style ambiguous aliases, the same fix already made for Google News and
+GDELT) AND ORs together a batch of trigger phrases, mirroring the
+boolean shape query_builder.py already uses for Google News. Deliberately
+fetches only the first page of results per batch (no pagination_token
+follow-up) to keep total request count -- and therefore total runtime --
+fully predictable given the 2/minute limit; if real runs show this
+under-fetching, pagination can be added later against that same
+rate-limit budget.
 
 Unlike Google News (one query per recipient, so the match is by
 construction) or GDELT (recipient mentions come from GKG's own structured
@@ -140,6 +156,7 @@ def fetch_mediacloud_articles(
     collection_id: int,
     max_age_days: int,
     recipients_per_query: int = 8,
+    triggers_per_query: int = 15,
 ) -> tuple[list[RawArticle], list[FetchFailure], MediaCloudFetchStats]:
     """Raises RuntimeError immediately if MEDIACLOUD_API_KEY isn't set —
     with every batch query bound to fail identically on a missing/invalid
@@ -164,53 +181,57 @@ def fetch_mediacloud_articles(
     end_date = datetime.now(timezone.utc).date()
     start_date = end_date - timedelta(days=max_age_days)
 
-    all_articles: list[RawArticle] = []
-    failures: list[FetchFailure] = []
-    queries_made = 0
-
-    for batch in _batched(recipients, recipients_per_query):
-        label = f"Media Cloud: {', '.join(r.name for r in batch)}"
-        query = _build_query(batch, triggers)
-        queries_made += 1
+    def run_one_query(query: str, label: str) -> tuple[list, FetchFailure | None]:
         _pace_queries()
         try:
             stories, _pagination_token = search_api.story_list(
                 query, start_date=start_date, end_date=end_date,
                 collection_ids=[collection_id], expanded=True,
             )
+            return stories, None
         except Exception as e:
             error_text = str(e)
-            if "429" in error_text:
-                # A real run hit this even with pacing intended (the pacing
-                # just added turned out to be needed because it wasn't
-                # actually happening before -- see MIN_SECONDS_BETWEEN_
-                # QUERIES above). One retry after a longer, deliberately
-                # generous wait, on the chance the account is still
-                # working off a burst from before this fix existed;
-                # anything past that is treated as a real failure rather
-                # than burning the rest of this source's time budget.
-                logger.warning("Media Cloud rate-limited for %s, waiting %.0fs before one retry: %s",
-                                label, MIN_SECONDS_BETWEEN_QUERIES * 2, e)
-                time.sleep(MIN_SECONDS_BETWEEN_QUERIES * 2)
-                try:
-                    stories, _pagination_token = search_api.story_list(
-                        query, start_date=start_date, end_date=end_date,
-                        collection_ids=[collection_id], expanded=True,
-                    )
-                except Exception as retry_e:
-                    logger.warning("Media Cloud fetch failed for %s (after retry): %s", label, retry_e)
-                    failures.append(FetchFailure(label, f"collection {collection_id}", str(retry_e)))
-                    continue
-            else:
+            if "429" not in error_text:
                 # Broad on purpose: the client can raise its own MCException/
                 # APIResponseError for auth/quota/HTTP issues, or a plain
                 # requests exception for a network blip — none of them should
                 # take down the whole run (see sources.py's module docstring).
                 logger.warning("Media Cloud fetch failed for %s: %s", label, e)
-                failures.append(FetchFailure(label, f"collection {collection_id}", str(e)))
-                continue
+                return [], FetchFailure(label, f"collection {collection_id}", str(e))
+            # A real run hit this even with pacing intended (the pacing
+            # just added turned out to be needed because it wasn't
+            # actually happening before -- see MIN_SECONDS_BETWEEN_
+            # QUERIES above). One retry after a longer, deliberately
+            # generous wait, on the chance the account is still working
+            # off a burst from before this fix existed; anything past
+            # that is treated as a real failure rather than burning the
+            # rest of this source's time budget.
+            logger.warning("Media Cloud rate-limited for %s, waiting %.0fs before one retry: %s",
+                            label, MIN_SECONDS_BETWEEN_QUERIES * 2, e)
+            time.sleep(MIN_SECONDS_BETWEEN_QUERIES * 2)
+            try:
+                stories, _pagination_token = search_api.story_list(
+                    query, start_date=start_date, end_date=end_date,
+                    collection_ids=[collection_id], expanded=True,
+                )
+                return stories, None
+            except Exception as retry_e:
+                logger.warning("Media Cloud fetch failed for %s (after retry): %s", label, retry_e)
+                return [], FetchFailure(label, f"collection {collection_id}", str(retry_e))
 
-        all_articles.extend(_story_to_article(s) for s in stories)
+    all_articles: list[RawArticle] = []
+    failures: list[FetchFailure] = []
+    queries_made = 0
+
+    for recipient_batch in _batched(recipients, recipients_per_query):
+        for trigger_batch in _batched(triggers, triggers_per_query):
+            label = f"Media Cloud: {', '.join(r.name for r in recipient_batch)}"
+            query = _build_query(recipient_batch, trigger_batch)
+            queries_made += 1
+            stories, failure = run_one_query(query, label)
+            if failure:
+                failures.append(failure)
+            all_articles.extend(_story_to_article(s) for s in stories)
 
     stats = MediaCloudFetchStats(queries_made=queries_made, candidates_found=len(all_articles))
     logger.info("Media Cloud: %d quer%s across %d recipients (batched), found %d candidate "

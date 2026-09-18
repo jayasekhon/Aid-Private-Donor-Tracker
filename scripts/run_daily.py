@@ -169,6 +169,7 @@ def main():
                 collection_id=settings["search"]["mediacloud_collection_id"],
                 max_age_days=settings["search"]["max_article_age_days"],
                 recipients_per_query=settings["search"].get("mediacloud_recipients_per_query", 8),
+                triggers_per_query=settings["search"].get("mediacloud_triggers_per_query", 15),
             )
             raw_articles.extend(mc_articles)
             fetch_failures.extend(f.__dict__ for f in mc_failures)
