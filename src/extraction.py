@@ -145,6 +145,10 @@ GENERIC_RECIPIENT_MARKERS = (
     "aid group", "relief group", "flood relief", "disaster relief",
     "humanitarian relief", "relief effort", "aid effort", "relief agenc",
     "aid agenc", "charitable organization",
+    # Another real case: "Lagos railway security agencies" -- a vague
+    # plural collective just like "aid groups" above, no specific agency
+    # ever named.
+    "security agenc",
 )
 
 
@@ -153,6 +157,39 @@ def is_generic_recipient(recipient: str) -> bool:
         return True
     r = recipient.strip().lower()
     return any(marker in r for marker in GENERIC_RECIPIENT_MARKERS)
+
+
+# This tracker exists to track PRIVATE-SECTOR donations to nonprofits —
+# neither side of that should ever be a government body. A real run
+# published two entries where BOTH sides were government: donor "Lagos
+# State Government" -> recipient "Nigerian Railway Corporation" (a state-
+# owned rail operator, not a nonprofit at all), and donor "Lagos State
+# Security Trust Fund" -> recipient "Lagos railway security agencies" —
+# neither a private company giving, nor a nonprofit receiving; both sides
+# of both entries were the state. The extraction prompt already says to
+# reject a government DONOR, but had no equivalent instruction for a
+# government-owned/-run RECIPIENT, and evidently isn't reliably complied
+# with either way — hence a code-level backstop, checked against BOTH
+# fields the same way (one function, two call sites), same as
+# is_generic_donor/is_generic_recipient's split for a different reason.
+# Deliberately compound phrases, not bare words like "state" (which would
+# wrongly reject real company names, e.g. "State Farm") — every marker
+# here is checked against real curated recipients.txt entries too, none
+# of which match any of them.
+GOVERNMENT_ENTITY_MARKERS = (
+    "government", "ministry of", "ministry for", "department of",
+    "city council", "county council", "municipal council", "municipality of",
+    "governor's office", "governor of", "mayor's office", "office of the mayor",
+    "state house", "national assembly", "house of representatives",
+    "state security trust fund", "security trust fund",
+)
+
+
+def is_government_entity(name: str) -> bool:
+    if not name or not name.strip():
+        return False
+    n = name.strip().lower()
+    return any(marker in n for marker in GOVERNMENT_ENTITY_MARKERS)
 
 
 # GENERIC_DONOR_MARKERS/GENERIC_RECIPIENT_MARKERS above are a fixed
@@ -340,9 +377,18 @@ The overwhelming majority of the time there is genuinely only one event — extr
 
 Your job, for EACH distinct event you identify: decide if this is genuinely a private company (or corporate foundation) donating to, \
 partnering with, or otherwise financially/materially supporting a nonprofit organization — a UN \
-agency, INGO, NGO, or any other named charity/nonprofit, of any size. If it is NOT (e.g. it's a \
-government donation, an unrelated story that matched keywords by coincidence, or pure speculation \
-with no confirmed commitment), it is not a real event — do not include an entry for it. This \
+agency, INGO, NGO, or any other named charity/nonprofit, of any size. If it is NOT (e.g. the donor \
+is a government body — a national/state/city government, a ministry, a government agency or \
+fund — rather than a private company; OR the recipient is a government body or a state-owned/\
+-run organization rather than a nonprofit, e.g. a state railway corporation, a government \
+security agency, or a public university/hospital system run BY the state — even if press \
+coverage calls it a "donation"; an unrelated story that matched keywords by coincidence; or pure \
+speculation with no confirmed commitment), it is not a real event — do not include an entry for \
+it. A real case that should have been excluded on both counts: "Lagos State Government" donating \
+patrol vehicles to the "Nigerian Railway Corporation" — a government body giving to a state-\
+owned corporation, nowhere close to a private company supporting a nonprofit. This tracker \
+exists to track PRIVATE-SECTOR giving to NONPROFITS specifically; a transfer between two parts \
+of government isn't that, no matter how it's phrased in the source text. This \
 tracker exists to identify WHICH company gave — if the source text never names a specific company \
 or corporate foundation (only vague language like "corporate partners", "several companies", or \
 "a donor"), that is also not a real event: do not include an entry, and never invent a placeholder \

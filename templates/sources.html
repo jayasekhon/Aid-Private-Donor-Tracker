@@ -50,6 +50,7 @@
       {% if stats.rejected_unnamed_recipient %}<li>{{ stats.rejected_unnamed_recipient }} rejected — the story was real, but no specific recipient organization was actually named</li>{% endif %}
       {% if stats.rejected_no_named_donor %}<li>{{ stats.rejected_no_named_donor }} rejected — no specific donor company could be identified</li>{% endif %}
       {% if stats.rejected_out_of_scope_country %}<li>{{ stats.rejected_out_of_scope_country }} rejected — a real donation, but to a recipient operating in a country outside this tracker's scope</li>{% endif %}
+      {% if stats.rejected_government_entity %}<li>{{ stats.rejected_government_entity }} rejected — a government body was on one side (donor or recipient), not a private-sector donation to a nonprofit</li>{% endif %}
       <li>{{ stats.entries_published }} entries published today</li>
     </ul>
 

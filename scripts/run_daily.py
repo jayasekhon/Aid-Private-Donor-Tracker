@@ -226,11 +226,12 @@ def main():
     rejected_unnamed_recipient = 0
     rejected_no_named_donor = 0
     rejected_out_of_scope_country = 0
+    rejected_government_entity = 0
 
     from src.extraction import (
         FatalExtractionError, is_generic_donor, is_generic_recipient, is_out_of_scope_country,
         assumptions_admit_missing_name, DONOR_NAME_CONTEXT_WORDS, RECIPIENT_NAME_CONTEXT_WORDS,
-        UNSPECIFIED_SCOPE,
+        UNSPECIFIED_SCOPE, is_government_entity,
     )
 
     def _cluster_sources(cluster) -> str:
@@ -271,6 +272,25 @@ def main():
                          cluster.cluster_id, _cluster_sources(cluster), len(results))
 
         for result in results:
+            # This tracker exists to track PRIVATE-SECTOR donations to
+            # NONPROFITS -- neither side of that should be a government
+            # body. A real run published two entries where both sides
+            # were government: "Lagos State Government" -> "Nigerian
+            # Railway Corporation" (a state-owned rail operator, not a
+            # nonprofit), and "Lagos State Security Trust Fund" ->
+            # "Lagos railway security agencies". The prompt already says
+            # to reject a government donor, but had no equivalent
+            # instruction for a government-run recipient, and evidently
+            # isn't reliably complied with either way. Checked before the
+            # donor/recipient-name checks below since it's a different
+            # kind of gate -- not "is a name missing" but "is this even a
+            # private-to-nonprofit donation at all".
+            if is_government_entity(result.donor) or is_government_entity(result.recipient):
+                rejected_government_entity += 1
+                logger.info("Rejecting cluster %s (via %s): government entity on one side (donor %r, "
+                             "recipient %r) -- not a private-sector-to-nonprofit donation.",
+                             cluster.cluster_id, _cluster_sources(cluster), result.donor, result.recipient)
+                continue
             # Backstop behind the extraction prompt's own instructions — the
             # model is told not to include an entry for these cases, but
             # doesn't always comply. A recipient no longer has to be on the
@@ -360,9 +380,10 @@ def main():
     if not is_gdelt_test:
         store.save()
     logger.info("%s %d entries (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no "
-                 "named donor, %d rejected as out-of-scope country).",
+                 "named donor, %d rejected as out-of-scope country, %d rejected as a government entity).",
                  "Would publish" if is_gdelt_test else "Published", len(entries),
-                 duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor, rejected_out_of_scope_country)
+                 duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor,
+                 rejected_out_of_scope_country, rejected_government_entity)
 
     # Highest confidence first -- the site should lead with its strongest,
     # best-evidenced findings rather than whatever order clusters happened
@@ -391,6 +412,7 @@ def main():
         "rejected_unnamed_recipient": rejected_unnamed_recipient,
         "rejected_no_named_donor": rejected_no_named_donor,
         "rejected_out_of_scope_country": rejected_out_of_scope_country,
+        "rejected_government_entity": rejected_government_entity,
         "entries_published": len(entries),
         "high_confidence_count": sum(1 for e in entries if e.confidence_score >= high_confidence_threshold),
     }
