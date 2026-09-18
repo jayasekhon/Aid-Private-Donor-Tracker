@@ -8,10 +8,8 @@ on:
       wipe_today:
         description: >-
           Wipe today's data first, then run fresh: removes today's edition
-          file AND today's entries from the dedupe store (data/seen_events.json)
-          -- deleting only the edition file isn't enough, since the store
-          would still remember today's donations as "already published" and
-          skip them. Every other day's history is untouched. Leave unchecked
+          file and today's entries from the dedupe store (data/seen_events.json).
+          Every other day's history is untouched. Leave unchecked
           for a normal run.
         type: boolean
         default: false
