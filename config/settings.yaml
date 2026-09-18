@@ -89,23 +89,21 @@ search:
   # requests/minute" limit.
   mediacloud_recipients_per_query: 8
   # Separately, a real run showed EVERY batch query — not just the
-  # first, and regardless of query size — failing with "API Server Error
-  # 403", correctly paced 31s apart. That ruled out rate limiting, and a
-  # follow-up run after shrinking query size this way (batching trigger
-  # phrases too, not just recipients) made no difference either — still
-  # 403 on literally every batch, so query size is ruled out too.
-  # Account/key/collection permissions are fine (a simple query worked
-  # in Media Cloud's own web UI) and the auth header format is correct
-  # (verified against the real client source). mediacloud_source.py now
-  # talks to the API directly (not through the `mediacloud` pip client)
-  # so it can set a browser-like User-Agent — the pip client leaves this
-  # at requests' default ("python-requests/x.y.z"), a well-known
-  # automated-client signature a WAF could be blocking on regardless of
-  # IP or content — and so a real response body is available in the logs
-  # if that turns out not to be it either. Not yet confirmed against a
-  # live run. Trigger-phrase batching (15/batch) is kept regardless,
-  # since it's a real improvement on its own merits even though it
-  # didn't turn out to explain the 403s. At these sizes, one daily run
+  # first, and regardless of query size or pacing — failing with "API
+  # Server Error 403". Rate limiting, query size, and auth header format
+  # were all ruled out in turn (see mediacloud_source.py's module
+  # docstring). The actual cause, found once mediacloud_source.py started
+  # calling the API directly and could capture the real response body
+  # instead of the `mediacloud` pip client discarding it: a plain,
+  # specific permission error — {"status": "error", "note": "You
+  # are not permitted to fetch `expanded` stories."} — nothing to do with
+  # a WAF or bot detection. This account's plan can't fetch expanded
+  # (full body text) stories, so every request asking for it was
+  # rejected identically regardless of content or timing. Fixed by simply
+  # not requesting expanded=1; results now carry title/url/publish_date/
+  # media_name only, no body text. Trigger-phrase batching (15/batch) is
+  # kept regardless, as a real improvement on its own merits even though
+  # it didn't turn out to explain the 403s. At these sizes, one daily run
   # costs 7 x 2 = 14 requests (~98/week) against a 4,000/week default
   # quota, adding roughly 7 minutes of paced runtime.
   mediacloud_triggers_per_query: 15

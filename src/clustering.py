@@ -79,6 +79,17 @@ def filter_by_trigger_phrase(articles: list[RawArticle], triggers: list[str]) ->
     kept = []
     rejected_sample = []
     for a in articles:
+        # An article can arrive with matched_trigger already set (Media
+        # Cloud — see mediacloud_source.py) when the fetch itself already
+        # guarantees a trigger-phrase match server-side but can't give us
+        # body text to re-verify it against locally (the account's plan
+        # can't fetch `expanded` story text). Re-checking title+summary in
+        # that case would wrongly drop real candidates whose trigger word
+        # never happens to land in the title. Trust it instead of re-
+        # deriving it from text that isn't there.
+        if a.matched_trigger:
+            kept.append(a)
+            continue
         haystack = f"{a.title} {a.summary}".lower()
         matched = False
         for phrase in triggers:

@@ -17,38 +17,48 @@ phrases, extraction prompt, alias matching), so the smaller curated
 English collection is both more relevant and far lower-noise.
 
 Query shape: BOTH recipients AND trigger phrases are batched into groups,
-not ORed together all at once.
+not ORed together all at once, since Media Cloud's own setup
+documentation states its API is rate-limited to "roughly 2 requests/
+minute" and explicitly recommends pacing calls 31 seconds apart -- one
+query per recipient across 50 recipients would take 25+ minutes for this
+source alone even paced correctly, hence batching. Pacing is done
+explicitly here (_pace_queries() below) rather than trusting a client
+library, since a real run showed nothing here self-throttles -- 7 batch
+queries fired within 0.79 seconds of each other in that run.
 
-1. Media Cloud's own setup documentation states its API is rate-limited
-   to "roughly 2 requests/minute" and explicitly recommends pacing calls
-   31 seconds apart -- one query per recipient across 50 recipients would
-   take 25+ minutes for this source alone even paced correctly, hence
-   batching recipients. Pacing is done explicitly here (_pace_queries()
-   below) rather than trusting a client library, since a real run showed
-   nothing here self-throttles -- 7 batch queries fired within 0.79
-   seconds of each other in that run.
+Calls the API directly via `requests` rather than through the
+`mediacloud` pip client. Two unrelated real-run investigations drove
+this, in order:
 
-2. A real run also showed EVERY batch query -- not just the first, and
-   regardless of query size -- failing with "API Server Error 403",
-   correctly paced 31s apart, ruling both rate-limiting AND query size
-   out as the cause (an earlier attempt shrank the query size on that
-   hypothesis; it made no difference -- still 403 on literally every
-   batch). Account/key/collection permissions are fine (a simple query
-   worked in Media Cloud's own web UI). What's different between "works
-   in the browser" and "always 403 from here": the requesting User-Agent.
-   This now talks to the API directly via `requests` (bypassing the
-   `mediacloud` pip client entirely) for two reasons: (a) to set a
-   browser-like User-Agent, since the pip client leaves this at
-   `requests`' default ("python-requests/x.y.z") -- a well-known
-   automated-client signature that a WAF in front of search.mediacloud.org
-   could easily be blocking on, independent of IP or content; and (b)
-   because the pip client's own error handling
-   (`RuntimeError(f"API Server Error {status}. Params: {params}")`)
-   discards the actual response body/headers on a non-200 -- if this
-   User-Agent change turns out not to be the fix either, the next run's
-   logs need that real response text to diagnose further, which the
-   library was structurally throwing away. This is not yet confirmed
-   against a live run.
+1. Every batch query, not just the first, and regardless of query size
+   or pacing, failed with "API Server Error 403" -- ruling out rate
+   limiting and query size as the cause. The pip client's own error
+   handling (`RuntimeError(f"API Server Error {status}. Params: {params}")`)
+   discards the actual response body on a non-200, so there was no way
+   to tell an auth problem from a WAF block from that message alone.
+   Calling the API directly instead captures the real response body and
+   headers on any failure.
+2. That paid off immediately: the captured body was
+   `{"status": "error", "note": "You are not permitted to fetch
+   `expanded` stories."}` -- a real, specific, plan-tier permission
+   error, not a WAF or User-Agent issue at all (an earlier commit's
+   User-Agent-spoofing guess, made before the real body was visible, is
+   removed here as unneeded). `expanded=1` (full story body text) isn't
+   available on this API key's plan; every request asked for it, so
+   every request was rejected identically no matter the content, size,
+   or timing. The fix is simply not asking for it.
+
+Losing expanded=1 means story results no longer include body text, only
+title/url/publish_date/media_name -- so RawArticle.summary is left empty
+here (there's nothing to put in it) and RawArticle.matched_trigger is
+set directly from the query's own trigger batch instead of being derived
+from title+summary text the way clustering.filter_by_trigger_phrase does
+for other sources. That's not a workaround, it's more correct: the
+trigger phrase is already ANDed into the server-side query for this
+batch, so a returned story is guaranteed to match one of them in its
+full text even though we can't see that text locally to re-derive which
+one. (See filter_by_trigger_phrase's own handling of an article that
+already carries a matched_trigger.)
 
 Each batch query ORs together a group of recipients' searchable_names
 (see config_loader.Recipient.searchable_names — excludes "WHO"/"CARE"-
@@ -94,15 +104,6 @@ logger = logging.getLogger(__name__)
 MEDIACLOUD_API_BASE = "https://search.mediacloud.org/api/"
 MEDIACLOUD_PLATFORM = "onlinenews-mediacloud"
 
-# A generic, current-looking desktop Chrome UA -- see module docstring for
-# why this is set explicitly rather than left at requests' default
-# ("python-requests/x.y.z"), which is a well-known automated-client
-# signature.
-BROWSER_USER_AGENT = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-)
-
 # A real run showed nothing between requests here self-throttles -- 7
 # batch queries fired within 0.79 SECONDS of each other despite Media
 # Cloud's own documented "roughly 2 requests/minute" limit. Paces calls
@@ -120,21 +121,11 @@ def _pace_queries() -> None:
         time.sleep(MIN_SECONDS_BETWEEN_QUERIES - elapsed)
     _last_query_time = time.monotonic()
 
-# How much of a story's full body text (only returned when expanded=True)
-# to keep as the RawArticle summary. Uncapped, a Media Cloud story's
-# `text` field is the full article body — potentially thousands of
-# words, which would both bloat the AI extraction prompt (real token
-# cost) and go well beyond what the trigger-phrase filter actually needs
-# (it only checks for a handful of short phrases anywhere in the text).
-# 1000 characters is a couple of paragraphs — comfortably enough to
-# contain the donation-relevant sentence in the vast majority of news
-# articles, which lead with their most newsworthy fact.
-SUMMARY_CHARS_FROM_TEXT = 1000
-
 # How much of a failed response's body to keep in a FetchFailure/log line
-# -- enough to show a Cloudflare/WAF block page's telltale text (or a
-# proper JSON auth-error message) without dumping an entire HTML page
-# into the log.
+# -- enough to show what the response actually says (a JSON error detail,
+# an HTML block page, whatever it turns out to be) without dumping an
+# entire page into the log. This is what surfaced the real cause of the
+# 403s below -- see module docstring.
 FAILURE_BODY_CHARS = 500
 
 
@@ -162,6 +153,10 @@ def _fetch_stories(api_key: str, query: str, start_date: date, end_date: date,
     `requests` rather than through the `mediacloud` pip client -- see
     module docstring. Raises RuntimeError (with the real response status,
     headers, and a body excerpt) on anything other than 200.
+
+    Deliberately does NOT request expanded=1 (full story body text) --
+    this account's plan doesn't have access to it (see module docstring),
+    so results only carry title/url/publish_date/media_name.
     """
     params = {
         "q": query,
@@ -169,12 +164,10 @@ def _fetch_stories(api_key: str, query: str, start_date: date, end_date: date,
         "end": end_date.isoformat(),
         "platform": MEDIACLOUD_PLATFORM,
         "cs": str(collection_id),
-        "expanded": 1,
     }
     headers = {
         "Authorization": f"Token {api_key}",
         "Accept": "application/json",
-        "User-Agent": BROWSER_USER_AGENT,
     }
     r = requests.get(MEDIACLOUD_API_BASE + "search/story-list", params=params,
                       headers=headers, timeout=60)
@@ -186,29 +179,32 @@ def _fetch_stories(api_key: str, query: str, start_date: date, end_date: date,
         )
     stories = r.json()["stories"]
     for s in stories:
-        # Mirrors mediacloud.api.SearchApi.story_list's own post-
-        # processing -- publish_date comes back as a string (sometimes a
-        # full timestamp), converted here to a plain date so downstream
-        # code (_story_to_article below) can treat it uniformly.
+        # publish_date comes back as a string (sometimes a full
+        # timestamp), converted here to a plain date so downstream code
+        # (_story_to_article below) can treat it uniformly.
         s["publish_date"] = date.fromisoformat(s["publish_date"][:10]) if s.get("publish_date") else None
     return stories
 
 
-def _story_to_article(story: dict) -> RawArticle:
+def _story_to_article(story: dict, matched_trigger: str) -> RawArticle:
     publish_date = story.get("publish_date")
     # publish_date is a plain date (see _fetch_stories above), and
     # datetime.fromisoformat() (used downstream by clustering.py's
     # _parse_published) happily parses a bare "YYYY-MM-DD" string as
     # midnight UTC, so no extra conversion is needed here.
     published = publish_date.isoformat() if publish_date else None
-    text = (story.get("text") or "")[:SUMMARY_CHARS_FROM_TEXT]
     return RawArticle(
         title=(story.get("title") or "").strip(),
         url=(story.get("url") or "").strip(),
         published=published,
         source_name=story.get("media_name") or "Unknown (via Media Cloud)",
         source_tier=SourceTier.GENERAL_NEWS,
-        summary=text,
+        # No body text available on this account's plan (see module
+        # docstring) -- matched_trigger is set directly below instead of
+        # being derived from title+summary text the way other sources'
+        # candidates are.
+        summary="",
+        matched_trigger=matched_trigger,
         fetch_source="Media Cloud",
     )
 
@@ -280,11 +276,15 @@ def fetch_mediacloud_articles(
         for trigger_batch in _batched(triggers, triggers_per_query):
             label = f"Media Cloud: {', '.join(r.name for r in recipient_batch)}"
             query = _build_query(recipient_batch, trigger_batch)
+            # Not the literal phrase that matched (we can't see body text
+            # to tell) -- honest about that, but still a real, server-
+            # verified match against one of this batch's phrases.
+            matched_trigger = f"server-side match (1 of {len(trigger_batch)} trigger phrases)"
             queries_made += 1
             stories, failure = run_one_query(query, label)
             if failure:
                 failures.append(failure)
-            all_articles.extend(_story_to_article(s) for s in stories)
+            all_articles.extend(_story_to_article(s, matched_trigger) for s in stories)
 
     stats = MediaCloudFetchStats(queries_made=queries_made, candidates_found=len(all_articles))
     logger.info("Media Cloud: %d quer%s across %d recipients (batched), found %d candidate "
