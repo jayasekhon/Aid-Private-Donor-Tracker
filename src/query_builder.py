@@ -23,39 +23,13 @@ from .config_loader import Recipient
 
 GOOGLE_NEWS_RSS_BASE = "https://news.google.com/rss/search"
 
-# Aliases that double as ordinary English words are unusable as bare Google
-# News search terms: Google matches the word anywhere in the article, not
-# just as an org reference, so searching `"WHO"` alone matches the pronoun
-# "who" in effectively any headline. A real run found 108 of 303 candidates
-# that passed the trigger-phrase filter were false WHO matches (Taylor
-# Swift donations, Trump policy news, etc.) — pure noise that still cost an
-# AI call each to correctly reject. Dropped here, in query construction,
-# only: "WHO" stays in recipients.txt and is still used everywhere alias
-# matching runs against actual article text/domains rather than free-text
-# search (e.g. tag_official_sources() matching a GDELT source against
-# "who.int"), where the false-positive risk is negligible. The World
-# Health Organization's full name is still searched via r.name, so WHO
-# coverage isn't lost — just no longer keyed on the bare acronym.
-#
-# "CARE" (CARE International's alias) turned out to be the same bug at a
-# much larger scale: a real run found 106 of 189 candidates that passed
-# the trigger-phrase filter (56% of the ENTIRE day's candidate pool) were
-# CARE International false matches — "Trump pledges $500 ObamaCare rebate
-# checks", "Men Who Care donates $3,400...", "Cascade Comprehensive Care
-# donates $50k...", none of them about the organization at all. This
-# wasn't just wasted AI calls: it was crowding out genuine stories about
-# every OTHER recipient (UNICEF and World Food Programme got 1-2
-# candidates each that same run) within Google News' bounded per-query
-# result window, and very likely the direct cause of small-nonprofit
-# noise (a "Cares"/"donates" story that happens to mention a hospital)
-# reaching publication ahead of real donations to the big monitored
-# agencies. Same fix, same reasoning as WHO: dropped from search only,
-# "CARE International" (the full name) still fully searched via r.name.
-AMBIGUOUS_SEARCH_ALIASES = {"who", "care"}
-
-
-def _searchable_names(r: Recipient) -> list[str]:
-    return [n for n in r.all_names if n.strip().lower() not in AMBIGUOUS_SEARCH_ALIASES]
+# See config_loader.Recipient.searchable_names for why this isn't just
+# all_names — "WHO"/"CARE" are ordinary English words, unsafe as a bare
+# Google News search term (Google matches the word anywhere in the
+# article, not just as an org reference). Real-run impact: WHO caused
+# 108/303 false candidates in one run; CARE was worse, 106/189 (56% of
+# that entire day's candidate pool) — "Trump pledges $500 ObamaCare
+# rebate checks" and similar, none connected to either organization.
 
 
 def build_recipient_trigger_queries(
@@ -95,7 +69,7 @@ def build_recipient_trigger_queries(
     """
     pairs = []
     for r in recipients:
-        name_clause = " OR ".join(f'"{n}"' for n in _searchable_names(r))
+        name_clause = " OR ".join(f'"{n}"' for n in r.searchable_names)
         for i in range(0, len(triggers), triggers_per_query):
             batch = triggers[i:i + triggers_per_query]
             trigger_clause = " OR ".join(f'"{t}"' for t in batch)
@@ -117,7 +91,7 @@ def build_recipient_country_queries(
     """
     pairs = []
     for r, c in itertools.product(recipients, countries):
-        name_clause = " OR ".join(f'"{n}"' for n in _searchable_names(r))
+        name_clause = " OR ".join(f'"{n}"' for n in r.searchable_names)
         query = f'({name_clause}) "{c}" donation'
         if max_age_days:
             query += f" when:{max_age_days}d"

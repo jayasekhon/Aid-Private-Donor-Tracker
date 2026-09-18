@@ -19,6 +19,24 @@ class ConfigError(Exception):
     """Raised when a config file is malformed. Carries a human-readable message."""
 
 
+# Aliases that double as ordinary English words are unsafe to use as a
+# bare search term or exact-match lookup key against free-text news
+# content: "WHO" matches the pronoun "who" and "CARE" matches the verb/
+# noun "care" almost anywhere, regardless of which search backend is
+# doing the matching. First found in Google News query construction (a
+# real run: 108/303 candidates were false WHO matches), then found again,
+# far worse, for "CARE" (106/189 candidates — 56% of one entire day's
+# pool — were false CARE International matches: "Trump pledges $500
+# ObamaCare rebate checks", etc.), then again in GDELT's own NLP
+# mis-tagging "who" as a standalone organization mention with nothing
+# organization-like nearby. Centralized here once every fetch source
+# (Google News, GDELT, Media Cloud, and any future one) needs the same
+# protection — each recipient's full name is unaffected and stays fully
+# searchable via `name`/`all_names`; only these specific short aliases
+# are excluded from `searchable_names`.
+AMBIGUOUS_SEARCH_ALIASES = {"who", "care"}
+
+
 @dataclass
 class Recipient:
     name: str
@@ -28,6 +46,17 @@ class Recipient:
     @property
     def all_names(self) -> list[str]:
         return [self.name] + self.aliases
+
+    @property
+    def searchable_names(self) -> list[str]:
+        """all_names, minus aliases unsafe for a bare search/lookup key —
+        see AMBIGUOUS_SEARCH_ALIASES above. Use this (not all_names)
+        anywhere a name is matched against free-text news content rather
+        than a known, specific value (e.g. tag_official_sources() and
+        match_curated_recipient() keep their own narrower, already-vetted
+        alias sets since they match differently — substring/fuzzy against
+        a short source name or extracted org string, not a search term)."""
+        return [n for n in self.all_names if n.strip().lower() not in AMBIGUOUS_SEARCH_ALIASES]
 
 
 def _strip_comments_and_blanks(lines: list[str]) -> list[tuple[int, str]]:
