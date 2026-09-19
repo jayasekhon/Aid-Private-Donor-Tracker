@@ -1,0 +1,239 @@
+{
+  "date": "2026-09-19",
+  "entries": [
+    {
+      "entry_id": "024b6cb9-aca5-45de-b637-12ee89519aad",
+      "donor": "Visa",
+      "recipient": "World Bank",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "digital financial services",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Visa has partnered with the World Bank to enhance digital financial services in emerging markets.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQM2Z4VU9lRkhlQlV6eWszT1R0SWFnTlNSU01JWG0tRzJhcjRGbzJMa0xXSy11WmR1NjJ3LXZNc2R1cl84cmtscndLcXNSVjVBLWtfR0NfMWNhTkNrcC0tUGRLdGlEVExkQURWaEZLbnVFdXNsREpJSm1uY2RNVnIycWg2UW5PdzF0cGtVLVRrRE9XYnFNQTZ1d1FJQ09JZkRsaXFMNG5OeWtrdDYwMW5CTE82N2hiMnFScHZBUmQzTzNUd2VfdWY2RW1zWFR0VVJpMkF4ZmRIcWhIQ2RIZllmWlg0MUt1UE5nRzRmY1VrTnpCcjhsQkE?oc=5"
+      ],
+      "source_names": [
+        "TradingView"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-19T10:03:23.252263+00:00",
+      "is_duplicate_of": "fad6918e-351d-4e13-8a16-bd1d9174cd3d"
+    },
+    {
+      "entry_id": "a0aae7fc-5aa2-4520-ab00-b0e75525492b",
+      "donor": "Robert Kraft",
+      "recipient": "Palestinian aid groups",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$2 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Palestine",
+      "status": "new_commitment",
+      "summary": "Robert Kraft pledged $2 million to aid Palestinians, but the specific recipients within Palestine are not detailed in the source text.",
+      "figure_quote": "$2 million",
+      "assumptions": [
+        "The specific nonprofit organizations receiving the funds are not named in the source text."
+      ],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMixAFBVV95cUxQYjQ2eHJhSTBDYWpPZC1BYnBHcUU1U2ZPV3JRSnhjNnY0Qk00RjkySEg3SzZMMTVXaFhJeVQtR09HVG5nQjdNZk1ISjRXSnpzanpKV1Vyakt0SzRRTGtKMVlCaERiLWNCSkUzNTJVMWtQZEJnbVlrUExzSnVKLWVqZzgyMk05bGpPX2NwYnY5NzVDbzgxMVF6TDM1SkRia3hUdTIyMjVMeTR1dHljSlE1cHFyZmJoaUU5cjVPMDJXdFpFZEhr?oc=5"
+      ],
+      "source_names": [
+        "Jewish Telegraphic Agency"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-19T10:02:50.785167+00:00",
+      "is_duplicate_of": "3e098dd8-2b64-4423-aa0d-bcca7fe447a8"
+    },
+    {
+      "entry_id": "2c1e1690-225e-4c0a-8aa0-60983f5bd0cd",
+      "donor": "Stray Kids' Bang Chan",
+      "recipient": "Unspecified",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "200 million won",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Nepal",
+      "status": "new_commitment",
+      "summary": "Stray Kids' Bang Chan donated 200 million won for Nepal flood relief and rehabilitation.",
+      "figure_quote": "200 million won",
+      "assumptions": [
+        "Recipient is unspecified but implied to be a charity or organization involved in Nepal flood relief and rehabilitation."
+      ],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxPTDltRmZBeVRhZnNwXzZXb2lrRmJVeFhzU0d0ZkdjakwtRDJoVG41NGtjWkZDbjc3Nkh2Q0hDS3hFVVF6VmtHVF9JUU9kVzVrQlVnRzVINGdqVXBEanNzQXB1TnJSRlFDVUpwVkcxNmlYZWNWZWZCZFp1X05rRDNrSEw2UmpzMGJDelZDajZ3?oc=5"
+      ],
+      "source_names": [
+        "조선일보"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-19T10:04:55.137148+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "7e74d0e8-c8c0-46d4-9f71-046d041fa90a",
+      "donor": "enGen Global",
+      "recipient": "Seva Bharathi hospital",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "surgical equipment",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "enGen Global donated surgical equipment to Seva Bharathi hospital.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMitgFBVV95cUxObkl5bG52MHQ5TDBOb0NRUlBOOTNvaThROFRrZ1JiSVNGZk5xYmR4RkRaLUFKckpDM3BKaHFsYkFJMTRRUmxzNWkxbWhmLXlLd01rM3M4RkdyX3E3WkU3Y3VuZUVYdWZwcVUyQVlWOEV0bGNYUGNLOHNhTDFac0lrT2FNel9RdXU2NjhtczlONkxSeUp3aGNqMUxsTkZJWXEtT2VnYjdHTW5sdFg2ZktyZXdGZ3JMZw?oc=5"
+      ],
+      "source_names": [
+        "metroindia.net"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-19T10:05:26.613765+00:00",
+      "is_duplicate_of": "a1d79d1d-3141-447f-9fc9-7f4c87d67b46"
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 76,
+    "gdelt_candidates_found": 435,
+    "mediacloud_queries_made": 0,
+    "mediacloud_candidates_found": 0,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2597,
+    "items_filtered_as_stale": 1810,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 89,
+    "clusters_analysed": 54,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 5,
+    "rejected_unnamed_recipient": 4,
+    "rejected_no_named_donor": 1,
+    "rejected_out_of_scope_country": 4,
+    "rejected_government_entity": 1,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 3,
+    "rejected_no_evidence": 2,
+    "entries_published": 4,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
