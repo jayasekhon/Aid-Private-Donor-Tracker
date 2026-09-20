@@ -1,0 +1,93 @@
+{
+  "date": "2026-09-20",
+  "entries": [
+    {
+      "entry_id": "67aa3cbc-53c5-4c5d-a959-af8d13239d17",
+      "donor": "Ms Rachel",
+      "recipient": "Gaza’s children",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$1 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Ms Rachel has committed to donating $1 million to support children in Gaza.",
+      "figure_quote": "$1 million",
+      "assumptions": [
+        "The specific nonprofit organizations or channels through which the funds will be distributed are not detailed in the source text."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMTlYbnlUV1VONjFEenByb1BNN0x1clVNbTZCZzl6TWZyVHJTNnFKT0lvempCTW4tbnl1RDR5QWRLZk04VDBoVTBzUDdTOWdqcUJ0dkRxOVFLbFhrTm5GQkhHSzNfMjc3UWY4QWhTWTg2YktXVXRWMGR0T0ZyS3lWaUVfNWlJQnZWcnBj?oc=5"
+      ],
+      "source_names": [
+        "UA.NEWS"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-20T10:23:07.697513+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 97,
+    "gdelt_candidates_found": 240,
+    "mediacloud_queries_made": 0,
+    "mediacloud_candidates_found": 0,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2374,
+    "items_filtered_as_stale": 1815,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 81,
+    "clusters_analysed": 50,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 5,
+    "rejected_unnamed_recipient": 5,
+    "rejected_no_named_donor": 1,
+    "rejected_out_of_scope_country": 4,
+    "rejected_government_entity": 1,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 3,
+    "rejected_no_evidence": 2,
+    "entries_published": 1,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "Feed parse error: <unknown>:2:119: not well-formed (invalid token)"
+    }
+  ]
+}

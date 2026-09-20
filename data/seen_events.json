@@ -3734,5 +3734,55 @@
     ],
     "date_found": "2026-09-19T10:05:26.613765+00:00",
     "is_duplicate_of": "a1d79d1d-3141-447f-9fc9-7f4c87d67b46"
+  },
+  {
+    "entry_id": "67aa3cbc-53c5-4c5d-a959-af8d13239d17",
+    "donor": "Ms Rachel",
+    "recipient": "Gaza’s children",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$1 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Ms Rachel has committed to donating $1 million to support children in Gaza.",
+    "figure_quote": "$1 million",
+    "assumptions": [
+      "The specific nonprofit organizations or channels through which the funds will be distributed are not detailed in the source text."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMTlYbnlUV1VONjFEenByb1BNN0x1clVNbTZCZzl6TWZyVHJTNnFKT0lvempCTW4tbnl1RDR5QWRLZk04VDBoVTBzUDdTOWdqcUJ0dkRxOVFLbFhrTm5GQkhHSzNfMjc3UWY4QWhTWTg2YktXVXRWMGR0T0ZyS3lWaUVfNWlJQnZWcnBj?oc=5"
+    ],
+    "source_names": [
+      "UA.NEWS"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-20T10:23:07.697513+00:00",
+    "is_duplicate_of": null
   }
 ]
