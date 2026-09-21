@@ -3784,5 +3784,105 @@
     ],
     "date_found": "2026-09-20T10:23:07.697513+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "9741e360-c29e-47b2-bb64-b02b6be0e380",
+    "donor": "South Korea",
+    "recipient": "World Food Programme",
+    "recipient_type": "UN Agency",
+    "amount_text": "$5 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "South Korea has provided a $5 million contribution to the World Food Programme (WFP) to support Rohingya assistance.",
+    "figure_quote": "$5M to WFP or Rohingya assistance",
+    "assumptions": [
+      "The donor is a government, not a private company."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUUp5VERhQXhPbDF4TjEtZHhPSXFaNWc0cHc1SXplTUpORVlMQ0JlMmR6N0lzQXE0TEVsc2FUU3RMdW12d1JkMW84SXZUX2ZXMDFaaDhrcU8tckk2OEFoaG9PSnA3by1xTUVmSS1YTVctbWZvTmplUWVxRUxZUnJ1TkR4QW9IRzYzUm9vZnZrRXNUREk2MzFJ0gGcAUFVX3lxTE9xa21NckNHaDRQazMtOFk4bU1XNF80LXpCUFZ1UXhuTXJOYWdpZHh5NklYR21SLUltNGJlXzVoRnU5S3JKaTBFRE15QjRodVZaYmowVlkxQ0N4X0ZxVkFHcE44aEgzeHZLZGVUdkxPNkF1TVZtVlRlVFlLcmlVWnpXbjc1WFhranl3SGY2cmdqZWJDeDdfblVGWFZEUw?oc=5"
+    ],
+    "source_names": [
+      "Dhaka Tribune"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-21T11:31:25.857730+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "0e36d1b1-4dc1-4f80-86b1-a5b722a310fe",
+    "donor": "Gates Foundation",
+    "recipient": "AI initiatives for child mortality reduction",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$1 billion",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "The Gates Foundation has committed $1 billion to support AI initiatives aimed at reducing child mortality, which has increased for the first time in decades.",
+    "figure_quote": "$1 billion",
+    "assumptions": [
+      "The specific nonprofits or projects receiving funds are not detailed in the source text."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMisAFBVV95cUxNY3hyRlN5V3JWM1ptRE53ZEpxMVJ1REs4aEoxUHNySU9mV3B6MlozSzVfQUhQN3BJS2dXZ3FNb0lrVjVxbDFDZlBjUnNQS2xnMDBrMzFrMG84TVVSQktfVDB4Z09KdnNENVFfRjVnVlk5dWVCcERBem94Umsyb1l5VTJmSXBjSEZJSEE0bk5GWmZfUGxyeEF5MHVJUXlLVmVWbldFRVFFcDdKdndwazI0eA?oc=5"
+    ],
+    "source_names": [
+      "hoodline.com"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-21T11:33:03.659911+00:00",
+    "is_duplicate_of": null
   }
 ]
