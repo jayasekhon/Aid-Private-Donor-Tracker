@@ -2,9 +2,9 @@
   "date": "2026-09-21",
   "entries": [
     {
-      "entry_id": "9741e360-c29e-47b2-bb64-b02b6be0e380",
+      "entry_id": "771f4568-3ded-4736-9428-a1cd379dce3e",
       "donor": "South Korea",
-      "recipient": "World Food Programme",
+      "recipient": "World Food Programme (WFP)",
       "recipient_type": "UN Agency",
       "amount_text": "$5 million",
       "is_in_kind": false,
@@ -48,13 +48,13 @@
       "source_channels": [
         "Google News"
       ],
-      "date_found": "2026-09-21T11:31:25.857730+00:00",
+      "date_found": "2026-09-21T15:59:38.568028+00:00",
       "is_duplicate_of": null
     },
     {
-      "entry_id": "0e36d1b1-4dc1-4f80-86b1-a5b722a310fe",
+      "entry_id": "f7314dc1-5f55-4ca5-b226-04fd46a0f25f",
       "donor": "Gates Foundation",
-      "recipient": "AI initiatives for child mortality reduction",
+      "recipient": "Various AI initiatives",
       "recipient_type": "Other Nonprofit",
       "amount_text": "$1 billion",
       "is_in_kind": false,
@@ -64,7 +64,7 @@
       "summary": "The Gates Foundation has committed $1 billion to support AI initiatives aimed at reducing child mortality, which has increased for the first time in decades.",
       "figure_quote": "$1 billion",
       "assumptions": [
-        "The specific nonprofits or projects receiving funds are not detailed in the source text."
+        "The specific recipients of the funds within the AI initiatives are not detailed in the source text."
       ],
       "confidence_score": 7,
       "confidence_breakdown": {
@@ -93,39 +93,137 @@
         "https://news.google.com/rss/articles/CBMisAFBVV95cUxNY3hyRlN5V3JWM1ptRE53ZEpxMVJ1REs4aEoxUHNySU9mV3B6MlozSzVfQUhQN3BJS2dXZ3FNb0lrVjVxbDFDZlBjUnNQS2xnMDBrMzFrMG84TVVSQktfVDB4Z09KdnNENVFfRjVnVlk5dWVCcERBem94Umsyb1l5VTJmSXBjSEZJSEE0bk5GWmZfUGxyeEF5MHVJUXlLVmVWbldFRVFFcDdKdndwazI0eA?oc=5"
       ],
       "source_names": [
-        "hoodline.com"
+        "Hoodline"
       ],
       "source_channels": [
         "Google News"
       ],
-      "date_found": "2026-09-21T11:33:03.659911+00:00",
+      "date_found": "2026-09-21T16:01:16.350712+00:00",
       "is_duplicate_of": null
+    },
+    {
+      "entry_id": "f1b91c34-fe94-45dd-956b-2c795a524a81",
+      "donor": "GXBank",
+      "recipient": "International Finance Corporation (IFC)",
+      "recipient_type": "UN Agency",
+      "amount_text": "RM450 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "GXBank has partnered with the International Finance Corporation (IFC), a member of the World Bank Group, to provide up to RM450 million in loans for local Micro, Small, and Medium Enterprises (MSMEs).",
+      "figure_quote": "up to RM450 million in loans",
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiigFBVV95cUxOVFhZODE0VVM3VzNDOWxVMjdGaWdYSkg4TGdQR083NWNFTmhad25QRmN3VXJwell1VVlLZkNVd09qNVlEV2xDUVNUWWt6RmRaUnh1TTNjb1JIZlBIc1k3ZjYtOEc0a0pRSDRYbV9xTUlxQ2V3b2xVYnVsNEFaUmJlZ2lCMUliOUJfT2c?oc=5"
+      ],
+      "source_names": [
+        "SoyaCincau"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-21T16:02:21.008631+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "eb31c41c-5528-4051-940c-6726d0f8dec7",
+      "donor": "NEC Uzima",
+      "recipient": "NFSU Uganda Cyber Run",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Water",
+      "country_scope": "Uganda",
+      "status": "new_commitment",
+      "summary": "NEC Uzima donated water ahead of the NFSU Uganda Cyber Run event.",
+      "figure_quote": null,
+      "assumptions": [
+        "The recipient is classified as 'Other nonprofit' as it appears to be an event rather than a traditional NGO or UN agency."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNl9VVXUyMldadk5fQkFJazJET19rX0xwY3RGV1g4MEF2a3RXY3JXQlJ6SkFrVGQ1ZE9FdXEzNzZtTW1XaVAyNF85OGRpV1pjMEhoa3FweUZQWDRoYU5Pd00tUW8zU1ZaNG0yZVNYWkY3YmtTMUZBRFJ1YnJISGtvUXVyYWlNc3BsblFVanVLYld1UdIBlwFBVV95cUxPc2Fib2dYQXdIOXplZzE3MGVFUGVNWENrMWw2bWs4Nkc1QnpteWoweGxnY3B0WmczdVJlQzBnYVd0bURRWlpiV2h1MWtuOS1qVGswUF9peWVNSy1NSlpuTjNUaWFWeE9LbVdhMy1xRjFmZU9vQUNNRFQ1VGQ5Q2E5M3l5SENjNnpCV0gzWUcyYnpPV3JaMVBJ?oc=5"
+      ],
+      "source_names": [
+        "UPDF"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-21T16:04:18.251704+00:00",
+      "is_duplicate_of": "2d314b60-591d-4042-8b1a-09bf44413b3f"
     }
   ],
   "stats": {
     "feeds_checked": 203,
     "google_news_queries": 200,
-    "gdelt_files_processed": 101,
-    "gdelt_candidates_found": 291,
-    "mediacloud_queries_made": 0,
-    "mediacloud_candidates_found": 0,
+    "gdelt_files_processed": 17,
+    "gdelt_candidates_found": 85,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 214,
     "recipients_watched": 50,
     "pr_wire_feeds": 3,
-    "items_considered": 2420,
-    "items_filtered_as_stale": 1813,
+    "items_considered": 2427,
+    "items_filtered_as_stale": 1818,
     "max_article_age_days": 14,
-    "items_after_trigger_filter": 86,
-    "clusters_analysed": 52,
+    "items_after_trigger_filter": 285,
+    "clusters_analysed": 148,
     "skipped_due_to_ai_budget": 0,
-    "duplicates_skipped": 6,
-    "rejected_unnamed_recipient": 5,
-    "rejected_no_named_donor": 1,
-    "rejected_out_of_scope_country": 3,
-    "rejected_government_entity": 0,
+    "duplicates_skipped": 8,
+    "rejected_unnamed_recipient": 6,
+    "rejected_no_named_donor": 4,
+    "rejected_out_of_scope_country": 2,
+    "rejected_government_entity": 2,
     "rejected_unspecified_scope_excluded": 0,
     "rejected_donor_is_monitored_recipient": 2,
-    "rejected_no_evidence": 2,
-    "entries_published": 2,
+    "rejected_no_evidence": 4,
+    "entries_published": 4,
     "high_confidence_count": 1
   },
   "fetch_failures": [
@@ -137,7 +235,7 @@
     {
       "source_label": "CSRWire",
       "url": "https://csrwire.com/feed/",
-      "error": "Feed parse error: <unknown>:2:119: not well-formed (invalid token)"
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
     }
   ]
 }
