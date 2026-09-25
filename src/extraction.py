@@ -713,14 +713,26 @@ def _extract_via_bedrock(prompt: str, model: str, region: str, cluster_id: str, 
 
 
 def _parse_event(data: dict) -> ExtractionResult:
-    """Raises (ValueError, KeyError) on unexpected shape — caller decides
-    whether that sinks the whole cluster or just this one event."""
+    """Raises (ValueError, KeyError, AttributeError, TypeError) on
+    unexpected shape — caller decides whether that sinks the whole
+    cluster or just this one event.
+
+    `data.get("donor", "")`-style defaults only apply when the key is
+    MISSING -- a real run crashed the entire pipeline (nothing published
+    that day) because the model returned `"donor": null` for one event
+    in a cluster: the key was present, so the default never kicked in,
+    `.get()` returned None, and `.strip()` on None raised AttributeError
+    -- an exception type extract_from_cluster's per-event try/except
+    didn't even catch, so this one malformed event took down every other
+    genuine finding in the same run too. `(data.get(...) or "")` guards
+    against both the missing-key AND the explicit-null case.
+    """
     return ExtractionResult(
         is_relevant=True,
         summary=data.get("summary", ""),
         figure_quote=data.get("figure_quote"),
-        donor=data.get("donor", "").strip(),
-        recipient=data.get("recipient", "").strip(),
+        donor=(data.get("donor") or "").strip(),
+        recipient=(data.get("recipient") or "").strip(),
         recipient_type_guess=data.get("recipient_type"),
         is_in_kind=bool(data.get("is_in_kind", False)),
         in_kind_description=data.get("in_kind_description"),
@@ -800,9 +812,17 @@ def extract_from_cluster(
             continue
         try:
             results.append(_parse_event(event_data))
-        except (ValueError, KeyError) as e:
+        except (ValueError, KeyError, AttributeError, TypeError) as e:
             # One malformed event in the array shouldn't cost every OTHER
-            # genuine event the model found in the same cluster.
+            # genuine event the model found in the same cluster -- let
+            # alone every OTHER cluster in the run. A real run crashed
+            # here entirely (AttributeError from a null field -- see
+            # _parse_event's docstring) because AttributeError wasn't in
+            # this tuple; broadened to also catch AttributeError/
+            # TypeError, the other shapes a malformed field predictably
+            # raises (calling a str method on None, indexing a field that
+            # came back as the wrong type), on top of _parse_event's own
+            # explicit ValueError/KeyError.
             logger.error("One event for cluster %s had unexpected shape, skipping just that "
                          "one: %s", cluster.cluster_id, e)
     return results
