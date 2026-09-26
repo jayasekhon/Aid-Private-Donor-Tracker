@@ -1,0 +1,393 @@
+{
+  "date": "2026-09-26",
+  "entries": [
+    {
+      "entry_id": "648beac3-b49e-4cc2-ab7a-f9bb6cf10d2d",
+      "donor": "partners (including private sector)",
+      "recipient": "UNFPA",
+      "recipient_type": "UN Agency",
+      "amount_text": "$715 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Multiple governments and partners, including private sector entities, pledged over $715 million for reproductive health initiatives at the UN General Assembly.",
+      "figure_quote": "pledged $715 million",
+      "assumptions": [
+        "The source text does not specify individual private sector donors, only that partners including the private sector pledged funds."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdTU0b3AtQjNpcmdLSGo5ZWlTOXlmeENmSWpHMDhuVk84dG90c3BvaF9TRTZpNkxpeG1oeTk0c3dvYkVNVnFsVW5Ya2xtUmtWWWdpbDIzUDdCRlpYbnhCTXFxenpmU3ljdE5senZfRV92LTZNa3M3aE1YS083bThrdjdsWVJkSWc0WGhBX04wOXRvRUpLTVd4Tm50ZjVXYUtVaVM2T2MxTQ?oc=5",
+        "https://www.globenewswire.com/news-release/2026/09/24/3368659/0/en/countries-and-partners-commit-more-than-us-715-million-for-reproductive-health.html"
+      ],
+      "source_names": [
+        "globenewswire.com",
+        "gazettengr.com"
+      ],
+      "source_channels": [
+        "Google News",
+        "Media Cloud"
+      ],
+      "date_found": "2026-09-26T10:39:35.785736+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "df0ca435-9c5c-4ae9-a623-bb81334e1ae7",
+      "donor": "Aveda",
+      "recipient": "Yawanawá People of the Amazon Rainforest",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$50,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Aveda has donated $50,000 to support the Yawanawá People of the Amazon Rainforest.",
+      "figure_quote": "$50K",
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQR3lWSDNiQVNBNDB5cHpIMnJybHloVXRGNTNiS1VzZEc1QzhKbGd2OEVKTnJXaHhZdXJ2dUdBMVYtaDh2UENXZlR4aW1VeHNaRFNUaHNqSWsxQncwRUpDanB1Um1sV3Z6WEszV2FCYXhOb2NUU1Vqbzl0cDIwTUVaS1JJZW8zSXlaaTNsbTNJSUgyQ2NYQ2FfaVU1a01OM2hRUElORXZ4YkZGZ1RCTHR2clJ5ZEZWSHBn?oc=5"
+      ],
+      "source_names": [
+        "Happi | Household And Personal Products Industry"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-26T10:37:18.966876+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "18ff09ef-1d4a-4d48-8d0e-2def25fe3e4e",
+      "donor": "Sun King",
+      "recipient": "UN Energy Compact",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Sun King has committed to providing power to 200 million people by 2030 as part of the UN Energy Compact.",
+      "figure_quote": "200 Million People with Power by 2030",
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTDhQUWROVXp6M25xZXFOMGVOR21RTWt1cVRPMGtaVmd4TFozQmtWSllhZXpqVTFjMDA5NWtqUm0zbFJhbnZ2ZHVzS0VNb0pvNm9ZVm1RUGJ0S1BXUWZKYzdCR19OU19wWWhtX3M0aS1ySGJwS19FUnFGTHpqOTljek1EcVBraGVSYTlKZ0JCOF9vc21RcENfX1RsTS1FT3JPdEd5ZjBIMXItdldUdk5CdXFDRFk?oc=5"
+      ],
+      "source_names": [
+        "Green Building Africa"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-26T10:41:12.754578+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "858c0f5d-ae74-49cb-a3f0-6a08524f9a1a",
+      "donor": "AstraZeneca",
+      "recipient": "Youth Health Programme",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$15.1 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "AstraZeneca has committed $15.1 million to support a Youth Health Programme.",
+      "figure_quote": "$15.1m for Youth Health Programme",
+      "assumptions": [
+        "The exact nature and scope of the 'Youth Health Programme' are not detailed in the source text."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTFZZZVQ4Z2hGSzQwekx2c3pVcnZaZnpFU3J2WGQzUzU0bVFIRmNoOHh6T0lwZWw5VmY4Uy0wMTdRNnI0dU1MdHVWQTVrYmRnMWhCOEwtd3FaM2RuQk1xZDZPcWtrdGh1eGVlYjNyeUMwYjBQVWNUT2RqNUMwT2FZOHhtQ2VRVWhBX2JPWWFB?oc=5"
+      ],
+      "source_names": [
+        "European Medical Journal"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-26T10:43:09.838140+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "ee086ad0-bb28-48d8-9666-09f139d51648",
+      "donor": "Visa",
+      "recipient": "Ebola response efforts",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "unclear",
+      "summary": "Visa contributed to the mobilization of nearly $3 billion for Ebola response efforts.",
+      "figure_quote": "Almost $3 billion mobilised",
+      "assumptions": [
+        "The exact amount contributed by Visa is not specified.",
+        "The recipient is a broad category ('Ebola response efforts') rather than a specific organization."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.standardmedia.co.ke/africa/article/2001558679/ebola-watch-almost-3-billion-mobilised-so-far-leaders-want-every-dollar-tracked"
+      ],
+      "source_names": [
+        "standardmedia.co.ke"
+      ],
+      "source_channels": [
+        "GDELT GKG"
+      ],
+      "date_found": "2026-09-26T10:44:40.847350+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "8d5ff1db-ceb9-489c-b44e-12fa500d64a0",
+      "donor": "Gaza Board of Peace",
+      "recipient": "Gaza",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$2.45 billion",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Gaza",
+      "status": "new_commitment",
+      "summary": "Gaza Board of Peace announced a $2.45 billion rebuilding initiative for Gaza, with Hamas reportedly ready to disarm as part of the peace efforts.",
+      "figure_quote": "$2.45B",
+      "assumptions": [
+        "The donor 'Gaza Board of Peace' is assumed to be a nonprofit or coalition, though its exact nature is not fully clear from the text."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.ynetnews.com/article/h12nmyzczx"
+      ],
+      "source_names": [
+        "ynetnews.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-09-26T10:51:49.796190+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "5edf6379-2406-45f5-97d7-4bf8389d2882",
+      "donor": "NEC Uzima",
+      "recipient": "NFSU Uganda Cyber Run",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Water",
+      "country_scope": "Uganda",
+      "status": "new_commitment",
+      "summary": "NEC Uzima donated water in preparation for the NFSU Uganda Cyber Run event.",
+      "figure_quote": null,
+      "assumptions": [
+        "The recipient is classified as 'Other nonprofit' based on the context of the event being a cyber run, which suggests a specific, localized event rather than a broader NGO or UN agency."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNl9VVXUyMldadk5fQkFJazJET19rX0xwY3RGV1g4MEF2a3RXY3JXQlJ6SkFrVGQ1ZE9FdXEzNzZtTW1XaVAyNF85OGRpV1pjMEhoa3FweUZQWDRoYU5Pd00tUW8zU1ZaNG0yZVNYWkY3YmtTMUZBRFJ1YnJISGtvUXVyYWlNc3BsblFVanVLYld1UdIBlwFBVV95cUxPc2Fib2dYQXdIOXplZzE3MGVFUGVNWENrMWw2bWs4Nkc1QnpteWoweGxnY3B0WmczdVJlQzBnYVd0bURRWlpiV2h1MWtuOS1qVGswUF9peWVNSy1NSlpuTjNUaWFWeE9LbVdhMy1xRjFmZU9vQUNNRFQ1VGQ5Q2E5M3l5SENjNnpCV0gzWUcyYnpPV3JaMVBJ?oc=5"
+      ],
+      "source_names": [
+        "UPDF"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-26T10:43:36.085405+00:00",
+      "is_duplicate_of": "eb31c41c-5528-4051-940c-6726d0f8dec7"
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 191,
+    "gdelt_candidates_found": 1208,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 291,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 3730,
+    "items_filtered_as_stale": 1852,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 373,
+    "clusters_analysed": 186,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 9,
+    "rejected_unnamed_recipient": 8,
+    "rejected_no_named_donor": 3,
+    "rejected_out_of_scope_country": 5,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 5,
+    "rejected_no_evidence": 5,
+    "entries_published": 7,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
