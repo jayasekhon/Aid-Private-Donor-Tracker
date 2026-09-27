@@ -4621,5 +4621,205 @@
     ],
     "date_found": "2026-09-26T10:51:49.796190+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "559f73c1-5ec0-4e9b-aaff-d999b087c7b2",
+    "donor": "Qatar",
+    "recipient": "Palestinian children",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "humanitarian efforts",
+    "country_scope": "Unspecified / global",
+    "status": "renewed_partnership",
+    "summary": "Qatar has pledged continued support for Palestinian children through humanitarian efforts.",
+    "figure_quote": null,
+    "assumptions": [
+      "The donor 'Qatar' is assumed to be a government entity, not a private company. Hence, this event does not qualify as a private-sector donation to a nonprofit."
+    ],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMizwFBVV95cUxQQ2dzZUZyOU9kWXdXUWNsX3VnWWp3elVGd01ZQ29OdmdkZUZiandzbjgyLTZVMThSS3JZT2Vfb2stdTUtbUd4cENPSHNvYXFGYzRQOXliOEJRemJHTTU0UTE0S1hzeHBuMmxVODNZVTFCSUxuMDhma0pqdDBuSTRyWWhIbjRzNFRZQVFjQUlwOVFIZTYyck5KWFRWeFZUMXRLcFN1OHFscVpMSTRfZXE5STJkczlkY1ZrX1p1bldsQzFpNHEzbVhqTHNTaGlMRUU?oc=5"
+    ],
+    "source_names": [
+      "The Peninsula Qatar"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-27T11:12:06.696538+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "ef65fd9d-f5a7-4fa3-9eb5-d360ffd99ea6",
+    "donor": "Indonesia",
+    "recipient": "UNRWA",
+    "recipient_type": "UN Agency",
+    "amount_text": "$1.2 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Indonesia has pledged $1.2 million in support for UNRWA.",
+    "figure_quote": "US$1.2 million",
+    "assumptions": [
+      "The donor is a government, not a private company."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNFlRbU1yb1pzUC1QOVBrdkhoZ0dPS2djOTdDdEYwNnN2VVdHc3BrQ3NGcmc4eU50S254b2RqNE0yZDMwU1RndDY1ODBLSUl1OGpfOUFjUFdaYjJSR083M0JCdHhBSlkzRHFaZFJibllMbkpibnB1cUlYYVlpUUQ5VW9wY3RfYm44WXRsb1BBdlpNckc2SGhneHFYMjViMUFxYkRDRG9vR2RKWEliTExQWDg0S1hIOFVVQk16ZGxMVW8tUHRmR1BhcDY3dkY2eFBpWUg5UzBnT09UM0lvc0t2X1BOV0MzVk0?oc=5"
+    ],
+    "source_names": [
+      "The Jakarta Post"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-27T11:13:11.713627+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "b6f5bc1a-ed98-4138-82bd-df446095fdb2",
+    "donor": "Malaysia",
+    "recipient": "UNRWA",
+    "recipient_type": "UN Agency",
+    "amount_text": "$1 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Malaysia has pledged an additional $1 million to support the United Nations Relief and Works Agency for Palestine Refugees in the Near East (UNRWA).",
+    "figure_quote": "US$1m",
+    "assumptions": [
+      "The donor is a government, not a private company."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMixwFBVV95cUxOREluMkF2bWgxQkJxVUN1ejJUYlprRFU2NnYxeU9rNEFjTExVSTJzUEIxMzBDRkdzWjFhVkc0aWFpOUpIeV9WYlJ2ajdJZThEQzIyaUVhMDY2bGxpVXdzNlUxRDZzZGZlMUc3WV8wX19QMG8wZXI4bmlDVnlKTjU0WXFMbjVRTEFONHM2SUd6SVFtOXNhVDFBd3JWRC1KNE4zdV9qUmtQWnp6cFc2YUo5SFFqbmhCZGJnNUJnVFp1MjVVaVlIeWhJ0gHMAUFVX3lxTE9QeGZBekZWa2F6ZFloSmJiMC1hZkpnT3VIOGkxSHptdV9KQWdMMW0tSUd0MTRWdzdUdURLenoxMTk4R0RxV0JQVnQ1emw0cVJYOWpiajNESmR3bmRiZ1NpbU1ERm5LbGN0Q09yTGhlY2hwVUN2LU9uNl9kZ0YxeGVISUZWSHJJRjdRRkFiUkZqd2x5ZHZKQ2pNUDAxeWlneVdSNVNLWHpkUmlvWkI5UGt1c3pxUE5OSHdWWnBLZS1YRS10bmIxYkdLdktUaw?oc=5"
+    ],
+    "source_names": [
+      "malaymail.com"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-27T11:13:37.803554+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "cfbddfb5-5767-463a-8b02-a585ecb7ea34",
+    "donor": "Qatar",
+    "recipient": "Iran Red Crescent Society",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Assistance in locating missing pilots",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Qatar has pledged assistance to the Iran Red Crescent Society in locating three missing Iranian pilots.",
+    "figure_quote": null,
+    "assumptions": [
+      "The donor is assumed to be the Qatari government or a state-affiliated entity, not a private company."
+    ],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.az/news/iran-red-crescent-says-qatar-pledges-to-help-locate-three-iranian-pilots"
+    ],
+    "source_names": [
+      "news.az"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-09-27T11:27:13.247839+00:00",
+    "is_duplicate_of": null
   }
 ]
