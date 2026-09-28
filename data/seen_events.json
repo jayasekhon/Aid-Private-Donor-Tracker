@@ -4821,5 +4821,55 @@
     ],
     "date_found": "2026-09-27T11:27:13.247839+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "94047162-ebf5-4df3-a01f-b07b932cd6dd",
+    "donor": "Ed Sheeran and Robert Kraft",
+    "recipient": "Gaza aid groups",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$4 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Gaza",
+    "status": "new_commitment",
+    "summary": "Ed Sheeran and Robert Kraft pledged $4 million for Gaza aid, but the specific recipients within Gaza are not detailed in the source text.",
+    "figure_quote": "$4 million",
+    "assumptions": [
+      "The specific nonprofit organizations receiving the funds are not named in the source text."
+    ],
+    "confidence_score": 5,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://www.ibtimes.co.uk/ed-sheeran-robert-kraft-pledge-gaza-aid-1820406"
+    ],
+    "source_names": [
+      "ibtimes.co.uk"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-09-28T12:48:00.358588+00:00",
+    "is_duplicate_of": "a0aae7fc-5aa2-4520-ab00-b0e75525492b"
   }
 ]
