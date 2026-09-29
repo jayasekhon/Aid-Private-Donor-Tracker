@@ -1,0 +1,346 @@
+{
+  "date": "2026-09-29",
+  "entries": [
+    {
+      "entry_id": "19fffc65-d717-4c5e-ae6a-ddb38ffa6b2c",
+      "donor": "Whira Photonics",
+      "recipient": "DGIST",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "300 million won",
+      "is_in_kind": true,
+      "in_kind_description": "semiconductor equipment parts",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Whira Photonics donated semiconductor equipment parts worth 300 million won to DGIST.",
+      "figure_quote": "300 million won in semiconductor equipment parts",
+      "assumptions": [
+        "Recipient type classified as 'Other nonprofit' as DGIST is likely a specific institution, not a global or multi-country operating NGO."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiVEFVX3lxTFAtdTVhZDJOQlVTUnlwZkJiSTVURVdySUpMNzdkS3JXeUVzakpyYUcwNS1kOE50OEZNQXpJZS1vZ3lIY0s4WW9LX3FMZzNNd19sX3BNTA?oc=5"
+      ],
+      "source_names": [
+        "DongA Science"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-29T11:56:52.445051+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "e4655e09-17e6-4bd7-90bd-57235b6c8f14",
+      "donor": "Sun King",
+      "recipient": "UN Energy Compact",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Sun King has committed to providing power to 200 million people by 2030 as part of the UN Energy Compact.",
+      "figure_quote": "200 Million People with Power by 2030",
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTDhQUWROVXp6M25xZXFOMGVOR21RTWt1cVRPMGtaVmd4TFozQmtWSllhZXpqVTFjMDA5NWtqUm0zbFJhbnZ2ZHVzS0VNb0pvNm9ZVm1RUGJ0S1BXUWZKYzdCR19OU19wWWhtX3M0aS1ySGJwS19FUnFGTHpqOTljek1EcVBraGVSYTlKZ0JCOF9vc21RcENfX1RsTS1FT3JPdEd5ZjBIMXItdldUdk5CdXFDRFk?oc=5"
+      ],
+      "source_names": [
+        "Green Building Africa"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-29T11:59:47.868722+00:00",
+      "is_duplicate_of": "18ff09ef-1d4a-4d48-8d0e-2def25fe3e4e"
+    },
+    {
+      "entry_id": "043c1deb-fb30-4c4e-bee5-92d8b1c0414e",
+      "donor": "Stray Kids’ Bang Chan",
+      "recipient": "Nepal flood recovery and rehabilitation care efforts",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "200 million Won",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Nepal",
+      "status": "new_commitment",
+      "summary": "Stray Kids' Bang Chan donated 200 million Won for rehabilitation care and Nepal flood recovery.",
+      "figure_quote": "200 million Won",
+      "assumptions": [
+        "The exact nonprofit organizations receiving the funds are not specified."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9sQy12QXNSZzBmclZSYldiaEFvWDlRT3FBMF9jRzlVUHY4cnduMzczZ0NtcUhWQUJleEhrUUlQMzhkZDJGM0k2S3dNTG5MdjBhNGRkaTRVaw?oc=5"
+      ],
+      "source_names": [
+        "The Korea Herald"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-29T12:02:17.821634+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "2d3af9d1-c421-405d-baaa-db92f4f04cc0",
+      "donor": "Norway",
+      "recipient": "UN Afghanistan Trust Fund",
+      "recipient_type": "UN Agency",
+      "amount_text": "$2.6 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Afghanistan",
+      "status": "new_commitment",
+      "summary": "Norway has provided a $2.6 million contribution to the UN Afghanistan Trust Fund to support humanitarian efforts in Afghanistan.",
+      "figure_quote": "$2.6 million",
+      "assumptions": [
+        "Norway is a government donor, not a private company."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.khaama.com/norway-provides-2-6-million-to-un-afghanistan-trust-fund/"
+      ],
+      "source_names": [
+        "khaama.com"
+      ],
+      "source_channels": [
+        "GDELT GKG"
+      ],
+      "date_found": "2026-09-29T12:04:39.885508+00:00",
+      "is_duplicate_of": "ae52b8b3-fd90-4e89-bc08-37d06ccb0543"
+    },
+    {
+      "entry_id": "70c2ca5c-bc9b-43ea-939b-f9c1dc984671",
+      "donor": "NEC Uzima",
+      "recipient": "NFSU Uganda Cyber Run",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Water",
+      "country_scope": "Uganda",
+      "status": "new_commitment",
+      "summary": "NEC Uzima donated water ahead of the NFSU Uganda Cyber Run event.",
+      "figure_quote": null,
+      "assumptions": [
+        "The recipient is assumed to be a nonprofit event organizer based on the context."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNl9VVXUyMldadk5fQkFJazJET19rX0xwY3RGV1g4MEF2a3RXY3JXQlJ6SkFrVGQ1ZE9FdXEzNzZtTW1XaVAyNF85OGRpV1pjMEhoa3FweUZQWDRoYU5Pd00tUW8zU1ZaNG0yZVNYWkY3YmtTMUZBRFJ1YnJISGtvUXVyYWlNc3BsblFVanVLYld1UdIBlwFBVV95cUxPc2Fib2dYQXdIOXplZzE3MGVFUGVNWENrMWw2bWs4Nkc1QnpteWoweGxnY3B0WmczdVJlQzBnYVd0bURRWlpiV2h1MWtuOS1qVGswUF9peWVNSy1NSlpuTjNUaWFWeE9LbVdhMy1xRjFmZU9vQUNNRFQ1VGQ5Q2E5M3l5SENjNnpCV0gzWUcyYnpPV3JaMVBJ?oc=5"
+      ],
+      "source_names": [
+        "UPDF"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-29T12:03:41.793354+00:00",
+      "is_duplicate_of": "5edf6379-2406-45f5-97d7-4bf8389d2882"
+    },
+    {
+      "entry_id": "c650a13e-4cf4-4070-a170-757b78b7795a",
+      "donor": "Optimus Bank",
+      "recipient": "maternal and emergency healthcare in Nigeria",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "blood drive",
+      "country_scope": "Nigeria",
+      "status": "new_commitment",
+      "summary": "Optimus Bank organized a blood drive to support maternal and emergency healthcare in Nigeria.",
+      "figure_quote": null,
+      "assumptions": [
+        "The specific nonprofit organizations benefiting from the blood drive are not named in the source text."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://dailypost.ng/2026/09/29/optimus-bank-champions-life-saving-blood-drive-to-support-maternal-emergency-healthcare-in-nigeria/"
+      ],
+      "source_names": [
+        "dailypost.ng"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-09-29T12:05:06.149475+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 94,
+    "gdelt_candidates_found": 619,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 330,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 3162,
+    "items_filtered_as_stale": 1831,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 433,
+    "clusters_analysed": 204,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 11,
+    "rejected_unnamed_recipient": 6,
+    "rejected_no_named_donor": 5,
+    "rejected_out_of_scope_country": 5,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 5,
+    "rejected_no_evidence": 5,
+    "entries_published": 6,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "PR Newswire - All Public Company News",
+      "url": "https://www.prnewswire.com/rss/news-releases-list.rss",
+      "error": "404 Client Error: Not Found for url: https://www.prnewswire.com/rss/news-releases-list.rss/"
+    },
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
