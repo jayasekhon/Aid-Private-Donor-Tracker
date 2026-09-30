@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-30",
+  "entries": [
+    {
+      "entry_id": "597accec-6f2c-42aa-a8ed-c9f166e9e90a",
+      "donor": "United Arab Emirates",
+      "recipient": "African Ebola response",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$10 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "The United Arab Emirates has committed $10 million to support the African response to the Ebola outbreak.",
+      "figure_quote": "$10 million",
+      "assumptions": [
+        "The recipient is described as 'African Ebola response', which is a vague category rather than a specific organization."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMixgFBVV95cUxOSkdpMUh3QnFBdnlZX3BLMG53UWNOenZCQWtZXzNFZVhWN3ZRR3ZDT3l0bmMzcWFFQVhrb0RUSU9MaWhJbnR1aDdlcDFnQVNDYzJ2ZkFRNjZLU2d2VU9jSFcxVVgzV1hmckRwMVpqc3dsWlliQ1doelhTZDJkdl9mRGlkTEpGZklZX1pSaHNKbXFiNzUwaTVqWGVKSTgzczZjSG9rS0ZOR1dsblZWWW9Yek5ZcW9DWVpCZGc3c1UwODE3MVE5a0E?oc=5"
+      ],
+      "source_names": [
+        "streamlinefeed.co.ke"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-09-30T11:44:39.210424+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 95,
+    "gdelt_candidates_found": 448,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 333,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2995,
+    "items_filtered_as_stale": 1823,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 426,
+    "clusters_analysed": 210,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 15,
+    "rejected_unnamed_recipient": 4,
+    "rejected_no_named_donor": 7,
+    "rejected_out_of_scope_country": 5,
+    "rejected_government_entity": 5,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 7,
+    "rejected_no_evidence": 4,
+    "entries_published": 1,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "PR Newswire - All Public Company News",
+      "url": "https://www.prnewswire.com/rss/news-releases-list.rss",
+      "error": "404 Client Error: Not Found for url: https://www.prnewswire.com/rss/news-releases-list.rss/"
+    },
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "Feed parse error: <unknown>:2:119: not well-formed (invalid token)"
+    }
+  ]
+}

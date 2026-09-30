@@ -5169,5 +5169,55 @@
     ],
     "date_found": "2026-09-29T12:05:06.149475+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "597accec-6f2c-42aa-a8ed-c9f166e9e90a",
+    "donor": "United Arab Emirates",
+    "recipient": "African Ebola response",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$10 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "The United Arab Emirates has committed $10 million to support the African response to the Ebola outbreak.",
+    "figure_quote": "$10 million",
+    "assumptions": [
+      "The recipient is described as 'African Ebola response', which is a vague category rather than a specific organization."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMixgFBVV95cUxOSkdpMUh3QnFBdnlZX3BLMG53UWNOenZCQWtZXzNFZVhWN3ZRR3ZDT3l0bmMzcWFFQVhrb0RUSU9MaWhJbnR1aDdlcDFnQVNDYzJ2ZkFRNjZLU2d2VU9jSFcxVVgzV1hmckRwMVpqc3dsWlliQ1doelhTZDJkdl9mRGlkTEpGZklZX1pSaHNKbXFiNzUwaTVqWGVKSTgzczZjSG9rS0ZOR1dsblZWWW9Yek5ZcW9DWVpCZGc3c1UwODE3MVE5a0E?oc=5"
+    ],
+    "source_names": [
+      "streamlinefeed.co.ke"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-09-30T11:44:39.210424+00:00",
+    "is_duplicate_of": null
   }
 ]
