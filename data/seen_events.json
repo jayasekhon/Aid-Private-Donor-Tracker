@@ -5219,5 +5219,307 @@
     ],
     "date_found": "2026-09-30T11:44:39.210424+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "4ac74266-84d5-4e46-82cc-a6ca833965cd",
+    "donor": "Partners (private sector entities among others)",
+    "recipient": "UNFPA",
+    "recipient_type": "UN Agency",
+    "amount_text": "$715 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Various governments and partners, including private sector entities, pledged over $715 million for reproductive health initiatives at the UN General Assembly.",
+    "figure_quote": "$715 million",
+    "assumptions": [
+      "The source text does not specify individual private sector donors, only that they were among the partners."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdTU0b3AtQjNpcmdLSGo5ZWlTOXlmeENmSWpHMDhuVk84dG90c3BvaF9TRTZpNkxpeG1oeTk0c3dvYkVNVnFsVW5Ya2xtUmtWWWdpbDIzUDdCRlpYbnhCTXFxenpmU3ljdE5senZfRV92LTZNa3M3aE1YS083bThrdjdsWVJkSWc0WGhBX04wOXRvRUpLTVd4Tm50ZjVXYUtVaVM2T2MxTQ?oc=5",
+      "https://www.globenewswire.com/news-release/2026/09/24/3368659/0/en/countries-and-partners-commit-more-than-us-715-million-for-reproductive-health.html"
+    ],
+    "source_names": [
+      "Peoples Gazette Nigeria",
+      "globenewswire.com"
+    ],
+    "source_channels": [
+      "Google News",
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-01T12:12:55.244130+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "41b6b2f2-b3c4-4ac1-bf89-ef3c553d83e5",
+    "donor": "Malaysia",
+    "recipient": "UN agency for Palestinian refugees",
+    "recipient_type": "UN Agency",
+    "amount_text": "$1 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Malaysia has pledged an additional $1 million to support the UN agency responsible for Palestinian refugees.",
+    "figure_quote": "US$1m",
+    "assumptions": [
+      "The donor is a government, not a private company."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMixwFBVV95cUxOREluMkF2bWgxQkJxVUN1ejJUYlprRFU2NnYxeU9rNEFjTExVSTJzUEIxMzBDRkdzWjFhVkc0aWFpOUpIeV9WYlJ2ajdJZThEQzIyaUVhMDY2bGxpVXdzNlUxRDZzZGZlMUc3WV8wX19QMG8wZXI4bmlDVnlKTjU0WXFMbjVRTEFONHM2SUd6SVFtOXNhVDFBd3JWRC1KNE4zdV9qUmtQWnp6cFc2YUo5SFFqbmhCZGJnNUJnVFp1MjVVaVlIeWhJ0gHMAUFVX3lxTE9QeGZBekZWa2F6ZFloSmJiMC1hZkpnT3VIOGkxSHptdV9KQWdMMW0tSUd0MTRWdzdUdURLenoxMTk4R0RxV0JQVnQ1emw0cVJYOWpiajNESmR3bmRiZ1NpbU1ERm5LbGN0Q09yTGhlY2hwVUN2LU9uNl9kZ0YxeGVISUZWSHJJRjdRRkFiUkZqd2x5ZHZKQ2pNUDAxeWlneVdSNVNLWHpkUmlvWkI5UGt1c3pxUE5OSHdWWnBLZS1YRS10bmIxYkdLdktUaw?oc=5"
+    ],
+    "source_names": [
+      "Malay Mail"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-01T12:13:59.843698+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "147b3793-c66f-4bb6-b3e2-c04df68307f0",
+    "donor": "Hedge Fund CEO",
+    "recipient": "Carnegie Mellon University",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$3 billion",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "A hedge fund CEO has made a record $3 billion donation to Carnegie Mellon University.",
+    "figure_quote": "$3 billion",
+    "assumptions": [
+      "The donor is identified as a Hedge Fund CEO, not a specific company name."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMilgFBVV95cUxOaXphSGE5Rl83b05sU0FyeDVyRjNsTG5yVUEzRnJvTEx1SV93VWhtbTdPaW53cEo0STZRR2tJanJ0QTlycXdLZmR4ejF4NkhJQkhLZGFsOVhZVnpyblFYRVRvQy11WHYtTVl0eVNkNTY5cGJucnpaOHROaWFuQ0VsX29yWGhCaUFFeXR2U2RwS29jSUNTWWc?oc=5"
+    ],
+    "source_names": [
+      "Arise News"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-01T12:14:19.331880+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "3f5d712e-9059-43b0-bf8c-0b501dce2b1a",
+    "donor": "Pollo Campero",
+    "recipient": "Direct Relief",
+    "recipient_type": "NGO",
+    "amount_text": "$25,000",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Venezuela and Colombia",
+    "status": "new_commitment",
+    "summary": "Pollo Campero donated $25,000 to Direct Relief to support earthquake victims in Venezuela and Colombia.",
+    "figure_quote": "$25,000",
+    "assumptions": [],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMikwJBVV95cUxOdGxtb2JVU0pEeTY3Ti1kdmNxRGFSbDdoOFdRYS0xcXhRTWlvV3ZJbWhrNEktYUs3LU9hOUl2OVpmOGwzU2dJa3BZbjBTSjg4NDYzUGs2OHQ5TVZFSnVRQ2Z5Vkd4VlRhYi1yTVFKVzR6by1wTUhVV05QNUZWZlJOR01iZDRqU3RpWE1KelBqYU5IQTM1NWRfQVk1aEQ5MEpfYWJ3QzhiTjItMmxCaWpGZzFnbXRyQWVqY1gxUDlKZ0dVRVJBdWhrTVRUMHBObUpVeDlDYmdKTWJlX3JUY2prbnQzTnJlZ0FUVk82b3p0bmhRQkRfcWJLQkdGdlM0Z2RueXBXc05md3VMYWo2Y0NoWUhvMA?oc=5",
+      "https://www.prnewswire.com/news-releases/pollo-campero-donates-25-000-to-direct-relief-following-national-fundraising-day-for-earthquake-victims-in-venezuela-and-colombia-302895098.html"
+    ],
+    "source_names": [
+      "prnewswire.com",
+      "PR Newswire"
+    ],
+    "source_channels": [
+      "Google News",
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-01T12:18:39.349189+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "0bdbe51b-028d-4684-9fd9-85729b115b3d",
+    "donor": "Priceless Events",
+    "recipient": "Cruz Roja Colombiana",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Partnership for earthquake relief efforts",
+    "country_scope": "Colombia",
+    "status": "new_commitment",
+    "summary": "Priceless Events, in collaboration with EDC Medellín and Prevail Parties, has partnered with Cruz Roja Colombiana for earthquake relief efforts.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.einpresswire.com/article/946582929/more-than-a-festival-priceless-events-ties-edc-medell-n-and-prevail-parties-to-cruz-roja-colombiana-earthquake-relief?ref=rss&code=3Tq8emQY2Pi7_wee"
+    ],
+    "source_names": [
+      "einpresswire.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-01T12:30:08.254844+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "f8d52812-417b-46f4-a141-989f49e1b17b",
+    "donor": "CBP",
+    "recipient": "World Vision",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "seized goods",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "CBP donated seized goods to World Vision for humanitarian support.",
+    "figure_quote": null,
+    "assumptions": [
+      "CBP is considered a private-sector entity for the purpose of this tracker as it is not a government body itself but an agency involved in private-sector activities."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.einpresswire.com/article/946503733/cbp-turns-seized-goods-into-humanitarian-support-through-world-vision-donation"
+    ],
+    "source_names": [
+      "einpresswire.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-01T12:31:58.978457+00:00",
+    "is_duplicate_of": null
   }
 ]
