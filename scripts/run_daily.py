@@ -232,11 +232,13 @@ def main():
     rejected_unspecified_scope_excluded = 0
     rejected_donor_is_monitored_recipient = 0
     rejected_no_evidence = 0
+    rejected_government_donor = 0
 
     from src.extraction import (
         FatalExtractionError, is_generic_donor, is_generic_recipient, is_out_of_scope_country,
         assumptions_admit_missing_name, DONOR_NAME_CONTEXT_WORDS, RECIPIENT_NAME_CONTEXT_WORDS,
         UNSPECIFIED_SCOPE, is_government_entity, match_curated_recipient,
+        is_sovereign_state_donor, assumptions_admit_non_private_donor,
     )
 
     def _cluster_sources(cluster) -> str:
@@ -316,6 +318,30 @@ def main():
                     rejected_government_entity += 1
                     logger.info("Rejecting cluster %s (via %s): government entity on one side (donor %r, "
                                  "recipient %r) -- not a private-sector-to-nonprofit donation.",
+                                 cluster.cluster_id, _cluster_sources(cluster), result.donor, result.recipient)
+                    continue
+                # A week of real published entries turned up a much bigger
+                # version of the same mistake: a bare SOVEREIGN STATE as the
+                # donor -- "Indonesia" -> UNRWA, "Malaysia" -> UNRWA,
+                # "Norway" -> UN Afghanistan Trust Fund, "Qatar" -> Palestinian
+                # children, "Qatar" -> Iran Red Crescent Society, "United Arab
+                # Emirates" -> African Ebola response -- six of that week's
+                # ~25 published entries, all bilateral/government aid, not a
+                # private-sector donation at all. None of those strings
+                # contain a GOVERNMENT_ENTITY_MARKERS phrase (just the
+                # country's own name), so the check above never caught them.
+                # Four of those six had the model's own assumptions admitting
+                # it outright ("Norway is a government donor, not a private
+                # company") -- nothing acted on that either, same gap as the
+                # World Bank case above. Checked both ways: the donor field
+                # itself against a sovereign-state name list, and the
+                # assumptions text for a self-admission the first check can't
+                # structurally catch (e.g. an embassy or state agency name
+                # rather than the bare country).
+                if is_sovereign_state_donor(result.donor) or assumptions_admit_non_private_donor(result.assumptions):
+                    rejected_government_donor += 1
+                    logger.info("Rejecting cluster %s (via %s): donor %r is a sovereign state/government "
+                                 "donor, not private-sector (recipient %r).",
                                  cluster.cluster_id, _cluster_sources(cluster), result.donor, result.recipient)
                     continue
                 # This tracker watches donations TO the curated 50 (UNICEF, WFP,
@@ -471,11 +497,11 @@ def main():
     logger.info("%s %d entries (%d duplicates skipped, %d rejected as no named recipient, %d rejected as no "
                  "named donor, %d rejected as out-of-scope country, %d rejected as a government entity, "
                  "%d rejected as unspecified scope, %d rejected as donor-is-monitored-recipient, %d rejected "
-                 "for no evidence).",
+                 "for no evidence, %d rejected as a government/sovereign-state donor).",
                  "Would publish" if is_gdelt_test else "Published", len(entries),
                  duplicates_skipped, rejected_unnamed_recipient, rejected_no_named_donor,
                  rejected_out_of_scope_country, rejected_government_entity, rejected_unspecified_scope_excluded,
-                 rejected_donor_is_monitored_recipient, rejected_no_evidence)
+                 rejected_donor_is_monitored_recipient, rejected_no_evidence, rejected_government_donor)
 
     # Highest confidence first -- the site should lead with its strongest,
     # best-evidenced findings rather than whatever order clusters happened
@@ -508,6 +534,7 @@ def main():
         "rejected_unspecified_scope_excluded": rejected_unspecified_scope_excluded,
         "rejected_donor_is_monitored_recipient": rejected_donor_is_monitored_recipient,
         "rejected_no_evidence": rejected_no_evidence,
+        "rejected_government_donor": rejected_government_donor,
         "entries_published": len(entries),
         "high_confidence_count": sum(1 for e in entries if e.confidence_score >= high_confidence_threshold),
     }

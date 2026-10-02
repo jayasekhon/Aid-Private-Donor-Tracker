@@ -56,6 +56,12 @@ GENERIC_DONOR_INDUSTRY_NOUNS = {
     "automaker", "car maker", "airline", "bank", "firm", "business",
     "company", "corporation", "organisation", "organization", "supermarket",
     "builder", "construction company", "property developer",
+    # A real run published donor "Hedge Fund CEO" for a $3B Carnegie
+    # Mellon gift -- a job title, not a name, same unusable shape as
+    # "Housebuilder" above (the model's own assumptions even said so:
+    # "The donor is identified as a Hedge Fund CEO, not a specific
+    # company name").
+    "hedge fund ceo", "ceo", "billionaire", "tech billionaire", "executive",
 }
 
 
@@ -192,6 +198,104 @@ def is_government_entity(name: str) -> bool:
     return any(marker in n for marker in GOVERNMENT_ENTITY_MARKERS)
 
 
+# A full week of real published entries turned up a much bigger version
+# of the same mistake GOVERNMENT_ENTITY_MARKERS already guards against:
+# a bare SOVEREIGN STATE name as the donor -- "Indonesia" -> UNRWA,
+# "Malaysia" -> UNRWA, "Norway" -> UN Afghanistan Trust Fund, "Qatar" ->
+# Palestinian children, "Qatar" -> Iran Red Crescent Society, "United
+# Arab Emirates" -> African Ebola response -- six of that week's ~25
+# published entries, all bilateral/government aid, none of them a
+# private-sector donation at all. None of those strings contain any
+# GOVERNMENT_ENTITY_MARKERS phrase (no "government"/"ministry of" --
+# just the country's own name), so that check never had a chance.
+# Checked via EXACT match (after stripping a leading "the"), never a
+# substring: a substring check would wrongly reject real philanthropic
+# entities that happen to share a country's name, e.g. "Qatar
+# Foundation" or "Qatar Airways" are real potential donors in their own
+# right, not the State of Qatar.
+SOVEREIGN_STATE_DONOR_NAMES = {
+    "afghanistan", "albania", "algeria", "andorra", "angola",
+    "antigua and barbuda", "argentina", "armenia", "australia", "austria",
+    "azerbaijan", "bahamas", "bahrain", "bangladesh", "barbados", "belarus",
+    "belgium", "belize", "benin", "bhutan", "bolivia",
+    "bosnia and herzegovina", "botswana", "brazil", "brunei", "bulgaria",
+    "burkina faso", "burundi", "cambodia", "cameroon", "canada",
+    "cape verde", "central african republic", "chad", "chile", "china",
+    "colombia", "comoros", "costa rica", "croatia", "cuba", "cyprus",
+    "czech republic", "czechia", "denmark", "djibouti", "dominica",
+    "dominican republic", "drc", "ecuador", "egypt", "el salvador",
+    "equatorial guinea", "eritrea", "estonia", "eswatini", "ethiopia",
+    "fiji", "finland", "france", "gabon", "gambia", "georgia", "germany",
+    "ghana", "greece", "grenada", "guatemala", "guinea", "guinea-bissau",
+    "guyana", "haiti", "honduras", "hungary", "iceland", "india",
+    "indonesia", "iran", "iraq", "ireland", "israel", "italy",
+    "ivory coast", "jamaica", "japan", "jordan", "kazakhstan", "kenya",
+    "kiribati", "kosovo", "kuwait", "kyrgyzstan", "laos", "latvia",
+    "lebanon", "lesotho", "liberia", "libya", "liechtenstein", "lithuania",
+    "luxembourg", "madagascar", "malawi", "malaysia", "maldives", "mali",
+    "malta", "marshall islands", "mauritania", "mauritius", "mexico",
+    "micronesia", "moldova", "monaco", "mongolia", "montenegro", "morocco",
+    "mozambique", "myanmar", "namibia", "nauru", "nepal", "netherlands",
+    "new zealand", "nicaragua", "niger", "nigeria", "north korea",
+    "north macedonia", "norway", "oman", "pakistan", "palau", "panama",
+    "papua new guinea", "paraguay", "peru", "philippines", "poland",
+    "portugal", "qatar", "romania", "russia", "rwanda",
+    "saint kitts and nevis", "saint lucia",
+    "saint vincent and the grenadines", "samoa", "san marino",
+    "sao tome and principe", "saudi arabia", "senegal", "serbia",
+    "seychelles", "sierra leone", "singapore", "slovakia", "slovenia",
+    "solomon islands", "somalia", "south africa", "south korea",
+    "south sudan", "spain", "sri lanka", "sudan", "suriname", "sweden",
+    "switzerland", "syria", "taiwan", "tajikistan", "tanzania", "thailand",
+    "timor-leste", "togo", "tonga", "trinidad and tobago", "tunisia",
+    "turkey", "turkiye", "türkiye", "turkmenistan", "tuvalu", "uae",
+    "uganda", "ukraine", "united arab emirates", "united kingdom",
+    "united states", "united states of america", "uruguay", "us", "usa",
+    "uk", "uzbekistan", "vanuatu", "venezuela", "vietnam", "yemen",
+    "zambia", "zimbabwe",
+}
+
+
+def is_sovereign_state_donor(donor: str) -> bool:
+    if not donor or not donor.strip():
+        return False
+    d = donor.strip().lower()
+    if d.startswith("the "):
+        d = d[4:]
+    return d in SOVEREIGN_STATE_DONOR_NAMES
+
+
+# A textual counterpart to is_sovereign_state_donor, for the cases it
+# can't catch structurally -- a donor name that ISN'T a bare country
+# name but the model's own assumptions still flag as government/
+# bilateral rather than private-sector (a real case: "Norway is a
+# government donor, not a private company", "The donor 'Qatar' is
+# assumed to be a government entity, not a private company" -- these
+# would ALSO be caught by is_sovereign_state_donor since the donor field
+# itself is just the country name, but this is the backstop for when a
+# future case phrases the donor field differently, e.g. an embassy or
+# state agency name, while still self-flagging the same way in
+# assumptions). Deliberately requires "not" AND "private" AND a non-
+# private-actor word all in the SAME assumption sentence, not any one
+# alone: "private" alone would false-positive on ordinary "the private
+# company name is not provided" admissions, and "government"/"state"
+# alone would false-positive on legitimate stories simply set in or
+# about a government context.
+NON_PRIVATE_DONOR_INDICATOR_WORDS = {
+    "government", "state entity", "state-affiliated", "state affiliated",
+    "sovereign", "bilateral", "multilateral", "intergovernmental",
+    "public sector", "state-owned", "state owned",
+}
+
+
+def assumptions_admit_non_private_donor(assumptions: list[str]) -> bool:
+    for a in assumptions or []:
+        a_l = a.lower()
+        if "not" in a_l and "private" in a_l and any(w in a_l for w in NON_PRIVATE_DONOR_INDICATOR_WORDS):
+            return True
+    return False
+
+
 # GENERIC_DONOR_MARKERS/GENERIC_RECIPIENT_MARKERS above are a fixed
 # phrase list, which will always be one step behind the open-ended ways
 # a source can describe an unnamed entity — a real run published "A
@@ -222,8 +326,18 @@ def is_government_entity(name: str) -> bool:
 #     floods", each with this exact assumption shape) were never
 #     recognized as vague at all, let alone linked to each other as
 #     probably the same story (see store.py's find_possible_match).
+#   - only matching "is not"/"isn't"/"wasn't"/"was not" missed a THIRD
+#     negation shape: "The source text does NOT SPECIFY individual
+#     private sector donors..." -- "does not", not "is not". Widened to
+#     the common negated-verb forms, and the tail to word-stems
+#     (provid\w*, specif\w*, etc.) rather than exact inflections, since
+#     this pattern has now been widened three times for exactly this
+#     kind of near-miss and stems should absorb the next one without
+#     another edit.
 NAME_MISSING_ADMISSION_PATTERN = re.compile(
-    r"\b(?:is not|isn't|wasn't|was not)\b.*\b(?:provided|specified|given|named|disclosed|stated)\b"
+    r"\b(?:is not|isn't|are not|aren't|was not|wasn't|were not|weren't|"
+    r"does not|doesn't|do not|don't|did not|didn't)\b.*"
+    r"\b(?:provid\w*|specif\w*|nam\w*|disclos\w*|stat\w*|identif\w*|given|mention\w*)\b"
 )
 # Which side (donor vs. recipient) an admission is about is inferred from
 # a word in the admission itself -- e.g. "name of the HOUSEBUILDING
