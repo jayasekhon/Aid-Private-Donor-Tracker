@@ -5521,5 +5521,203 @@
     ],
     "date_found": "2026-10-01T12:31:58.978457+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "e64adabe-aa8e-44f1-a2f0-03de88685049",
+    "donor": "Benson-Idahosa",
+    "recipient": "Edo CCS",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "borehole",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "Benson-Idahosa donated a borehole to Edo CCS to mark a birthday.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMikgFBVV95cUxNT00yY25vc3ItN1MzdHVDYkVXcFozdkUyVndVeDVNM3QwaVo3RXg4YVRmc3pQdzJaRUxodUpDZ3lyZ3FYNVhhV2lWYWlNTnY3SUtqZUpnc3ZlNGlZQVVCN2lrMEtKZGRDdWZTVENVQks1X3hmSER5OVpsazAyNGtzN0JuYnI3R0hVRTRLeS1mUndJdw?oc=5"
+    ],
+    "source_names": [
+      "Tribune Online"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-03T10:59:47.000519+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "6d32cd12-958c-4348-9a29-c4dc88ca74f5",
+    "donor": "SICO",
+    "recipient": "Bahrain banks",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Sponsorship for a meeting",
+    "country_scope": "Unspecified / global",
+    "status": "unclear",
+    "summary": "SICO, a Bahrain-based investment bank, sponsored a meeting of Bahraini banks in Bangkok.",
+    "figure_quote": null,
+    "assumptions": [
+      "The nature of the sponsorship (financial or in-kind) is not explicitly detailed beyond the event being sponsored."
+    ],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVWNuekFjSFBWeXB5WEFwZUp4T0kzb0FIaURKaEs2UTRYenJBOGVrOUN3SEk5ZWNhZmFEaVdxSFlYcVd0cUlGYmpUdE9KSm9vMk9OQjZhcUpvVGtOWVJ1LUhfaWRpMnZ0ZFNHclIxdlUxcFFKa3RZbWlQWmJLVXNuMEMtVkhraTF0T29WaFVmQlNHZU9RWWc?oc=5"
+    ],
+    "source_names": [
+      "Gulf Daily News (Bahrain)"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-03T10:59:53.935696+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "a690c063-314b-4bd0-ba13-60064a56bbe5",
+    "donor": "Optimus Bank",
+    "recipient": "maternal and emergency healthcare services in Nigeria",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "blood drive",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "Optimus Bank organized a blood drive to support maternal and emergency healthcare in Nigeria.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific nonprofit organizations benefiting from the blood drive are not named in the source text."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://dailypost.ng/2026/09/29/optimus-bank-champions-life-saving-blood-drive-to-support-maternal-emergency-healthcare-in-nigeria/"
+    ],
+    "source_names": [
+      "dailypost.ng"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-03T11:05:11.857297+00:00",
+    "is_duplicate_of": "c650a13e-4cf4-4070-a170-757b78b7795a"
+  },
+  {
+    "entry_id": "52d17e54-ffb4-47db-bf45-a698c4d1bf75",
+    "donor": "U.S. Customs and Border Protection (CBP)",
+    "recipient": "World Vision",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Seized goods",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "U.S. Customs and Border Protection (CBP) has donated seized goods to World Vision for humanitarian support.",
+    "figure_quote": null,
+    "assumptions": [
+      "The exact nature and value of the seized goods are not specified."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.einpresswire.com/article/946503733/cbp-turns-seized-goods-into-humanitarian-support-through-world-vision-donation"
+    ],
+    "source_names": [
+      "einpresswire.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-03T11:16:34.464703+00:00",
+    "is_duplicate_of": null
   }
 ]
