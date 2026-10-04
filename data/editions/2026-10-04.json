@@ -1,0 +1,200 @@
+{
+  "date": "2026-10-04",
+  "entries": [
+    {
+      "entry_id": "9a07a0c7-3fd6-4650-b4fe-17467c357f70",
+      "donor": "Asian Development Bank",
+      "recipient": "Unspecified recipients for Ebola combat in Central Africa",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$13 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Central Africa",
+      "status": "new_commitment",
+      "summary": "Asian Development Bank pledges $13 million to help combat the Ebola outbreak in Central Africa.",
+      "figure_quote": "$13M",
+      "assumptions": [
+        "The specific recipients within Central Africa are not named, only the region and purpose."
+      ],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 5,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNaDByVS10dkNYNWl2LWxzMzBGS21TWmZIN0pkdFZaS01Ma3NGN3NVeXppZnl4LWtDdXhHZGdrdHVYRlJ2d3lYTktHVDc3VXdCZ09vdEdxdzF6OUdMcVJFUDN3ckxsOUZFeXVGdzZMb1dWR19pODdkZXZGVnc5LWl6U3RXMGtSZ0hXbUdNd0hmTExSbDFLd1FmQXFRNEZfQ0tsdXdPSzRlT2h5WlU?oc=5",
+        "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUFFaZnpGQTBTQ2o1QlA2aXZFQnEwWDNUSGVrZ0YxRWhBeFdONWlhNnZ4M2NRVGFNQ1BwMGxjcXBaQl9GbkNfMXo4YzEzMnBJbm45WWJOZkxSZXg1b0hQQ2VPZVdQWDNxUDRteEQ0QlZSdC1oWHRmVVRlZXpGWUxqT0pPdEMxeWMtZjdjLVM1aGV3bF9uZmJz?oc=5",
+        "https://news.google.com/rss/articles/CBMipAFBVV95cUxPOGFxYy1JY1Ytbkl3aTV4V2pJNHdxVS1MS3E4VzNiS2ZIcXlCeGFSOWo3WnpBMFQ1cmdhZ2ctOG4tNXI4WFFnSjlmb0g5b1JuYnN3dzFNdWw2QUthVmZjVU5sVjlCOWF4RnF5N0l4MmN6RzFONjZaUlBzT0dNeF9KcGZDOVdJVGJMRXREV19mU0pKTnpuZGlOd2F6TENTU3ktLW9hRA?oc=5",
+        "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZXhGQmRxSGI0dXdMU1ZUcVNFanV2R0lJbFpKa1l5M3hNdnNZWks0RDRRWHg4NjVZTFMtOHd6QV9rOWNjWVRhbGJrN1JfUzU2cjJhZURXbG9UdzJtZjRldkdLUGxXUkthS3l5Z184ak1qMkxpUEFZSm94WkxCMmVkUDdSUUZlVWoyZi1mVTFGV0NlazFDYjB3?oc=5",
+        "https://news.google.com/rss/articles/CBMisAFBVV95cUxQemc0UGk4OC1ub2hvdVhCMUZwMDdTQllJSElISTRXd0w0YTFBLUNnZ2dMV19jMlhpSWRGeG9jSkNqSmJuTERVMEl3bVNhQVk2WV9yUmtDajYzbl9Cb3plZmdDOHM5N2FjOE1PeVl6M2EwV3I5bHBiMldTblRIdWVsbHJaR3ZCbVc5WnZpMVFzT0ZHOC1TdjBmUmNucEY5cUc1RFhpTThtRG9zMWYzNUsyZA?oc=5"
+      ],
+      "source_names": [
+        "The Financial Express",
+        "Nairametrics",
+        "Weekend Post",
+        "Reuters",
+        "97.9 WEVE"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-04T11:44:27.038588+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "b6c060bb-e0ff-4acd-af6e-85f5093b9597",
+      "donor": "Whira Photonics",
+      "recipient": "DGIST",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "semiconductor equipment parts",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Whira Photonics donated semiconductor equipment parts worth 300 million won to DGIST.",
+      "figure_quote": "300 million won in semiconductor equipment parts",
+      "assumptions": [
+        "Recipient type classified as 'Other nonprofit' based on the nature of DGIST as a research institution."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiVEFVX3lxTFAtdTVhZDJOQlVTUnlwZkJiSTVURVdySUpMNzdkS3JXeUVzakpyYUcwNS1kOE50OEZNQXpJZS1vZ3lIY0s4WW9LX3FMZzNNd19sX3BNTA?oc=5"
+      ],
+      "source_names": [
+        "DongA Science"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-04T11:39:28.049398+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "4959644a-c98b-4341-8ddd-acc0ff4230e8",
+      "donor": "Sun King",
+      "recipient": "UN Energy Compact",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Sun King has committed to providing power to 200 million people by 2030 as part of the UN Energy Compact.",
+      "figure_quote": "200 Million People with Power by 2030",
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTDhQUWROVXp6M25xZXFOMGVOR21RTWt1cVRPMGtaVmd4TFozQmtWSllhZXpqVTFjMDA5NWtqUm0zbFJhbnZ2ZHVzS0VNb0pvNm9ZVm1RUGJ0S1BXUWZKYzdCR19OU19wWWhtX3M0aS1ySGJwS19FUnFGTHpqOTljek1EcVBraGVSYTlKZ0JCOF9vc21RcENfX1RsTS1FT3JPdEd5ZjBIMXItdldUdk5CdXFDRFk?oc=5"
+      ],
+      "source_names": [
+        "Green Building Africa"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-04T11:42:03.939786+00:00",
+      "is_duplicate_of": "e4655e09-17e6-4bd7-90bd-57235b6c8f14"
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 99,
+    "gdelt_candidates_found": 248,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 291,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2707,
+    "items_filtered_as_stale": 1799,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 360,
+    "clusters_analysed": 189,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 7,
+    "rejected_unnamed_recipient": 1,
+    "rejected_no_named_donor": 8,
+    "rejected_out_of_scope_country": 5,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 6,
+    "rejected_no_evidence": 4,
+    "rejected_government_donor": 5,
+    "entries_published": 3,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "Feed parse error: <unknown>:2:119: not well-formed (invalid token)"
+    }
+  ]
+}
