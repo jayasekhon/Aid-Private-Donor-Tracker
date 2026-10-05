@@ -5875,5 +5875,202 @@
     ],
     "date_found": "2026-10-04T11:44:27.038588+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "0989443b-049a-4c79-bf59-17fa4084645d",
+    "donor": "Amazon India",
+    "recipient": "relief efforts in flood-hit areas of Nepal",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "relief efforts",
+    "country_scope": "Nepal",
+    "status": "new_commitment",
+    "summary": "Amazon India has provided support for relief efforts in the flood-affected regions of Nepal.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific nonprofit organizations involved in the relief efforts are not named."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQzBEaGwySVdiTlNscDBlQ2NibFlXejl2REJUYi1iQW5OcmxBVENSenhkZDBnSU9BRFdOZFp5UUw1WldjdE5oQVFrMVlQQmp5eWtYLVRVSHQ2ZlBPUUJ6LXZYUFprck5QYnVkalEwTHo0Sk5YMTFMTHNKbllkbW9WMkFFTlZENWw4UGc?oc=5"
+    ],
+    "source_names": [
+      "aboutamazon.in"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-05T13:11:42.000614+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "279cea21-e705-4aeb-8e29-613d903f63dc",
+    "donor": "Bang Chan",
+    "recipient": "World Vision",
+    "recipient_type": "INGO",
+    "amount_text": "100 million KRW",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Bang Chan, a member of Stray Kids, donated 100 million KRW to World Vision to support children's dreams.",
+    "figure_quote": "KRW 100 million",
+    "assumptions": [],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ScmVocHpJMnRzSl9sOXlrOGtLWDNObndfblp4MTB2T29raGxUc3VuNl9NMWRMVkh4WWhla3hiVWo2eU1ycml2SE9zS1JHVFpUTGl6VHpOZEtPQ2lmTE9lYTR5SmFlMGMzZ3R2R1VHaVBkYXNDYXFoRw?oc=5",
+      "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4MldiczlyUXF0d0ladTlfbnFIZnlPbnZZaWFGbGxtWEVGM2xmRjVLSWtIV1gzYmNRYjR6aGZ6eHE2SGpOVnBPckswVnVkUFo3?oc=5"
+    ],
+    "source_names": [
+      "starnewskorea.com",
+      "매일경제"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-05T13:15:29.120374+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "45c309a4-85a8-48a2-a0de-bed753c1ba81",
+    "donor": "Springfield Beer Company",
+    "recipient": "International PolioPlus Fund",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Springfield Beer Company pledged to donate $1 for every pint of Golden Lager sold to the International PolioPlus Fund to support polio eradication efforts.",
+    "figure_quote": "$1 will be donated for each pint sold",
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.illinoistimes.com/arts-culture/pints-for-polio/"
+    ],
+    "source_names": [
+      "illinoistimes.com"
+    ],
+    "source_channels": [
+      "GDELT GKG"
+    ],
+    "date_found": "2026-10-05T13:17:26.328050+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "9dfd710d-5668-4b8b-b1b1-f9b1b35abeff",
+    "donor": "Priceless Events",
+    "recipient": "Cruz Roja Colombiana",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Partnership for earthquake relief efforts",
+    "country_scope": "Colombia",
+    "status": "new_commitment",
+    "summary": "Priceless Events, in collaboration with EDC Medellín and Prevail Parties, has partnered with Cruz Roja Colombiana for earthquake relief efforts.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.einpresswire.com/article/946582929/more-than-a-festival-priceless-events-ties-edc-medell-n-and-prevail-parties-to-cruz-roja-colombiana-earthquake-relief",
+      "https://www.einpresswire.com/article/946582929/more-than-a-festival-priceless-events-ties-edc-medell-n-and-prevail-parties-to-cruz-roja-colombiana-earthquake-relief?ref=rss&code=3Tq8emQY2Pi7_wee"
+    ],
+    "source_names": [
+      "einpresswire.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-05T13:28:41.974930+00:00",
+    "is_duplicate_of": "0bdbe51b-028d-4684-9fd9-85729b115b3d"
   }
 ]
