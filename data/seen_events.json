@@ -6271,5 +6271,103 @@
     ],
     "date_found": "2026-10-06T12:51:33.449631+00:00",
     "is_duplicate_of": "f8d52812-417b-46f4-a141-989f49e1b17b"
+  },
+  {
+    "entry_id": "bef448e6-b180-49ed-ba64-523689c09b5c",
+    "donor": "Sun King",
+    "recipient": "UN Energy Compact",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Sun King has committed to providing power to 200 million people by 2030 as part of the UN Energy Compact.",
+    "figure_quote": "200 Million People with Power by 2030",
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTDhQUWROVXp6M25xZXFOMGVOR21RTWt1cVRPMGtaVmd4TFozQmtWSllhZXpqVTFjMDA5NWtqUm0zbFJhbnZ2ZHVzS0VNb0pvNm9ZVm1RUGJ0S1BXUWZKYzdCR19OU19wWWhtX3M0aS1ySGJwS19FUnFGTHpqOTljek1EcVBraGVSYTlKZ0JCOF9vc21RcENfX1RsTS1FT3JPdEd5ZjBIMXItdldUdk5CdXFDRFk?oc=5"
+    ],
+    "source_names": [
+      "Green Building Africa"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-07T12:29:53.479935+00:00",
+    "is_duplicate_of": "4959644a-c98b-4341-8ddd-acc0ff4230e8"
+  },
+  {
+    "entry_id": "f92ea55f-ad63-4bde-a545-8e90d19fd403",
+    "donor": "Educo",
+    "recipient": "national mobilization",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "school kits",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Educo, an NGO, is providing 11,000 school kits as part of a national back-to-school initiative.",
+    "figure_quote": "11,000 school kits",
+    "assumptions": [
+      "The recipient is described as a 'national mobilization', which is interpreted as a collective effort rather than a specific organization."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiuAFBVV95cUxORWJMS19TbGQtRElhWkRUeWNnTElVbG43THBGbDFUc3ZXa0tTYjBYUzU5akFtTWRyQ1M4N1NfVDlMV0RqSDU5T0tDcVZXY2lJaEVVZDhNSTZDeWItdUFDd0NmMXRBNHJEWlRpX29pU0VkQ1MwMjhnVjJzXzRBb3F2WVFhOHAzcXVzTGdoWUUzRHNNNHpodVVLYl9mLTM0aWc5NFpsQUN1dS1RcG5EMTNLM1pLdWNRcjRG?oc=5"
+    ],
+    "source_names": [
+      "beninwebtv.com"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-07T12:31:37.647973+00:00",
+    "is_duplicate_of": null
   }
 ]
