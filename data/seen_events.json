@@ -6369,5 +6369,122 @@
     ],
     "date_found": "2026-10-07T12:31:37.647973+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "2b961716-e85b-4a12-8ca0-cb9b069cd019",
+    "donor": "Stray Kids' Bang Chan",
+    "recipient": "I-DLE",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "100 million won",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Stray Kids' Bang Chan donated 100 million won to support I-DLE's dreams.",
+    "figure_quote": "100 million won",
+    "assumptions": [
+      "The specific nature of I-DLE as a nonprofit is assumed based on the context of the donation."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 7,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMijgFBVV95cUxQQmNmbjZfZDVQdWFXOGxYZUNRblNMUnhSb0UtQTVxZTZwd0lOQ0g1c05aTmlVazVvUTNQaElmejZxQkVSN0R1OWczUElEN3lNaVpyeWJkRGFCSU9VX3Nvalp6OU5JaW1TZTJXSGdzZ1pLa3l1Ti0tSDlObTRQUUpYMW5QZ2Y2N0RwcmJHdDFn?oc=5",
+      "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVk5oWmg2cG1qLUtVTm9WU1kzMGdnT3YxUnRyOF8xdU05NmNpZDhhaWdTTExIY3RqeDZoMG5yMjBUdlZaV2p2bmVYa2ZuYS03c196WkMxQWQ4TXRsODZyOHRwYjlnd1lUQndYUzV3MHBzS3BMdzVmUjVNMklleFpIN3V0TlJZc0RyeDRfT2U0T3M5cVBPOUNycmJReklUVml0ajByV2diWjlLN3ZjaUdPRGVLUVVyZ3RMZFZn0gG7AUFVX3lxTE9WTmhaaDZwbWotS1VOb1ZTWTMwZ2dPdjFSdHI4XzF1TTk2Y2lkOGFpZ1NMTEhjdGp4NmgwbnIyMFR2VlpXanZuZVhrZm5hLTdzX3paQzFBZDhNdGw4NnI4dHBiOWd3WVRCd1hTNXcwcHNLcEx3NWZSNU0ySWV4Wkg3dXROUllzRHJ4NF9PZTRPczlxUE85Q3JyYlF6SVRWaXRqMHJXZ2JaOUs3dmNpR09EZUtRVXJndExkVmc?oc=5",
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTE5zMTRvcHpPZGw3WWZLV0l4aDJjdy01NF9fZWo0V2I3Z1l1X2NjWUtpaDdFLTBRU1JJbnRVZUpuclBXNVViYS04R0h0Qks4SEk0ZVJMQnAtMW1IMjVtTURDRmtfQWdMaERxRllqRWEySnV0emYzWkptZw?oc=5",
+      "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9tNnFRWDJtVkFVWG5jeE1DZUFCVF9xbFhncndvMW41V2pHUFVhSFA1eFFjbmpuQld4dDZDV2hRZjJ5ZXMxNm9MRG84RldkM1pQNlE?oc=5",
+      "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9UQnpOS04yMEVBVGxVMWw5ZGJMS1NrT0xENDBNa3dIRjFQVDdaMFpHMzdxODd5a3VhcEtISnV0Nk81eXI4clUwMVN1TjV6WW5q?oc=5",
+      "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTHU5akxSOHpPWnp1a3dQU1NrUUZSR0JrQlBJOGVlbTVHbWNSMWxPVXRLQm5fZm5oSE5fRGYyRjVZUTVfQldzYjJOX0Iyb29VNllDaGdzbndZa3BfbDZkZWZ0aHllQlcweU5maHYxaFhXZGEwY1BKdUJxMWVrbW9YYlhjWHZIUl9WWWJJOVJtNk90enNEZnBocDZIemY2RVU4UkhwRGt0azkzQlBIcVQ2Ymx4bTJiT0JMRk1EM01JbWxnSW1R0gHKAUFVX3lxTE1uLUd2MWxwQWNGZDJqd2Q1VmRwMUxwU2N2RFQxdHVuNnZPNjE1NXJHUjFaLWo5RGVRS2lvWFN6TnhYODg1NlJ5bEVKcDRUbElCd2hXS0dzZm53Q2FRWjBTanIwMHdHb2FtZ1UtZjQ0bjdIZHJUb3hKMFJHb2VBeFMzZUlSR2FsbFpiQ1J2bWFCN3pnT1VUdF9BM2ZpWGlvbEJ1Um5rakVQckZUQUtNZE5rQ1RFV3o5Zjl4MnRiNzVzbno3c04xLTBaU1E?oc=5",
+      "https://news.google.com/rss/articles/CBMiREFVX3lxTE5JYTYtMlZsajhVX3NUQjVwcDF2eDZVYTloUUtKSFc2c0MxVTZUemU5MEc1NU9vcHNncU5YVTQyeDhydHdK?oc=5",
+      "https://www.outlookindia.com/art-entertainment/k-drama/stray-kids-bang-chan-donates-300-million-won-to-charity-on-his-birthday",
+      "https://www.outlookindia.com/art-entertainment/k-drama/stray-kids-bang-chan-donates-300-million-won-to-charity-on-his-birthday"
+    ],
+    "source_names": [
+      "outlookindia.com",
+      "조선일보",
+      "NST Online",
+      "Music Mundial",
+      "매일경제",
+      "스타뉴스",
+      "DIPE.CO.KR"
+    ],
+    "source_channels": [
+      "Google News",
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-08T12:39:34.536495+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "18286c16-051d-44ed-b781-671d986ee5a1",
+    "donor": "African Development Bank",
+    "recipient": "Ebola outbreak response in Central Africa",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$13 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Central Africa",
+    "status": "new_commitment",
+    "summary": "The African Development Bank (ADB) has pledged $13 million to help combat the Ebola outbreak in Central Africa.",
+    "figure_quote": "$13M",
+    "assumptions": [
+      "The recipient is described as 'Ebola outbreak response in Central Africa', which is a specific context rather than a named organization."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMilAFBVV95cUxNN29BMW1SRllsT2pjb2FJY1RMSlY3S1laMWs1Nmk5R0NoT2dqLXM1bDViYkl3aUJRb00tVEZQYWsxNllhY1hJZG9ONjRzUXRPZWZPQWlQS0xnOWVxdjNCRWRCY0s1RjZQTDNNb2F2XzFmUjBjNWdGc3RTV3Z6V096T0YyUm81ZHV2NUNzaVppRk50aFRW?oc=5",
+      "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZXhGQmRxSGI0dXdMU1ZUcVNFanV2R0lJbFpKa1l5M3hNdnNZWks0RDRRWHg4NjVZTFMtOHd6QV9rOWNjWVRhbGJrN1JfUzU2cjJhZURXbG9UdzJtZjRldkdLUGxXUkthS3l5Z184ak1qMkxpUEFZSm94WkxCMmVkUDdSUUZlVWoyZi1mVTFGV0NlazFDYjB3?oc=5"
+    ],
+    "source_names": [
+      "Ghanaian Times",
+      "Weekend Post"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-08T12:40:51.642037+00:00",
+    "is_duplicate_of": null
   }
 ]
