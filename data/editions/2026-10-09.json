@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-09",
+  "entries": [
+    {
+      "entry_id": "6c966917-0987-4960-a2ca-8a26057884a7",
+      "donor": "Priceless Events",
+      "recipient": "Cruz Roja Colombiana",
+      "recipient_type": "INGO",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Partnership for earthquake relief efforts",
+      "country_scope": "Colombia",
+      "status": "new_commitment",
+      "summary": "Priceless Events, in collaboration with EDC Medellín and Prevail Parties, has partnered with Cruz Roja Colombiana for earthquake relief efforts.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.einpresswire.com/article/946582929/more-than-a-festival-priceless-events-ties-edc-medell-n-and-prevail-parties-to-cruz-roja-colombiana-earthquake-relief",
+        "https://www.einpresswire.com/article/946582929/more-than-a-festival-priceless-events-ties-edc-medell-n-and-prevail-parties-to-cruz-roja-colombiana-earthquake-relief?ref=rss&code=3Tq8emQY2Pi7_wee"
+      ],
+      "source_names": [
+        "einpresswire.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-09T12:39:51.953245+00:00",
+      "is_duplicate_of": "9dfd710d-5668-4b8b-b1b1-f9b1b35abeff"
+    },
+    {
+      "entry_id": "567be442-3e57-4087-b285-0990d5eb408f",
+      "donor": "Amazon India",
+      "recipient": "relief efforts in flood-hit areas of Nepal",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "relief supplies",
+      "country_scope": "Nepal",
+      "status": "new_commitment",
+      "summary": "Amazon India has provided support for relief efforts in flood-affected regions of Nepal.",
+      "figure_quote": null,
+      "assumptions": [
+        "The specific nonprofit organizations receiving the aid are not named in the source text."
+      ],
+      "confidence_score": 2,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQzBEaGwySVdiTlNscDBlQ2NibFlXejl2REJUYi1iQW5OcmxBVENSenhkZDBnSU9BRFdOZFp5UUw1WldjdE5oQVFrMVlQQmp5eWtYLVRVSHQ2ZlBPUUJ6LXZYUFprck5QYnVkalEwTHo0Sk5YMTFMTHNKbllkbW9WMkFFTlZENWw4UGc?oc=5"
+      ],
+      "source_names": [
+        "About Amazon India"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-09T12:25:34.081135+00:00",
+      "is_duplicate_of": "0989443b-049a-4c79-bf59-17fa4084645d"
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 95,
+    "gdelt_candidates_found": 790,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 249,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 3241,
+    "items_filtered_as_stale": 1835,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 301,
+    "clusters_analysed": 164,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 8,
+    "rejected_unnamed_recipient": 3,
+    "rejected_no_named_donor": 3,
+    "rejected_out_of_scope_country": 8,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 7,
+    "rejected_no_evidence": 2,
+    "rejected_government_donor": 1,
+    "entries_published": 2,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "Feed parse error: <unknown>:25:79: not well-formed (invalid token)"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
