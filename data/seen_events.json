@@ -6585,5 +6585,151 @@
     ],
     "date_found": "2026-10-09T12:39:51.953245+00:00",
     "is_duplicate_of": "9dfd710d-5668-4b8b-b1b1-f9b1b35abeff"
+  },
+  {
+    "entry_id": "88faae31-5394-4123-927a-bcc92fee2cb3",
+    "donor": "Benson-Idahosa",
+    "recipient": "Edo CCS",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "borehole",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "Benson-Idahosa donated a borehole to Edo CCS to mark a birthday.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMikgFBVV95cUxNT00yY25vc3ItN1MzdHVDYkVXcFozdkUyVndVeDVNM3QwaVo3RXg4YVRmc3pQdzJaRUxodUpDZ3lyZ3FYNVhhV2lWYWlNTnY3SUtqZUpnc3ZlNGlZQVVCN2lrMEtKZGRDdWZTVENVQks1X3hmSER5OVpsazAyNGtzN0JuYnI3R0hVRTRLeS1mUndJdw?oc=5"
+    ],
+    "source_names": [
+      "Tribune Online"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-10T11:44:19.209252+00:00",
+    "is_duplicate_of": "87a1e253-e23a-469a-96be-23c48a49e968"
+  },
+  {
+    "entry_id": "98616211-8994-41ca-81b8-775f5ef43cb2",
+    "donor": "Optimus Bank",
+    "recipient": "maternal and emergency healthcare services in Nigeria",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "blood drive",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "Optimus Bank organized a blood drive to support maternal and emergency healthcare in Nigeria.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific nonprofit organizations benefiting from the blood drive are not named in the source text."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://dailypost.ng/2026/09/29/optimus-bank-champions-life-saving-blood-drive-to-support-maternal-emergency-healthcare-in-nigeria/"
+    ],
+    "source_names": [
+      "dailypost.ng"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-10T11:52:46.316500+00:00",
+    "is_duplicate_of": "a67bcb37-5f1a-470f-91ca-b48a49170bf4"
+  },
+  {
+    "entry_id": "cc45d6ed-e2bd-4b35-8c6f-1417b12cc478",
+    "donor": "CBP",
+    "recipient": "World Vision",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "seized goods",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "CBP donated seized goods to World Vision for humanitarian support.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.einpresswire.com/article/946503733/cbp-turns-seized-goods-into-humanitarian-support-through-world-vision-donation"
+    ],
+    "source_names": [
+      "einpresswire.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-10T11:59:22.873279+00:00",
+    "is_duplicate_of": "eacd18aa-0ed9-4ba0-8f29-437f98763dc2"
   }
 ]
