@@ -1,0 +1,289 @@
+{
+  "date": "2026-10-11",
+  "entries": [
+    {
+      "entry_id": "4e15b9b2-745d-4e1d-9181-8156ffa03f2f",
+      "donor": "Bang Chan",
+      "recipient": "World Vision",
+      "recipient_type": "INGO",
+      "amount_text": "1 million won",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Bang Chan donated 1 million won to World Vision.",
+      "figure_quote": "1 million won",
+      "assumptions": [],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 10,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ScmVocHpJMnRzSl9sOXlrOGtLWDNObndfblp4MTB2T29raGxUc3VuNl9NMWRMVkh4WWhla3hiVWo2eU1ycml2SE9zS1JHVFpUTGl6VHpOZEtPQ2lmTE9lYTR5SmFlMGMzZ3R2R1VHaVBkYXNDYXFoRw?oc=5",
+        "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4MldiczlyUXF0d0ladTlfbnFIZnlPbnZZaWFGbGxtWEVGM2xmRjVLSWtIV1gzYmNRYjR6aGZ6eHE2SGpOVnBPckswVnVkUFo3?oc=5",
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxQQmNmbjZfZDVQdWFXOGxYZUNRblNMUnhSb0UtQTVxZTZwd0lOQ0g1c05aTmlVazVvUTNQaElmejZxQkVSN0R1OWczUElEN3lNaVpyeWJkRGFCSU9VX3Nvalp6OU5JaW1TZTJXSGdzZ1pLa3l1Ti0tSDlObTRQUUpYMW5QZ2Y2N0RwcmJHdDFn?oc=5",
+        "https://news.google.com/rss/articles/CBMic0FVX3lxTE1WX2g5cFZyMlVqcWN1d3lZd2gtSnBjZFNxX2hXS0xzLUFzYXFfcnl2QjFDYzJkcFpMUENvd1hXUUhVUEU1RU5jb1VCUk1OYjZ2eVZiNWFBRVZIY3Z5aVA5WEotVjZnQm5RdHUxQVE5UUVXXzA?oc=5",
+        "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBpZUZVMUVoSjFYcU16LXNxdUNSbW5hM3pPbFhtSGk5STNSek91Y1lGVzhyNjdUMDZnVGc5N2FrS2FTQ19NNjlITjJ0NF9SaG1sbE9xdzI1RQ?oc=5",
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE5zMTRvcHpPZGw3WWZLV0l4aDJjdy01NF9fZWo0V2I3Z1l1X2NjWUtpaDdFLTBRU1JJbnRVZUpuclBXNVViYS04R0h0Qks4SEk0ZVJMQnAtMW1IMjVtTURDRmtfQWdMaERxRllqRWEySnV0emYzWkptZw?oc=5",
+        "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9tNnFRWDJtVkFVWG5jeE1DZUFCVF9xbFhncndvMW41V2pHUFVhSFA1eFFjbmpuQld4dDZDV2hRZjJ5ZXMxNm9MRG84RldkM1pQNlE?oc=5",
+        "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQXVXa0Z0MGtSMHpfRmxyVVM3TVo3S1F1YnF2ZU80a0xueWJudHczbVF5N2lGcXpkZERTZXBHOFgwUmVWLW9NbEVLMDA2anZmcjFPRWlza0lFb3ZEQmdIZ2E0dEJ6Z2F2Yi1YME5ZVTdjbUNmRENyZEFPYXFCcTR2dlFkN0tPY3FVazhSaVlQeFNlYkQxSlUxM0d1Si1yWFBGSjJscm1fTUNCNnFXQVU5b0F2WFlRUdIBuwFBVV95cUxPVk5oWmg2cG1qLUtVTm9WU1kzMGdnT3YxUnRyOF8xdU05NmNpZDhhaWdTTExIY3RqeDZoMG5yMjBUdlZaV2p2bmVYa2ZuYS03c196WkMxQWQ4TXRsODZyOHRwYjlnd1lUQndYUzV3MHBzS3BMdzVmUjVNMklleFpIN3V0TlJZc0RyeDRfT2U0T3M5cVBPOUNycmJReklUVml0ajByV2diWjlLN3ZjaUdPRGVLUVVyZ3RMZFZn?oc=5",
+        "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9UQnpOS04yMEVBVGxVMWw5ZGJMS1NrT0xENDBNa3dIRjFQVDdaMFpHMzdxODd5a3VhcEtISnV0Nk81eXI4clUwMVN1TjV6WW5q?oc=5",
+        "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTHU5akxSOHpPWnp1a3dQU1NrUUZSR0JrQlBJOGVlbTVHbWNSMWxPVXRLQm5fZm5oSE5fRGYyRjVZUTVfQldzYjJOX0Iyb29VNllDaGdzbndZa3BfbDZkZWZ0aHllQlcweU5maHYxaFhXZGEwY1BKdUJxMWVrbW9YYlhjWHZIUl9WWWJJOVJtNk90enNEZnBocDZIemY2RVU4UkhwRGt0azkzQlBIcVQ2Ymx4bTJiT0JMRk1EM01JbWxnSW1R0gHKAUFVX3lxTE1uLUd2MWxwQWNGZDJqd2Q1VmRwMUxwU2N2RFQxdHVuNnZPNjE1NXJHUjFaLWo5RGVRS2lvWFN6TnhYODg1NlJ5bEVKcDRUbElCd2hXS0dzZm53Q2FRWjBTanIwMHdHb2FtZ1UtZjQ0bjdIZHJUb3hKMFJHb2VBeFMzZUlSR2FsbFpiQ1J2bWFCN3pnT1VUdF9BM2ZpWGlvbEJ1Um5rakVQckZUQUtNZE5rQ1RFV3o5Zjl4MnRiNzVzbno3c04xLTBaU1E?oc=5",
+        "https://news.google.com/rss/articles/CBMixAFBVV95cUxOM3hLNVNPZmdvT0NyMTYtbXQwejROdmtUUzZTVnBfVlRYaUlkSmNYaWI2R3FPeGRseDRWdExsQTQ1WWE1MjdGZnFia1hZcjNVTEZ5VjRiRjVzcHdRdWxJQ2FRMWVzZ3Z6ZEtGMnZsQjFBT2IzUXU2WXdJMXR5a0xTN19nZUx2Wk9jdEE0bnVIRHN3aVNQcC03N2U3V1hpQ1dEcUhUVF95NmZMTDNGNnpuRXB5b0s2OFpEejJtUGVhaGJhd1Ay0gHSAUFVX3lxTE1GeGFhVnJXSlJzOHRIbVVSaC0xSzB0OFdUQTlvNzRMQThPY25meEtkWXh2RlI4VjVPV2N0RHJBYmN4SDRVSXZOUkZxLVpPb2xFanlsWTFtT1BZcGQ2SEV4dG1IcWRXRGk3dEZyekZxeGRyN3dVSURteWJRYWhLOG9hRFdrOUR0TnlVMTBhOUZ1N3FuTk5EWHJLY01IRHgzUWJyZUlIcjlrTWgwYXdDSDU3QXpMRDlNWHdOdGtKRTNKWHNNbk95RmtjOVh0TEdhcWp5Zw?oc=5",
+        "https://www.straitstimes.com/life/entertainment/bang-chan-of-k-pop-boy-band-stray-kids-donates-285000-on-29th-birthday",
+        "https://www.outlookindia.com/art-entertainment/k-drama/stray-kids-bang-chan-donates-300-million-won-to-charity-on-his-birthday",
+        "https://www.straitstimes.com/life/entertainment/bang-chan-of-k-pop-boy-band-stray-kids-donates-285000-on-29th-birthday",
+        "https://www.outlookindia.com/art-entertainment/k-drama/stray-kids-bang-chan-donates-300-million-won-to-charity-on-his-birthday"
+      ],
+      "source_names": [
+        "Outlook India",
+        "straitstimes.com",
+        "Music Mundial",
+        "매일경제",
+        "outlookindia.com",
+        "헤럴드경제",
+        "스타뉴스",
+        "조선일보",
+        "The Korea Daily",
+        "NST Online"
+      ],
+      "source_channels": [
+        "Google News",
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-11T11:59:10.511163+00:00",
+      "is_duplicate_of": "279cea21-e705-4aeb-8e29-613d903f63dc"
+    },
+    {
+      "entry_id": "d1b6adcc-39a5-4c2e-b7b4-57555f6a9a3d",
+      "donor": "Bang Chan",
+      "recipient": "Charity",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "300 million won",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Bang Chan donated 300 million won to charity on his birthday.",
+      "figure_quote": "300 million won",
+      "assumptions": [],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 10,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ScmVocHpJMnRzSl9sOXlrOGtLWDNObndfblp4MTB2T29raGxUc3VuNl9NMWRMVkh4WWhla3hiVWo2eU1ycml2SE9zS1JHVFpUTGl6VHpOZEtPQ2lmTE9lYTR5SmFlMGMzZ3R2R1VHaVBkYXNDYXFoRw?oc=5",
+        "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4MldiczlyUXF0d0ladTlfbnFIZnlPbnZZaWFGbGxtWEVGM2xmRjVLSWtIV1gzYmNRYjR6aGZ6eHE2SGpOVnBPckswVnVkUFo3?oc=5",
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxQQmNmbjZfZDVQdWFXOGxYZUNRblNMUnhSb0UtQTVxZTZwd0lOQ0g1c05aTmlVazVvUTNQaElmejZxQkVSN0R1OWczUElEN3lNaVpyeWJkRGFCSU9VX3Nvalp6OU5JaW1TZTJXSGdzZ1pLa3l1Ti0tSDlObTRQUUpYMW5QZ2Y2N0RwcmJHdDFn?oc=5",
+        "https://news.google.com/rss/articles/CBMic0FVX3lxTE1WX2g5cFZyMlVqcWN1d3lZd2gtSnBjZFNxX2hXS0xzLUFzYXFfcnl2QjFDYzJkcFpMUENvd1hXUUhVUEU1RU5jb1VCUk1OYjZ2eVZiNWFBRVZIY3Z5aVA5WEotVjZnQm5RdHUxQVE5UUVXXzA?oc=5",
+        "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBpZUZVMUVoSjFYcU16LXNxdUNSbW5hM3pPbFhtSGk5STNSek91Y1lGVzhyNjdUMDZnVGc5N2FrS2FTQ19NNjlITjJ0NF9SaG1sbE9xdzI1RQ?oc=5",
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE5zMTRvcHpPZGw3WWZLV0l4aDJjdy01NF9fZWo0V2I3Z1l1X2NjWUtpaDdFLTBRU1JJbnRVZUpuclBXNVViYS04R0h0Qks4SEk0ZVJMQnAtMW1IMjVtTURDRmtfQWdMaERxRllqRWEySnV0emYzWkptZw?oc=5",
+        "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9tNnFRWDJtVkFVWG5jeE1DZUFCVF9xbFhncndvMW41V2pHUFVhSFA1eFFjbmpuQld4dDZDV2hRZjJ5ZXMxNm9MRG84RldkM1pQNlE?oc=5",
+        "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQXVXa0Z0MGtSMHpfRmxyVVM3TVo3S1F1YnF2ZU80a0xueWJudHczbVF5N2lGcXpkZERTZXBHOFgwUmVWLW9NbEVLMDA2anZmcjFPRWlza0lFb3ZEQmdIZ2E0dEJ6Z2F2Yi1YME5ZVTdjbUNmRENyZEFPYXFCcTR2dlFkN0tPY3FVazhSaVlQeFNlYkQxSlUxM0d1Si1yWFBGSjJscm1fTUNCNnFXQVU5b0F2WFlRUdIBuwFBVV95cUxPVk5oWmg2cG1qLUtVTm9WU1kzMGdnT3YxUnRyOF8xdU05NmNpZDhhaWdTTExIY3RqeDZoMG5yMjBUdlZaV2p2bmVYa2ZuYS03c196WkMxQWQ4TXRsODZyOHRwYjlnd1lUQndYUzV3MHBzS3BMdzVmUjVNMklleFpIN3V0TlJZc0RyeDRfT2U0T3M5cVBPOUNycmJReklUVml0ajByV2diWjlLN3ZjaUdPRGVLUVVyZ3RMZFZn?oc=5",
+        "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9UQnpOS04yMEVBVGxVMWw5ZGJMS1NrT0xENDBNa3dIRjFQVDdaMFpHMzdxODd5a3VhcEtISnV0Nk81eXI4clUwMVN1TjV6WW5q?oc=5",
+        "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTHU5akxSOHpPWnp1a3dQU1NrUUZSR0JrQlBJOGVlbTVHbWNSMWxPVXRLQm5fZm5oSE5fRGYyRjVZUTVfQldzYjJOX0Iyb29VNllDaGdzbndZa3BfbDZkZWZ0aHllQlcweU5maHYxaFhXZGEwY1BKdUJxMWVrbW9YYlhjWHZIUl9WWWJJOVJtNk90enNEZnBocDZIemY2RVU4UkhwRGt0azkzQlBIcVQ2Ymx4bTJiT0JMRk1EM01JbWxnSW1R0gHKAUFVX3lxTE1uLUd2MWxwQWNGZDJqd2Q1VmRwMUxwU2N2RFQxdHVuNnZPNjE1NXJHUjFaLWo5RGVRS2lvWFN6TnhYODg1NlJ5bEVKcDRUbElCd2hXS0dzZm53Q2FRWjBTanIwMHdHb2FtZ1UtZjQ0bjdIZHJUb3hKMFJHb2VBeFMzZUlSR2FsbFpiQ1J2bWFCN3pnT1VUdF9BM2ZpWGlvbEJ1Um5rakVQckZUQUtNZE5rQ1RFV3o5Zjl4MnRiNzVzbno3c04xLTBaU1E?oc=5",
+        "https://news.google.com/rss/articles/CBMixAFBVV95cUxOM3hLNVNPZmdvT0NyMTYtbXQwejROdmtUUzZTVnBfVlRYaUlkSmNYaWI2R3FPeGRseDRWdExsQTQ1WWE1MjdGZnFia1hZcjNVTEZ5VjRiRjVzcHdRdWxJQ2FRMWVzZ3Z6ZEtGMnZsQjFBT2IzUXU2WXdJMXR5a0xTN19nZUx2Wk9jdEE0bnVIRHN3aVNQcC03N2U3V1hpQ1dEcUhUVF95NmZMTDNGNnpuRXB5b0s2OFpEejJtUGVhaGJhd1Ay0gHSAUFVX3lxTE1GeGFhVnJXSlJzOHRIbVVSaC0xSzB0OFdUQTlvNzRMQThPY25meEtkWXh2RlI4VjVPV2N0RHJBYmN4SDRVSXZOUkZxLVpPb2xFanlsWTFtT1BZcGQ2SEV4dG1IcWRXRGk3dEZyekZxeGRyN3dVSURteWJRYWhLOG9hRFdrOUR0TnlVMTBhOUZ1N3FuTk5EWHJLY01IRHgzUWJyZUlIcjlrTWgwYXdDSDU3QXpMRDlNWHdOdGtKRTNKWHNNbk95RmtjOVh0TEdhcWp5Zw?oc=5",
+        "https://www.straitstimes.com/life/entertainment/bang-chan-of-k-pop-boy-band-stray-kids-donates-285000-on-29th-birthday",
+        "https://www.outlookindia.com/art-entertainment/k-drama/stray-kids-bang-chan-donates-300-million-won-to-charity-on-his-birthday",
+        "https://www.straitstimes.com/life/entertainment/bang-chan-of-k-pop-boy-band-stray-kids-donates-285000-on-29th-birthday",
+        "https://www.outlookindia.com/art-entertainment/k-drama/stray-kids-bang-chan-donates-300-million-won-to-charity-on-his-birthday"
+      ],
+      "source_names": [
+        "Outlook India",
+        "straitstimes.com",
+        "Music Mundial",
+        "매일경제",
+        "outlookindia.com",
+        "헤럴드경제",
+        "스타뉴스",
+        "조선일보",
+        "The Korea Daily",
+        "NST Online"
+      ],
+      "source_channels": [
+        "Google News",
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-11T11:59:10.512302+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "d93db93f-ce6d-4814-ac28-9047bfbadaca",
+      "donor": "Bill Gates",
+      "recipient": "Africa",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "anti-malaria nets",
+      "country_scope": "Africa",
+      "status": "unclear",
+      "summary": "Bill Gates donated millions of anti-malaria nets to Africa.",
+      "figure_quote": "millions of anti-malaria nets",
+      "assumptions": [
+        "The specific nonprofit or agency in Africa that received the nets is not named.",
+        "The exact number of nets and the monetary value are not specified."
+      ],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMGpXWWJuWk1ReVRDZkpKTTlOVW1RR0lMd1pZNVFCY1FFMFdfX204Q1VRVjdDS0FHNTZUeHR6OEVkNTdFLW1TY1A3dmNPUGM1TUxGbFRabDR0UEdZR0J1Q2JKLTBzeUdLTURFUFpUSzROOGs4QTF0OFhWejF4Tm5oMnQ1WU1HSEtwQ3FfOGdBXzNOSkhhQ3p1UXFDbE5rdWY0M2VRcEYzN0haUk1jdUlleUxibXVhTXVEMEZCb1lucGZjZXVDZENHUW1VRVNlQWdCZXFoTFdNMDTSAewBQVVfeXFMTkk2c2RpSUpBSGxSQ2l3M0JyVFB6bjNmenF0djh0Q0FQRXp3NmNPU21sc19lOEhKeGJvNkdoZ0xzR3NEVnJDamVaY1hTbzFUYWdqV2dQZlNlYnl4Y0VnendIY2dWbUozM0pLMFdOZmwzOENDNktod1VHZzEzR2tGb2w0d0lOODBoTHp1c3NhWkphMk9ESFZSc3FiaE9TVHB1TVg2U0lMRlRKaFpkcTFBMWY5NThhNnBHU0t6eXFKSUNsMUFydmltVldiaW53MnRkZmo1NnNjNlpRSWpGS1Z1LWU2U3RMSTBfdHJsR3U?oc=5"
+      ],
+      "source_names": [
+        "Diario AS"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-11T11:55:54.926030+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "bd038b8f-fae0-41db-b2ff-6e536103e92a",
+      "donor": "MARAN",
+      "recipient": "shipping institute",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "training and capacity building",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "MARAN pledged to provide sustained capacity building and training for members at a shipping institute.",
+      "figure_quote": null,
+      "assumptions": [
+        "The nature of the shipping institute as a nonprofit is inferred from the context."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQjVwVmlCSGhmS08yZ29ocHpKMU43OGxUbXBaXzVDeU1TaVVfem10Qy12TUVfQjZIRDhULUxpeFZOOWhxMlZIcVpDMkUtQkRyV3cyTmRGWFB4aEZuRTBSMTUwY3VLYTVjYTJ0SFFwVzVnY3hmZEZfVXBVUmJsNzUwdkU4VXdwN0otWGtweGczNnBsVXN4SWtoUWZkQ3lNUlVReU16dnhFM2NIUUtQZ1Q1djhrOWpPRThtLXhxMHVfR1o?oc=5"
+      ],
+      "source_names": [
+        "Eye Witness News"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-11T11:58:57.366172+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 97,
+    "gdelt_candidates_found": 283,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 253,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2797,
+    "items_filtered_as_stale": 1885,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 308,
+    "clusters_analysed": 165,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 6,
+    "rejected_unnamed_recipient": 3,
+    "rejected_no_named_donor": 5,
+    "rejected_out_of_scope_country": 4,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 1,
+    "rejected_no_evidence": 3,
+    "rejected_government_donor": 3,
+    "entries_published": 4,
+    "high_confidence_count": 3
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
