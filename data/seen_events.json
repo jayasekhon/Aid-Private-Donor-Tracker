@@ -6976,5 +6976,257 @@
     ],
     "date_found": "2026-10-11T11:59:10.512302+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "166ccf4c-481a-43ac-b443-0b01b81099fb",
+    "donor": "Dangote Group",
+    "recipient": "Borno Displaced Persons, Returnees",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "N366 million",
+    "is_in_kind": true,
+    "in_kind_description": "Shares",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "Dangote Group donated N366 million worth of shares to support displaced persons and returnees in Borno.",
+    "figure_quote": "N366m Shares",
+    "assumptions": [
+      "The exact nonprofit organization managing the funds for displaced persons and returnees is not specified."
+    ],
+    "confidence_score": 8,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVzNoVDdVYUVCQnVIOTVSWEFlZUN2b3J2VWtmb1lPaGlNMFpDQWNIWFZEYW1kY082MWcwTk9fQk5TX3lWWkpIQjRoZklxc0tUMUlyQWxRRlVJZXFOY0VBazQ3LVdzb1dRanlnT1VpVWhLUjdJZ3RuMnpPd3lhcTdlMGpsdThDS0tiR2JOdndXemxiT3lOTnllV2dR?oc=5",
+      "https://leadership.ng/dangote-group-donates-n366m-shares-to-borno-displaced-persons-returnees/"
+    ],
+    "source_names": [
+      "LEADERSHIP Newspapers",
+      "leadership.ng"
+    ],
+    "source_channels": [
+      "GDELT GKG",
+      "Google News"
+    ],
+    "date_found": "2026-10-12T14:01:52.918982+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "f06446cd-4a68-4bed-8bdc-6ff5e7b77f26",
+    "donor": "Bill Gates",
+    "recipient": "flood-affected communities",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$1 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Bill Gates has donated $1 million to support communities affected by floods.",
+    "figure_quote": "$1 million",
+    "assumptions": [
+      "The recipient is described generally as 'flood-affected communities' without specifying a particular nonprofit organization."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQjVwQzUtUHd1S3ZDV2w3Sl81eFdVRWNVMHR4S2FmeWFwUVZORkpXbm1WYlUyeFRrd3M2b0t1dFhvckIyNkhhLXJpb2ZMYktPQi03dFoxb0Z1UUNfcF8xdGRLNmk5b0FEWEZCanlRSnN3VXJFNVh4dmdxeGEwTVIzX2p6RVhkQ1Z1WHhYbVU1SWY1VDRqbzNj?oc=5"
+    ],
+    "source_names": [
+      "Bol News"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-12T14:02:50.876131+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "f25e2698-8601-4eea-8f6d-dbd54f6b88f5",
+    "donor": "Amazon India",
+    "recipient": "relief efforts in flood-hit areas of Nepal",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "relief efforts",
+    "country_scope": "Nepal",
+    "status": "new_commitment",
+    "summary": "Amazon India has provided support for relief efforts in flood-affected regions of Nepal.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific nonprofit organizations receiving the aid are not named in the source text."
+    ],
+    "confidence_score": 2,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQzBEaGwySVdiTlNscDBlQ2NibFlXejl2REJUYi1iQW5OcmxBVENSenhkZDBnSU9BRFdOZFp5UUw1WldjdE5oQVFrMVlQQmp5eWtYLVRVSHQ2ZlBPUUJ6LXZYUFprck5QYnVkalEwTHo0Sk5YMTFMTHNKbllkbW9WMkFFTlZENWw4UGc?oc=5"
+    ],
+    "source_names": [
+      "About Amazon India"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-12T14:03:04.245257+00:00",
+    "is_duplicate_of": "567be442-3e57-4087-b285-0990d5eb408f"
+  },
+  {
+    "entry_id": "2668065c-287d-4131-a339-69fbd1fdac20",
+    "donor": "Bang Chan",
+    "recipient": "World Vision",
+    "recipient_type": "INGO",
+    "amount_text": "100 million KRW",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Bang Chan, a member of Stray Kids, donated 100 million KRW to World Vision to support children's dreams.",
+    "figure_quote": "KRW 100 million",
+    "assumptions": [],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ScmVocHpJMnRzSl9sOXlrOGtLWDNObndfblp4MTB2T29raGxUc3VuNl9NMWRMVkh4WWhla3hiVWo2eU1ycml2SE9zS1JHVFpUTGl6VHpOZEtPQ2lmTE9lYTR5SmFlMGMzZ3R2R1VHaVBkYXNDYXFoRw?oc=5",
+      "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4MldiczlyUXF0d0ladTlfbnFIZnlPbnZZaWFGbGxtWEVGM2xmRjVLSWtIV1gzYmNRYjR6aGZ6eHE2SGpOVnBPckswVnVkUFo3?oc=5"
+    ],
+    "source_names": [
+      "스타뉴스",
+      "매일경제"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-12T14:05:52.898967+00:00",
+    "is_duplicate_of": "4e15b9b2-745d-4e1d-9181-8156ffa03f2f"
+  },
+  {
+    "entry_id": "bc45ae8f-8149-42a6-84e9-702fa7ec04b7",
+    "donor": "Priceless Events",
+    "recipient": "Cruz Roja Colombiana",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Support for earthquake relief efforts",
+    "country_scope": "Colombia",
+    "status": "new_commitment",
+    "summary": "Priceless Events, in collaboration with EDC Medellín and Prevail Parties, is supporting Cruz Roja Colombiana's earthquake relief efforts.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.einpresswire.com/article/946582929/more-than-a-festival-priceless-events-ties-edc-medell-n-and-prevail-parties-to-cruz-roja-colombiana-earthquake-relief",
+      "https://www.einpresswire.com/article/946582929/more-than-a-festival-priceless-events-ties-edc-medell-n-and-prevail-parties-to-cruz-roja-colombiana-earthquake-relief?ref=rss&code=3Tq8emQY2Pi7_wee"
+    ],
+    "source_names": [
+      "einpresswire.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-12T14:18:20.895533+00:00",
+    "is_duplicate_of": "6c966917-0987-4960-a2ca-8a26057884a7"
   }
 ]
