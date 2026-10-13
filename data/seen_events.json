@@ -7228,5 +7228,149 @@
     ],
     "date_found": "2026-10-12T14:18:20.895533+00:00",
     "is_duplicate_of": "6c966917-0987-4960-a2ca-8a26057884a7"
+  },
+  {
+    "entry_id": "3c9c6ca6-ed3d-40a5-ad8f-b5acb840ddd9",
+    "donor": "Benson-Idahosa",
+    "recipient": "Edo CCS",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "borehole",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "Benson-Idahosa donated a borehole to Edo CCS to mark a birthday.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMikgFBVV95cUxNT00yY25vc3ItN1MzdHVDYkVXcFozdkUyVndVeDVNM3QwaVo3RXg4YVRmc3pQdzJaRUxodUpDZ3lyZ3FYNVhhV2lWYWlNTnY3SUtqZUpnc3ZlNGlZQVVCN2lrMEtKZGRDdWZTVENVQks1X3hmSER5OVpsazAyNGtzN0JuYnI3R0hVRTRLeS1mUndJdw?oc=5"
+    ],
+    "source_names": [
+      "Tribune Online"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-13T13:21:25.807106+00:00",
+    "is_duplicate_of": "88faae31-5394-4123-927a-bcc92fee2cb3"
+  },
+  {
+    "entry_id": "04ca3fec-8ad9-4a97-8608-8695917e8daa",
+    "donor": "Marriott Business Council",
+    "recipient": "Shoes to School Programme",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "2,400 pairs of shoes",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Marriott Business Council donated 2,400 pairs of shoes to support the ‘Shoes to School’ programme.",
+    "figure_quote": "2,400 pairs of shoes",
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMizgFBVV95cUxPUGNheFJDYUExMFJ0RmZ0MWJmcHdvQWt4VDJWS25XUjMyb2hqZmhsdGlSVUlrd2Z2ZXBUSExpR0Vza3ZueXJ0VkVZc1N5cHh6QlVPSXFZSmlrNkpIMENub3BZLUppNFBYUVZOZks0SUZNZWVmSWtyeWJZYW1xdzVWeVYySmlaY2dPWXN3WllvUHlGc0p6eHlIcmg2elVtVzEtWFZpZ2E4bWtrcTlHWG9TbVBKYnFBOUtmV21Jbm95Rjc4Q25vS1hwQ2NmclJWQQ?oc=5"
+    ],
+    "source_names": [
+      "Indonesia Expat"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-13T13:22:37.545513+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "d76784ac-6b61-4d93-a3aa-80feda2e0bef",
+    "donor": "CBP",
+    "recipient": "World Vision",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "seized goods",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "CBP donated seized goods to World Vision for humanitarian support.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.einpresswire.com/article/946503733/cbp-turns-seized-goods-into-humanitarian-support-through-world-vision-donation"
+    ],
+    "source_names": [
+      "einpresswire.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-13T13:36:55.902240+00:00",
+    "is_duplicate_of": "cc45d6ed-e2bd-4b35-8c6f-1417b12cc478"
   }
 ]
