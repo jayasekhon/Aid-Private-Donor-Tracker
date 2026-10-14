@@ -1,0 +1,199 @@
+{
+  "date": "2026-10-14",
+  "entries": [
+    {
+      "entry_id": "c64db8c7-7720-4396-bf5f-ba307b3644b8",
+      "donor": "Ben Stiller",
+      "recipient": "UNHCR",
+      "recipient_type": "UN Agency",
+      "amount_text": "$3 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Ben Stiller's UNHCR campaigns raised over $3 million for refugees in 2016.",
+      "figure_quote": "over $3 million",
+      "assumptions": [
+        "Ben Stiller's involvement is through campaigns, not a direct corporate donation."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://timesofindia.indiatimes.com/entertainment/english/hollywood/news/in-2016-ben-stiller-turned-his-attention-to-refugees-unhcr-campaigns-featuring-him-raised-over-3-million/articleshow/134896681.cms"
+      ],
+      "source_names": [
+        "indiatimes.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-14T11:05:44.045544+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "2207a3e1-1aa1-4759-833e-3e65c2a7cd44",
+      "donor": "GFI APAC",
+      "recipient": "WHO",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Collaboration on publishing a report",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "The World Health Organization (WHO) has partnered with GFI APAC, a private-sector entity, to publish a public health report on alternative proteins.",
+      "figure_quote": null,
+      "assumptions": [
+        "The nature of GFI APAC's support is inferred to be in-kind due to the collaboration on publishing, not a direct cash donation."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxORVJsdDdWR3pRYnBrSFk3eV9LSEdTNGNTMkxSVHNfSmdWazdYX3h5OHRoVzFVLS1OTTR4UEVhQ2JlMHpCcHJKOFYxQ2xJUTlBMTdoQnFySm00eUVHR2dDcV9yaV9CRmRkbDJNZ1lUMHZiTUtCMmdFNllUaVlsZTQ5SkdLaXZnMzdaX3A1RzZJWWJmMHhDODl6TVhfbVlFLUhpTVRRU25DbTFwMW8tRGpaOFQtcw?oc=5"
+      ],
+      "source_names": [
+        "Green Queen Media"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-14T10:59:27.381816+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "c18ac945-b9f4-4dbe-8a35-ba399775547d",
+      "donor": "Tony Robbins",
+      "recipient": "Feeding America",
+      "recipient_type": "INGO",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Tony Robbins launched the 100 Million Meals Challenge in 2014, which expanded and reached 1 billion meals by 2023.",
+      "figure_quote": "1 billion meals",
+      "assumptions": [
+        "Tony Robbins' initiative is considered a personal commitment rather than a corporate donation."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://timesofindia.indiatimes.com/world/us/in-2014-tony-robbins-turned-a-childhood-memory-of-his-struggling-family-receiving-groceries-from-a-stranger-into-feeding-americas-100-million-meals-challenge-expanded-later-it-reached-1-billion-meals-in-2023/articleshow/134914887.cms"
+      ],
+      "source_names": [
+        "indiatimes.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-14T11:05:05.310398+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 87,
+    "gdelt_candidates_found": 775,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 229,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 3205,
+    "items_filtered_as_stale": 1832,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 301,
+    "clusters_analysed": 178,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 10,
+    "rejected_unnamed_recipient": 4,
+    "rejected_no_named_donor": 1,
+    "rejected_out_of_scope_country": 7,
+    "rejected_government_entity": 2,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 4,
+    "rejected_no_evidence": 3,
+    "rejected_government_donor": 0,
+    "entries_published": 3,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "PR Newswire - All Public Company News",
+      "url": "https://www.prnewswire.com/rss/news-releases-list.rss",
+      "error": "404 Client Error: Not Found for url: https://www.prnewswire.com/rss/news-releases-list.rss/"
+    },
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
