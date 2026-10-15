@@ -7522,5 +7522,306 @@
     ],
     "date_found": "2026-10-14T11:05:44.045544+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "a0f72967-0aa6-4cc1-81c3-5c9700029413",
+    "donor": "Bill Gates",
+    "recipient": "Africa",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "anti-malaria nets",
+    "country_scope": "Africa",
+    "status": "new_commitment",
+    "summary": "Bill Gates has been sending millions of anti-malaria nets to Africa since 2004.",
+    "figure_quote": "millions of anti-malaria nets",
+    "assumptions": [
+      "Bill Gates' donations are likely made through the Bill & Melinda Gates Foundation, but the source text does not explicitly state this."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": false,
+        "points": 0
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMGpXWWJuWk1ReVRDZkpKTTlOVW1RR0lMd1pZNVFCY1FFMFdfX204Q1VRVjdDS0FHNTZUeHR6OEVkNTdFLW1TY1A3dmNPUGM1TUxGbFRabDR0UEdZR0J1Q2JKLTBzeUdLTURFUFpUSzROOGs4QTF0OFhWejF4Tm5oMnQ1WU1HSEtwQ3FfOGdBXzNOSkhhQ3p1UXFDbE5rdWY0M2VRcEYzN0haUk1jdUlleUxibXVhTXVEMEZCb1lucGZjZXVDZENHUW1VRVNlQWdCZXFoTFdNMDTSAewBQVVfeXFMTkk2c2RpSUpBSGxSQ2l3M0JyVFB6bjNmenF0djh0Q0FQRXp3NmNPU21sc19lOEhKeGJvNkdoZ0xzR3NEVnJDamVaY1hTbzFUYWdqV2dQZlNlYnl4Y0VnendIY2dWbUozM0pLMFdOZmwzOENDNktod1VHZzEzR2tGb2w0d0lOODBoTHp1c3NhWkphMk9ESFZSc3FiaE9TVHB1TVg2U0lMRlRKaFpkcTFBMWY5NThhNnBHU0t6eXFKSUNsMUFydmltVldiaW53MnRkZmo1NnNjNlpRSWpGS1Z1LWU2U3RMSTBfdHJsR3U?oc=5",
+      "https://timesofindia.indiatimes.com/technology/technology-news/since-2004-bill-gates-has-sent-millions-of-anti-malaria-nets-to-africa-but-the-donated-gear-is-devastating-local-waters/articleshow/134886254.cms"
+    ],
+    "source_names": [
+      "Diario AS",
+      "indiatimes.com"
+    ],
+    "source_channels": [
+      "Google News",
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-15T10:42:52.143417+00:00",
+    "is_duplicate_of": "d93db93f-ce6d-4814-ac28-9047bfbadaca"
+  },
+  {
+    "entry_id": "59693150-3792-4f15-af89-937c6c1bd389",
+    "donor": "Good Food Institute Asia Pacific (GFI APAC)",
+    "recipient": "World Health Organization (WHO)",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Collaboration on publishing a public health report",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "The World Health Organization (WHO) has partnered with the Good Food Institute Asia Pacific (GFI APAC) to publish a public health report on alternative proteins.",
+    "figure_quote": null,
+    "assumptions": [
+      "The nature of the partnership suggests an in-kind contribution rather than a monetary donation."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiswFBVV95cUxORVJsdDdWR3pRYnBrSFk3eV9LSEdTNGNTMkxSVHNfSmdWazdYX3h5OHRoVzFVLS1OTTR4UEVhQ2JlMHpCcHJKOFYxQ2xJUTlBMTdoQnFySm00eUVHR2dDcV9yaV9CRmRkbDJNZ1lUMHZiTUtCMmdFNllUaVlsZTQ5SkdLaXZnMzdaX3A1RzZJWWJmMHhDODl6TVhfbVlFLUhpTVRRU25DbTFwMW8tRGpaOFQtcw?oc=5"
+    ],
+    "source_names": [
+      "Green Queen Media"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-15T10:43:57.059139+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "b84deba3-69f8-4185-b048-6d835712e80a",
+    "donor": "MARAN",
+    "recipient": "shipping institute",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "training and capacity building",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "MARAN pledged to provide sustained capacity building and training for members at a shipping institute.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQjVwVmlCSGhmS08yZ29ocHpKMU43OGxUbXBaXzVDeU1TaVVfem10Qy12TUVfQjZIRDhULUxpeFZOOWhxMlZIcVpDMkUtQkRyV3cyTmRGWFB4aEZuRTBSMTUwY3VLYTVjYTJ0SFFwVzVnY3hmZEZfVXBVUmJsNzUwdkU4VXdwN0otWGtweGczNnBsVXN4SWtoUWZkQ3lNUlVReU16dnhFM2NIUUtQZ1Q1djhrOWpPRThtLXhxMHVfR1o?oc=5"
+    ],
+    "source_names": [
+      "Eye Witness News"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-15T10:46:58.850928+00:00",
+    "is_duplicate_of": "bd038b8f-fae0-41db-b2ff-6e536103e92a"
+  },
+  {
+    "entry_id": "f5885cfd-b2a8-4ecf-8343-6375e455708b",
+    "donor": "Bang Chan",
+    "recipient": "World Vision",
+    "recipient_type": "INGO",
+    "amount_text": "1 million won",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Bang Chan, a member of the group Stray Kids, donated 1 million won to World Vision, an international NGO.",
+    "figure_quote": "1 million won",
+    "assumptions": [
+      "The donation is by an individual, not a corporate entity."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ScmVocHpJMnRzSl9sOXlrOGtLWDNObndfblp4MTB2T29raGxUc3VuNl9NMWRMVkh4WWhla3hiVWo2eU1ycml2SE9zS1JHVFpUTGl6VHpOZEtPQ2lmTE9lYTR5SmFlMGMzZ3R2R1VHaVBkYXNDYXFoRw?oc=5"
+    ],
+    "source_names": [
+      "스타뉴스"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-15T10:47:11.883974+00:00",
+    "is_duplicate_of": "2668065c-287d-4131-a339-69fbd1fdac20"
+  },
+  {
+    "entry_id": "6cd70908-5c02-4f7c-9367-f9e07ae17693",
+    "donor": "Educo",
+    "recipient": "national mobilization effort",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "school kits",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Educo has provided 11,000 school kits as part of a national mobilization effort for the 2026-2027 school year.",
+    "figure_quote": "11,000 school kits",
+    "assumptions": [
+      "The recipient is described as a 'national mobilization effort', which is interpreted as an 'Other nonprofit' due to the lack of a specific organization name."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiuAFBVV95cUxORWJMS19TbGQtRElhWkRUeWNnTElVbG43THBGbDFUc3ZXa0tTYjBYUzU5akFtTWRyQ1M4N1NfVDlMV0RqSDU5T0tDcVZXY2lJaEVVZDhNSTZDeWItdUFDd0NmMXRBNHJEWlRpX29pU0VkQ1MwMjhnVjJzXzRBb3F2WVFhOHAzcXVzTGdoWUUzRHNNNHpodVVLYl9mLTM0aWc5NFpsQUN1dS1RcG5EMTNLM1pLdWNRcjRG?oc=5"
+    ],
+    "source_names": [
+      "beninwebtv.com"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-15T10:47:32.138001+00:00",
+    "is_duplicate_of": "f92ea55f-ad63-4bde-a545-8e90d19fd403"
+  },
+  {
+    "entry_id": "e725bdce-d06e-48f5-b482-f03b8fab2eec",
+    "donor": "Pierre Omidyar and his wife",
+    "recipient": "Hawaii’s community foundation",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$50 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "In 2009, Pierre Omidyar and his wife committed $50 million to Hawaii's community foundation, which subsequently supported a stabilization program aiding over 10,000 individuals and families.",
+    "figure_quote": "$50 million",
+    "assumptions": [
+      "The donation is attributed to Pierre Omidyar and his wife personally, not directly to eBay as a corporate entity."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://timesofindia.indiatimes.com/technology/tech-news/in-2009-ebay-founder-pierre-omidyar-and-his-wife-pledged-50-million-to-hawaiis-community-foundation-a-stabilization-program-backed-by-the-fund-later-helped-more-than-10000-people-and-families/articleshow/134945317.cms"
+    ],
+    "source_names": [
+      "indiatimes.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-15T11:01:10.547759+00:00",
+    "is_duplicate_of": null
   }
 ]
