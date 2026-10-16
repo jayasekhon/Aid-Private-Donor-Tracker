@@ -1,0 +1,194 @@
+{
+  "date": "2026-10-16",
+  "entries": [
+    {
+      "entry_id": "c211e486-b1f1-4a44-b4c4-491ae049307e",
+      "donor": "Bang Chan",
+      "recipient": "World Vision",
+      "recipient_type": "INGO",
+      "amount_text": "100 million KRW",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Bang Chan, a member of Stray Kids, donated 100 million KRW to World Vision to support children's dreams.",
+      "figure_quote": "KRW 100 Million",
+      "assumptions": [],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ScmVocHpJMnRzSl9sOXlrOGtLWDNObndfblp4MTB2T29raGxUc3VuNl9NMWRMVkh4WWhla3hiVWo2eU1ycml2SE9zS1JHVFpUTGl6VHpOZEtPQ2lmTE9lYTR5SmFlMGMzZ3R2R1VHaVBkYXNDYXFoRw?oc=5",
+        "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4MldiczlyUXF0d0ladTlfbnFIZnlPbnZZaWFGbGxtWEVGM2xmRjVLSWtIV1gzYmNRYjR6aGZ6eHE2SGpOVnBPckswVnVkUFo3?oc=5"
+      ],
+      "source_names": [
+        "매일경제",
+        "스타뉴스"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-16T10:33:20.843303+00:00",
+      "is_duplicate_of": "f5885cfd-b2a8-4ecf-8343-6375e455708b"
+    },
+    {
+      "entry_id": "643b5b73-dd9a-42b7-bfb1-6c585ca66aaa",
+      "donor": "Dangote Group",
+      "recipient": "Borno Displaced Persons, Returnees",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Shares",
+      "country_scope": "Nigeria",
+      "status": "new_commitment",
+      "summary": "Dangote Group donated N366 million worth of shares to support displaced persons and returnees in Borno.",
+      "figure_quote": "N366m Shares",
+      "assumptions": [
+        "The exact nonprofit organization managing the funds for displaced persons and returnees is not specified."
+      ],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVzNoVDdVYUVCQnVIOTVSWEFlZUN2b3J2VWtmb1lPaGlNMFpDQWNIWFZEYW1kY082MWcwTk9fQk5TX3lWWkpIQjRoZklxc0tUMUlyQWxRRlVJZXFOY0VBazQ3LVdzb1dRanlnT1VpVWhLUjdJZ3RuMnpPd3lhcTdlMGpsdThDS0tiR2JOdndXemxiT3lOTnllV2dR?oc=5"
+      ],
+      "source_names": [
+        "LEADERSHIP Newspapers"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-16T10:29:40.725907+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "a7620902-dd17-4a71-bf0a-321b25fa60f2",
+      "donor": "Laughing Man Foundation",
+      "recipient": "farming families",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "safer homes, healthcare, and college scholarships",
+      "country_scope": "Unspecified / global",
+      "status": "unclear",
+      "summary": "Hugh Jackman's Laughing Man Foundation provided support for safer homes, healthcare, and college scholarships to farming families.",
+      "figure_quote": null,
+      "assumptions": [
+        "The specific nature of the support (e.g., monetary or in-kind) and the exact amount are not detailed in the source text."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://timesofindia.indiatimes.com/world/us/in-2009-hugh-jackman-met-an-ethiopian-coffee-farmer-who-inspired-a-business-his-laughing-man-foundation-later-supported-safer-homes-healthcare-and-college-scholarships-for-farming-families/articleshow/134890227.cms"
+      ],
+      "source_names": [
+        "indiatimes.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-16T10:48:12.513715+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 95,
+    "gdelt_candidates_found": 821,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 291,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 3403,
+    "items_filtered_as_stale": 1867,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 377,
+    "clusters_analysed": 203,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 8,
+    "rejected_unnamed_recipient": 6,
+    "rejected_no_named_donor": 2,
+    "rejected_out_of_scope_country": 8,
+    "rejected_government_entity": 1,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 4,
+    "rejected_no_evidence": 2,
+    "rejected_government_donor": 3,
+    "entries_published": 3,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "Feed parse error: <unknown>:2:119: not well-formed (invalid token)"
+    }
+  ]
+}
