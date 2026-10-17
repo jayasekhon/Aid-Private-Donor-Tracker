@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-17",
+  "entries": [
+    {
+      "entry_id": "5c706e6d-f604-4dfb-9cf9-117ee7768380",
+      "donor": "Bang Chan",
+      "recipient": "World Vision",
+      "recipient_type": "INGO",
+      "amount_text": "1 million won",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Bang Chan, a member of the group Stray Kids, donated 1 million won to World Vision, an international NGO.",
+      "figure_quote": "1 million won",
+      "assumptions": [
+        "The donation is attributed to an individual, Bang Chan, rather than a corporate entity."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ScmVocHpJMnRzSl9sOXlrOGtLWDNObndfblp4MTB2T29raGxUc3VuNl9NMWRMVkh4WWhla3hiVWo2eU1ycml2SE9zS1JHVFpUTGl6VHpOZEtPQ2lmTE9lYTR5SmFlMGMzZ3R2R1VHaVBkYXNDYXFoRw?oc=5"
+      ],
+      "source_names": [
+        "스타뉴스"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-17T10:06:07.775971+00:00",
+      "is_duplicate_of": "c211e486-b1f1-4a44-b4c4-491ae049307e"
+    },
+    {
+      "entry_id": "f39a0dfc-74d6-4da7-b6cf-598c469b415a",
+      "donor": "Elon Musk",
+      "recipient": "Flint schools",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$480,350",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Elon Musk donated $480,350 to Flint schools in 2018 for the installation of water filters, enabling students to drink from fountains after years without safe water.",
+      "figure_quote": "$480,350 for water filters",
+      "assumptions": [
+        "Elon Musk's donation was made personally, not through a corporate entity."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.hindustantimes.com/world-news/us-news/in-2018-elon-musk-gave-flint-schools-480-350-for-water-filters-four-years-later-students-could-drink-from-fountains-after-years-without-safe-water-101791197562296.html"
+      ],
+      "source_names": [
+        "hindustantimes.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-17T10:08:37.518422+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 94,
+    "gdelt_candidates_found": 728,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 295,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 3313,
+    "items_filtered_as_stale": 1859,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 393,
+    "clusters_analysed": 214,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 8,
+    "rejected_unnamed_recipient": 5,
+    "rejected_no_named_donor": 2,
+    "rejected_out_of_scope_country": 6,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 4,
+    "rejected_no_evidence": 3,
+    "rejected_government_donor": 3,
+    "entries_published": 2,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}

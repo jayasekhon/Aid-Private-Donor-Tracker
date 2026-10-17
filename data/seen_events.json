@@ -7973,5 +7973,105 @@
     ],
     "date_found": "2026-10-16T10:48:12.513715+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "5c706e6d-f604-4dfb-9cf9-117ee7768380",
+    "donor": "Bang Chan",
+    "recipient": "World Vision",
+    "recipient_type": "INGO",
+    "amount_text": "1 million won",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Bang Chan, a member of the group Stray Kids, donated 1 million won to World Vision, an international NGO.",
+    "figure_quote": "1 million won",
+    "assumptions": [
+      "The donation is attributed to an individual, Bang Chan, rather than a corporate entity."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ScmVocHpJMnRzSl9sOXlrOGtLWDNObndfblp4MTB2T29raGxUc3VuNl9NMWRMVkh4WWhla3hiVWo2eU1ycml2SE9zS1JHVFpUTGl6VHpOZEtPQ2lmTE9lYTR5SmFlMGMzZ3R2R1VHaVBkYXNDYXFoRw?oc=5"
+    ],
+    "source_names": [
+      "스타뉴스"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-17T10:06:07.775971+00:00",
+    "is_duplicate_of": "c211e486-b1f1-4a44-b4c4-491ae049307e"
+  },
+  {
+    "entry_id": "f39a0dfc-74d6-4da7-b6cf-598c469b415a",
+    "donor": "Elon Musk",
+    "recipient": "Flint schools",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$480,350",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Elon Musk donated $480,350 to Flint schools in 2018 for the installation of water filters, enabling students to drink from fountains after years without safe water.",
+    "figure_quote": "$480,350 for water filters",
+    "assumptions": [
+      "Elon Musk's donation was made personally, not through a corporate entity."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.hindustantimes.com/world-news/us-news/in-2018-elon-musk-gave-flint-schools-480-350-for-water-filters-four-years-later-students-could-drink-from-fountains-after-years-without-safe-water-101791197562296.html"
+    ],
+    "source_names": [
+      "hindustantimes.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-17T10:08:37.518422+00:00",
+    "is_duplicate_of": null
   }
 ]
