@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-18",
+  "entries": [
+    {
+      "entry_id": "64b8b6fd-1111-4d7f-8544-00632e6d5752",
+      "donor": "Bang Chan (Stray Kids)",
+      "recipient": "World Vision",
+      "recipient_type": "INGO",
+      "amount_text": "100 million won",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Bang Chan, a member of Stray Kids, donated 100 million won to World Vision to support children's dreams.",
+      "figure_quote": "KRW 100 Million",
+      "assumptions": [
+        "The donation is attributed to Bang Chan personally, not directly to a corporate entity, but is included due to his affiliation with Stray Kids, a corporate-managed entity."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 3,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE5ScmVocHpJMnRzSl9sOXlrOGtLWDNObndfblp4MTB2T29raGxUc3VuNl9NMWRMVkh4WWhla3hiVWo2eU1ycml2SE9zS1JHVFpUTGl6VHpOZEtPQ2lmTE9lYTR5SmFlMGMzZ3R2R1VHaVBkYXNDYXFoRw?oc=5",
+        "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4MldiczlyUXF0d0ladTlfbnFIZnlPbnZZaWFGbGxtWEVGM2xmRjVLSWtIV1gzYmNRYjR6aGZ6eHE2SGpOVnBPckswVnVkUFo3?oc=5",
+        "https://news.google.com/rss/articles/CBMiREFVX3lxTE5JYTYtMlZsajhVX3NUQjVwcDF2eDZVYTloUUtKSFc2c0MxVTZUemU5MEc1NU9vcHNncU5YVTQyeDhydHdK?oc=5"
+      ],
+      "source_names": [
+        "DIPE.CO.KR",
+        "매일경제",
+        "스타뉴스"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-18T10:17:56.947178+00:00",
+      "is_duplicate_of": "5c706e6d-f604-4dfb-9cf9-117ee7768380"
+    },
+    {
+      "entry_id": "83c01b41-d00e-44e5-9b6d-77413ae0c8e9",
+      "donor": "GFI APAC",
+      "recipient": "WHO",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Collaboration on publishing a report",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "The World Health Organization (WHO) has partnered with GFI APAC to publish a public health report on alternative proteins.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxORVJsdDdWR3pRYnBrSFk3eV9LSEdTNGNTMkxSVHNfSmdWazdYX3h5OHRoVzFVLS1OTTR4UEVhQ2JlMHpCcHJKOFYxQ2xJUTlBMTdoQnFySm00eUVHR2dDcV9yaV9CRmRkbDJNZ1lUMHZiTUtCMmdFNllUaVlsZTQ5SkdLaXZnMzdaX3A1RzZJWWJmMHhDODl6TVhfbVlFLUhpTVRRU25DbTFwMW8tRGpaOFQtcw?oc=5"
+      ],
+      "source_names": [
+        "Green Queen Media"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-18T10:13:49.569739+00:00",
+      "is_duplicate_of": "2207a3e1-1aa1-4759-833e-3e65c2a7cd44"
+    },
+    {
+      "entry_id": "9ae4bb20-1f1e-47a2-9e0a-515eedfcfcfd",
+      "donor": "Tony Robbins",
+      "recipient": "Feeding America",
+      "recipient_type": "INGO",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "meals",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Tony Robbins launched the 100 Million Meals Challenge in 2014, which expanded and reached 1 billion meals by 2023.",
+      "figure_quote": "1 billion meals",
+      "assumptions": [
+        "The exact nature of Tony Robbins' involvement (personal donation vs. challenge initiation) is not explicitly detailed in the source text."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://timesofindia.indiatimes.com/world/us/in-2014-tony-robbins-turned-a-childhood-memory-of-his-struggling-family-receiving-groceries-from-a-stranger-into-feeding-americas-100-million-meals-challenge-expanded-later-it-reached-1-billion-meals-in-2023/articleshow/134914887.cms"
+      ],
+      "source_names": [
+        "indiatimes.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-18T10:22:49.073469+00:00",
+      "is_duplicate_of": "c18ac945-b9f4-4dbe-8a35-ba399775547d"
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 97,
+    "gdelt_candidates_found": 484,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 311,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 3090,
+    "items_filtered_as_stale": 1880,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 384,
+    "clusters_analysed": 222,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 7,
+    "rejected_unnamed_recipient": 6,
+    "rejected_no_named_donor": 2,
+    "rejected_out_of_scope_country": 7,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 4,
+    "rejected_no_evidence": 2,
+    "rejected_government_donor": 2,
+    "entries_published": 3,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "PR Newswire - All Public Company News",
+      "url": "https://www.prnewswire.com/rss/news-releases-list.rss",
+      "error": "404 Client Error: Not Found for url: https://www.prnewswire.com/rss/news-releases-list.rss/"
+    },
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
