@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-19",
+  "entries": [
+    {
+      "entry_id": "5cc3d25d-341a-4ab0-9ec8-3dcf424f1d63",
+      "donor": "Bill Gates",
+      "recipient": "Africa",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "anti-malaria nets",
+      "country_scope": "Africa",
+      "status": "new_commitment",
+      "summary": "Bill Gates has been sending millions of anti-malaria nets to Africa since 2004.",
+      "figure_quote": "millions of anti-malaria nets",
+      "assumptions": [
+        "Bill Gates' donations are likely channeled through a foundation or nonprofit, but the specific entity is not named in the source text."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMGpXWWJuWk1ReVRDZkpKTTlOVW1RR0lMd1pZNVFCY1FFMFdfX204Q1VRVjdDS0FHNTZUeHR6OEVkNTdFLW1TY1A3dmNPUGM1TUxGbFRabDR0UEdZR0J1Q2JKLTBzeUdLTURFUFpUSzROOGs4QTF0OFhWejF4Tm5oMnQ1WU1HSEtwQ3FfOGdBXzNOSkhhQ3p1UXFDbE5rdWY0M2VRcEYzN0haUk1jdUlleUxibXVhTXVEMEZCb1lucGZjZXVDZENHUW1VRVNlQWdCZXFoTFdNMDTSAewBQVVfeXFMTkk2c2RpSUpBSGxSQ2l3M0JyVFB6bjNmenF0djh0Q0FQRXp3NmNPU21sc19lOEhKeGJvNkdoZ0xzR3NEVnJDamVaY1hTbzFUYWdqV2dQZlNlYnl4Y0VnendIY2dWbUozM0pLMFdOZmwzOENDNktod1VHZzEzR2tGb2w0d0lOODBoTHp1c3NhWkphMk9ESFZSc3FiaE9TVHB1TVg2U0lMRlRKaFpkcTFBMWY5NThhNnBHU0t6eXFKSUNsMUFydmltVldiaW53MnRkZmo1NnNjNlpRSWpGS1Z1LWU2U3RMSTBfdHJsR3U?oc=5",
+        "https://timesofindia.indiatimes.com/technology/technology-news/since-2004-bill-gates-has-sent-millions-of-anti-malaria-nets-to-africa-but-the-donated-gear-is-devastating-local-waters/articleshow/134886254.cms"
+      ],
+      "source_names": [
+        "Diario AS",
+        "indiatimes.com"
+      ],
+      "source_channels": [
+        "Google News",
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-19T11:43:51.305241+00:00",
+      "is_duplicate_of": "a0f72967-0aa6-4cc1-81c3-5c9700029413"
+    },
+    {
+      "entry_id": "18a1994c-15ba-4275-bcd9-b31a50ccca36",
+      "donor": "Yrkesorganisasjonenes Sentralforbund - YS",
+      "recipient": "TV campaign",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "200,000 kroner",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Yrkesorganisasjonenes Sentralforbund - YS donated 200,000 kroner to a TV campaign.",
+      "figure_quote": "200,000 kroner",
+      "assumptions": [
+        "The nature of the TV campaign as a nonprofit entity is assumed based on the context of the donation."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikAFBVV95cUxPOS01TnlkZ1d4Y2p2TFdhQjAzUUZLQV9LT2FKaW1HMHJxa3JmWUZDaFFHOHJkZHZVUUtjSloxOE1wRVBZLTd1U1ZrUjA2aEY3d2F1bzlWcGsyMDd2eVZNYTJfQUk2Y0JGLWZrTUFGWUxkbkxqdGJ3NlVpbWZXNENoa253S1hsNFJFbGVlSDBDUEY?oc=5"
+      ],
+      "source_names": [
+        "Yrkesorganisasjonenes Sentralforbund - YS"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-19T11:48:17.728805+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "7510826c-1246-4c15-9dab-1ee1247d6605",
+      "donor": "Educo",
+      "recipient": "national mobilization",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "11,000 school kits",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Educo, a private organization, has donated 11,000 school kits as part of the national mobilization for the 2026-2027 school year.",
+      "figure_quote": "11,000 school kits",
+      "assumptions": [
+        "The exact nature of the 'national mobilization' as a recipient is unclear, but it is treated as a nonprofit for the purpose of this entry."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxORWJMS19TbGQtRElhWkRUeWNnTElVbG43THBGbDFUc3ZXa0tTYjBYUzU5akFtTWRyQ1M4N1NfVDlMV0RqSDU5T0tDcVZXY2lJaEVVZDhNSTZDeWItdUFDd0NmMXRBNHJEWlRpX29pU0VkQ1MwMjhnVjJzXzRBb3F2WVFhOHAzcXVzTGdoWUUzRHNNNHpodVVLYl9mLTM0aWc5NFpsQUN1dS1RcG5EMTNLM1pLdWNRcjRG?oc=5"
+      ],
+      "source_names": [
+        "beninwebtv.com"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-19T11:49:09.937158+00:00",
+      "is_duplicate_of": "6cd70908-5c02-4f7c-9367-f9e07ae17693"
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 102,
+    "gdelt_candidates_found": 495,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 333,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 3146,
+    "items_filtered_as_stale": 1861,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 420,
+    "clusters_analysed": 234,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 5,
+    "rejected_unnamed_recipient": 4,
+    "rejected_no_named_donor": 3,
+    "rejected_out_of_scope_country": 8,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 5,
+    "rejected_no_evidence": 6,
+    "rejected_government_donor": 2,
+    "entries_published": 3,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
