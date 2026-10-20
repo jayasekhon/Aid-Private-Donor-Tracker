@@ -8378,5 +8378,101 @@
     ],
     "date_found": "2026-10-19T11:49:09.937158+00:00",
     "is_duplicate_of": "6cd70908-5c02-4f7c-9367-f9e07ae17693"
+  },
+  {
+    "entry_id": "106c4a96-74f1-4dca-aa79-bfa90008cc39",
+    "donor": "Trex Company",
+    "recipient": "Sacramento Zoo",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Transcend Decking materials",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Trex Company donated Transcend Decking materials to the Sacramento Zoo for a project.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPMTAySHBjaXBCRTdRMUdOVC16TW90VzJRMldjTzZVOWdsWFRnTGZ2bVZRXzd2VGhIOVNzSlBDVjVRTDhoYkhMNERWc1RNLUd5ajlGc1I1b0wtWkxnXzNTRTZxODlTR2hzcWJ0eUpqRktQcUpnd3hzc0kxb1hyTEhBUnMwVWxqV3BVTk85eTNtenh0a0U0Qzc1b19vbmFjd1U1OVB5NjNDZ3pRYW9WOHd0SjVGTmI3c2Q2SHBWb2tRX1hOVmtvNEt0QXZuc3MyYTVrS2hR?oc=5"
+    ],
+    "source_names": [
+      "LBM Journal"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-20T10:46:55.981748+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "fb206377-c773-48ac-b7b2-c911884a1fd9",
+    "donor": "Good Food Institute Asia Pacific (GFI APAC)",
+    "recipient": "World Health Organization (WHO)",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Collaboration on publishing a public health report",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "The World Health Organization (WHO) has partnered with the Good Food Institute Asia Pacific (GFI APAC) to publish a public health report on alternative proteins.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiswFBVV95cUxORVJsdDdWR3pRYnBrSFk3eV9LSEdTNGNTMkxSVHNfSmdWazdYX3h5OHRoVzFVLS1OTTR4UEVhQ2JlMHpCcHJKOFYxQ2xJUTlBMTdoQnFySm00eUVHR2dDcV9yaV9CRmRkbDJNZ1lUMHZiTUtCMmdFNllUaVlsZTQ5SkdLaXZnMzdaX3A1RzZJWWJmMHhDODl6TVhfbVlFLUhpTVRRU25DbTFwMW8tRGpaOFQtcw?oc=5"
+    ],
+    "source_names": [
+      "Green Queen Media"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-20T10:48:07.206208+00:00",
+    "is_duplicate_of": "59693150-3792-4f15-af89-937c6c1bd389"
   }
 ]
