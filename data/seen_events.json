@@ -8474,5 +8474,253 @@
     ],
     "date_found": "2026-10-20T10:48:07.206208+00:00",
     "is_duplicate_of": "59693150-3792-4f15-af89-937c6c1bd389"
+  },
+  {
+    "entry_id": "7eb1aeff-8db8-4563-a6e5-66e622673366",
+    "donor": "GFI APAC",
+    "recipient": "WHO",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Collaboration on publishing a report",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "The World Health Organization (WHO) has partnered with GFI APAC to publish a public health report on alternative proteins.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiswFBVV95cUxORVJsdDdWR3pRYnBrSFk3eV9LSEdTNGNTMkxSVHNfSmdWazdYX3h5OHRoVzFVLS1OTTR4UEVhQ2JlMHpCcHJKOFYxQ2xJUTlBMTdoQnFySm00eUVHR2dDcV9yaV9CRmRkbDJNZ1lUMHZiTUtCMmdFNllUaVlsZTQ5SkdLaXZnMzdaX3A1RzZJWWJmMHhDODl6TVhfbVlFLUhpTVRRU25DbTFwMW8tRGpaOFQtcw?oc=5"
+    ],
+    "source_names": [
+      "Green Queen Media"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-21T10:58:58.088129+00:00",
+    "is_duplicate_of": "83c01b41-d00e-44e5-9b6d-77413ae0c8e9"
+  },
+  {
+    "entry_id": "3b1f91d9-32b8-4119-adae-3828283b4645",
+    "donor": "Lucy",
+    "recipient": "Oxfam",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Voice donation for a campaign",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Lucy, a celebrity, has lent her voice to an Oxfam campaign aimed at helping climate-vulnerable groups.",
+    "figure_quote": null,
+    "assumptions": [
+      "The donation is in-kind (voice for a campaign) rather than monetary."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQTFScXZ4RzA1R3haOWw4cE1ERktXNUxBUlNPVzh3TjZpckIxMXZjQ1R2N0FBNEtXel9zcTNqcWFMck9BWWw2NmdHbVRHcG02WHpTYnBOVVA3WkxDcnctX2RrWFFVN0p0a0NmT0VGZUZLZEJJRW5TYjhWcUVtX1I5bHBxRlYyd0xXN21IcnVUc2dpR2VNbmpmY0FxNGjSAZwBQVVfeXFMT0ExUnF2eEcwNUd4WjlsOHBNREZLVzVMQVJTT1c4d042aXJCMTF2Y0NUdjdBQTRLV3pfc3EzanFhTHJPQVlsNjZnR21UR3BtNlh6U2JwTlVQN1pMQ3J3LV9ka1hRVTdKdGtDZk9FRmVGS2RCSUVuU2I4VnFFbV9SOWxwcUZWMndMVzdtSHJ1VHNnaUdlTW5qZmNBcTRo?oc=5"
+    ],
+    "source_names": [
+      "Chosunbiz"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-21T11:02:58.819710+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "a15e7fdc-66b1-4ad4-97bb-9a6618a5b8a0",
+    "donor": "MARAN",
+    "recipient": "shipping institute",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "training and capacity building",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "MARAN pledged to provide sustained capacity building and training for members at a shipping institute.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQjVwVmlCSGhmS08yZ29ocHpKMU43OGxUbXBaXzVDeU1TaVVfem10Qy12TUVfQjZIRDhULUxpeFZOOWhxMlZIcVpDMkUtQkRyV3cyTmRGWFB4aEZuRTBSMTUwY3VLYTVjYTJ0SFFwVzVnY3hmZEZfVXBVUmJsNzUwdkU4VXdwN0otWGtweGczNnBsVXN4SWtoUWZkQ3lNUlVReU16dnhFM2NIUUtQZ1Q1djhrOWpPRThtLXhxMHVfR1o?oc=5"
+    ],
+    "source_names": [
+      "Eye Witness News"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-21T11:03:24.184223+00:00",
+    "is_duplicate_of": "b84deba3-69f8-4185-b048-6d835712e80a"
+  },
+  {
+    "entry_id": "3f2da41e-a4f7-4e63-a32f-232c8921c7ed",
+    "donor": "Electrolux Food Foundation",
+    "recipient": "Various food aid programs",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Food aid",
+    "country_scope": "Unspecified / global",
+    "status": "renewed_partnership",
+    "summary": "Electrolux Food Foundation, a corporate foundation, has been supporting food aid programs for a decade.",
+    "figure_quote": null,
+    "assumptions": [
+      "The specific recipients and amounts are not detailed in the source text."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.prnewswire.co.uk/news-releases/electrolux-food-foundation-celebrates-its-10th-anniversary-302911009.html",
+      "https://www.prnewswire.com/news-releases/electrolux-food-foundation-celebrates-its-10th-anniversary-302911009.html"
+    ],
+    "source_names": [
+      "prnewswire.com",
+      "prnewswire.co.uk"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-21T11:08:03.570816+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "b57b6817-4ae0-44a3-b538-af048711b486",
+    "donor": "Tony Robbins",
+    "recipient": "Feeding America",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "meals",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Tony Robbins launched the 100 Million Meals Challenge in 2014, which expanded and reached 1 billion meals by 2023.",
+    "figure_quote": "1 billion meals",
+    "assumptions": [
+      "Tony Robbins is an individual, not a corporate entity; thus, this event does not meet the criteria for inclusion."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://timesofindia.indiatimes.com/world/us/in-2014-tony-robbins-turned-a-childhood-memory-of-his-struggling-family-receiving-groceries-from-a-stranger-into-feeding-americas-100-million-meals-challenge-expanded-later-it-reached-1-billion-meals-in-2023/articleshow/134914887.cms"
+    ],
+    "source_names": [
+      "indiatimes.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-21T11:10:20.657327+00:00",
+    "is_duplicate_of": "9ae4bb20-1f1e-47a2-9e0a-515eedfcfcfd"
   }
 ]
