@@ -8722,5 +8722,101 @@
     ],
     "date_found": "2026-10-21T11:10:20.657327+00:00",
     "is_duplicate_of": "9ae4bb20-1f1e-47a2-9e0a-515eedfcfcfd"
+  },
+  {
+    "entry_id": "5d9b0a6b-bc1c-47ee-85e6-ceff7432882d",
+    "donor": "TH Group",
+    "recipient": "She Codes the Future",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "digital opportunities and resources",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "TH Group has partnered with the 'She Codes the Future' initiative to enhance digital opportunities for women and girls.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNenFwZ1FxTWhhdVlTTHhWbkQwLXpBTWxzM1B1T2lNelRtRkprM3BlWVRPTDFLRVBsQ1dUVXR4V2hJc1FRamdQVVlUWVFWRnJJdFpqR0xvY3p4YkxfZGhwUUFOaUdtVDRtQzNkeUs0UGJkNHE2ejdiYV9qWmxOajJTT2FucXlYZi1rZXN4eXM2dktheE9wTy1GM0xGTDdZNms5UGFfZ3VjOE5ZTkVMZVFNb1FTR3FfWURRR29tOG1XX1hVMFFTMzBkWGE1RmhnZVNMTHh6dg?oc=5"
+    ],
+    "source_names": [
+      "Vietnam.vn"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-22T11:01:05.354723+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "7cb7b623-279b-4474-8637-5157acb0838e",
+    "donor": "Airtel",
+    "recipient": "UNICEF",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Free digital learning services",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "Airtel has expanded its free digital learning initiative to Nigerian schools in partnership with UNICEF.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://bizwatchnigeria.ng/free-digital-learning-nigeria-unicef-airtel/"
+    ],
+    "source_names": [
+      "bizwatchnigeria.ng"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-22T11:07:22.922096+00:00",
+    "is_duplicate_of": null
   }
 ]
