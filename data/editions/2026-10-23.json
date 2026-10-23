@@ -1,0 +1,295 @@
+{
+  "date": "2026-10-23",
+  "entries": [
+    {
+      "entry_id": "ebde3edc-f198-4d43-b46a-85d9c9ea8e60",
+      "donor": "Bill Gates",
+      "recipient": "Africa",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "anti-malaria nets",
+      "country_scope": "Africa",
+      "status": "new_commitment",
+      "summary": "Bill Gates has been sending millions of anti-malaria nets to Africa since 2004.",
+      "figure_quote": "millions of anti-malaria nets",
+      "assumptions": [
+        "Bill Gates' donations are likely made through the Bill & Melinda Gates Foundation, but the source text does not explicitly state this."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMGpXWWJuWk1ReVRDZkpKTTlOVW1RR0lMd1pZNVFCY1FFMFdfX204Q1VRVjdDS0FHNTZUeHR6OEVkNTdFLW1TY1A3dmNPUGM1TUxGbFRabDR0UEdZR0J1Q2JKLTBzeUdLTURFUFpUSzROOGs4QTF0OFhWejF4Tm5oMnQ1WU1HSEtwQ3FfOGdBXzNOSkhhQ3p1UXFDbE5rdWY0M2VRcEYzN0haUk1jdUlleUxibXVhTXVEMEZCb1lucGZjZXVDZENHUW1VRVNlQWdCZXFoTFdNMDTSAewBQVVfeXFMTkk2c2RpSUpBSGxSQ2l3M0JyVFB6bjNmenF0djh0Q0FQRXp3NmNPU21sc19lOEhKeGJvNkdoZ0xzR3NEVnJDamVaY1hTbzFUYWdqV2dQZlNlYnl4Y0VnendIY2dWbUozM0pLMFdOZmwzOENDNktod1VHZzEzR2tGb2w0d0lOODBoTHp1c3NhWkphMk9ESFZSc3FiaE9TVHB1TVg2U0lMRlRKaFpkcTFBMWY5NThhNnBHU0t6eXFKSUNsMUFydmltVldiaW53MnRkZmo1NnNjNlpRSWpGS1Z1LWU2U3RMSTBfdHJsR3U?oc=5",
+        "https://timesofindia.indiatimes.com/technology/technology-news/since-2004-bill-gates-has-sent-millions-of-anti-malaria-nets-to-africa-but-the-donated-gear-is-devastating-local-waters/articleshow/134886254.cms"
+      ],
+      "source_names": [
+        "Diario AS",
+        "indiatimes.com"
+      ],
+      "source_channels": [
+        "Google News",
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-23T10:50:02.932565+00:00",
+      "is_duplicate_of": "5cc3d25d-341a-4ab0-9ec8-3dcf424f1d63"
+    },
+    {
+      "entry_id": "7835cbf1-b7a6-4762-931e-e82b53d07a59",
+      "donor": "Dangote Group",
+      "recipient": "Borno Displaced Persons, Returnees",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Shares",
+      "country_scope": "Nigeria",
+      "status": "new_commitment",
+      "summary": "Dangote Group donated N366 million worth of shares to support displaced persons and returnees in Borno.",
+      "figure_quote": "N366m Shares",
+      "assumptions": [
+        "The exact nonprofit organization managing the funds for displaced persons and returnees is not specified."
+      ],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVzNoVDdVYUVCQnVIOTVSWEFlZUN2b3J2VWtmb1lPaGlNMFpDQWNIWFZEYW1kY082MWcwTk9fQk5TX3lWWkpIQjRoZklxc0tUMUlyQWxRRlVJZXFOY0VBazQ3LVdzb1dRanlnT1VpVWhLUjdJZ3RuMnpPd3lhcTdlMGpsdThDS0tiR2JOdndXemxiT3lOTnllV2dR?oc=5"
+      ],
+      "source_names": [
+        "LEADERSHIP Newspapers"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-23T10:51:27.074054+00:00",
+      "is_duplicate_of": "643b5b73-dd9a-42b7-bfb1-6c585ca66aaa"
+    },
+    {
+      "entry_id": "dd6af010-4250-4bb0-9f23-0fe075d29385",
+      "donor": "Hima Cement",
+      "recipient": "Alumni Golf Tourney",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Pledged support for the tournament",
+      "country_scope": "Unspecified / global",
+      "status": "unclear",
+      "summary": "Hima Cement has pledged additional support for an alumni golf tournament.",
+      "figure_quote": null,
+      "assumptions": [
+        "The nature and amount of support are not specified."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOOVRqQUktelVxX0VUelkyRDhXWDBnellMbDR0djEyNXM1NUtmOVYweHdXTW02VU96UGhxT1UxMmoxX0E4ZHpSYzJ4eUQ1dzhKRjQxTGJGSVN0Nnd2YTdWY1B0aHpSdlM2NmlTMUlYZ05nTVZ5UEFDSlJvX3BnNjNwVkNDUExQcy1PNzNzWXhqOERETU5ic004NEk0Qkd1dDJRY0tXWnNyQnNjMEtSN1JRMTdNNk9wUHRkUG5UalE4M1FtQlRZXzVtRzNtU1lLaXFiN2RTTw?oc=5"
+      ],
+      "source_names": [
+        "UG Diplomat"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-23T10:57:24.631973+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "4ee2cd47-f753-4b73-b143-5cb56de35287",
+      "donor": "Chery",
+      "recipient": "IUCN",
+      "recipient_type": "INGO",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Eco-Tech and Global Philanthropy",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Chery, a Chinese automaker, has partnered with the International Union for Conservation of Nature (IUCN) to support sustainable development and environmental conservation through technology and philanthropy.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.globenewswire.com/news-release/2026/10/22/3386794/0/en/chery-champions-the-one-nature-one-future-vision-with-iucn-co-creating-a-sustainable-future-through-eco-tech-and-global-philanthropy.html"
+      ],
+      "source_names": [
+        "globenewswire.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-23T10:58:55.188840+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "606c118f-562a-415a-b5db-7736ea8ee1e1",
+      "donor": "OMODA & JAECOO",
+      "recipient": "Various local and global nonprofit organizations",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Support through global community initiatives aimed at ecosystem protection and public safety.",
+      "country_scope": "Unspecified / global",
+      "status": "unclear",
+      "summary": "OMODA & JAECOO, through their global community initiatives, have committed to supporting various local and global nonprofit organizations aimed at ecosystem protection and public safety.",
+      "figure_quote": null,
+      "assumptions": [
+        "The specific nonprofit organizations and the exact nature of the support are not detailed in the source text."
+      ],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.globenewswire.com/news-release/2026/10/16/3382245/0/en/from-protecting-ecosystems-to-supporting-public-safety-omoda-jaecoo-creates-local-value-through-global-community-initiatives.html"
+      ],
+      "source_names": [
+        "globenewswire.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-23T11:01:51.893700+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 96,
+    "gdelt_candidates_found": 772,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 347,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 3254,
+    "items_filtered_as_stale": 1686,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 434,
+    "clusters_analysed": 253,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 7,
+    "rejected_unnamed_recipient": 2,
+    "rejected_no_named_donor": 4,
+    "rejected_out_of_scope_country": 8,
+    "rejected_government_entity": 3,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 2,
+    "rejected_no_evidence": 5,
+    "rejected_government_donor": 4,
+    "entries_published": 5,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
