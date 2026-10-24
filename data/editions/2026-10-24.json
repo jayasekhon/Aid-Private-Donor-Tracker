@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-24",
+  "entries": [
+    {
+      "entry_id": "98a0d6ce-9519-4775-a584-f62cf615522c",
+      "donor": "Helen Haines’ campaign",
+      "recipient": "Save the Children",
+      "recipient_type": "INGO",
+      "amount_text": "$350,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Helen Haines' campaign raised $350,000 for Save the Children.",
+      "figure_quote": "$350k",
+      "assumptions": [
+        "The campaign is not explicitly stated to be corporate-led, but the context implies a collective effort which may include corporate donations."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.news.com.au/national/victoria/hundreds-gather-across-victoria-as-injured-mp-helen-haines-loses-both-legs/news-story/7880a54168a623c2446e52869b6d1b3d"
+      ],
+      "source_names": [
+        "news.com.au"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-24T10:29:31.531468+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "405a9213-437b-4874-8281-3141b84d01c6",
+      "donor": "GFI APAC",
+      "recipient": "World Health Organization",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Collaboration on publishing a public health report",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "The World Health Organization (WHO) has partnered with GFI APAC to publish a public health report on alternative proteins.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxORVJsdDdWR3pRYnBrSFk3eV9LSEdTNGNTMkxSVHNfSmdWazdYX3h5OHRoVzFVLS1OTTR4UEVhQ2JlMHpCcHJKOFYxQ2xJUTlBMTdoQnFySm00eUVHR2dDcV9yaV9CRmRkbDJNZ1lUMHZiTUtCMmdFNllUaVlsZTQ5SkdLaXZnMzdaX3A1RzZJWWJmMHhDODl6TVhfbVlFLUhpTVRRU25DbTFwMW8tRGpaOFQtcw?oc=5"
+      ],
+      "source_names": [
+        "Green Queen Media"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-24T10:07:38.188208+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 93,
+    "gdelt_candidates_found": 355,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 330,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2868,
+    "items_filtered_as_stale": 1721,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 428,
+    "clusters_analysed": 261,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 12,
+    "rejected_unnamed_recipient": 5,
+    "rejected_no_named_donor": 3,
+    "rejected_out_of_scope_country": 9,
+    "rejected_government_entity": 4,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 4,
+    "rejected_no_evidence": 8,
+    "rejected_government_donor": 3,
+    "entries_published": 2,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
