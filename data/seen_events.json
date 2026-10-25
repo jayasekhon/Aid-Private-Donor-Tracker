@@ -9167,5 +9167,153 @@
     ],
     "date_found": "2026-10-24T10:29:31.531468+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "bd4b4d9c-2321-4ae5-b3b6-291dbbe7a5e8",
+    "donor": "Good Food Institute Asia Pacific (GFI APAC)",
+    "recipient": "World Health Organization (WHO)",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Collaboration on publishing a public health report",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "The World Health Organization (WHO) has partnered with the Good Food Institute Asia Pacific (GFI APAC) to publish a public health report on alternative proteins.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiswFBVV95cUxORVJsdDdWR3pRYnBrSFk3eV9LSEdTNGNTMkxSVHNfSmdWazdYX3h5OHRoVzFVLS1OTTR4UEVhQ2JlMHpCcHJKOFYxQ2xJUTlBMTdoQnFySm00eUVHR2dDcV9yaV9CRmRkbDJNZ1lUMHZiTUtCMmdFNllUaVlsZTQ5SkdLaXZnMzdaX3A1RzZJWWJmMHhDODl6TVhfbVlFLUhpTVRRU25DbTFwMW8tRGpaOFQtcw?oc=5"
+    ],
+    "source_names": [
+      "Green Queen Media"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-25T10:33:17.656361+00:00",
+    "is_duplicate_of": "fb206377-c773-48ac-b7b2-c911884a1fd9"
+  },
+  {
+    "entry_id": "8d617ab7-6e93-4c58-ba10-fc3d0a528c7b",
+    "donor": "Lucy",
+    "recipient": "Oxfam",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Voice donation for a campaign",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Lucy, a voice actor, has contributed her voice to an Oxfam campaign aimed at helping climate-vulnerable groups.",
+    "figure_quote": null,
+    "assumptions": [
+      "Lucy's donation is of her voice for a campaign, not a financial contribution."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPamhsd3FxT0dnMzlLTEhCandrRFNmSk9mT1VrSjlrbHp3MWJubVVzY1BYR3R6RGdYMDZNVmQxM0VPc0VfWEdnUEpneGNYdWczNmNMRllrZlZyZkp2NXhDLXB1SUh4QjdPU1M0bzU4LTBKY1lQaVJ1SWNNUm1vQjdTOFNZU3JnWk1O0gGcAUFVX3lxTE9BMVJxdnhHMDVHeFo5bDhwTURGS1c1TEFSU09XOHdONmlyQjExdmNDVHY3QUE0S1d6X3NxM2pxYUxyT0FZbDY2Z0dtVEdwbTZYelNicE5VUDdaTENydy1fZGtYUVU3SnRrQ2ZPRUZlRktkQklFblNiOFZxRW1fUjlscHFGVjJ3TFc3bUhydVRzZ2lHZU1uamZjQXE0aA?oc=5"
+    ],
+    "source_names": [
+      "Chosunbiz"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-25T10:37:24.471128+00:00",
+    "is_duplicate_of": "3b1f91d9-32b8-4119-adae-3828283b4645"
+  },
+  {
+    "entry_id": "b0445fa9-1870-4758-801b-063b6fc91376",
+    "donor": "Bee Gees",
+    "recipient": "UNICEF",
+    "recipient_type": "UN Agency",
+    "amount_text": "more than $10 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "unclear",
+    "summary": "Royalties from the Bee Gees' song 'Too Much Heaven' have contributed over $10 million to UNICEF for children's causes.",
+    "figure_quote": "more than $10 million in UNICEF funding",
+    "assumptions": [
+      "The Bee Gees are not a corporate entity but a music group; their royalties are considered a form of donation."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://timesofindia.indiatimes.com/world/rest-of-world/a-bee-gees-song-released-in-1979-still-generates-money-for-children-royalties-from-too-much-heaven-have-contributed-to-more-than-10-million-in-unicef-funding/articleshow/135167173.cms"
+    ],
+    "source_names": [
+      "indiatimes.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-25T10:40:20.055811+00:00",
+    "is_duplicate_of": null
   }
 ]
