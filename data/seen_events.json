@@ -9315,5 +9315,203 @@
     ],
     "date_found": "2026-10-25T10:40:20.055811+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "bc9f15fe-aaaf-438b-bb5d-95eaf910a4d1",
+    "donor": "Hima Cement",
+    "recipient": "Alumni Golf Tourney",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Support for the tournament",
+    "country_scope": "Unspecified / global",
+    "status": "renewed_partnership",
+    "summary": "Hima Cement has pledged additional support for an alumni golf tournament, highlighting their ongoing commitment to community and educational initiatives.",
+    "figure_quote": "Pledges More Support",
+    "assumptions": [
+      "The exact nature and amount of support are not specified in the source text."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOOVRqQUktelVxX0VUelkyRDhXWDBnellMbDR0djEyNXM1NUtmOVYweHdXTW02VU96UGhxT1UxMmoxX0E4ZHpSYzJ4eUQ1dzhKRjQxTGJGSVN0Nnd2YTdWY1B0aHpSdlM2NmlTMUlYZ05nTVZ5UEFDSlJvX3BnNjNwVkNDUExQcy1PNzNzWXhqOERETU5ic004NEk0Qkd1dDJRY0tXWnNyQnNjMEtSN1JRMTdNNk9wUHRkUG5UalE4M1FtQlRZXzVtRzNtU1lLaXFiN2RTTw?oc=5"
+    ],
+    "source_names": [
+      "UG Diplomat"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-26T12:08:30.335229+00:00",
+    "is_duplicate_of": "dd6af010-4250-4bb0-9f23-0fe075d29385"
+  },
+  {
+    "entry_id": "dffb8d28-d097-408b-af12-9a244d4fb6fa",
+    "donor": "ABBA",
+    "recipient": "UNICEF",
+    "recipient_type": "UN Agency",
+    "amount_text": "$5 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "ABBA donated royalties from their song 'Chiquitita' to UNICEF, raising over $5 million for vulnerable children worldwide.",
+    "figure_quote": "more than $5 million",
+    "assumptions": [],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://timesofindia.indiatimes.com/world/europe/in-1979-abba-gave-unicef-the-royalties-from-chiquitita-45-years-later-the-song-had-raised-more-than-5-million-to-help-protect-vulnerable-children-from-violence-abuse-and-exploitation-worldwide/articleshow/135193953.cms"
+    ],
+    "source_names": [
+      "indiatimes.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-26T12:09:29.332963+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "a904e74c-1418-4e58-be29-e4ae9f0a91eb",
+    "donor": "Airtel",
+    "recipient": "UNICEF",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "digital learning services",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "Airtel partners with UNICEF to expand digital learning for one million Nigerian students.",
+    "figure_quote": "one million Nigerian students",
+    "assumptions": [],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.thisdaylive.com/2026/10/23/unicef-airtel-fg-expand-digital-learning-to-one-million-nigerian-students/",
+      "https://bizwatchnigeria.ng/free-digital-learning-nigeria-unicef-airtel/"
+    ],
+    "source_names": [
+      "bizwatchnigeria.ng",
+      "thisdaylive.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-26T12:11:05.946943+00:00",
+    "is_duplicate_of": "7cb7b623-279b-4474-8637-5157acb0838e"
+  },
+  {
+    "entry_id": "8f8534c7-3c20-4b2e-ac56-f1d3d4d3e74f",
+    "donor": "Tony Robbins",
+    "recipient": "Feeding America",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Tony Robbins launched the 100 Million Meals Challenge in 2014, which expanded and reached 1 billion meals by 2023.",
+    "figure_quote": "1 billion meals",
+    "assumptions": [
+      "Tony Robbins is an individual, not a corporate entity. This event does not meet the criteria for inclusion."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://timesofindia.indiatimes.com/world/us/in-2014-tony-robbins-turned-a-childhood-memory-of-his-struggling-family-receiving-groceries-from-a-stranger-into-feeding-americas-100-million-meals-challenge-expanded-later-it-reached-1-billion-meals-in-2023/articleshow/134914887.cms"
+    ],
+    "source_names": [
+      "indiatimes.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-26T12:16:12.884624+00:00",
+    "is_duplicate_of": "b57b6817-4ae0-44a3-b538-af048711b486"
   }
 ]
