@@ -9513,5 +9513,165 @@
     ],
     "date_found": "2026-10-26T12:16:12.884624+00:00",
     "is_duplicate_of": "b57b6817-4ae0-44a3-b538-af048711b486"
+  },
+  {
+    "entry_id": "fa256c50-2f85-480f-a162-b9b98bd6ac98",
+    "donor": "Transitional Development Assistance",
+    "recipient": "Ukraine",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "emergency repairs and resilience in the housing sector",
+    "country_scope": "Ukraine",
+    "status": "unclear",
+    "summary": "Transitional Development Assistance is contributing to Ukraine's social recovery through various means including emergency repairs and resilience in the housing sector.",
+    "figure_quote": null,
+    "assumptions": [
+      "The donor 'Transitional Development Assistance' is assumed to be a private entity or foundation due to the context, but the exact nature is not explicitly confirmed in the source text."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNYWdPdmxHV3FFbW5HVWlaN1lBRHlwU0VQT1VqZHZSOUpGMUhtOFpxaFdOcF9ma0ZMME5QZ0JaamFDak4zeGg5RUZGUDR1V0hWMWJVZ3VFNUpyTlUxUXFkQXB4d0tfdm9IMWRhNHNPU1VNZl9rVDhvV1hRdFhDQWdjM3JHcnFjN0szVkZXZm5tcVZvNFg5dHBJemkzbnU4UkVXdDJ3LXJBYmJwQ3g5Sm5qTlU0WkdXLXpnTzFQc1pORFlGRkJMTHVSU1hiVHpnMXJXVXVfTFYxRUN1R2tQblJUc3kzRHR5NnNzcWYwZENMS05kcmxQUjFmcHltVQ?oc=5"
+    ],
+    "source_names": [
+      "The Kyiv Independent"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-27T11:24:36.631920+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "83f17198-ad76-4e31-a23e-aee45eb997d4",
+    "donor": "UAE Aid Agency",
+    "recipient": "returnees to Afghanistan",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$3 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Afghanistan",
+    "status": "new_commitment",
+    "summary": "The UAE Aid Agency has committed $3 million to support returnees to Afghanistan.",
+    "figure_quote": "$3 million",
+    "assumptions": [
+      "The recipient is described as 'returnees to Afghanistan', which is a specific group rather than a named organization."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 4,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "http://www.turkmenistannews.net/news/279397753/uae-aid-agency-announces-us3-million-in-support-for-returnees-to-afghanistan-at-aidex-2026",
+      "http://www.kyrgyzstannews.net/news/279397753/uae-aid-agency-announces-us3-million-in-support-for-returnees-to-afghanistan-at-aidex-2026",
+      "http://www.afghanistannews.net/news/279397753/uae-aid-agency-announces-us3-million-in-support-for-returnees-to-afghanistan-at-aidex-2026",
+      "http://www.afghanistansun.com/news/279397753/uae-aid-agency-announces-us3-million-in-support-for-returnees-to-afghanistan-at-aidex-2026",
+      "http://www.turkmenistannews.net/news/279397753/uae-aid-agency-announces-us3-million-in-support-for-returnees-to-afghanistan-at-aidex-2026",
+      "http://www.kyrgyzstannews.net/news/279397753/uae-aid-agency-announces-us3-million-in-support-for-returnees-to-afghanistan-at-aidex-2026",
+      "http://www.afghanistannews.net/news/279397753/uae-aid-agency-announces-us3-million-in-support-for-returnees-to-afghanistan-at-aidex-2026",
+      "http://www.afghanistansun.com/news/279397753/uae-aid-agency-announces-us3-million-in-support-for-returnees-to-afghanistan-at-aidex-2026"
+    ],
+    "source_names": [
+      "afghanistansun.com",
+      "afghanistannews.net",
+      "kyrgyzstannews.net",
+      "turkmenistannews.net"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-27T11:29:42.446780+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "95a79790-f2aa-4eb9-83ac-3bc59717d86a",
+    "donor": "CAFOSEL",
+    "recipient": "15 households in Ibadan",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Supports for households",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "CAFOSEL provided support to 15 households in Ibadan to commemorate World Food Day.",
+    "figure_quote": null,
+    "assumptions": [
+      "The exact nature of the support is not specified, assumed to be in-kind based on the context."
+    ],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://tribuneonlineng.com/cafosel-commemorates-world-food-day-with-supports-for-15-households-in-ibadan/"
+    ],
+    "source_names": [
+      "tribuneonlineng.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-27T11:45:56.643335+00:00",
+    "is_duplicate_of": null
   }
 ]
