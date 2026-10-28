@@ -9673,5 +9673,159 @@
     ],
     "date_found": "2026-10-27T11:45:56.643335+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "3790e1be-4266-4bad-80fe-b4e1642efaf4",
+    "donor": "Bavarian Nordic",
+    "recipient": "World Health Organization",
+    "recipient_type": "UN Agency",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "75,000 doses of mpox vaccine",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Bavarian Nordic has donated 75,000 doses of mpox vaccine to the global emergency stockpile managed by the World Health Organization.",
+    "figure_quote": "75,000 mpox vaccine doses",
+    "assumptions": [],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 3,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPYTJjeGxqeVptbHRQYk1lYndrU1BpZWdMOW1DdHA5bHQzVzFVNWxMMWotZ3F2OEhfVEpfc1BlaE5hd05lb1ViejQ0YXdyeDJfcGFULVAzbTM5OThvWFFWdmFCcVFyTEFJYnJvWXF6b2x3WXg1bTh3dWFEZXFrQ3VkZUtZUWhyUk0yS3cyUHZ0aGN2SG90SjJ1M19SLXpVR2FtUlY3VGJRbEd2MmdjVnBjTU1mN05JQnJVZHJGc1lLRWVzTWxFbExGa1hPaHF3MUR2ODRGWHVNRnRmQUJ3bVVpQg?oc=5",
+      "https://econotimes.com/Bavarian-Nordic-Commits-225-000-Mpox-Vaccine-Doses-to-Global-Reserve-1764629",
+      "https://www.medscape.com/s/viewarticle/bavarian-nordic-donates-75-000-mpox-vaccine-doses-global-2026a10014qc"
+    ],
+    "source_names": [
+      "econotimes.com",
+      "medscape.com",
+      "Reuters"
+    ],
+    "source_channels": [
+      "GDELT GKG",
+      "Google News"
+    ],
+    "date_found": "2026-10-28T11:57:03.700433+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "83fda42c-b837-4c52-a2de-ca4c1e2a4c6e",
+    "donor": "Bavarian Nordic",
+    "recipient": "Global Reserve",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "225,000 doses of mpox vaccine",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Bavarian Nordic has committed to providing an additional 225,000 doses of mpox vaccine to the global reserve.",
+    "figure_quote": "225,000 Mpox Vaccine Doses",
+    "assumptions": [],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 3,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPYTJjeGxqeVptbHRQYk1lYndrU1BpZWdMOW1DdHA5bHQzVzFVNWxMMWotZ3F2OEhfVEpfc1BlaE5hd05lb1ViejQ0YXdyeDJfcGFULVAzbTM5OThvWFFWdmFCcVFyTEFJYnJvWXF6b2x3WXg1bTh3dWFEZXFrQ3VkZUtZUWhyUk0yS3cyUHZ0aGN2SG90SjJ1M19SLXpVR2FtUlY3VGJRbEd2MmdjVnBjTU1mN05JQnJVZHJGc1lLRWVzTWxFbExGa1hPaHF3MUR2ODRGWHVNRnRmQUJ3bVVpQg?oc=5",
+      "https://econotimes.com/Bavarian-Nordic-Commits-225-000-Mpox-Vaccine-Doses-to-Global-Reserve-1764629",
+      "https://www.medscape.com/s/viewarticle/bavarian-nordic-donates-75-000-mpox-vaccine-doses-global-2026a10014qc"
+    ],
+    "source_names": [
+      "econotimes.com",
+      "medscape.com",
+      "Reuters"
+    ],
+    "source_channels": [
+      "GDELT GKG",
+      "Google News"
+    ],
+    "date_found": "2026-10-28T11:57:03.701282+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "72fefc79-42e8-42da-870b-854883443c1b",
+    "donor": "Lucy",
+    "recipient": "Oxfam",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "voice technology for a campaign",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Lucy, a company, has donated its voice technology to Oxfam for a campaign aimed at helping climate-vulnerable groups.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPamhsd3FxT0dnMzlLTEhCandrRFNmSk9mT1VrSjlrbHp3MWJubVVzY1BYR3R6RGdYMDZNVmQxM0VPc0VfWEdnUEpneGNYdWczNmNMRllrZlZyZkp2NXhDLXB1SUh4QjdPU1M0bzU4LTBKY1lQaVJ1SWNNUm1vQjdTOFNZU3JnWk1O0gGcAUFVX3lxTE9BMVJxdnhHMDVHeFo5bDhwTURGS1c1TEFSU09XOHdONmlyQjExdmNDVHY3QUE0S1d6X3NxM2pxYUxyT0FZbDY2Z0dtVEdwbTZYelNicE5VUDdaTENydy1fZGtYUVU3SnRrQ2ZPRUZlRktkQklFblNiOFZxRW1fUjlscHFGVjJ3TFc3bUhydVRzZ2lHZU1uamZjQXE0aA?oc=5"
+    ],
+    "source_names": [
+      "Chosunbiz"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-10-28T12:00:43.964222+00:00",
+    "is_duplicate_of": "8d617ab7-6e93-4c58-ba10-fc3d0a528c7b"
   }
 ]
