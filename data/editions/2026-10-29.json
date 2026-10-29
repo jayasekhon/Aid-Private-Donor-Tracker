@@ -1,0 +1,293 @@
+{
+  "date": "2026-10-29",
+  "entries": [
+    {
+      "entry_id": "577dd872-f76b-4513-b4cf-4db6cb6ea8c0",
+      "donor": "Airtel",
+      "recipient": "UNICEF",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "digital learning services",
+      "country_scope": "Nigeria",
+      "status": "new_commitment",
+      "summary": "Airtel has partnered with UNICEF to expand digital learning access to one million Nigerian students.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.thisdaylive.com/2026/10/23/unicef-airtel-fg-expand-digital-learning-to-one-million-nigerian-students/",
+        "https://bizwatchnigeria.ng/free-digital-learning-nigeria-unicef-airtel/"
+      ],
+      "source_names": [
+        "bizwatchnigeria.ng",
+        "thisdaylive.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-29T12:17:19.248779+00:00",
+      "is_duplicate_of": "a904e74c-1418-4e58-be29-e4ae9f0a91eb"
+    },
+    {
+      "entry_id": "fdd9fbc9-c21d-4f5a-85e5-a986e3483467",
+      "donor": "Bavarian Nordic",
+      "recipient": "global emergency stockpile",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "75,000 mpox vaccine doses",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Bavarian Nordic has donated 75,000 doses of mpox vaccine to the global emergency stockpile.",
+      "figure_quote": "75,000 mpox vaccine doses",
+      "assumptions": [
+        "The global emergency stockpile is classified as 'Other nonprofit' due to the lack of specific information about its organizational structure."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPYTJjeGxqeVptbHRQYk1lYndrU1BpZWdMOW1DdHA5bHQzVzFVNWxMMWotZ3F2OEhfVEpfc1BlaE5hd05lb1ViejQ0YXdyeDJfcGFULVAzbTM5OThvWFFWdmFCcVFyTEFJYnJvWXF6b2x3WXg1bTh3dWFEZXFrQ3VkZUtZUWhyUk0yS3cyUHZ0aGN2SG90SjJ1M19SLXpVR2FtUlY3VGJRbEd2MmdjVnBjTU1mN05JQnJVZHJGc1lLRWVzTWxFbExGa1hPaHF3MUR2ODRGWHVNRnRmQUJ3bVVpQg?oc=5"
+      ],
+      "source_names": [
+        "Reuters"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-29T12:04:52.780016+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "85661e58-a9fa-4882-9d01-734c45ce153c",
+      "donor": "Chery",
+      "recipient": "International Union for Conservation of Nature (IUCN)",
+      "recipient_type": "INGO",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Eco-technology and global philanthropy efforts",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Chery has partnered with the International Union for Conservation of Nature (IUCN) to support sustainable development and eco-technology initiatives.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.thestar.com/globenewswire/chery-champions-the-one-nature-one-future-vision-with-iucn-co-creating-a-sustainable-future/article_79193019-7b5e-5a0c-b941-296306bf5ebb.html",
+        "https://www.globenewswire.com/news-release/2026/10/22/3386794/0/en/chery-champions-the-one-nature-one-future-vision-with-iucn-co-creating-a-sustainable-future-through-eco-tech-and-global-philanthropy.html"
+      ],
+      "source_names": [
+        "thestar.com",
+        "globenewswire.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-29T12:16:59.930316+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "390db27e-ac0a-476c-b2d1-4b610c568517",
+      "donor": "Russia and Japan",
+      "recipient": "World Food Programme (WFP)",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Donations through WFP",
+      "country_scope": "Unspecified / global",
+      "status": "unclear",
+      "summary": "Russia and Japan have made donations through the World Food Programme (WFP) to support Cuba.",
+      "figure_quote": null,
+      "assumptions": [
+        "Donor is a country, not a private company",
+        "Specific company names not provided"
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.plenglish.com/news/2026/10/17/cuba-thanks-russia-and-japan-for-donations-thru-wfp/"
+      ],
+      "source_names": [
+        "plenglish.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-10-29T12:18:18.011736+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "e2a6c0d4-f70c-42b5-bed6-cf18e464a53d",
+      "donor": "Alport Banjul Limited",
+      "recipient": "Summer Jam Basketball",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Sponsorship for the event",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Alport Banjul Limited has sponsored the Summer Jam Basketball event to support youth and sports development.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiywFBVV95cUxNazlpUVBkdTh6Z2g4SDItc0JZTjYwVkYtdGNwSTVGSHlOYUxTa3AtMV9jSjRmT3FEWXpqdGdzWWU2QnY4YnJhWm5fLTdqeFBUeFRuVHhuSGFYNjZjV24wNVRndERJZ1hxRE5UTVowZ1FvbDRoaWVlbGhHWm4wTE5IRGVjUmhMb2NNS1J3R2hXX2tDODlHMHdzUjh5ei15MWRMTHF1UnBGVDJJdVNRU3hOb0xPY3FqVXNEOUdvZDRuRmdHUVF6WE45RW5QZw?oc=5"
+      ],
+      "source_names": [
+        "Yeni Şafak English"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-10-29T12:06:03.329662+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 97,
+    "gdelt_candidates_found": 596,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 314,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2718,
+    "items_filtered_as_stale": 1455,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 356,
+    "clusters_analysed": 249,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 5,
+    "rejected_unnamed_recipient": 3,
+    "rejected_no_named_donor": 3,
+    "rejected_out_of_scope_country": 5,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 2,
+    "rejected_no_evidence": 8,
+    "rejected_government_donor": 6,
+    "entries_published": 5,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
