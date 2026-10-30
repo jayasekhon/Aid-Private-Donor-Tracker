@@ -10076,5 +10076,106 @@
     ],
     "date_found": "2026-10-29T12:18:18.011736+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "ffd25b1c-9104-4c74-aad4-3f02e10ac135",
+    "donor": "Alessia Cara",
+    "recipient": "Save the Children",
+    "recipient_type": "INGO",
+    "amount_text": null,
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Alessia Cara pledged her share of royalties from a live EP to Save the Children for 21 years.",
+    "figure_quote": "pledged her share of royalties from a live EP",
+    "assumptions": [
+      "The donor is a celebrity, not a private company or corporate foundation."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 2,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi_AJBVV95cUxNNEpVVkVaeUtVS0w0TnlMS3I3YkhwOGNuRTliUVFfNHN5YWNfRWlYZ3ZMd091eFMzZmpfd0trZ2ZYaU1LZnpKMmh1MnVVaUUxRFFJSDJwQ3o5U3F1UlpmNXJpUnZvSzc1RDBmV0p0eFJlcnBrZVJ0QnlDQVdvRVlZOXliR3h0dDVtV3lGSWlJVmlYUE80LXpqUzVCREs2czNPMnJlVi1VdFkzSy1ad3JWSUVBUXh5eFAzTjBaeHUtcnQ5NnY5eDlmRU1aY0FGRW1CZVpGRkl5Y1RMRXNXMVhKcHZ5UDE2NVFYMUNvaHhVRFg4djdwSWdYUmZOeU5DOS1peE5YNUJFamlQd3hnTURYQmdvQzZMZzU5eEc0dVA4Q05TSHZNeTZFNWoyaDJpOXJTQTdiNS1Zdlc4X2lBS0o2UXYydUtCZm54SGd3bXNFZ1JUVG5IbHU4b0R2YWdfVHdYS3h5OWpWTVRhSXhKQ0ZBR1B2UDVnbk9IZDl3cNIBggNBVV95cUxQdUp5Y1Q0ZVc4UGFRWFZ3RHFKN1FIcU5nWTRlWW5MSnUwT3R2SkJTYlJsWHNXZEFpVFB2MHoxd21Vb3Vndjd5LWpidTNseHBnaGpSTnJWUFpHM25Gd1JpbzJkcG5QSUZPaHVnYzd6aFdmX3gwb3E0TlV1NTByaHZnTjdJZHBrV3h3a1h1R2Zmbkdtc0otSW1uMXFNbzg3Nm82MU9iRlQxaWhqaVIzTzNXV05nWFRKVmZaN2lnczQ4ZmowYUFGR20wOWRDTGplWFpXcVhvYU1HZlVsOGNWV3p1VkZzTFJOak1sNWlySWVfODdma29oUExNTWRIcE5iWXgtNThyY003bGR0M3hrV0hwR1M0QW9ham55WTk4bjVpbjh1RHFVQTdCSmp2VWEtMVZHN2RoRVJJeU1NVHB0d2xxbXB0WFBaSWdacndkdjVmTElKVmJ4bkM4TnJvNnRYeUpzMzk0NXN0Wm90X1JkRm42MnQ0dTdMQ0pJQm1aVTZZUkZ6Zw?oc=5",
+      "https://timesofindia.indiatimes.com/world/rest-of-world/in-2020-alessia-cara-pledged-her-share-of-royalties-from-a-live-ep-to-save-the-children-for-21-years-a-pandemic-era-music-release-became-a-long-term-commitment-to-vulnerable-children/articleshow/135226245.cms"
+    ],
+    "source_names": [
+      "indiatimes.com",
+      "The Times of India"
+    ],
+    "source_channels": [
+      "Google News",
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-30T12:03:13.463973+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "aa4a886a-cbe7-4c10-bafb-8892be1965e2",
+    "donor": "CAFOSEL",
+    "recipient": "15 households in Ibadan",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Supports for 15 households",
+    "country_scope": "Nigeria",
+    "status": "new_commitment",
+    "summary": "CAFOSEL provided support to 15 households in Ibadan to commemorate World Food Day.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://tribuneonlineng.com/cafosel-commemorates-world-food-day-with-supports-for-15-households-in-ibadan/"
+    ],
+    "source_names": [
+      "tribuneonlineng.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-10-30T12:22:17.322287+00:00",
+    "is_duplicate_of": "95a79790-f2aa-4eb9-83ac-3bc59717d86a"
   }
 ]
