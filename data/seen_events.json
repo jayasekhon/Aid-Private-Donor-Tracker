@@ -10177,5 +10177,55 @@
     ],
     "date_found": "2026-10-30T12:22:17.322287+00:00",
     "is_duplicate_of": "95a79790-f2aa-4eb9-83ac-3bc59717d86a"
+  },
+  {
+    "entry_id": "e341ba78-fd53-4459-b85b-98a950d967d2",
+    "donor": "TCL",
+    "recipient": "Youth Olympic Village",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "ultra-low-power display system",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "TCL donated an ultra-low-power display system to the Youth Olympic Village.",
+    "figure_quote": "ultra-low-power display system",
+    "assumptions": [
+      "The Youth Olympic Village is classified as 'Other nonprofit' as it is a specific event-based entity, not a continuous NGO or INGO."
+    ],
+    "confidence_score": 8,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "wire_service",
+        "points": 3
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.prnewswire.com/news-releases/tcl-donates-ultra-low-power-display-system-to-the-youth-olympic-village-bringing-advanced-display-technology-to-everyday-use-302925532.html"
+    ],
+    "source_names": [
+      "PR Newswire"
+    ],
+    "source_channels": [
+      "PR Wire"
+    ],
+    "date_found": "2026-10-31T11:37:42.577979+00:00",
+    "is_duplicate_of": null
   }
 ]
