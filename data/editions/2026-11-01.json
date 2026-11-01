@@ -1,0 +1,245 @@
+{
+  "date": "2026-11-01",
+  "entries": [
+    {
+      "entry_id": "ee5fc1eb-18ea-40fc-b72c-4b1bb0254957",
+      "donor": "Bavarian Nordic",
+      "recipient": "global emergency stockpile",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "75,000 doses of mpox vaccine",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Bavarian Nordic has donated 75,000 doses of mpox vaccine to the global emergency stockpile.",
+      "figure_quote": "75,000 mpox vaccine doses",
+      "assumptions": [
+        "The global emergency stockpile is classified as 'Other nonprofit' due to the lack of specific information about its organizational structure."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPYTJjeGxqeVptbHRQYk1lYndrU1BpZWdMOW1DdHA5bHQzVzFVNWxMMWotZ3F2OEhfVEpfc1BlaE5hd05lb1ViejQ0YXdyeDJfcGFULVAzbTM5OThvWFFWdmFCcVFyTEFJYnJvWXF6b2x3WXg1bTh3dWFEZXFrQ3VkZUtZUWhyUk0yS3cyUHZ0aGN2SG90SjJ1M19SLXpVR2FtUlY3VGJRbEd2MmdjVnBjTU1mN05JQnJVZHJGc1lLRWVzTWxFbExGa1hPaHF3MUR2ODRGWHVNRnRmQUJ3bVVpQg?oc=5"
+      ],
+      "source_names": [
+        "Reuters"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-01T12:27:30.286201+00:00",
+      "is_duplicate_of": "fdd9fbc9-c21d-4f5a-85e5-a986e3483467"
+    },
+    {
+      "entry_id": "81d02d08-e439-447e-ba93-268dc8e18ab4",
+      "donor": "Orbis International",
+      "recipient": "Orbis International",
+      "recipient_type": "INGO",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Orbis International, a global NGO focused on eye health, has committed to improving eye health for over 18 million people.",
+      "figure_quote": "more than 18 million people",
+      "assumptions": [],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMikAFBVV95cUxQYktjTlRHeXZzTHZlVzhhSjg2Mm5lYXRxZnFTWUJzWm5xWEtPVmRLazJEcXVCV3pHVGx2ZDFDTjVqbnZ2TTEybURQclM5VDdwanZ6MU5XblJEdEQ2cmNrZ0o3WHJpRTFzV3F2T1ZMX1FrR2pVY2tDVlluUUFvQUdieDhwRnNCLThNM1BxU2E2ZGk?oc=5"
+      ],
+      "source_names": [
+        "AOL.com"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-01T12:29:00.824611+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "6249132e-6114-4e8e-b944-4cb0fb4046ed",
+      "donor": "Lucy",
+      "recipient": "Oxfam",
+      "recipient_type": "INGO",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Voice donation for a campaign",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Lucy, a celebrity, has lent her voice to an Oxfam campaign aimed at helping groups vulnerable to climate change.",
+      "figure_quote": null,
+      "assumptions": [
+        "The donation is in-kind (voice for a campaign) and not a monetary contribution."
+      ],
+      "confidence_score": 7,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPamhsd3FxT0dnMzlLTEhCandrRFNmSk9mT1VrSjlrbHp3MWJubVVzY1BYR3R6RGdYMDZNVmQxM0VPc0VfWEdnUEpneGNYdWczNmNMRllrZlZyZkp2NXhDLXB1SUh4QjdPU1M0bzU4LTBKY1lQaVJ1SWNNUm1vQjdTOFNZU3JnWk1O0gGcAUFVX3lxTE9BMVJxdnhHMDVHeFo5bDhwTURGS1c1TEFSU09XOHdONmlyQjExdmNDVHY3QUE0S1d6X3NxM2pxYUxyT0FZbDY2Z0dtVEdwbTZYelNicE5VUDdaTENydy1fZGtYUVU3SnRrQ2ZPRUZlRktkQklFblNiOFZxRW1fUjlscHFGVjJ3TFc3bUhydVRzZ2lHZU1uamZjQXE0aA?oc=5"
+      ],
+      "source_names": [
+        "Chosunbiz"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-01T12:31:43.670895+00:00",
+      "is_duplicate_of": "72fefc79-42e8-42da-870b-854883443c1b"
+    },
+    {
+      "entry_id": "bd12d52d-7204-4917-8ebf-01fdb7405d4a",
+      "donor": "Alport Banjul Limited",
+      "recipient": "Summer Jam Basketball",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Sponsorship for the event",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Alport Banjul Limited sponsored the Summer Jam Basketball event to support youth and sports development.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiywFBVV95cUxNazlpUVBkdTh6Z2g4SDItc0JZTjYwVkYtdGNwSTVGSHlOYUxTa3AtMV9jSjRmT3FEWXpqdGdzWWU2QnY4YnJhWm5fLTdqeFBUeFRuVHhuSGFYNjZjV24wNVRndERJZ1hxRE5UTVowZ1FvbDRoaWVlbGhHWm4wTE5IRGVjUmhMb2NNS1J3R2hXX2tDODlHMHdzUjh5ei15MWRMTHF1UnBGVDJJdVNRU3hOb0xPY3FqVXNEOUdvZDRuRmdHUVF6WE45RW5QZw?oc=5"
+      ],
+      "source_names": [
+        "Yeni Şafak English"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-01T12:28:28.537296+00:00",
+      "is_duplicate_of": "e2a6c0d4-f70c-42b5-bed6-cf18e464a53d"
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 100,
+    "gdelt_candidates_found": 407,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 144,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2371,
+    "items_filtered_as_stale": 1387,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 212,
+    "clusters_analysed": 174,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 2,
+    "rejected_unnamed_recipient": 2,
+    "rejected_no_named_donor": 7,
+    "rejected_out_of_scope_country": 2,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 2,
+    "rejected_no_evidence": 3,
+    "rejected_government_donor": 5,
+    "entries_published": 4,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    },
+    {
+      "source_label": "Media Cloud: World Food Programme, United Nations Children's Fund, United Nations High Commissioner for Refugees, United Nations Development Programme, World Health Organization, International Organization for Migration, UN Office for the Coordination of Humanitarian Affairs, UN Population Fund",
+      "url": "collection 9272347",
+      "error": "HTTPSConnectionPool(host='search.mediacloud.org', port=443): Read timed out. (read timeout=60)"
+    }
+  ]
+}
