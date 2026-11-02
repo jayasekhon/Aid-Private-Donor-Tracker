@@ -1,0 +1,295 @@
+{
+  "date": "2026-11-02",
+  "entries": [
+    {
+      "entry_id": "6830f9ca-1065-46e1-b1fd-e5a825b23648",
+      "donor": "Plave",
+      "recipient": "UNICEF",
+      "recipient_type": "UN Agency",
+      "amount_text": "100 million won",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Plave donated 100 million won to UNICEF to support children in need.",
+      "figure_quote": "100 million won",
+      "assumptions": [],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMivwFBVV95cUxPbi1URnl3Y2lSanRGZkhFS3h6RUplNW1rTnVfSkpLbFhTSmx6Rjg5UVltOVdINm5IQ0JBallZc0k4TVZvcUZVLThQUVJoZ0Jxb3BCMHBHYUZRMUNkS2tybkRUZHpoN3Y0TUtEOWZpVGp0THJhaXhqYV9aUFdLX1RPZ3VwU3kyTFZORUFGRlI1SE9tVERnQndHakVJMlB1NXpuTWk4VkRkYU9DbjZpN3hXSGpka1gzNV9DbUZjQzA0dw?oc=5"
+      ],
+      "source_names": [
+        "Korea JoongAng Daily"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-02T14:21:32.484858+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "30797308-441b-4e08-a374-ba0456a8f2bf",
+      "donor": "Alessia Cara",
+      "recipient": "Save the Children",
+      "recipient_type": "INGO",
+      "amount_text": null,
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Alessia Cara pledged her share of royalties from a live EP to Save the Children for 21 years.",
+      "figure_quote": "pledged her share of royalties from a live EP",
+      "assumptions": [
+        "Alessia Cara is a celebrity, not a private company or corporate foundation."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMi_AJBVV95cUxNNEpVVkVaeUtVS0w0TnlMS3I3YkhwOGNuRTliUVFfNHN5YWNfRWlYZ3ZMd091eFMzZmpfd0trZ2ZYaU1LZnpKMmh1MnVVaUUxRFFJSDJwQ3o5U3F1UlpmNXJpUnZvSzc1RDBmV0p0eFJlcnBrZVJ0QnlDQVdvRVlZOXliR3h0dDVtV3lGSWlJVmlYUE80LXpqUzVCREs2czNPMnJlVi1VdFkzSy1ad3JWSUVBUXh5eFAzTjBaeHUtcnQ5NnY5eDlmRU1aY0FGRW1CZVpGRkl5Y1RMRXNXMVhKcHZ5UDE2NVFYMUNvaHhVRFg4djdwSWdYUmZOeU5DOS1peE5YNUJFamlQd3hnTURYQmdvQzZMZzU5eEc0dVA4Q05TSHZNeTZFNWoyaDJpOXJTQTdiNS1Zdlc4X2lBS0o2UXYydUtCZm54SGd3bXNFZ1JUVG5IbHU4b0R2YWdfVHdYS3h5OWpWTVRhSXhKQ0ZBR1B2UDVnbk9IZDl3cNIBggNBVV95cUxQdUp5Y1Q0ZVc4UGFRWFZ3RHFKN1FIcU5nWTRlWW5MSnUwT3R2SkJTYlJsWHNXZEFpVFB2MHoxd21Vb3Vndjd5LWpidTNseHBnaGpSTnJWUFpHM25Gd1JpbzJkcG5QSUZPaHVnYzd6aFdmX3gwb3E0TlV1NTByaHZnTjdJZHBrV3h3a1h1R2Zmbkdtc0otSW1uMXFNbzg3Nm82MU9iRlQxaWhqaVIzTzNXV05nWFRKVmZaN2lnczQ4ZmowYUFGR20wOWRDTGplWFpXcVhvYU1HZlVsOGNWV3p1VkZzTFJOak1sNWlySWVfODdma29oUExNTWRIcE5iWXgtNThyY003bGR0M3hrV0hwR1M0QW9ham55WTk4bjVpbjh1RHFVQTdCSmp2VWEtMVZHN2RoRVJJeU1NVHB0d2xxbXB0WFBaSWdacndkdjVmTElKVmJ4bkM4TnJvNnRYeUpzMzk0NXN0Wm90X1JkRm42MnQ0dTdMQ0pJQm1aVTZZUkZ6Zw?oc=5",
+        "https://timesofindia.indiatimes.com/world/rest-of-world/in-2020-alessia-cara-pledged-her-share-of-royalties-from-a-live-ep-to-save-the-children-for-21-years-a-pandemic-era-music-release-became-a-long-term-commitment-to-vulnerable-children/articleshow/135226245.cms"
+      ],
+      "source_names": [
+        "indiatimes.com",
+        "The Times of India"
+      ],
+      "source_channels": [
+        "Google News",
+        "Media Cloud"
+      ],
+      "date_found": "2026-11-02T14:25:39.327284+00:00",
+      "is_duplicate_of": "ffd25b1c-9104-4c74-aad4-3f02e10ac135"
+    },
+    {
+      "entry_id": "21a5073e-e19d-4ace-8882-5e93e14191fc",
+      "donor": "J.J. Watt",
+      "recipient": "Hurricane Harvey relief fund",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$100,000",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "J.J. Watt, a professional athlete, initiated a fund for Hurricane Harvey relief in 2017, starting with a personal donation of $100,000.",
+      "figure_quote": "$100,000",
+      "assumptions": [
+        "J.J. Watt is an individual, not a corporate entity; however, his fund-raising efforts are included as they involve a significant initial personal donation to a relief effort."
+      ],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE96alk5Nm9zdVNia2gwT3k0eEpLZUVLeWhRNHdnYVBkT1VLMDQ1ZWI2dDljRzZHekNVa2NwVFcxYzFOcG9wSGRFc3VpbG1VR3IxU0xMcUtZN3R3SUJYY2paNWZNOUdoZTJGSEdULXkydnRyMDB3TmxMaQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPNXV0c2I4eVRaZzRJOVhZd1h6N2RBU05MSVhIUENwLXdaXy12M0I0QXdYRDhSNXhHQ1kwTDZZTGNrTEczZkFzSWNsdWp1aUV3Zk5SX3ZXdlpVSTNpVlNFdEx1SGtKS2dxM0IyTUF6MDQ1VnU2WF9HUzZYcUdMazU5SEgya0RuS1djQ3JJeWdFTGtFTWRYc2JrZVJJaEg2dFB5emV6a0tqc3dfa2V3WVlXaGZ5OHlNLWltZm9EdjU5aHI0UQ?oc=5"
+      ],
+      "source_names": [
+        "Yahoo Sports",
+        "inkl"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-02T14:25:46.521877+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "88d42984-1ad7-414b-8b52-9fc70bed1b17",
+      "donor": "Airtel",
+      "recipient": "UNICEF",
+      "recipient_type": "UN Agency",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "digital learning access",
+      "country_scope": "Nigeria",
+      "status": "new_commitment",
+      "summary": "Airtel partners with UNICEF to expand digital learning access for one million Nigerian students.",
+      "figure_quote": "Expand Digital Learning to One Million Nigerian Students",
+      "assumptions": [],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 2,
+          "points": 3
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.thisdaylive.com/2026/10/23/unicef-airtel-fg-expand-digital-learning-to-one-million-nigerian-students/",
+        "https://bizwatchnigeria.ng/free-digital-learning-nigeria-unicef-airtel/"
+      ],
+      "source_names": [
+        "bizwatchnigeria.ng",
+        "thisdaylive.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-11-02T14:34:19.189763+00:00",
+      "is_duplicate_of": "577dd872-f76b-4513-b4cf-4db6cb6ea8c0"
+    },
+    {
+      "entry_id": "c54598fd-9035-4dd6-92b3-b4210bdea0cd",
+      "donor": "CAFOSEL",
+      "recipient": "15 households in Ibadan",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "Supports for 15 households",
+      "country_scope": "Nigeria",
+      "status": "new_commitment",
+      "summary": "CAFOSEL provided support to 15 households in Ibadan to commemorate World Food Day.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://tribuneonlineng.com/cafosel-commemorates-world-food-day-with-supports-for-15-households-in-ibadan/"
+      ],
+      "source_names": [
+        "tribuneonlineng.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-11-02T14:43:11.440478+00:00",
+      "is_duplicate_of": "aa4a886a-cbe7-4c10-bafb-8892be1965e2"
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 104,
+    "gdelt_candidates_found": 518,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 230,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2432,
+    "items_filtered_as_stale": 1289,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 288,
+    "clusters_analysed": 213,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 5,
+    "rejected_unnamed_recipient": 3,
+    "rejected_no_named_donor": 9,
+    "rejected_out_of_scope_country": 0,
+    "rejected_government_entity": 1,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 2,
+    "rejected_no_evidence": 6,
+    "rejected_government_donor": 5,
+    "entries_published": 5,
+    "high_confidence_count": 4
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
