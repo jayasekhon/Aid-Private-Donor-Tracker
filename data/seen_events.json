@@ -10674,5 +10674,53 @@
     ],
     "date_found": "2026-11-02T14:43:11.440478+00:00",
     "is_duplicate_of": "aa4a886a-cbe7-4c10-bafb-8892be1965e2"
+  },
+  {
+    "entry_id": "2dde61f0-5740-453d-a782-df489dce0134",
+    "donor": "SimplySoles®",
+    "recipient": "Dress for Success®",
+    "recipient_type": "INGO",
+    "amount_text": "10% of net proceeds",
+    "is_in_kind": true,
+    "in_kind_description": "2,000+ pairs of shoes",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "SimplySoles® has partnered with Dress for Success®, committing to donate 10% of net proceeds and over 2,000 pairs of shoes to support women's economic mobility.",
+    "figure_quote": "10% of net proceeds and 2,000+ pairs of shoes",
+    "assumptions": [],
+    "confidence_score": 8,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "wire_service",
+        "points": 3
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.prnewswire.com/news-releases/simplysoles-partners-with-dress-for-success-to-empower-women-this-holiday-season-302927283.html"
+    ],
+    "source_names": [
+      "PR Newswire"
+    ],
+    "source_channels": [
+      "PR Wire"
+    ],
+    "date_found": "2026-11-03T13:29:43.562976+00:00",
+    "is_duplicate_of": null
   }
 ]

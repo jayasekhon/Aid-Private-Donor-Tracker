@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-03",
+  "entries": [
+    {
+      "entry_id": "2dde61f0-5740-453d-a782-df489dce0134",
+      "donor": "SimplySoles®",
+      "recipient": "Dress for Success®",
+      "recipient_type": "INGO",
+      "amount_text": "10% of net proceeds",
+      "is_in_kind": true,
+      "in_kind_description": "2,000+ pairs of shoes",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "SimplySoles® has partnered with Dress for Success®, committing to donate 10% of net proceeds and over 2,000 pairs of shoes to support women's economic mobility.",
+      "figure_quote": "10% of net proceeds and 2,000+ pairs of shoes",
+      "assumptions": [],
+      "confidence_score": 8,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "wire_service",
+          "points": 3
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://www.prnewswire.com/news-releases/simplysoles-partners-with-dress-for-success-to-empower-women-this-holiday-season-302927283.html"
+      ],
+      "source_names": [
+        "PR Newswire"
+      ],
+      "source_channels": [
+        "PR Wire"
+      ],
+      "date_found": "2026-11-03T13:29:43.562976+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 92,
+    "gdelt_candidates_found": 728,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 226,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 2655,
+    "items_filtered_as_stale": 1331,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 289,
+    "clusters_analysed": 212,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 8,
+    "rejected_unnamed_recipient": 4,
+    "rejected_no_named_donor": 11,
+    "rejected_out_of_scope_country": 1,
+    "rejected_government_entity": 1,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 3,
+    "rejected_no_evidence": 4,
+    "rejected_government_donor": 4,
+    "entries_published": 1,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
