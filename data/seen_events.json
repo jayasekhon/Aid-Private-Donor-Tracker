@@ -10722,5 +10722,206 @@
     ],
     "date_found": "2026-11-03T13:29:43.562976+00:00",
     "is_duplicate_of": null
+  },
+  {
+    "entry_id": "4a789155-7923-409d-9a78-bce131ccf74c",
+    "donor": "Bavarian Nordic",
+    "recipient": "global emergency stockpile",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "75,000 doses of mpox vaccine",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Bavarian Nordic has donated 75,000 doses of mpox vaccine to the global emergency stockpile.",
+    "figure_quote": "75,000 mpox vaccine doses",
+    "assumptions": [
+      "The global emergency stockpile is classified as 'Other nonprofit' due to the lack of specific information about its organizational structure."
+    ],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPYTJjeGxqeVptbHRQYk1lYndrU1BpZWdMOW1DdHA5bHQzVzFVNWxMMWotZ3F2OEhfVEpfc1BlaE5hd05lb1ViejQ0YXdyeDJfcGFULVAzbTM5OThvWFFWdmFCcVFyTEFJYnJvWXF6b2x3WXg1bTh3dWFEZXFrQ3VkZUtZUWhyUk0yS3cyUHZ0aGN2SG90SjJ1M19SLXpVR2FtUlY3VGJRbEd2MmdjVnBjTU1mN05JQnJVZHJGc1lLRWVzTWxFbExGa1hPaHF3MUR2ODRGWHVNRnRmQUJ3bVVpQg?oc=5"
+    ],
+    "source_names": [
+      "Reuters"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-11-04T13:35:06.465682+00:00",
+    "is_duplicate_of": "ee5fc1eb-18ea-40fc-b72c-4b1bb0254957"
+  },
+  {
+    "entry_id": "e4581d2d-d0a3-4eda-8e25-eed281309800",
+    "donor": "Alport Banjul Limited",
+    "recipient": "Summer Jam Basketball",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Sponsorship for the event",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Alport Banjul Limited has sponsored the Summer Jam Basketball event to support youth and sports development.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiywFBVV95cUxNazlpUVBkdTh6Z2g4SDItc0JZTjYwVkYtdGNwSTVGSHlOYUxTa3AtMV9jSjRmT3FEWXpqdGdzWWU2QnY4YnJhWm5fLTdqeFBUeFRuVHhuSGFYNjZjV24wNVRndERJZ1hxRE5UTVowZ1FvbDRoaWVlbGhHWm4wTE5IRGVjUmhMb2NNS1J3R2hXX2tDODlHMHdzUjh5ei15MWRMTHF1UnBGVDJJdVNRU3hOb0xPY3FqVXNEOUdvZDRuRmdHUVF6WE45RW5QZw?oc=5"
+    ],
+    "source_names": [
+      "Yeni Şafak English"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-11-04T13:36:10.638529+00:00",
+    "is_duplicate_of": "bd12d52d-7204-4917-8ebf-01fdb7405d4a"
+  },
+  {
+    "entry_id": "1a562eeb-e7a6-4e28-8af1-9e7bc7b49a6b",
+    "donor": "IFAD",
+    "recipient": "Sri Lanka",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": "$665 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Sri Lanka",
+    "status": "new_commitment",
+    "summary": "IFAD, in partnership with the World Bank, has launched a $665 million AgriConnect plan in Sri Lanka to accelerate agropastoral transformation.",
+    "figure_quote": "$665 million",
+    "assumptions": [
+      "IFAD is a UN agency, not a private company, so this is not a valid event for the tracker."
+    ],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 3,
+        "points": 3
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOSUU5aURGUUg3YXpYWllLajN2dFF5YmRRQWMtYk9nbHA1UHdvWkNjUWZETE1Ybi1laDU1RlJSeFFhVUVXV09XYWZQTFQxLW1QbkJySUdEcUpEVTJXbVdWX2RhVkM5aFczNEV3bVcyTC1ud2R3Z3dCQWJ0dFBoWGk2dW8zTjZnY2JWM2VaOUVZenpLMnJiZUNuM3pwazZKTFhkTGd3ckpoZmJFQ1A1eWRQR2poai00ZE1wQ2NmalJwdFNwNVQ2b0xLNnRQMkwtenlDRk1N?oc=5",
+      "https://news.google.com/rss/articles/CBMiswFBVV95cUxQanFyLXNFU2hKb1FQVkhZeFZrZUdpRVc4QzFnUWJob2huZ0xLYjY2cEhqOUZscGxVNmpUd3pGOHJGX1dOOFBWYk1mcjlMUHlRUFBsYzNCaGI1Yy1ZUEkyQVRUbXFKdDd2b2dad1ZkUGZWWFR4V2JHSWU5YVFVN0Y0dFN1X2V0WEkycE9jWE1YWC1vcmpHeFVBTmxCNV82bTByS1JZWjhmOHNFMFR4RFZLUGxzcw?oc=5",
+      "https://realnewsmagazine.net/ifad-joins-cameroon-world-bank-to-accelerate-agropastoral-transformation-through-agriconnect/"
+    ],
+    "source_names": [
+      "Newswire",
+      "Farmers Review Africa",
+      "realnewsmagazine.net"
+    ],
+    "source_channels": [
+      "Google News",
+      "Media Cloud"
+    ],
+    "date_found": "2026-11-04T13:37:56.809938+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "cc4f2d13-e70c-47b2-b6f9-e935f8e5721f",
+    "donor": "Dayal Opticals",
+    "recipient": "Goonj",
+    "recipient_type": "NGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "300 pairs of eyeglasses",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Dayal Opticals donated 300 pairs of eyeglasses to Goonj, an NGO.",
+    "figure_quote": "300 pairs of eyeglasses",
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.newsx.com/bl-news/dayal-opticals-supports-goonj-with-a-contribution-of-300-pairs-of-eyeglasses-289826/"
+    ],
+    "source_names": [
+      "newsx.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-11-04T13:41:03.290006+00:00",
+    "is_duplicate_of": null
   }
 ]
