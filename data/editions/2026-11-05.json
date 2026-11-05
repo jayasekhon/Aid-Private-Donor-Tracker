@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-05",
+  "entries": [],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 97,
+    "gdelt_candidates_found": 603,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 238,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 1893,
+    "items_filtered_as_stale": 775,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 266,
+    "clusters_analysed": 192,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 7,
+    "rejected_unnamed_recipient": 2,
+    "rejected_no_named_donor": 3,
+    "rejected_out_of_scope_country": 2,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 2,
+    "rejected_no_evidence": 5,
+    "rejected_government_donor": 5,
+    "entries_published": 0,
+    "high_confidence_count": 0
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
