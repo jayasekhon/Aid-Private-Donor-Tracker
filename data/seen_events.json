@@ -11071,5 +11071,53 @@
     ],
     "date_found": "2026-11-08T12:42:29.113039+00:00",
     "is_duplicate_of": "cc4f2d13-e70c-47b2-b6f9-e935f8e5721f"
+  },
+  {
+    "entry_id": "5282cc61-79e4-4713-91fb-f098f931cc79",
+    "donor": "Alport Banjul Limited",
+    "recipient": "Summer Jam Basketball",
+    "recipient_type": "Other Nonprofit",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "Sponsorship for the event",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Alport Banjul Limited sponsored the Summer Jam Basketball event to support youth and sports development.",
+    "figure_quote": null,
+    "assumptions": [],
+    "confidence_score": 4,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": false,
+        "points": 0
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMiywFBVV95cUxNazlpUVBkdTh6Z2g4SDItc0JZTjYwVkYtdGNwSTVGSHlOYUxTa3AtMV9jSjRmT3FEWXpqdGdzWWU2QnY4YnJhWm5fLTdqeFBUeFRuVHhuSGFYNjZjV24wNVRndERJZ1hxRE5UTVowZ1FvbDRoaWVlbGhHWm4wTE5IRGVjUmhMb2NNS1J3R2hXX2tDODlHMHdzUjh5ei15MWRMTHF1UnBGVDJJdVNRU3hOb0xPY3FqVXNEOUdvZDRuRmdHUVF6WE45RW5QZw?oc=5"
+    ],
+    "source_names": [
+      "Yeni Şafak English"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-11-10T14:05:05.513152+00:00",
+    "is_duplicate_of": "e4581d2d-d0a3-4eda-8e25-eed281309800"
   }
 ]
