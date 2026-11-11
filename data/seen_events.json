@@ -11119,5 +11119,149 @@
     ],
     "date_found": "2026-11-10T14:05:05.513152+00:00",
     "is_duplicate_of": "e4581d2d-d0a3-4eda-8e25-eed281309800"
+  },
+  {
+    "entry_id": "a7465dbe-58cd-405d-a128-24c7656c6d98",
+    "donor": "Novo Nordisk",
+    "recipient": "World Diabetes Foundation",
+    "recipient_type": "INGO",
+    "amount_text": "$200 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Novo Nordisk commits $200 million to the World Diabetes Foundation for diabetes care and prevention programs.",
+    "figure_quote": "$200 million",
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMigwFBVV95cUxNUE5OUW5rWXB2c0tzZFp1WnRQdGItUFU3YkRuSGkwaTZjQnRVUHFlb05LUDRDamtJb0RWU2tjME5KTzJha0JtMXB1cTFsRzdHWWJUSFRYVEI3TEhHNHFHQmtpM0E5RVJweTFzWHk1VnJINkp1djBWbXdnVEFiNmdvSW4wMA?oc=5"
+    ],
+    "source_names": [
+      "Yahoo"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-11-11T13:20:15.434012+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "b09a16ba-2afe-4029-8773-e1eaf1598450",
+    "donor": "Inditex",
+    "recipient": "International Finance Corporation",
+    "recipient_type": "UN Agency",
+    "amount_text": "$50 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Inditex, owner of Zara, has committed $50 million to fund low-cost loans for suppliers transitioning to sustainable practices.",
+    "figure_quote": "$50 million",
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://economictimes.indiatimes.com/industry/cons-products/garments-/-textiles/zara-owner-inditex-commits-50-million-to-fund-low-cost-loans-for-suppliers-going-green/articleshow/135719121.cms"
+    ],
+    "source_names": [
+      "indiatimes.com"
+    ],
+    "source_channels": [
+      "GDELT GKG"
+    ],
+    "date_found": "2026-11-11T13:25:26.850518+00:00",
+    "is_duplicate_of": null
+  },
+  {
+    "entry_id": "f6fb971d-5646-4303-889f-4fb4fe093c7d",
+    "donor": "Dayal Opticals",
+    "recipient": "Goonj",
+    "recipient_type": "NGO",
+    "amount_text": null,
+    "is_in_kind": true,
+    "in_kind_description": "300 pairs of eyeglasses",
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Dayal Opticals donated 300 pairs of eyeglasses to Goonj, an NGO.",
+    "figure_quote": "300 pairs of eyeglasses",
+    "assumptions": [],
+    "confidence_score": 7,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": false,
+        "points": 0
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://www.newsx.com/bl-news/dayal-opticals-supports-goonj-with-a-contribution-of-300-pairs-of-eyeglasses-289826/"
+    ],
+    "source_names": [
+      "newsx.com"
+    ],
+    "source_channels": [
+      "Media Cloud"
+    ],
+    "date_found": "2026-11-11T13:29:33.847369+00:00",
+    "is_duplicate_of": "bb04330b-4d9b-4284-83d4-d0ec2eced217"
   }
 ]
