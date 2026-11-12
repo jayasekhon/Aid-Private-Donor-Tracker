@@ -11263,5 +11263,53 @@
     ],
     "date_found": "2026-11-11T13:29:33.847369+00:00",
     "is_duplicate_of": "bb04330b-4d9b-4284-83d4-d0ec2eced217"
+  },
+  {
+    "entry_id": "aeab00c1-d654-4268-947f-d73cb92777e4",
+    "donor": "Inditex",
+    "recipient": "World Bank",
+    "recipient_type": "UN Agency",
+    "amount_text": "$400 million",
+    "is_in_kind": false,
+    "in_kind_description": null,
+    "country_scope": "Unspecified / global",
+    "status": "new_commitment",
+    "summary": "Inditex has partnered with the World Bank to establish a $400 million fund aimed at improving supply chain resilience.",
+    "figure_quote": "$400 million",
+    "assumptions": [],
+    "confidence_score": 10,
+    "confidence_breakdown": {
+      "source_tier": {
+        "value": "general_news",
+        "points": 2
+      },
+      "explicit_amount_stated": {
+        "value": true,
+        "points": 3
+      },
+      "multiple_independent_sources": {
+        "value": 1,
+        "points": 0
+      },
+      "monitored_recipient": {
+        "value": true,
+        "points": 3
+      },
+      "specific_recipient_named": {
+        "value": true,
+        "points": 2
+      }
+    },
+    "source_urls": [
+      "https://news.google.com/rss/articles/CBMivAFBVV95cUxQS01iSEJHeDNNalJLUlZnbjB5aHFBSnRxOG5oTlgzV2szbmlEalE1eWRPZnlpaVJWb05DbzZTcnI3WGVKR01HcXJPazM0a3owNWRfRy1XVWlXMkVMdGd3elZIQU1TVnp4aHRCbG5kdVF1UlE4NGJENHNHTmpwWlpCaklpT01tX3dUbjJwRkxJa3FaODIzZl9XaE4tVlhTUmdXSm1SZ21STHE0UVdWallNd2swcWZiZTFONWNIZw?oc=5"
+    ],
+    "source_names": [
+      "Modaes"
+    ],
+    "source_channels": [
+      "Google News"
+    ],
+    "date_found": "2026-11-12T14:27:02.894433+00:00",
+    "is_duplicate_of": null
   }
 ]

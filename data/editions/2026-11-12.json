@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-12",
+  "entries": [
+    {
+      "entry_id": "aeab00c1-d654-4268-947f-d73cb92777e4",
+      "donor": "Inditex",
+      "recipient": "World Bank",
+      "recipient_type": "UN Agency",
+      "amount_text": "$400 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Inditex has partnered with the World Bank to establish a $400 million fund aimed at improving supply chain resilience.",
+      "figure_quote": "$400 million",
+      "assumptions": [],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMivAFBVV95cUxQS01iSEJHeDNNalJLUlZnbjB5aHFBSnRxOG5oTlgzV2szbmlEalE1eWRPZnlpaVJWb05DbzZTcnI3WGVKR01HcXJPazM0a3owNWRfRy1XVWlXMkVMdGd3elZIQU1TVnp4aHRCbG5kdVF1UlE4NGJENHNHTmpwWlpCaklpT01tX3dUbjJwRkxJa3FaODIzZl9XaE4tVlhTUmdXSm1SZ21STHE0UVdWallNd2swcWZiZTFONWNIZw?oc=5"
+      ],
+      "source_names": [
+        "Modaes"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-12T14:27:02.894433+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 100,
+    "gdelt_candidates_found": 470,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 253,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 1788,
+    "items_filtered_as_stale": 769,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 302,
+    "clusters_analysed": 202,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 2,
+    "rejected_unnamed_recipient": 3,
+    "rejected_no_named_donor": 2,
+    "rejected_out_of_scope_country": 3,
+    "rejected_government_entity": 0,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 1,
+    "rejected_no_evidence": 1,
+    "rejected_government_donor": 4,
+    "entries_published": 1,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
