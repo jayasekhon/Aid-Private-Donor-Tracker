@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-13",
+  "entries": [
+    {
+      "entry_id": "902f129b-513e-4b4a-9cae-cdaf9ec3c92e",
+      "donor": "ANTA Group",
+      "recipient": "UNHCR",
+      "recipient_type": "UN Agency",
+      "amount_text": "$1.5 million",
+      "is_in_kind": true,
+      "in_kind_description": "1.2 million items",
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "ANTA Group has committed $1.5 million in funding and 1.2 million items to support UNHCR's global refugee relief efforts.",
+      "figure_quote": "$1.5M and 1.2M Items",
+      "assumptions": [],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZTZseHJzZ3BFdmN2WDdQc0ZZRWdzamZjQ2lET3pNamxUTHJkdzZ3MHA0dlB5R0ZQU09jcTVFdXFoemN3X2VVY0JSRlBSR21qTUZpcFJLR01JOUY0MkRGY0NLaS14RnFhUzVmMk9OSmVqbjVmSzN5TjVJaEJhMlpHNlZZanV1ZnE1OGxzTHQ5NnppYjl6TFpWdFg3bkxRTnpXVUZCaU9mMGM4ZEVXYjFkb3BYYUtxOWd5eG1HVHVB?oc=5"
+      ],
+      "source_names": [
+        "TradingView"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-13T13:44:52.777641+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "9dc1df39-a108-4182-9bc4-22af823ab438",
+      "donor": "GOCOP",
+      "recipient": "Lagos orphanage",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": null,
+      "is_in_kind": true,
+      "in_kind_description": "food items and other supplies",
+      "country_scope": "Nigeria",
+      "status": "new_commitment",
+      "summary": "GOCOP visited an orphanage in Lagos and donated food items and other supplies.",
+      "figure_quote": null,
+      "assumptions": [],
+      "confidence_score": 4,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": false,
+          "points": 0
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiogFBVV95cUxNbE9wNWZIZUZmTjZuaFZOeVU2dWVlVFY0dEttVzRPZFhWQlNNZmMxR2s0cWR0U1otWDBMay1HdWxOTjF2am5iZGVhdzdybi1VNXF4Mk5wTzI3OFNMVndVSXVUb2VMcHRtb216RkN5U25scEkzMnAzUlBRWmtWSkd2Qld5MzFPQlV1UzZTdXBicHlvLVd4OHdNUEticGJyV1ZVX0E?oc=5"
+      ],
+      "source_names": [
+        "OnePage Africa"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-13T13:48:20.409462+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 93,
+    "gdelt_candidates_found": 567,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 257,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 1906,
+    "items_filtered_as_stale": 765,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 317,
+    "clusters_analysed": 216,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 3,
+    "rejected_unnamed_recipient": 2,
+    "rejected_no_named_donor": 3,
+    "rejected_out_of_scope_country": 5,
+    "rejected_government_entity": 1,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 1,
+    "rejected_no_evidence": 1,
+    "rejected_government_donor": 3,
+    "entries_published": 2,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    }
+  ]
+}
