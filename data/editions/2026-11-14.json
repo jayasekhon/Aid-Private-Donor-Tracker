@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-14",
+  "entries": [
+    {
+      "entry_id": "7381e9a6-9db7-4997-9fbf-558cad375da3",
+      "donor": "Jeff Bezos' family",
+      "recipient": "UNICEF",
+      "recipient_type": "UN Agency",
+      "amount_text": "$500 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Unspecified / global",
+      "status": "new_commitment",
+      "summary": "Jeff Bezos' family announced a $500 million matching challenge for UNICEF's child nutrition fund to address global child and maternal malnutrition.",
+      "figure_quote": "$500 million matching challenge",
+      "assumptions": [],
+      "confidence_score": 10,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": true,
+          "points": 3
+        },
+        "specific_recipient_named": {
+          "value": true,
+          "points": 2
+        }
+      },
+      "source_urls": [
+        "https://timesofindia.indiatimes.com/technology/tech-news/in-2025-jeff-bezos-family-announced-a-500-million-matching-challenge-for-unicefs-child-nutrition-fund-inviting-governments-philanthropists-and-private-donors-to-help-tackle-global-child-and-maternal-malnutrition/articleshow/135801942.cms",
+        "https://timesofindia.indiatimes.com/technology/tech-news/in-2025-jeff-bezos-family-announced-a-500-million-matching-challenge-for-unicefs-child-nutrition-fund-inviting-governments-philanthropists-and-private-donors-to-help-tackle-global-child-and-maternal-malnutrition/articleshow/135801942.cms"
+      ],
+      "source_names": [
+        "indiatimes.com"
+      ],
+      "source_channels": [
+        "Media Cloud"
+      ],
+      "date_found": "2026-11-14T12:57:17.309523+00:00",
+      "is_duplicate_of": null
+    },
+    {
+      "entry_id": "8ff9b541-bcc5-4a83-a980-1b6ad13754f5",
+      "donor": "AWS",
+      "recipient": "Various healthcare organizations across Africa",
+      "recipient_type": "Other Nonprofit",
+      "amount_text": "$100 million",
+      "is_in_kind": false,
+      "in_kind_description": null,
+      "country_scope": "Africa",
+      "status": "new_commitment",
+      "summary": "AWS has committed $100 million to expand the use of AI in healthcare across Africa.",
+      "figure_quote": "$100m",
+      "assumptions": [
+        "The recipients are described as 'Various healthcare organizations across Africa', which implies multiple entities but does not name specific organizations."
+      ],
+      "confidence_score": 5,
+      "confidence_breakdown": {
+        "source_tier": {
+          "value": "general_news",
+          "points": 2
+        },
+        "explicit_amount_stated": {
+          "value": true,
+          "points": 3
+        },
+        "multiple_independent_sources": {
+          "value": 1,
+          "points": 0
+        },
+        "monitored_recipient": {
+          "value": false,
+          "points": 0
+        },
+        "specific_recipient_named": {
+          "value": false,
+          "points": 0
+        }
+      },
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVm16SlFwMjRuRVl0UF9DcU53aXYwUzB4UGZKT1RSSEoxQ251SjdJcmVaM3FlalVnQVAtc3dKYUVMQjhUMXlwbzlhN0N2eDc0eWpzNXhqZXN4cDNNbml4LTFRcUIwa1FOUERFblBpX09iQlo2OXdzU3NESmxrZEtaUzhIZEozdUV6NWRVT2tVLVhGZmJf?oc=5"
+      ],
+      "source_names": [
+        "Africa Business Communities"
+      ],
+      "source_channels": [
+        "Google News"
+      ],
+      "date_found": "2026-11-14T12:51:59.367813+00:00",
+      "is_duplicate_of": null
+    }
+  ],
+  "stats": {
+    "feeds_checked": 203,
+    "google_news_queries": 200,
+    "gdelt_files_processed": 93,
+    "gdelt_candidates_found": 544,
+    "mediacloud_queries_made": 7,
+    "mediacloud_candidates_found": 234,
+    "recipients_watched": 50,
+    "pr_wire_feeds": 3,
+    "items_considered": 1865,
+    "items_filtered_as_stale": 765,
+    "max_article_age_days": 14,
+    "items_after_trigger_filter": 295,
+    "clusters_analysed": 192,
+    "skipped_due_to_ai_budget": 0,
+    "duplicates_skipped": 5,
+    "rejected_unnamed_recipient": 2,
+    "rejected_no_named_donor": 2,
+    "rejected_out_of_scope_country": 3,
+    "rejected_government_entity": 1,
+    "rejected_unspecified_scope_excluded": 0,
+    "rejected_donor_is_monitored_recipient": 1,
+    "rejected_no_evidence": 2,
+    "rejected_government_donor": 1,
+    "entries_published": 2,
+    "high_confidence_count": 1
+  },
+  "fetch_failures": [
+    {
+      "source_label": "GlobeNewswire - Nonprofit",
+      "url": "https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss",
+      "error": "403 Client Error: Forbidden for url: https://www.globenewswire.com/en/search/subject/Non-profit%2520organisation/feedType/rss"
+    },
+    {
+      "source_label": "CSRWire",
+      "url": "https://csrwire.com/feed/",
+      "error": "403 Client Error: Forbidden for url: https://csrwire.com/feed/"
+    },
+    {
+      "source_label": "Media Cloud: International Federation of Red Cross and Red Crescent Societies, Save the Children, Médecins Sans Frontières, Oxfam, International Rescue Committee, CARE International, Norwegian Refugee Council, Mercy Corps",
+      "url": "collection 9272347",
+      "error": "HTTPSConnectionPool(host='search.mediacloud.org', port=443): Read timed out. (read timeout=60)"
+    }
+  ]
+}
